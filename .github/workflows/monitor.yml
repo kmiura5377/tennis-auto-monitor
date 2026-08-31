@@ -1,0 +1,14 @@
+name: Tennis Court Monitor
+
+on:
+  schedule:
+    # UTC time. JST 6:00-23:59 = UTC 21:00-23:59 (prev day) + UTC 00:00-14:59
+    - cron: '*/15 21-23,0-14 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  call-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call monitor endpoint
+        run: curl -fsS "https://tennis-auto-monitor.vercel.app/api/monitor"
