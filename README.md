@@ -63,3 +63,6 @@ tennis-auto-monitor/
 ## ライセンス
 
 MIT
+
+<!-- deploy trigger -->
+
