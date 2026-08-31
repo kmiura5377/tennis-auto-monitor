@@ -1,0 +1,22 @@
+{
+  "crons": [
+    {
+      "path": "/api/monitor",
+      "schedule": "*/15 6-23 * * *"
+    }
+  ],
+  "functions": {
+    "api/monitor.js": {
+      "memory": 1024,
+      "maxDuration": 60,
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "NOTIFY_EMAIL": "@NOTIFY_EMAIL",
+    "WEBHOOK_URL": "@WEBHOOK_URL",
+    "SMTP_HOST": "@SMTP_HOST",
+    "SMTP_USER": "@SMTP_USER",
+    "SMTP_PASS": "@SMTP_PASS"
+  }
+}
