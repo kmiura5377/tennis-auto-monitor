@@ -5,12 +5,5 @@
       "maxDuration": 60,
       "runtime": "nodejs18.x"
     }
-  },
-  "env": {
-    "NOTIFY_EMAIL": "@NOTIFY_EMAIL",
-    "WEBHOOK_URL": "@WEBHOOK_URL",
-    "SMTP_HOST": "@SMTP_HOST",
-    "SMTP_USER": "@SMTP_USER",
-    "SMTP_PASS": "@SMTP_PASS"
   }
 }
