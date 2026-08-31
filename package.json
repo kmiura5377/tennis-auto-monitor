@@ -5,7 +5,6 @@
   "main": "api/monitor.js",
   "scripts": {
     "dev": "vercel dev",
-    "build": "echo 'build'",
     "start": "node api/monitor.js"
   },
   "dependencies": {
