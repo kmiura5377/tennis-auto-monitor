@@ -369,7 +369,7 @@
 
         async function checkAvailability() {
             try {
-                const res = await fetch('/api/monitor');
+                const res = await fetch('/api/availability');
                 const data = await res.json();
                 if (!data.success) throw new Error(data.error || 'unknown error');
 

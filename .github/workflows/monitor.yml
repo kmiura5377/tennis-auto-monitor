@@ -10,5 +10,5 @@ jobs:
   call-monitor:
     runs-on: ubuntu-latest
     steps:
-      - name: Call monitor endpoint
-        run: curl -fsS "https://tennis-auto-monitor.vercel.app/api/monitor"
+      - name: Call availability check endpoint
+        run: curl -fsS "https://tennis-auto-monitor.vercel.app/api/availability"
