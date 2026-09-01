@@ -1,68 +1,47 @@
-# 🎾 テニスコート自動監視システム
+# 🎾 テニスコート空き状況カレンダー
 
-東京都立公園のテニスコート空き状況を自動監視し、新しい空きが出たら即座に通知するシステムです。
+東京都立公園のテニスコート空き状況を月間カレンダー形式で確認できるシステムです。
+
+## 現在の状態
+
+⚠️ **実際のスクレイピングは未実装です。** 現在表示されているのはテスト用のダミーデータです。
+
+東京都のスポレクシステム（都立公園スポーツレクリエーション予約システム）は利用規約で過度な自動アクセスを禁止しており、実装にあたっては慎重な検証が必要なため、実データ取得は保留中です。
 
 ## 機能
 
-- ✅ 15分ごとに自動的に空き状況をチェック
-- ✅ 新しい空き枠が出たら即座に通知
-- ✅ メール通知対応
-- ✅ ブラウザプッシュ通知対応
-- ✅ 前回データと比較して変更があった場合のみ通知
-
-## セットアップ
-
-### 1. ローカル環境での動作確認
-
-```bash
-npm install
-npm run dev
-```
-
-### 2. Vercelへのデプロイ
-
-```bash
-vercel deploy
-```
-
-### 3. 環境変数の設定
-
-Vercel ダッシュボードで以下を設定：
-
-```
-SMTP_HOST=your-email-provider
-SMTP_USER=your-email@example.com
-SMTP_PASS=your-app-password
-NOTIFY_EMAIL=recipient@example.com
-```
+- ✅ 月間カレンダーで日付ごとの空き枠数を表示
+- ✅ 日付クリックで施設ごとの時間帯詳細を表示
+- ✅ 公式予約サイトへのリンク
+- ⏳ 実際の空き状況スクレイピング（未実装）
+- ⏳ 新規空きの通知（未実装）
 
 ## 構成
 
 ```
 tennis-auto-monitor/
+├── index.html              # 月間カレンダーUI
 ├── api/
-│   ├── scrape.js          # スクレイピング機能
-│   ├── compare.js         # データ比較機能
-│   └── notify.js          # 通知機能
-├── lib/
-│   ├── db.js              # データベース操作
-│   └── parser.js          # HTML解析
-├── pages/
-│   ├── dashboard.html     # ダッシュボード
-│   └── history.html       # 通知履歴
+│   └── availability.js     # 空き状況API（現在はダミーデータ生成）
+├── .github/workflows/
+│   └── monitor.yml         # 1時間ごとにAPIを呼び出すGitHub Actions
 ├── package.json
-├── vercel.json           # Vercel設定
+├── vercel.json
 └── README.md
 ```
 
-## 注意
+## セットアップ
 
-スクレイピングは東京都の利用規約に従って実行されています。
-過度なアクセスは避けてください。
+```bash
+npm install
+```
+
+Vercelにデプロイすると、`index.html` と `api/availability.js` がそのまま公開されます（ビルドステップなし）。
+
+## 定期実行について
+
+Vercel Hobbyプランはcronの実行が1日1回までに制限されているため、定期的なチェックは GitHub Actions（`.github/workflows/monitor.yml`）で1時間おきに行っています。
 
 ## ライセンス
 
 MIT
-
-<!-- deploy trigger -->
-

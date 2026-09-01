@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>テニスコート空き状況</title>
+    <title>テニスコート空き状況カレンダー</title>
     <style>
         * {
             margin: 0;
@@ -46,175 +46,258 @@
         }
 
         header {
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
+            padding-bottom: 16px;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             letter-spacing: -0.5px;
         }
 
         .header-subtitle {
             color: var(--text-secondary);
-            font-size: 14px;
+            font-size: 13.5px;
+        }
+
+        .notice-banner {
+            background-color: rgba(255, 149, 0, 0.12);
+            border: 1px solid rgba(255, 149, 0, 0.4);
+            color: #ad6800;
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 12.5px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .notice-banner { color: #ffb340; }
         }
 
         .status-bar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .status-card {
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 14px;
+            padding: 12px;
             text-align: center;
         }
 
         .status-value {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .status-label {
-            font-size: 11px;
+            font-size: 10.5px;
             color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .facility-grid {
-            display: grid;
-            gap: 14px;
-        }
-
-        .facility-card {
+        .calendar-container {
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 14px;
             padding: 20px;
         }
 
-        .facility-card.new-availability {
-            border-color: var(--success);
-            box-shadow: 0 0 0 2px rgba(52, 199, 89, 0.25);
-        }
-
-        .facility-head {
+        .calendar-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
         }
 
-        .facility-name {
+        .calendar-title {
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .weekday {
+            text-align: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            padding: 8px 0;
+            text-transform: uppercase;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+        }
+
+        .day {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-primary);
+            cursor: pointer;
+            padding: 4px;
+            text-align: center;
+            min-height: 64px;
+        }
+
+        .day:hover {
+            border-color: var(--accent);
+        }
+
+        .day.other-month {
+            visibility: hidden;
+        }
+
+        .day.past {
+            opacity: 0.4;
+            cursor: default;
+        }
+
+        .day-number {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .day-count {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        .day-count.zero {
+            color: var(--text-secondary);
+            font-size: 10px;
+        }
+
+        .day-count-label {
+            font-size: 9px;
+            color: var(--text-secondary);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--bg-primary);
+            border-radius: 14px;
+            padding: 24px;
+            max-width: 480px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-title {
             font-size: 17px;
             font-weight: 700;
         }
 
-        .badge {
-            font-size: 11px;
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .facility-section {
+            margin-bottom: 18px;
+        }
+
+        .facility-name {
+            font-size: 14.5px;
             font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 20px;
+            margin-bottom: 8px;
         }
 
-        .badge.available {
-            background-color: rgba(52, 199, 89, 0.15);
-            color: var(--success);
-        }
-
-        .badge.unavailable {
-            background-color: rgba(134, 134, 139, 0.15);
-            color: var(--text-secondary);
-        }
-
-        .badge.new {
-            background-color: var(--danger);
-            color: white;
-            margin-left: 8px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
-
-        .slots {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-            gap: 8px;
-        }
-
-        .slot {
-            padding: 8px;
+        .time-slot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 12px;
+            background-color: var(--bg-secondary);
             border-radius: 8px;
-            font-size: 12px;
-            text-align: center;
-            font-weight: 600;
-            background-color: var(--bg-primary);
-            border: 1px solid var(--border-color);
-        }
-
-        .slot.open {
-            color: var(--success);
-            border-color: var(--success);
-        }
-
-        .slot.closed {
-            color: var(--text-secondary);
+            margin-bottom: 6px;
+            font-size: 13px;
+            border-left: 3px solid var(--success);
         }
 
         .no-data {
             color: var(--text-secondary);
             font-size: 13px;
-        }
-
-        .activity-log {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 18px;
-            margin-top: 24px;
-        }
-
-        .activity-log h3 {
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .log-entry {
-            padding: 10px;
-            border-left: 3px solid var(--border-color);
-            margin-bottom: 8px;
-            font-size: 12.5px;
-        }
-
-        .log-entry.new-availability {
-            border-left-color: var(--success);
-            background-color: rgba(52, 199, 89, 0.1);
-        }
-
-        .log-time {
-            color: var(--text-secondary);
-            font-size: 10.5px;
+            text-align: center;
         }
 
         .footer {
             background-color: var(--bg-secondary);
             border-top: 1px solid var(--border-color);
-            padding: 16px 20px;
+            padding: 14px 20px;
             text-align: center;
             position: fixed;
             bottom: 0;
@@ -228,39 +311,37 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
         .footer-text {
-            font-size: 12.5px;
+            font-size: 12px;
             color: var(--text-secondary);
         }
 
         .footer-button {
             background-color: var(--accent);
             color: white;
-            padding: 10px 20px;
-            border: none;
+            padding: 9px 18px;
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 600;
-            cursor: pointer;
             text-decoration: none;
             display: inline-block;
-        }
-
-        .footer-button:hover {
-            background-color: #0a66d2;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🎾 テニスコート空き状況</h1>
-            <p class="header-subtitle">東京都立公園を自動監視中（15分ごとに更新）</p>
+            <h1>🎾 テニスコート空き状況カレンダー</h1>
+            <p class="header-subtitle">東京都立公園を自動監視中</p>
         </header>
+
+        <div class="notice-banner">
+            ⚠️ 現在表示中のデータはテスト用のダミーデータです。実際の空き状況とは異なります。
+        </div>
 
         <div class="status-bar">
             <div class="status-card">
@@ -272,18 +353,43 @@
                 <div class="status-label">最終チェック</div>
             </div>
             <div class="status-card">
-                <div class="status-value" id="availableCount">-</div>
-                <div class="status-label">空きあり施設</div>
+                <div class="status-value" id="monthTotal">-</div>
+                <div class="status-label">今月の空き枠合計</div>
             </div>
         </div>
 
-        <div class="facility-grid" id="facilityGrid">
-            <p class="no-data">読み込み中...</p>
-        </div>
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <h2 class="calendar-title" id="calendarTitle">-</h2>
+                <div class="calendar-nav">
+                    <button class="btn" id="prevMonth">← 前月</button>
+                    <button class="btn" id="nextMonth">次月 →</button>
+                </div>
+            </div>
 
-        <div class="activity-log">
-            <h3>📋 最近のアクティビティ</h3>
-            <div id="activityLog"></div>
+            <div class="weekdays">
+                <div class="weekday">日</div>
+                <div class="weekday">月</div>
+                <div class="weekday">火</div>
+                <div class="weekday">水</div>
+                <div class="weekday">木</div>
+                <div class="weekday">金</div>
+                <div class="weekday">土</div>
+            </div>
+
+            <div class="days" id="calendarDays">
+                <p class="no-data">読み込み中...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="detailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div id="modalBody"></div>
         </div>
     </div>
 
@@ -297,104 +403,132 @@
     </div>
 
     <script>
-        const STORAGE_KEY = 'tennisMonitorState';
-        const REFRESH_MS = 5 * 60 * 1000;
+        let viewDate = new Date();
+        let monthData = null;
 
-        function loadState() {
+        function pad(n) { return String(n).padStart(2, '0'); }
+        function dateKey(y, m, d) { return `${y}-${pad(m + 1)}-${pad(d)}`; }
+
+        function countAvailable(dayFacilities) {
+            if (!dayFacilities) return 0;
+            return dayFacilities.reduce((sum, f) => sum + f.timeSlots.filter(s => s.available).length, 0);
+        }
+
+        async function loadMonth(year, month) {
+            const grid = document.getElementById('calendarDays');
+            grid.innerHTML = '<p class="no-data">読み込み中...</p>';
             try {
-                const raw = localStorage.getItem(STORAGE_KEY);
-                return raw ? JSON.parse(raw) : { previousData: [], logs: [] };
-            } catch (e) {
-                return { previousData: [], logs: [] };
-            }
-        }
-
-        function saveState(state) {
-            try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-            } catch (e) {
-                /* storage unavailable, ignore */
-            }
-        }
-
-        let state = loadState();
-
-        function addLog(message, type) {
-            state.logs.unshift({ message, type, time: new Date().toLocaleTimeString('ja-JP') });
-            state.logs = state.logs.slice(0, 10);
-            renderLog();
-        }
-
-        function renderLog() {
-            const el = document.getElementById('activityLog');
-            if (state.logs.length === 0) {
-                el.innerHTML = '<p class="no-data">まだアクティビティがありません</p>';
-                return;
-            }
-            el.innerHTML = state.logs.map(log => `
-                <div class="log-entry ${log.type}">
-                    <div class="log-time">${log.time}</div>
-                    <div>${log.message}</div>
-                </div>
-            `).join('');
-        }
-
-        function renderFacilities(currentData, newIds) {
-            const grid = document.getElementById('facilityGrid');
-            grid.innerHTML = currentData.map(f => {
-                const isNew = newIds.has(f.facilityId);
-                const openSlots = (f.timeSlots || []).filter(s => s.available).length;
-                return `
-                    <div class="facility-card ${isNew ? 'new-availability' : ''}">
-                        <div class="facility-head">
-                            <div class="facility-name">${f.facility}</div>
-                            <div>
-                                <span class="badge ${f.available ? 'available' : 'unavailable'}">
-                                    ${f.available ? `空きあり (${openSlots})` : '空きなし'}
-                                </span>
-                                ${isNew ? '<span class="badge new">NEW</span>' : ''}
-                            </div>
-                        </div>
-                        ${
-                            (f.timeSlots && f.timeSlots.length > 0)
-                                ? `<div class="slots">${f.timeSlots.map(s => `
-                                    <div class="slot ${s.available ? 'open' : 'closed'}">${s.time}</div>
-                                `).join('')}</div>`
-                                : '<p class="no-data">現在空きはありません</p>'
-                        }
-                    </div>
-                `;
-            }).join('');
-        }
-
-        async function checkAvailability() {
-            try {
-                const res = await fetch('/api/availability');
+                const res = await fetch(`/api/availability?year=${year}&month=${month}`);
                 const data = await res.json();
                 if (!data.success) throw new Error(data.error || 'unknown error');
-
-                const newIds = new Set((data.newAvailability || []).map(n => n.facilityId));
-
-                (data.newAvailability || []).forEach(n => addLog(n.message, 'new-availability'));
-
-                renderFacilities(data.currentData, newIds);
-
-                const availableCount = data.currentData.filter(f => f.available).length;
-                document.getElementById('availableCount').textContent = availableCount;
+                monthData = data;
                 document.getElementById('lastCheckTime').textContent = new Date(data.timestamp).toLocaleTimeString('ja-JP');
                 document.getElementById('monitoringStatus').textContent = '🟢';
 
-                state.previousData = data.currentData;
-                saveState(state);
+                const total = Object.values(data.days).reduce((sum, dayFacilities) => sum + countAvailable(dayFacilities), 0);
+                document.getElementById('monthTotal').textContent = total;
+
+                renderCalendar(year, month, data.days);
             } catch (e) {
                 document.getElementById('monitoringStatus').textContent = '🔴';
-                addLog('⚠️ データ取得に失敗しました: ' + e.message, 'checked');
+                grid.innerHTML = `<p class="no-data">データ取得に失敗しました: ${e.message}</p>`;
             }
         }
 
-        renderLog();
-        checkAvailability();
-        setInterval(checkAvailability, REFRESH_MS);
+        function renderCalendar(year, month, days) {
+            const monthNames = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+            document.getElementById('calendarTitle').textContent = `${year}年${monthNames[month]}`;
+
+            const firstDay = new Date(year, month, 1);
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const startingDayOfWeek = firstDay.getDay();
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            const grid = document.getElementById('calendarDays');
+            grid.innerHTML = '';
+
+            for (let i = 0; i < startingDayOfWeek; i++) {
+                const empty = document.createElement('div');
+                empty.className = 'day other-month';
+                grid.appendChild(empty);
+            }
+
+            for (let d = 1; d <= daysInMonth; d++) {
+                const key = dateKey(year, month, d);
+                const dayFacilities = days[key] || [];
+                const count = countAvailable(dayFacilities);
+                const cellDate = new Date(year, month, d);
+
+                const el = document.createElement('div');
+                el.className = 'day' + (cellDate < today ? ' past' : '');
+
+                const num = document.createElement('div');
+                num.className = 'day-number';
+                num.textContent = d;
+
+                const countEl = document.createElement('div');
+                countEl.className = 'day-count' + (count === 0 ? ' zero' : '');
+                countEl.textContent = count === 0 ? '空きなし' : count;
+
+                el.appendChild(num);
+                el.appendChild(countEl);
+                if (count > 0) {
+                    const label = document.createElement('div');
+                    label.className = 'day-count-label';
+                    label.textContent = '枠';
+                    el.appendChild(label);
+                }
+
+                el.addEventListener('click', () => showDetails(key, cellDate, dayFacilities));
+                grid.appendChild(el);
+            }
+        }
+
+        function showDetails(key, date, dayFacilities) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+            document.getElementById('modalTitle').textContent = date.toLocaleDateString('ja-JP', options);
+
+            const modalBody = document.getElementById('modalBody');
+            const sections = dayFacilities
+                .map(f => {
+                    const openSlots = f.timeSlots.filter(s => s.available);
+                    if (openSlots.length === 0) return '';
+                    return `
+                        <div class="facility-section">
+                            <div class="facility-name">${f.facility}</div>
+                            ${openSlots.map(s => `
+                                <div class="time-slot"><span>${s.time}</span><span style="color:var(--success)">✓ 空き</span></div>
+                            `).join('')}
+                        </div>
+                    `;
+                })
+                .filter(html => html !== '')
+                .join('');
+
+            modalBody.innerHTML = sections || '<p class="no-data">この日は空きがありません</p>';
+            document.getElementById('detailModal').classList.add('active');
+        }
+
+        document.getElementById('modalClose').addEventListener('click', () => {
+            document.getElementById('detailModal').classList.remove('active');
+        });
+        document.getElementById('detailModal').addEventListener('click', (e) => {
+            if (e.target.id === 'detailModal') e.target.classList.remove('active');
+        });
+
+        document.getElementById('prevMonth').addEventListener('click', () => {
+            viewDate.setMonth(viewDate.getMonth() - 1);
+            loadMonth(viewDate.getFullYear(), viewDate.getMonth());
+        });
+        document.getElementById('nextMonth').addEventListener('click', () => {
+            viewDate.setMonth(viewDate.getMonth() + 1);
+            loadMonth(viewDate.getFullYear(), viewDate.getMonth());
+        });
+
+        loadMonth(viewDate.getFullYear(), viewDate.getMonth());
+        setInterval(() => loadMonth(viewDate.getFullYear(), viewDate.getMonth()), 60 * 60 * 1000);
     </script>
 </body>
 </html>
