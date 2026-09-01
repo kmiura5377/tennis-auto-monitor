@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テニスコート空き状況</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --border-color: #e5e5e7;
+            --accent: #0071e3;
+            --success: #34c759;
+            --danger: #ff3b30;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1d1d1f;
+                --bg-secondary: #2c2c2e;
+                --text-primary: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --border-color: #424245;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 20px 140px;
+        }
+
+        header {
+            margin-bottom: 24px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .header-subtitle {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .status-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .status-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .status-value {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .status-label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .facility-grid {
+            display: grid;
+            gap: 14px;
+        }
+
+        .facility-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .facility-card.new-availability {
+            border-color: var(--success);
+            box-shadow: 0 0 0 2px rgba(52, 199, 89, 0.25);
+        }
+
+        .facility-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .facility-name {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .badge {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .badge.available {
+            background-color: rgba(52, 199, 89, 0.15);
+            color: var(--success);
+        }
+
+        .badge.unavailable {
+            background-color: rgba(134, 134, 139, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .badge.new {
+            background-color: var(--danger);
+            color: white;
+            margin-left: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 8px;
+        }
+
+        .slot {
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            text-align: center;
+            font-weight: 600;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .slot.open {
+            color: var(--success);
+            border-color: var(--success);
+        }
+
+        .slot.closed {
+            color: var(--text-secondary);
+        }
+
+        .no-data {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .activity-log {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 24px;
+        }
+
+        .activity-log h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .log-entry {
+            padding: 10px;
+            border-left: 3px solid var(--border-color);
+            margin-bottom: 8px;
+            font-size: 12.5px;
+        }
+
+        .log-entry.new-availability {
+            border-left-color: var(--success);
+            background-color: rgba(52, 199, 89, 0.1);
+        }
+
+        .log-time {
+            color: var(--text-secondary);
+            font-size: 10.5px;
+        }
+
+        .footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 16px 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-text {
+            font-size: 12.5px;
+            color: var(--text-secondary);
+        }
+
+        .footer-button {
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .footer-button:hover {
+            background-color: #0a66d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎾 テニスコート空き状況</h1>
+            <p class="header-subtitle">東京都立公園を自動監視中（15分ごとに更新）</p>
+        </header>
+
+        <div class="status-bar">
+            <div class="status-card">
+                <div class="status-value" id="monitoringStatus">🟢</div>
+                <div class="status-label">監視ステータス</div>
+            </div>
+            <div class="status-card">
+                <div class="status-value" id="lastCheckTime">-</div>
+                <div class="status-label">最終チェック</div>
+            </div>
+            <div class="status-card">
+                <div class="status-value" id="availableCount">-</div>
+                <div class="status-label">空きあり施設</div>
+            </div>
+        </div>
+
+        <div class="facility-grid" id="facilityGrid">
+            <p class="no-data">読み込み中...</p>
+        </div>
+
+        <div class="activity-log">
+            <h3>📋 最近のアクティビティ</h3>
+            <div id="activityLog"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-text">💡 空きが見つかったら公式サイトで予約してください</div>
+            <a href="https://kouen.sports.metro.tokyo.lg.jp/web/" target="_blank" rel="noopener" class="footer-button">
+                予約ページを開く ↗
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'tennisMonitorState';
+        const REFRESH_MS = 5 * 60 * 1000;
+
+        function loadState() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                return raw ? JSON.parse(raw) : { previousData: [], logs: [] };
+            } catch (e) {
+                return { previousData: [], logs: [] };
+            }
+        }
+
+        function saveState(state) {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+            } catch (e) {
+                /* storage unavailable, ignore */
+            }
+        }
+
+        let state = loadState();
+
+        function addLog(message, type) {
+            state.logs.unshift({ message, type, time: new Date().toLocaleTimeString('ja-JP') });
+            state.logs = state.logs.slice(0, 10);
+            renderLog();
+        }
+
+        function renderLog() {
+            const el = document.getElementById('activityLog');
+            if (state.logs.length === 0) {
+                el.innerHTML = '<p class="no-data">まだアクティビティがありません</p>';
+                return;
+            }
+            el.innerHTML = state.logs.map(log => `
+                <div class="log-entry ${log.type}">
+                    <div class="log-time">${log.time}</div>
+                    <div>${log.message}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderFacilities(currentData, newIds) {
+            const grid = document.getElementById('facilityGrid');
+            grid.innerHTML = currentData.map(f => {
+                const isNew = newIds.has(f.facilityId);
+                const openSlots = (f.timeSlots || []).filter(s => s.available).length;
+                return `
+                    <div class="facility-card ${isNew ? 'new-availability' : ''}">
+                        <div class="facility-head">
+                            <div class="facility-name">${f.facility}</div>
+                            <div>
+                                <span class="badge ${f.available ? 'available' : 'unavailable'}">
+                                    ${f.available ? `空きあり (${openSlots})` : '空きなし'}
+                                </span>
+                                ${isNew ? '<span class="badge new">NEW</span>' : ''}
+                            </div>
+                        </div>
+                        ${
+                            (f.timeSlots && f.timeSlots.length > 0)
+                                ? `<div class="slots">${f.timeSlots.map(s => `
+                                    <div class="slot ${s.available ? 'open' : 'closed'}">${s.time}</div>
+                                `).join('')}</div>`
+                                : '<p class="no-data">現在空きはありません</p>'
+                        }
+                    </div>
+                `;
+            }).join('');
+        }
+
+        async function checkAvailability() {
+            try {
+                const res = await fetch('/api/monitor');
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error || 'unknown error');
+
+                const newIds = new Set((data.newAvailability || []).map(n => n.facilityId));
+
+                (data.newAvailability || []).forEach(n => addLog(n.message, 'new-availability'));
+
+                renderFacilities(data.currentData, newIds);
+
+                const availableCount = data.currentData.filter(f => f.available).length;
+                document.getElementById('availableCount').textContent = availableCount;
+                document.getElementById('lastCheckTime').textContent = new Date(data.timestamp).toLocaleTimeString('ja-JP');
+                document.getElementById('monitoringStatus').textContent = '🟢';
+
+                state.previousData = data.currentData;
+                saveState(state);
+            } catch (e) {
+                document.getElementById('monitoringStatus').textContent = '🔴';
+                addLog('⚠️ データ取得に失敗しました: ' + e.message, 'checked');
+            }
+        }
+
+        renderLog();
+        checkAvailability();
+        setInterval(checkAvailability, REFRESH_MS);
+    </script>
+</body>
+</html>
