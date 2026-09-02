@@ -148,6 +148,8 @@
             font-size: 13px;
             font-weight: 700;
             cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
             transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
         }
 
@@ -618,10 +620,9 @@
         </div>
 
         <div class="notify-bar">
-            <button class="scan-btn" id="scanBtn">📡 今すぐスキャンする</button>
+            <a class="scan-btn" href="https://github.com/kmiura5377/tennis-auto-monitor/actions/workflows/monitor.yml" target="_blank" rel="noopener">📡 今すぐスキャンする（GitHubを開く）</a>
             <button class="notify-btn" id="notifyBtn">🔔 新規空きの通知を有効にする</button>
         </div>
-        <p class="no-data" id="scanStatus" style="margin-bottom:16px;"></p>
 
         <div class="subscribe-panel" id="subscribePanel" style="display:none;">
             通知の設定が完了しました。以下の内容をコピーして、GitHubリポジトリの Secret
@@ -927,48 +928,6 @@
         loadActivityLog();
         setInterval(loadData, 60 * 60 * 1000);
         setInterval(loadActivityLog, 60 * 60 * 1000);
-
-        // --- 今すぐスキャン ---
-        const SCAN_COOLDOWN_MS = 10 * 60 * 1000; // 連打防止のクールダウン
-
-        function updateScanButtonState() {
-            const btn = document.getElementById('scanBtn');
-            const lastTriggered = Number(localStorage.getItem('lastScanTriggeredAt') || 0);
-            const remaining = SCAN_COOLDOWN_MS - (Date.now() - lastTriggered);
-            if (remaining > 0) {
-                btn.disabled = true;
-                btn.textContent = `⏳ ${Math.ceil(remaining / 60000)}分後に再実行できます`;
-                setTimeout(updateScanButtonState, 5000);
-            } else {
-                btn.disabled = false;
-                btn.textContent = '📡 今すぐスキャンする';
-            }
-        }
-
-        document.getElementById('scanBtn').addEventListener('click', async () => {
-            const btn = document.getElementById('scanBtn');
-            const status = document.getElementById('scanStatus');
-            btn.disabled = true;
-            btn.textContent = '📡 開始しています...';
-            status.textContent = '';
-
-            try {
-                const res = await fetch('/api/trigger-scan', { method: 'POST' });
-                const data = await res.json();
-                if (!data.success) throw new Error(data.error || '不明なエラー');
-
-                localStorage.setItem('lastScanTriggeredAt', String(Date.now()));
-                status.textContent = data.alreadyRunning
-                    ? 'ℹ️ ' + data.message + '（完了まで15〜25分ほどかかります）'
-                    : '✅ ' + data.message + '（完了まで15〜25分ほどかかります。完了後にこの画面を再読み込みしてください）';
-            } catch (e) {
-                status.textContent = '❌ スキャンの開始に失敗しました: ' + e.message;
-            } finally {
-                updateScanButtonState();
-            }
-        });
-
-        updateScanButtonState();
 
         // --- PWA installability + Web Push ---
         const VAPID_PUBLIC_KEY = 'BNpuNfvpkX-8XMwnvBU4K7cykGDCEh6uSR7IwtKEfQJh4E-qus2N1PigdmjcnPIs-G7bvgO_2dNjKSQS9FRgVI8';
