@@ -20,151 +20,288 @@
 
         :root {
             --bg-primary: #ffffff;
-            --bg-secondary: #f5f5f7;
-            --text-primary: #1d1d1f;
-            --text-secondary: #86868b;
-            --border-color: #e5e5e7;
-            --accent: #0071e3;
-            --success: #34c759;
-            --danger: #ff3b30;
+            --bg-secondary: #f4f6f8;
+            --bg-elevated: #ffffff;
+            --text-primary: #12151a;
+            --text-secondary: #6b7280;
+            --text-tertiary: #9aa1ab;
+            --border-color: #e7e9ec;
+            --accent: #0e9f6e;
+            --accent-strong: #0a7a54;
+            --accent-soft: rgba(14, 159, 110, 0.12);
+            --success: #16a34a;
+            --amber: #d97706;
+            --amber-soft: rgba(217, 119, 6, 0.12);
+            --danger: #e11d48;
+            --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
+            --shadow-md: 0 4px 16px rgba(16, 24, 40, 0.06);
+            --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.09);
+            --heat-0: transparent;
+            --heat-1: rgba(14, 159, 110, 0.12);
+            --heat-2: rgba(14, 159, 110, 0.26);
+            --heat-3: rgba(14, 159, 110, 0.44);
+            --heat-4: rgba(14, 159, 110, 0.68);
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-primary: #1d1d1f;
-                --bg-secondary: #2c2c2e;
-                --text-primary: #f5f5f7;
-                --text-secondary: #a1a1a6;
-                --border-color: #424245;
+                --bg-primary: #0b0d10;
+                --bg-secondary: #14171b;
+                --bg-elevated: #191d22;
+                --text-primary: #f2f3f5;
+                --text-secondary: #9aa1ab;
+                --text-tertiary: #6b7280;
+                --border-color: #24282e;
+                --accent: #22c07d;
+                --accent-strong: #34d399;
+                --accent-soft: rgba(34, 192, 125, 0.16);
+                --success: #34d399;
+                --amber: #f59e0b;
+                --amber-soft: rgba(245, 158, 11, 0.14);
+                --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+                --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.35);
+                --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+                --heat-1: rgba(34, 192, 125, 0.14);
+                --heat-2: rgba(34, 192, 125, 0.28);
+                --heat-3: rgba(34, 192, 125, 0.46);
+                --heat-4: rgba(34, 192, 125, 0.7);
             }
         }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Yu Gothic', Roboto, sans-serif;
             background-color: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 880px;
             margin: 0 auto;
-            padding: 20px 20px 140px;
+            padding: 28px 20px 140px;
         }
 
         header {
-            margin-bottom: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .header-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #4fd869, #0a9c4a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: var(--shadow-md);
+            flex-shrink: 0;
         }
 
         h1 {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
         }
 
         .header-subtitle {
             color: var(--text-secondary);
-            font-size: 13.5px;
+            font-size: 12.5px;
+            margin-top: 2px;
         }
 
         .notice-banner {
-            background-color: rgba(255, 149, 0, 0.12);
-            border: 1px solid rgba(255, 149, 0, 0.4);
-            color: #ad6800;
-            border-radius: 10px;
-            padding: 10px 14px;
-            font-size: 12.5px;
-            margin-bottom: 18px;
+            background-color: var(--amber-soft);
+            border: 1px solid rgba(217, 119, 6, 0.28);
+            color: var(--amber);
+            border-radius: 12px;
+            padding: 11px 14px;
+            font-size: 12px;
+            margin-bottom: 16px;
             text-align: center;
+            font-weight: 500;
         }
 
-        @media (prefers-color-scheme: dark) {
-            .notice-banner { color: #ffb340; }
+        .notify-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .notify-btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+            color: white;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .notify-btn:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .notify-btn:disabled {
+            background: var(--bg-secondary);
+            color: var(--text-tertiary);
+            box-shadow: none;
+            cursor: default;
+        }
+
+        .subscribe-panel {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 16px;
+            font-size: 12.5px;
+        }
+
+        .subscribe-panel code {
+            background: var(--accent-soft);
+            color: var(--accent-strong);
+            padding: 1px 6px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .subscribe-panel textarea {
+            width: 100%;
+            height: 84px;
+            margin-top: 8px;
+            font-family: ui-monospace, monospace;
+            font-size: 10.5px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        .card {
+            background-color: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
         }
 
         .status-bar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 10px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+            margin-bottom: 18px;
         }
 
         .status-card {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 12px;
+            min-width: 0;
+            padding: 14px 8px;
             text-align: center;
+            overflow: hidden;
         }
 
         .status-value {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 2px;
+            font-size: 19px;
+            font-weight: 800;
+            margin-bottom: 3px;
+            letter-spacing: -0.3px;
         }
 
         .status-label {
-            font-size: 10.5px;
-            color: var(--text-secondary);
+            font-size: 10px;
+            color: var(--text-tertiary);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
+            font-weight: 600;
         }
 
         .calendar-container {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
             padding: 20px;
+            margin-bottom: 18px;
         }
 
         .calendar-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .calendar-title {
-            font-size: 19px;
-            font-weight: 700;
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: -0.2px;
         }
 
         .calendar-nav {
             display: flex;
-            gap: 8px;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .segmented {
+            display: flex;
+            background-color: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .segmented .btn {
+            border: none;
+            background: transparent;
+            box-shadow: none;
+            padding: 6px 12px;
+        }
+
+        .segmented .btn:hover {
+            background-color: var(--bg-elevated);
+            color: var(--text-primary);
+            box-shadow: var(--shadow-sm);
         }
 
         .btn {
-            padding: 8px 14px;
+            padding: 7px 13px;
             border: 1px solid var(--border-color);
-            background-color: var(--bg-primary);
+            background-color: var(--bg-elevated);
             color: var(--text-primary);
-            border-radius: 8px;
-            font-size: 13px;
+            border-radius: 9px;
+            font-size: 12.5px;
             font-weight: 600;
             cursor: pointer;
+            transition: background-color 0.12s ease, color 0.12s ease;
         }
 
         .btn:hover {
-            background-color: var(--accent);
-            color: white;
-            border-color: var(--accent);
+            background-color: var(--accent-soft);
+            color: var(--accent-strong);
         }
 
         .facility-select {
-            max-width: 160px;
+            max-width: 170px;
             cursor: pointer;
+            border-radius: 9px;
         }
 
         @media (max-width: 560px) {
             .calendar-header {
                 flex-direction: column;
                 align-items: stretch;
-                gap: 10px;
             }
             .calendar-nav {
                 flex-wrap: wrap;
@@ -177,43 +314,48 @@
 
         .weekdays {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(7, minmax(0, 1fr));
             gap: 6px;
             margin-bottom: 8px;
         }
 
         .weekday {
             text-align: center;
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 700;
-            color: var(--text-secondary);
-            padding: 8px 0;
+            color: var(--text-tertiary);
+            padding: 6px 0;
             text-transform: uppercase;
         }
 
         .days {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(7, minmax(0, 1fr));
             gap: 6px;
         }
 
         .day {
+            min-width: 0;
             aspect-ratio: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 11px;
             background-color: var(--bg-primary);
             cursor: pointer;
             padding: 4px;
             text-align: center;
-            min-height: 64px;
+            min-height: 62px;
+            overflow: hidden;
+            transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
         }
 
         .day:hover {
+            transform: translateY(-2px);
             border-color: var(--accent);
+            box-shadow: var(--shadow-md);
         }
 
         .day.other-month {
@@ -221,42 +363,57 @@
         }
 
         .day.past {
-            opacity: 0.4;
+            opacity: 0.35;
             cursor: default;
         }
 
+        .day.past:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .day.heat-1 { background-color: var(--heat-1); }
+        .day.heat-2 { background-color: var(--heat-2); }
+        .day.heat-3 { background-color: var(--heat-3); border-color: transparent; }
+        .day.heat-4 { background-color: var(--heat-4); border-color: transparent; }
+        .day.heat-3 .day-count, .day.heat-4 .day-count { color: #ffffff; }
+        .day.heat-3 .day-number, .day.heat-4 .day-number { color: #ffffff; }
+        .day.heat-3 .day-count-label, .day.heat-4 .day-count-label { color: rgba(255,255,255,0.85); }
+
         .day-number {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 700;
             margin-bottom: 2px;
         }
 
         .day-count {
             font-size: 15px;
-            font-weight: 700;
-            color: var(--success);
+            font-weight: 800;
+            color: var(--accent-strong);
         }
 
         .day-count.zero {
-            color: var(--text-secondary);
+            color: var(--text-tertiary);
             font-size: 10px;
+            font-weight: 600;
         }
 
         .day-count.unknown {
-            color: var(--text-secondary);
+            color: var(--text-tertiary);
             font-size: 12px;
         }
 
         .day-count-label {
             font-size: 9px;
-            color: var(--text-secondary);
+            color: var(--text-tertiary);
         }
 
         .modal {
             display: none;
             position: fixed;
             inset: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(10, 12, 15, 0.55);
+            backdrop-filter: blur(2px);
             z-index: 1000;
             align-items: center;
             justify-content: center;
@@ -267,13 +424,14 @@
         }
 
         .modal-content {
-            background-color: var(--bg-primary);
-            border-radius: 14px;
+            background-color: var(--bg-elevated);
+            border-radius: 18px;
             padding: 24px;
             max-width: 480px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
+            box-shadow: var(--shadow-lg);
         }
 
         .modal-header {
@@ -286,8 +444,8 @@
         }
 
         .modal-title {
-            font-size: 17px;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 800;
         }
 
         .modal-close {
@@ -303,8 +461,8 @@
         }
 
         .facility-name {
-            font-size: 14.5px;
-            font-weight: 700;
+            font-size: 14px;
+            font-weight: 800;
             margin-bottom: 8px;
         }
 
@@ -314,20 +472,74 @@
             align-items: center;
             padding: 9px 12px;
             background-color: var(--bg-secondary);
-            border-radius: 8px;
+            border-radius: 9px;
             margin-bottom: 6px;
-            font-size: 13px;
-            border-left: 3px solid var(--success);
+            font-size: 12.5px;
+            border-left: 3px solid var(--accent);
         }
 
         .no-data {
-            color: var(--text-secondary);
-            font-size: 13px;
+            color: var(--text-tertiary);
+            font-size: 12.5px;
             text-align: center;
         }
 
+        .activity-section {
+            padding: 18px 20px;
+        }
+
+        .activity-title {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 4px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            margin-top: 5px;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+
+        .activity-text {
+            font-size: 12.5px;
+            font-weight: 600;
+        }
+
+        .activity-time {
+            font-size: 10.5px;
+            color: var(--text-tertiary);
+            margin-top: 2px;
+        }
+
         .footer {
-            background-color: var(--bg-secondary);
+            background-color: var(--bg-elevated);
             border-top: 1px solid var(--border-color);
             padding: 14px 20px;
             text-align: center;
@@ -335,10 +547,11 @@
             bottom: 0;
             left: 0;
             right: 0;
+            backdrop-filter: blur(10px);
         }
 
         .footer-content {
-            max-width: 900px;
+            max-width: 880px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -348,75 +561,31 @@
         }
 
         .footer-text {
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--text-secondary);
         }
 
         .footer-button {
-            background-color: var(--accent);
+            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
             color: white;
             padding: 9px 18px;
-            border-radius: 8px;
-            font-size: 13.5px;
-            font-weight: 600;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
-        }
-
-        .notify-bar {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 18px;
-        }
-
-        .notify-btn {
-            background-color: var(--success);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 13.5px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .notify-btn:disabled {
-            background-color: var(--text-secondary);
-            cursor: default;
-        }
-
-        .subscribe-panel {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 18px;
-            font-size: 12.5px;
-        }
-
-        .subscribe-panel textarea {
-            width: 100%;
-            height: 90px;
-            margin-top: 8px;
-            font-family: monospace;
-            font-size: 11px;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 8px;
-        }
-
-        .subscribe-panel .btn {
-            margin-top: 8px;
+            box-shadow: var(--shadow-md);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🎾 テニスコート空き状況カレンダー</h1>
-            <p class="header-subtitle">東京都立公園を自動監視中</p>
+            <div class="header-icon">🎾</div>
+            <div>
+                <h1>テニスコート空き状況カレンダー</h1>
+                <p class="header-subtitle">東京都立公園を自動監視中</p>
+            </div>
         </header>
 
         <div class="notice-banner" id="noticeBanner">
@@ -435,29 +604,31 @@
         </div>
 
         <div class="status-bar">
-            <div class="status-card">
+            <div class="status-card card">
                 <div class="status-value" id="monitoringStatus">🟢</div>
                 <div class="status-label">監視ステータス</div>
             </div>
-            <div class="status-card">
+            <div class="status-card card">
                 <div class="status-value" id="lastCheckTime">-</div>
                 <div class="status-label">最終チェック</div>
             </div>
-            <div class="status-card">
+            <div class="status-card card">
                 <div class="status-value" id="monthTotal">-</div>
                 <div class="status-label">今月の空き枠合計</div>
             </div>
         </div>
 
-        <div class="calendar-container">
+        <div class="calendar-container card">
             <div class="calendar-header">
                 <h2 class="calendar-title" id="calendarTitle">-</h2>
                 <div class="calendar-nav">
                     <select class="btn facility-select" id="facilityFilter">
                         <option value="all">全施設</option>
                     </select>
-                    <button class="btn" id="prevMonth">← 前月</button>
-                    <button class="btn" id="nextMonth">次月 →</button>
+                    <div class="segmented">
+                        <button class="btn" id="prevMonth">← 前月</button>
+                        <button class="btn" id="nextMonth">次月 →</button>
+                    </div>
                 </div>
             </div>
 
@@ -472,6 +643,13 @@
             </div>
 
             <div class="days" id="calendarDays">
+                <p class="no-data">読み込み中...</p>
+            </div>
+        </div>
+
+        <div class="activity-section card">
+            <div class="activity-title">📋 最近見つかった空き</div>
+            <div class="activity-list" id="activityList">
                 <p class="no-data">読み込み中...</p>
             </div>
         </div>
@@ -512,6 +690,14 @@
 
         function countAvailable(dayFacilities) {
             return filterFacilities(dayFacilities).reduce((sum, f) => sum + f.timeSlots.filter(s => s.available).length, 0);
+        }
+
+        function heatTier(count) {
+            if (count <= 0) return 0;
+            if (count <= 3) return 1;
+            if (count <= 8) return 2;
+            if (count <= 15) return 3;
+            return 4;
         }
 
         function populateFacilityFilter() {
@@ -583,9 +769,11 @@
                 const count = countAvailable(dayFacilities);
                 if (hasData) monthTotal += count;
                 const cellDate = new Date(year, month, d);
+                const isPast = cellDate < today;
 
                 const el = document.createElement('div');
-                el.className = 'day' + (cellDate < today ? ' past' : '');
+                const tier = hasData && !isPast ? heatTier(count) : 0;
+                el.className = 'day' + (isPast ? ' past' : '') + (tier > 0 ? ` heat-${tier}` : '');
 
                 const num = document.createElement('div');
                 num.className = 'day-number';
@@ -631,7 +819,7 @@
                         <div class="facility-section">
                             <div class="facility-name">${f.facility}</div>
                             ${openSlots.map(s => `
-                                <div class="time-slot"><span>${s.time}</span><span style="color:var(--success)">✓ 空き</span></div>
+                                <div class="time-slot"><span>${s.time}</span><span style="color:var(--accent-strong)">✓ 空き</span></div>
                             `).join('')}
                         </div>
                     `;
@@ -663,8 +851,54 @@
             renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
         });
 
+        // --- アクティビティログ ---
+        function relativeTime(isoString) {
+            const diffMs = Date.now() - new Date(isoString).getTime();
+            const minutes = Math.floor(diffMs / 60000);
+            if (minutes < 1) return 'たった今';
+            if (minutes < 60) return `${minutes}分前`;
+            const hours = Math.floor(minutes / 60);
+            if (hours < 24) return `${hours}時間前`;
+            const days = Math.floor(hours / 24);
+            return `${days}日前`;
+        }
+
+        function formatActivityDate(dateStr) {
+            const d = new Date(dateStr + 'T00:00:00+09:00');
+            const weekday = ['日', '月', '火', '水', '木', '金', '土'][d.getDay()];
+            return `${d.getMonth() + 1}/${d.getDate()}(${weekday})`;
+        }
+
+        async function loadActivityLog() {
+            const list = document.getElementById('activityList');
+            try {
+                const res = await fetch(`/data/activity-log.json?t=${Date.now()}`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const log = await res.json();
+
+                if (!log || log.length === 0) {
+                    list.innerHTML = '<p class="no-data">まだ新しい空きは見つかっていません</p>';
+                    return;
+                }
+
+                list.innerHTML = log.slice(0, 30).map(entry => `
+                    <div class="activity-item">
+                        <div class="activity-dot"></div>
+                        <div>
+                            <div class="activity-text">${formatActivityDate(entry.date)} ${entry.time} ${entry.facility}</div>
+                            <div class="activity-time">${relativeTime(entry.detectedAt)}に検知</div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) {
+                list.innerHTML = `<p class="no-data">読み込みに失敗しました: ${e.message}</p>`;
+            }
+        }
+
         loadData();
+        loadActivityLog();
         setInterval(loadData, 60 * 60 * 1000);
+        setInterval(loadActivityLog, 60 * 60 * 1000);
 
         // --- PWA installability + Web Push ---
         const VAPID_PUBLIC_KEY = 'BNpuNfvpkX-8XMwnvBU4K7cykGDCEh6uSR7IwtKEfQJh4E-qus2N1PigdmjcnPIs-G7bvgO_2dNjKSQS9FRgVI8';
@@ -676,11 +910,28 @@
             return Uint8Array.from([...rawData].map(c => c.charCodeAt(0)));
         }
 
+        function isIos() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent);
+        }
+
+        function isStandalone() {
+            return window.navigator.standalone === true
+                || window.matchMedia('(display-mode: standalone)').matches;
+        }
+
         async function setupPush() {
             const btn = document.getElementById('notifyBtn');
             if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
-                btn.textContent = '❌ このブラウザは通知に対応していません';
-                btn.disabled = true;
+                if (isIos() && !isStandalone()) {
+                    btn.textContent = '📲 まずホーム画面に追加してください';
+                    btn.title = 'Safariの共有ボタン→「ホーム画面に追加」を実行後、ホーム画面のアイコンから開き直してください（iOS 16.4以降が必要です）';
+                    btn.addEventListener('click', () => {
+                        alert('iPhoneでは通知を使う前に、Safariの共有ボタンから「ホーム画面に追加」し、ホーム画面のアイコンから開き直す必要があります（iOS 16.4以降）。');
+                    });
+                } else {
+                    btn.textContent = '❌ このブラウザは通知に対応していません';
+                    btn.disabled = true;
+                }
                 return;
             }
 

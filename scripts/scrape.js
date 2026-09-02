@@ -264,9 +264,32 @@ async function sendPushNotification(newSlots) {
   }
 }
 
+const ACTIVITY_LOG_MAX_ENTRIES = 200;
+
+function appendActivityLog(logPath, newSlots, generatedAt) {
+  let log = [];
+  try {
+    log = JSON.parse(fs.readFileSync(logPath, 'utf8'));
+  } catch (e) {
+    log = [];
+  }
+
+  const newEntries = newSlots.map(slot => ({
+    detectedAt: generatedAt,
+    date: slot.date,
+    time: slot.time,
+    facility: slot.facility
+  }));
+
+  const combined = [...newEntries, ...log].slice(0, ACTIVITY_LOG_MAX_ENTRIES);
+  fs.writeFileSync(logPath, JSON.stringify(combined, null, 2));
+  return combined;
+}
+
 (async () => {
   const outDir = path.join(__dirname, '..', 'data');
   const outPath = path.join(outDir, 'availability.json');
+  const logPath = path.join(outDir, 'activity-log.json');
   const previousData = loadPreviousData(outPath);
 
   const browser = await chromium.launch({ headless: true });
@@ -279,17 +302,22 @@ async function sendPushNotification(newSlots) {
 
   await browser.close();
 
+  const generatedAt = new Date().toISOString();
   const newlyAvailable = detectNewlyAvailable(previousData.days || {}, days);
   console.log('NEWLY_AVAILABLE', newlyAvailable.length);
   await sendPushNotification(newlyAvailable);
 
+  fs.mkdirSync(outDir, { recursive: true });
+  if (newlyAvailable.length > 0) {
+    appendActivityLog(logPath, newlyAvailable, generatedAt);
+  }
+
   const output = {
-    generatedAt: new Date().toISOString(),
+    generatedAt,
     facilities: FACILITIES.map(f => ({ id: f.id, name: f.name })),
     days
   };
 
-  fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
 
   console.log('SCRAPE_COMPLETE', Object.keys(days).length, 'dates written');
