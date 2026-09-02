@@ -214,11 +214,18 @@ function loadPreviousData(filePath) {
 function detectNewlyAvailable(previousDays, newDays) {
   const found = [];
   for (const [dateStr, facilities] of Object.entries(newDays)) {
+    // ローリングウィンドウ（直近5週間分を毎回取得し直す方式）により、
+    // 前回はまだ観測していなかった日が新しく取得範囲に入ってくることがある。
+    // その日は「空きが増えた」わけではなく単に初めて見えただけなので、通知対象にしない。
+    if (!Object.prototype.hasOwnProperty.call(previousDays, dateStr)) continue;
+
     for (const facility of facilities) {
-      const prevFacility = (previousDays[dateStr] || []).find(f => f.facilityId === facility.facilityId);
+      const prevFacility = previousDays[dateStr].find(f => f.facilityId === facility.facilityId);
+      if (!prevFacility) continue; // この施設も前回未観測ならスキップ
+
       for (const slot of facility.timeSlots) {
         if (!slot.available) continue;
-        const prevSlot = prevFacility ? prevFacility.timeSlots.find(s => s.time === slot.time) : null;
+        const prevSlot = prevFacility.timeSlots.find(s => s.time === slot.time);
         const wasAvailable = prevSlot ? prevSlot.available : false;
         if (!wasAvailable) {
           found.push({ date: dateStr, facility: facility.facility, time: slot.time });
