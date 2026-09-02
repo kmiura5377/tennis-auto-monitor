@@ -8,10 +8,12 @@
     "scrape": "node scripts/scrape.js"
   },
   "dependencies": {
-    "nodemailer": "^6.9.0"
+    "nodemailer": "^6.9.0",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
     "playwright": "^1.47.0",
+    "sharp": "^0.35.4",
     "vercel": "^32.0.0"
   },
   "author": "",

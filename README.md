@@ -20,12 +20,21 @@
 
 `scripts/scrape.js` の `FACILITIES` に定義された全31施設（人工芝27施設・ハードコート4施設）。実際に予約サイトで検索できる公園・コートすべてを対象としています。
 
-## 新規空き通知（Discord）
+## PWA化 / スマホへのプッシュ通知
 
-前回の取得結果と比較して新しく空きが出た枠があれば、Discordに通知します。
+このサイトはPWA（Progressive Web App）として作られており、スマホでホーム画面に追加するとアプリのように使えます（アイコン付き）。
 
-1. Discordサーバーで「サーバー設定 → 連携サービス → ウェブフック」からウェブフックURLを作成
-2. GitHubリポジトリの Settings → Secrets and variables → Actions で `DISCORD_WEBHOOK_URL` という名前のSecretを追加し、そのURLを設定
+新しく空きが出た枠があれば、ブラウザのプッシュ通知（Web Push）でスマホに直接通知が届きます。
+
+### 通知の設定手順
+
+1. サイトを開き、「🔔 新規空きの通知を有効にする」ボタンを押して通知を許可する
+2. 画面に表示される長い文字列（購読情報）をコピーする
+3. GitHubリポジトリの Settings → Secrets and variables → Actions で以下の2つのSecretを設定する
+   - `PUSH_SUBSCRIPTION`: 手順2でコピーした文字列
+   - `PUSH_VAPID_PRIVATE_KEY`: プロジェクト作成時に生成したVAPID秘密鍵（このシステムを構築した際に別途共有されたもの）
+
+※ 現在は1人分の購読情報のみ対応した簡易実装です。
 
 設定しない場合は通知は送られず、カレンダーの更新のみが行われます。
 
@@ -33,11 +42,15 @@
 
 ```
 tennis-auto-monitor/
-├── index.html                  # 月間カレンダーUI
+├── index.html                  # 月間カレンダーUI（PWA対応）
+├── manifest.json                # PWAマニフェスト
+├── sw.js                        # サービスワーカー（プッシュ通知の受信）
+├── icons/                       # PWA/ホーム画面用アイコン
+├── assets/icon.svg              # アイコンの元データ
 ├── data/
 │   └── availability.json       # スクレイピング結果（GitHub Actionsが更新）
 ├── scripts/
-│   └── scrape.js                # Playwrightスクレイパー本体
+│   └── scrape.js                # Playwrightスクレイパー + 通知送信
 ├── .github/workflows/
 │   └── monitor.yml             # 1時間ごとにスクレイパーを実行するGitHub Actions
 ├── package.json

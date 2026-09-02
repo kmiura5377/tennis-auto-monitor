@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>テニスコート空き状況カレンダー</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icons/icon-32.png">
+    <link rel="apple-touch-icon" href="/icons/icon-180.png">
+    <meta name="theme-color" content="#0a9c4a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="コート空き状況">
     <style>
         * {
             margin: 0;
@@ -355,6 +362,54 @@
             text-decoration: none;
             display: inline-block;
         }
+
+        .notify-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .notify-btn {
+            background-color: var(--success);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .notify-btn:disabled {
+            background-color: var(--text-secondary);
+            cursor: default;
+        }
+
+        .subscribe-panel {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 18px;
+            font-size: 12.5px;
+        }
+
+        .subscribe-panel textarea {
+            width: 100%;
+            height: 90px;
+            margin-top: 8px;
+            font-family: monospace;
+            font-size: 11px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        .subscribe-panel .btn {
+            margin-top: 8px;
+        }
     </style>
 </head>
 <body>
@@ -366,6 +421,17 @@
 
         <div class="notice-banner" id="noticeBanner">
             実データを取得中です...
+        </div>
+
+        <div class="notify-bar">
+            <button class="notify-btn" id="notifyBtn">🔔 新規空きの通知を有効にする</button>
+        </div>
+
+        <div class="subscribe-panel" id="subscribePanel" style="display:none;">
+            通知の設定が完了しました。以下の内容をコピーして、GitHubリポジトリの Secret
+            <code>PUSH_SUBSCRIPTION</code> に貼り付けてください（初回のみ・1人分のみ対応）。
+            <textarea id="subscribeText" readonly></textarea>
+            <button class="btn" id="copySubscribeBtn">コピーする</button>
         </div>
 
         <div class="status-bar">
@@ -599,6 +665,69 @@
 
         loadData();
         setInterval(loadData, 60 * 60 * 1000);
+
+        // --- PWA installability + Web Push ---
+        const VAPID_PUBLIC_KEY = 'BNpuNfvpkX-8XMwnvBU4K7cykGDCEh6uSR7IwtKEfQJh4E-qus2N1PigdmjcnPIs-G7bvgO_2dNjKSQS9FRgVI8';
+
+        function urlBase64ToUint8Array(base64String) {
+            const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
+            const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+            const rawData = atob(base64);
+            return Uint8Array.from([...rawData].map(c => c.charCodeAt(0)));
+        }
+
+        async function setupPush() {
+            const btn = document.getElementById('notifyBtn');
+            if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+                btn.textContent = '❌ このブラウザは通知に対応していません';
+                btn.disabled = true;
+                return;
+            }
+
+            try {
+                const registration = await navigator.serviceWorker.register('/sw.js');
+
+                const existing = await registration.pushManager.getSubscription();
+                if (existing) {
+                    btn.textContent = '🔔 通知は有効です';
+                    btn.disabled = true;
+                    return;
+                }
+
+                btn.addEventListener('click', async () => {
+                    const permission = await Notification.requestPermission();
+                    if (permission !== 'granted') {
+                        alert('通知が許可されませんでした');
+                        return;
+                    }
+
+                    const subscription = await registration.pushManager.subscribe({
+                        userVisibleOnly: true,
+                        applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
+                    });
+
+                    btn.textContent = '🔔 通知は有効です';
+                    btn.disabled = true;
+
+                    const panel = document.getElementById('subscribePanel');
+                    const textarea = document.getElementById('subscribeText');
+                    textarea.value = JSON.stringify(subscription);
+                    panel.style.display = 'block';
+                });
+            } catch (e) {
+                console.error('push setup failed', e);
+            }
+        }
+
+        document.getElementById('copySubscribeBtn').addEventListener('click', () => {
+            const textarea = document.getElementById('subscribeText');
+            textarea.select();
+            navigator.clipboard.writeText(textarea.value).catch(() => {
+                document.execCommand('copy');
+            });
+        });
+
+        setupPush();
     </script>
 </body>
 </html>

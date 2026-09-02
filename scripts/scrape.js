@@ -4,8 +4,12 @@
 // 月表示APIはヘッドレスブラウザからの応答が得られなかったため使用しない。
 
 const { chromium } = require('playwright');
+const webpush = require('web-push');
 const fs = require('fs');
 const path = require('path');
+
+// index.html に埋め込まれている公開鍵と同一のもの（公開鍵なので秘匿不要）
+const VAPID_PUBLIC_KEY = 'BNpuNfvpkX-8XMwnvBU4K7cykGDCEh6uSR7IwtKEfQJh4E-qus2N1PigdmjcnPIs-G7bvgO_2dNjKSQS9FRgVI8';
 
 const BASE_URL = 'https://kouen.sports.metro.tokyo.lg.jp/web/index.jsp';
 const WEEKS_TO_FETCH = 5;
@@ -228,42 +232,35 @@ function detectNewlyAvailable(previousDays, newDays) {
 function formatSlotLine(slot) {
   const d = new Date(slot.date + 'T00:00:00+09:00');
   const weekday = ['日', '月', '火', '水', '木', '金', '土'][d.getDay()];
-  return `📅 ${d.getMonth() + 1}/${d.getDate()}(${weekday}) ${slot.time} ${slot.facility}`;
+  return `${d.getMonth() + 1}/${d.getDate()}(${weekday}) ${slot.time} ${slot.facility}`;
 }
 
-async function sendDiscordNotification(newSlots) {
-  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
-  if (!webhookUrl || newSlots.length === 0) return;
+async function sendPushNotification(newSlots) {
+  const subscriptionJson = process.env.PUSH_SUBSCRIPTION;
+  const privateKey = process.env.PUSH_VAPID_PRIVATE_KEY;
+  if (!subscriptionJson || !privateKey || newSlots.length === 0) return;
+
+  let subscription;
+  try {
+    subscription = JSON.parse(subscriptionJson);
+  } catch (e) {
+    console.error('PUSH_SUBSCRIPTION is not valid JSON:', e.message);
+    return;
+  }
+
+  webpush.setVapidDetails('mailto:example@example.com', VAPID_PUBLIC_KEY, privateKey);
 
   newSlots.sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
 
-  const header = `🎾 新しくテニスコートの空きが見つかりました！（${newSlots.length}件）\n`;
-  const lines = newSlots.map(formatSlotLine);
+  const title = `🎾 新しい空きが見つかりました！（${newSlots.length}件）`;
+  const body = newSlots.slice(0, 3).map(formatSlotLine).join('\n')
+    + (newSlots.length > 3 ? `\n他 ${newSlots.length - 3}件` : '');
 
-  // Discordのメッセージ上限(2000文字)に収まるようチャンク分割
-  const chunks = [];
-  let current = header;
-  for (const line of lines) {
-    if ((current + line + '\n').length > 1900) {
-      chunks.push(current);
-      current = '';
-    }
-    current += line + '\n';
-  }
-  if (current) chunks.push(current);
-
-  for (const content of chunks) {
-    try {
-      const res = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content })
-      });
-      if (!res.ok) console.error('Discord notification failed:', res.status, await res.text());
-    } catch (e) {
-      console.error('Discord notification error:', e.message);
-    }
-    await sleep(500);
+  try {
+    await webpush.sendNotification(subscription, JSON.stringify({ title, body, url: '/' }));
+    console.log('Push notification sent');
+  } catch (e) {
+    console.error('Push notification failed:', e.statusCode, e.message);
   }
 }
 
@@ -284,7 +281,7 @@ async function sendDiscordNotification(newSlots) {
 
   const newlyAvailable = detectNewlyAvailable(previousData.days || {}, days);
   console.log('NEWLY_AVAILABLE', newlyAvailable.length);
-  await sendDiscordNotification(newlyAvailable);
+  await sendPushNotification(newlyAvailable);
 
   const output = {
     generatedAt: new Date().toISOString(),
