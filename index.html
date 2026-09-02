@@ -81,10 +81,70 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 880px;
+        .shell {
+            max-width: 1180px;
             margin: 0 auto;
-            padding: 28px 20px 140px;
+            padding: 28px 24px 140px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 22px;
+            align-items: start;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: sticky;
+            top: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .shell {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+        }
+
+        .side-card {
+            padding: 16px;
+        }
+
+        .side-title {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-tertiary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .stat-value {
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: -0.2px;
         }
 
         header {
@@ -224,35 +284,6 @@
             border: 1px solid var(--border-color);
             border-radius: 16px;
             box-shadow: var(--shadow-sm);
-        }
-
-        .status-bar {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 8px;
-            margin-bottom: 18px;
-        }
-
-        .status-card {
-            min-width: 0;
-            padding: 14px 8px;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .status-value {
-            font-size: 19px;
-            font-weight: 800;
-            margin-bottom: 3px;
-            letter-spacing: -0.3px;
-        }
-
-        .status-label {
-            font-size: 10px;
-            color: var(--text-tertiary);
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            font-weight: 600;
         }
 
         .calendar-container {
@@ -578,7 +609,7 @@
         }
 
         .footer-content {
-            max-width: 880px;
+            max-width: 1180px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -606,81 +637,77 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-icon">🎾</div>
-            <div>
-                <h1>テニスコート空き状況カレンダー</h1>
-                <p class="header-subtitle">東京都立公園を自動監視中</p>
+    <div class="shell">
+        <div class="main">
+            <header>
+                <div class="header-icon">🎾</div>
+                <div>
+                    <h1>テニスコート空き状況カレンダー</h1>
+                    <p class="header-subtitle">東京都立公園を自動監視中</p>
+                </div>
+            </header>
+
+            <div class="notice-banner" id="noticeBanner">
+                実データを取得中です...
             </div>
-        </header>
 
-        <div class="notice-banner" id="noticeBanner">
-            実データを取得中です...
-        </div>
-
-        <div class="notify-bar">
-            <a class="scan-btn" href="https://github.com/kmiura5377/tennis-auto-monitor/actions/workflows/monitor.yml" target="_blank" rel="noopener">📡 今すぐスキャンする（GitHubを開く）</a>
-            <button class="notify-btn" id="notifyBtn">🔔 新規空きの通知を有効にする</button>
-        </div>
-
-        <div class="subscribe-panel" id="subscribePanel" style="display:none;">
-            通知の設定が完了しました。以下の内容をコピーして、GitHubリポジトリの Secret
-            <code>PUSH_SUBSCRIPTION</code> に貼り付けてください（初回のみ・1人分のみ対応）。
-            <textarea id="subscribeText" readonly></textarea>
-            <button class="btn" id="copySubscribeBtn">コピーする</button>
-        </div>
-
-        <div class="status-bar">
-            <div class="status-card card">
-                <div class="status-value" id="monitoringStatus">🟢</div>
-                <div class="status-label">監視ステータス</div>
+            <div class="notify-bar">
+                <a class="scan-btn" href="https://github.com/kmiura5377/tennis-auto-monitor/actions/workflows/monitor.yml" target="_blank" rel="noopener">📡 今すぐスキャンする（GitHubを開く）</a>
+                <button class="notify-btn" id="notifyBtn">🔔 新規空きの通知を有効にする</button>
             </div>
-            <div class="status-card card">
-                <div class="status-value" id="lastCheckTime">-</div>
-                <div class="status-label">最終チェック</div>
-            </div>
-            <div class="status-card card">
-                <div class="status-value" id="monthTotal">-</div>
-                <div class="status-label">今月の空き枠合計</div>
-            </div>
-        </div>
 
-        <div class="calendar-container card">
-            <div class="calendar-header">
-                <h2 class="calendar-title" id="calendarTitle">-</h2>
-                <div class="calendar-nav">
-                    <select class="btn facility-select" id="facilityFilter">
-                        <option value="all">全施設</option>
-                    </select>
-                    <div class="segmented">
-                        <button class="btn" id="prevMonth">← 前月</button>
-                        <button class="btn" id="nextMonth">次月 →</button>
+            <div class="subscribe-panel" id="subscribePanel" style="display:none;">
+                通知の設定が完了しました。以下の内容をコピーして、GitHubリポジトリの Secret
+                <code>PUSH_SUBSCRIPTION</code> に貼り付けてください（初回のみ・1人分のみ対応）。
+                <textarea id="subscribeText" readonly></textarea>
+                <button class="btn" id="copySubscribeBtn">コピーする</button>
+            </div>
+
+            <div class="calendar-container card">
+                <div class="calendar-header">
+                    <h2 class="calendar-title" id="calendarTitle">-</h2>
+                    <div class="calendar-nav">
+                        <select class="btn facility-select" id="facilityFilter">
+                            <option value="all">全施設</option>
+                        </select>
+                        <div class="segmented">
+                            <button class="btn" id="prevMonth">← 前月</button>
+                            <button class="btn" id="nextMonth">次月 →</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="weekdays">
-                <div class="weekday">日</div>
-                <div class="weekday">月</div>
-                <div class="weekday">火</div>
-                <div class="weekday">水</div>
-                <div class="weekday">木</div>
-                <div class="weekday">金</div>
-                <div class="weekday">土</div>
-            </div>
+                <div class="weekdays">
+                    <div class="weekday">日</div>
+                    <div class="weekday">月</div>
+                    <div class="weekday">火</div>
+                    <div class="weekday">水</div>
+                    <div class="weekday">木</div>
+                    <div class="weekday">金</div>
+                    <div class="weekday">土</div>
+                </div>
 
-            <div class="days" id="calendarDays">
-                <p class="no-data">読み込み中...</p>
+                <div class="days" id="calendarDays">
+                    <p class="no-data">読み込み中...</p>
+                </div>
             </div>
         </div>
 
-        <div class="activity-section card">
-            <div class="activity-title">📋 最近見つかった空き</div>
-            <div class="activity-list" id="activityList">
-                <p class="no-data">読み込み中...</p>
+        <aside class="sidebar">
+            <div class="side-card card">
+                <div class="side-title">ステータス</div>
+                <div class="stat-row"><span class="stat-label">監視ステータス</span><span class="stat-value" id="monitoringStatus">🟢</span></div>
+                <div class="stat-row"><span class="stat-label">最終チェック</span><span class="stat-value" id="lastCheckTime" style="font-size:12.5px;">-</span></div>
+                <div class="stat-row"><span class="stat-label">今月の空き枠合計</span><span class="stat-value" id="monthTotal">-</span></div>
             </div>
-        </div>
+
+            <div class="side-card card activity-section">
+                <div class="activity-title">📋 最近見つかった空き</div>
+                <div class="activity-list" id="activityList">
+                    <p class="no-data">読み込み中...</p>
+                </div>
+            </div>
+        </aside>
     </div>
 
     <div class="modal" id="detailModal">
