@@ -148,6 +148,26 @@
             border-color: var(--accent);
         }
 
+        .facility-select {
+            max-width: 160px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 560px) {
+            .calendar-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .calendar-nav {
+                flex-wrap: wrap;
+            }
+            .facility-select {
+                max-width: none;
+                flex: 1 1 100%;
+            }
+        }
+
         .weekdays {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -367,6 +387,9 @@
             <div class="calendar-header">
                 <h2 class="calendar-title" id="calendarTitle">-</h2>
                 <div class="calendar-nav">
+                    <select class="btn facility-select" id="facilityFilter">
+                        <option value="all">全施設</option>
+                    </select>
                     <button class="btn" id="prevMonth">← 前月</button>
                     <button class="btn" id="nextMonth">次月 →</button>
                 </div>
@@ -410,13 +433,31 @@
     <script>
         let viewDate = new Date();
         let fullData = null;
+        let selectedFacilityId = 'all';
 
         function pad(n) { return String(n).padStart(2, '0'); }
         function dateKey(y, m, d) { return `${y}-${pad(m + 1)}-${pad(d)}`; }
 
+        function filterFacilities(dayFacilities) {
+            if (!dayFacilities) return [];
+            if (selectedFacilityId === 'all') return dayFacilities;
+            return dayFacilities.filter(f => f.facilityId === selectedFacilityId);
+        }
+
         function countAvailable(dayFacilities) {
-            if (!dayFacilities) return 0;
-            return dayFacilities.reduce((sum, f) => sum + f.timeSlots.filter(s => s.available).length, 0);
+            return filterFacilities(dayFacilities).reduce((sum, f) => sum + f.timeSlots.filter(s => s.available).length, 0);
+        }
+
+        function populateFacilityFilter() {
+            const select = document.getElementById('facilityFilter');
+            select.innerHTML = '<option value="all">全施設</option>';
+            fullData.facilities.forEach(f => {
+                const opt = document.createElement('option');
+                opt.value = f.id;
+                opt.textContent = f.name;
+                select.appendChild(opt);
+            });
+            select.value = selectedFacilityId;
         }
 
         async function loadData() {
@@ -438,6 +479,7 @@
                     banner.textContent = '⚠️ データがまだ取得できていません';
                 }
 
+                populateFacilityFilter();
                 renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
             } catch (e) {
                 document.getElementById('monitoringStatus').textContent = '🔴';
@@ -471,7 +513,7 @@
             for (let d = 1; d <= daysInMonth; d++) {
                 const key = dateKey(year, month, d);
                 const hasData = Object.prototype.hasOwnProperty.call(days, key);
-                const dayFacilities = days[key] || [];
+                const dayFacilities = filterFacilities(days[key] || []);
                 const count = countAvailable(dayFacilities);
                 if (hasData) monthTotal += count;
                 const cellDate = new Date(year, month, d);
@@ -548,6 +590,10 @@
         });
         document.getElementById('nextMonth').addEventListener('click', () => {
             viewDate.setMonth(viewDate.getMonth() + 1);
+            renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
+        });
+        document.getElementById('facilityFilter').addEventListener('change', (e) => {
+            selectedFacilityId = e.target.value;
             renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
         });
 
