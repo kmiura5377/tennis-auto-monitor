@@ -1,4 +1,4 @@
-name: Tennis Court Monitor
+name: Tennis Court Availability Scraper
 
 on:
   schedule:
@@ -6,9 +6,36 @@ on:
     - cron: '0 21-23,0-14 * * *'
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 jobs:
-  call-monitor:
+  scrape:
     runs-on: ubuntu-latest
     steps:
-      - name: Call availability check endpoint
-        run: curl -fsS "https://tennis-auto-monitor.vercel.app/api/availability"
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run scraper
+        run: npm run scrape
+
+      - name: Commit updated data if changed
+        run: |
+          git config user.name "tennis-monitor-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if ! git diff --quiet -- data/availability.json; then
+            git add data/availability.json
+            git commit -m "Update availability data ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            git push
+          else
+            echo "No changes to data/availability.json"
+          fi

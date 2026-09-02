@@ -2,15 +2,16 @@
   "name": "tennis-auto-monitor",
   "version": "1.0.0",
   "description": "東京都立公園テニスコート自動監視・通知システム",
-  "main": "api/availability.js",
+  "main": "scripts/scrape.js",
   "scripts": {
     "dev": "vercel dev",
-    "start": "node api/availability.js"
+    "scrape": "node scripts/scrape.js"
   },
   "dependencies": {
     "nodemailer": "^6.9.0"
   },
   "devDependencies": {
+    "playwright": "^1.47.0",
     "vercel": "^32.0.0"
   },
   "author": "",

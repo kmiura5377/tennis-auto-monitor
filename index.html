@@ -215,6 +215,11 @@
             font-size: 10px;
         }
 
+        .day-count.unknown {
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
         .day-count-label {
             font-size: 9px;
             color: var(--text-secondary);
@@ -339,8 +344,8 @@
             <p class="header-subtitle">東京都立公園を自動監視中</p>
         </header>
 
-        <div class="notice-banner">
-            ⚠️ 現在表示中のデータはテスト用のダミーデータです。実際の空き状況とは異なります。
+        <div class="notice-banner" id="noticeBanner">
+            実データを取得中です...
         </div>
 
         <div class="status-bar">
@@ -404,7 +409,7 @@
 
     <script>
         let viewDate = new Date();
-        let monthData = null;
+        let fullData = null;
 
         function pad(n) { return String(n).padStart(2, '0'); }
         function dateKey(y, m, d) { return `${y}-${pad(m + 1)}-${pad(d)}`; }
@@ -414,28 +419,34 @@
             return dayFacilities.reduce((sum, f) => sum + f.timeSlots.filter(s => s.available).length, 0);
         }
 
-        async function loadMonth(year, month) {
-            const grid = document.getElementById('calendarDays');
-            grid.innerHTML = '<p class="no-data">読み込み中...</p>';
+        async function loadData() {
             try {
-                const res = await fetch(`/api/availability?year=${year}&month=${month}`);
-                const data = await res.json();
-                if (!data.success) throw new Error(data.error || 'unknown error');
-                monthData = data;
-                document.getElementById('lastCheckTime').textContent = new Date(data.timestamp).toLocaleTimeString('ja-JP');
+                const res = await fetch(`/data/availability.json?t=${Date.now()}`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                fullData = await res.json();
+
+                document.getElementById('lastCheckTime').textContent = new Date(fullData.generatedAt).toLocaleString('ja-JP');
                 document.getElementById('monitoringStatus').textContent = '🟢';
 
-                const total = Object.values(data.days).reduce((sum, dayFacilities) => sum + countAvailable(dayFacilities), 0);
-                document.getElementById('monthTotal').textContent = total;
+                const dates = Object.keys(fullData.days).sort();
+                const banner = document.getElementById('noticeBanner');
+                if (dates.length > 0) {
+                    const rangeStart = new Date(dates[0]).toLocaleDateString('ja-JP', { month: 'long', day: 'numeric' });
+                    const rangeEnd = new Date(dates[dates.length - 1]).toLocaleDateString('ja-JP', { month: 'long', day: 'numeric' });
+                    banner.textContent = `実際の空き状況データです（${rangeStart}〜${rangeEnd}分を1時間ごとに取得。それ以外の日付は未取得です）`;
+                } else {
+                    banner.textContent = '⚠️ データがまだ取得できていません';
+                }
 
-                renderCalendar(year, month, data.days);
+                renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
             } catch (e) {
                 document.getElementById('monitoringStatus').textContent = '🔴';
-                grid.innerHTML = `<p class="no-data">データ取得に失敗しました: ${e.message}</p>`;
+                document.getElementById('calendarDays').innerHTML = `<p class="no-data">データ取得に失敗しました: ${e.message}</p>`;
             }
         }
 
-        function renderCalendar(year, month, days) {
+        function renderCalendar(year, month) {
+            const days = fullData ? fullData.days : {};
             const monthNames = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
             document.getElementById('calendarTitle').textContent = `${year}年${monthNames[month]}`;
 
@@ -449,6 +460,8 @@
             const grid = document.getElementById('calendarDays');
             grid.innerHTML = '';
 
+            let monthTotal = 0;
+
             for (let i = 0; i < startingDayOfWeek; i++) {
                 const empty = document.createElement('div');
                 empty.className = 'day other-month';
@@ -457,8 +470,10 @@
 
             for (let d = 1; d <= daysInMonth; d++) {
                 const key = dateKey(year, month, d);
+                const hasData = Object.prototype.hasOwnProperty.call(days, key);
                 const dayFacilities = days[key] || [];
                 const count = countAvailable(dayFacilities);
+                if (hasData) monthTotal += count;
                 const cellDate = new Date(year, month, d);
 
                 const el = document.createElement('div');
@@ -469,21 +484,30 @@
                 num.textContent = d;
 
                 const countEl = document.createElement('div');
-                countEl.className = 'day-count' + (count === 0 ? ' zero' : '');
-                countEl.textContent = count === 0 ? '空きなし' : count;
+                if (!hasData) {
+                    countEl.className = 'day-count unknown';
+                    countEl.textContent = '-';
+                } else {
+                    countEl.className = 'day-count' + (count === 0 ? ' zero' : '');
+                    countEl.textContent = count === 0 ? '空きなし' : count;
+                }
 
                 el.appendChild(num);
                 el.appendChild(countEl);
-                if (count > 0) {
+                if (hasData && count > 0) {
                     const label = document.createElement('div');
                     label.className = 'day-count-label';
                     label.textContent = '枠';
                     el.appendChild(label);
                 }
 
-                el.addEventListener('click', () => showDetails(key, cellDate, dayFacilities));
+                if (hasData) {
+                    el.addEventListener('click', () => showDetails(key, cellDate, dayFacilities));
+                }
                 grid.appendChild(el);
             }
+
+            document.getElementById('monthTotal').textContent = monthTotal;
         }
 
         function showDetails(key, date, dayFacilities) {
@@ -520,15 +544,15 @@
 
         document.getElementById('prevMonth').addEventListener('click', () => {
             viewDate.setMonth(viewDate.getMonth() - 1);
-            loadMonth(viewDate.getFullYear(), viewDate.getMonth());
+            renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
         });
         document.getElementById('nextMonth').addEventListener('click', () => {
             viewDate.setMonth(viewDate.getMonth() + 1);
-            loadMonth(viewDate.getFullYear(), viewDate.getMonth());
+            renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
         });
 
-        loadMonth(viewDate.getFullYear(), viewDate.getMonth());
-        setInterval(() => loadMonth(viewDate.getFullYear(), viewDate.getMonth()), 60 * 60 * 1000);
+        loadData();
+        setInterval(loadData, 60 * 60 * 1000);
     </script>
 </body>
 </html>
