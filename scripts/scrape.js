@@ -198,7 +198,80 @@ async function scrapeFacility(browser, facility, days) {
   }
 }
 
+function loadPreviousData(filePath) {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch (e) {
+    return { days: {} };
+  }
+}
+
+// 前回データと比較し、「前回は空きなし/未取得 → 今回は空きあり」になった枠を検出
+function detectNewlyAvailable(previousDays, newDays) {
+  const found = [];
+  for (const [dateStr, facilities] of Object.entries(newDays)) {
+    for (const facility of facilities) {
+      const prevFacility = (previousDays[dateStr] || []).find(f => f.facilityId === facility.facilityId);
+      for (const slot of facility.timeSlots) {
+        if (!slot.available) continue;
+        const prevSlot = prevFacility ? prevFacility.timeSlots.find(s => s.time === slot.time) : null;
+        const wasAvailable = prevSlot ? prevSlot.available : false;
+        if (!wasAvailable) {
+          found.push({ date: dateStr, facility: facility.facility, time: slot.time });
+        }
+      }
+    }
+  }
+  return found;
+}
+
+function formatSlotLine(slot) {
+  const d = new Date(slot.date + 'T00:00:00+09:00');
+  const weekday = ['日', '月', '火', '水', '木', '金', '土'][d.getDay()];
+  return `📅 ${d.getMonth() + 1}/${d.getDate()}(${weekday}) ${slot.time} ${slot.facility}`;
+}
+
+async function sendDiscordNotification(newSlots) {
+  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+  if (!webhookUrl || newSlots.length === 0) return;
+
+  newSlots.sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
+
+  const header = `🎾 新しくテニスコートの空きが見つかりました！（${newSlots.length}件）\n`;
+  const lines = newSlots.map(formatSlotLine);
+
+  // Discordのメッセージ上限(2000文字)に収まるようチャンク分割
+  const chunks = [];
+  let current = header;
+  for (const line of lines) {
+    if ((current + line + '\n').length > 1900) {
+      chunks.push(current);
+      current = '';
+    }
+    current += line + '\n';
+  }
+  if (current) chunks.push(current);
+
+  for (const content of chunks) {
+    try {
+      const res = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content })
+      });
+      if (!res.ok) console.error('Discord notification failed:', res.status, await res.text());
+    } catch (e) {
+      console.error('Discord notification error:', e.message);
+    }
+    await sleep(500);
+  }
+}
+
 (async () => {
+  const outDir = path.join(__dirname, '..', 'data');
+  const outPath = path.join(outDir, 'availability.json');
+  const previousData = loadPreviousData(outPath);
+
   const browser = await chromium.launch({ headless: true });
   const days = {};
 
@@ -209,15 +282,18 @@ async function scrapeFacility(browser, facility, days) {
 
   await browser.close();
 
+  const newlyAvailable = detectNewlyAvailable(previousData.days || {}, days);
+  console.log('NEWLY_AVAILABLE', newlyAvailable.length);
+  await sendDiscordNotification(newlyAvailable);
+
   const output = {
     generatedAt: new Date().toISOString(),
     facilities: FACILITIES.map(f => ({ id: f.id, name: f.name })),
     days
   };
 
-  const outDir = path.join(__dirname, '..', 'data');
   fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(path.join(outDir, 'availability.json'), JSON.stringify(output, null, 2));
+  fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
 
   console.log('SCRAPE_COMPLETE', Object.keys(days).length, 'dates written');
 })().catch(e => {

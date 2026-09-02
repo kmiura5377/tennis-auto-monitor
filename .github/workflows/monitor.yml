@@ -26,6 +26,8 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run scraper
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: npm run scrape
 
       - name: Commit updated data if changed

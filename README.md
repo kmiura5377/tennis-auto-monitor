@@ -18,7 +18,16 @@
 
 ## 監視対象施設
 
-`scripts/scrape.js` の `FACILITIES` に定義された5施設（人工芝3施設・ハードコート2施設）。実際に予約サイトで検索できる公園・コートのみを対象としています。
+`scripts/scrape.js` の `FACILITIES` に定義された全31施設（人工芝27施設・ハードコート4施設）。実際に予約サイトで検索できる公園・コートすべてを対象としています。
+
+## 新規空き通知（Discord）
+
+前回の取得結果と比較して新しく空きが出た枠があれば、Discordに通知します。
+
+1. Discordサーバーで「サーバー設定 → 連携サービス → ウェブフック」からウェブフックURLを作成
+2. GitHubリポジトリの Settings → Secrets and variables → Actions で `DISCORD_WEBHOOK_URL` という名前のSecretを追加し、そのURLを設定
+
+設定しない場合は通知は送られず、カレンダーの更新のみが行われます。
 
 ## 構成
 
