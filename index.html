@@ -692,12 +692,13 @@
             return filterFacilities(dayFacilities).reduce((sum, f) => sum + f.timeSlots.filter(s => s.available).length, 0);
         }
 
+        // 空きが少ない（貴重な）日ほど濃く、余裕がある日ほど薄く表示する
         function heatTier(count) {
             if (count <= 0) return 0;
-            if (count <= 3) return 1;
-            if (count <= 8) return 2;
-            if (count <= 15) return 3;
-            return 4;
+            if (count <= 5) return 4;
+            if (count <= 10) return 3;
+            if (count <= 20) return 2;
+            return 1;
         }
 
         function populateFacilityFilter() {
