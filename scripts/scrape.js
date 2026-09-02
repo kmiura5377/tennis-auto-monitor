@@ -10,12 +10,43 @@ const path = require('path');
 const BASE_URL = 'https://kouen.sports.metro.tokyo.lg.jp/web/index.jsp';
 const WEEKS_TO_FETCH = 5;
 
+// テニス（ハード）4施設 + テニス（人工芝）27施設 = 全31施設
+// （大井ふ頭海浜公園Ｂは両方の区分に存在するため、別施設として扱う）
 const FACILITIES = [
-  { id: 'shakujii', name: '石神井公園（人工芝）', purpose: 'テニス（人工芝）', park: '石神井公園Ｂ' },
-  { id: 'nogawa', name: '野川公園（人工芝）', purpose: 'テニス（人工芝）', park: '野川公園' },
+  // ハード
+  { id: 'oi_a_hard', name: '大井ふ頭海浜公園Ａ（ハード）', purpose: 'テニス（ハード）', park: '大井ふ頭海浜公園Ａ' },
+  { id: 'oi_b_hard', name: '大井ふ頭海浜公園Ｂ（ハード）', purpose: 'テニス（ハード）', park: '大井ふ頭海浜公園Ｂ' },
+  { id: 'ariake_a_hard', name: '有明テニスＡ屋外ハードコート', purpose: 'テニス（ハード）', park: '有明テニスＡ屋外ハードコート' },
+  { id: 'ariake_b_hard', name: '有明テニスＢインドアコート', purpose: 'テニス（ハード）', park: '有明テニスＢインドアコート' },
+
+  // 人工芝
+  { id: 'hibiya', name: '日比谷公園（人工芝）', purpose: 'テニス（人工芝）', park: '日比谷公園' },
+  { id: 'shiba', name: '芝公園（人工芝）', purpose: 'テニス（人工芝）', park: '芝公園' },
+  { id: 'sarue', name: '猿江恩賜公園（人工芝）', purpose: 'テニス（人工芝）', park: '猿江恩賜公園' },
+  { id: 'kameido', name: '亀戸中央公園（人工芝）', purpose: 'テニス（人工芝）', park: '亀戸中央公園' },
+  { id: 'kiba', name: '木場公園（人工芝）', purpose: 'テニス（人工芝）', park: '木場公園' },
+  { id: 'soshigaya', name: '祖師谷公園（人工芝）', purpose: 'テニス（人工芝）', park: '祖師谷公園' },
+  { id: 'higashishirahige', name: '東白鬚公園（人工芝）', purpose: 'テニス（人工芝）', park: '東白鬚公園' },
+  { id: 'ukima', name: '浮間公園（人工芝）', purpose: 'テニス（人工芝）', park: '浮間公園' },
+  { id: 'johoku', name: '城北中央公園（人工芝）', purpose: 'テニス（人工芝）', park: '城北中央公園' },
+  { id: 'akatsuka', name: '赤塚公園（人工芝）', purpose: 'テニス（人工芝）', park: '赤塚公園' },
+  { id: 'higashiayase', name: '東綾瀬公園（人工芝）', purpose: 'テニス（人工芝）', park: '東綾瀬公園' },
+  { id: 'toneri', name: '舎人公園（人工芝）', purpose: 'テニス（人工芝）', park: '舎人公園' },
+  { id: 'shinozaki_a', name: '篠崎公園Ａ（人工芝）', purpose: 'テニス（人工芝）', park: '篠崎公園Ａ' },
+  { id: 'oojima_komatsugawa', name: '大島小松川公園（人工芝）', purpose: 'テニス（人工芝）', park: '大島小松川公園' },
+  { id: 'shioiri', name: '汐入公園（人工芝）', purpose: 'テニス（人工芝）', park: '汐入公園' },
+  { id: 'takaido', name: '高井戸公園（人工芝）', purpose: 'テニス（人工芝）', park: '高井戸公園' },
+  { id: 'zenpukuji', name: '善福寺川緑地（人工芝）', purpose: 'テニス（人工芝）', park: '善福寺川緑地' },
+  { id: 'hikarigaoka', name: '光が丘公園（人工芝）', purpose: 'テニス（人工芝）', park: '光が丘公園' },
+  { id: 'shakujii_b', name: '石神井公園Ｂ（人工芝）', purpose: 'テニス（人工芝）', park: '石神井公園Ｂ' },
   { id: 'inokashira', name: '井の頭恩賜公園（人工芝）', purpose: 'テニス（人工芝）', park: '井の頭恩賜公園' },
-  { id: 'ariake_a', name: '有明テニスＡ（ハード）', purpose: 'テニス（ハード）', park: '有明テニスＡ屋外ハードコート' },
-  { id: 'oi_a', name: '大井ふ頭海浜公園Ａ（ハード）', purpose: 'テニス（ハード）', park: '大井ふ頭海浜公園Ａ' }
+  { id: 'musashino_chuo', name: '武蔵野中央公園（人工芝）', purpose: 'テニス（人工芝）', park: '武蔵野中央公園' },
+  { id: 'koganei', name: '小金井公園（人工芝）', purpose: 'テニス（人工芝）', park: '小金井公園' },
+  { id: 'nogawa', name: '野川公園（人工芝）', purpose: 'テニス（人工芝）', park: '野川公園' },
+  { id: 'fuchu_no_mori', name: '府中の森公園（人工芝）', purpose: 'テニス（人工芝）', park: '府中の森公園' },
+  { id: 'higashiyamato_minami', name: '東大和南公園（人工芝）', purpose: 'テニス（人工芝）', park: '東大和南公園' },
+  { id: 'oi_b_turf', name: '大井ふ頭海浜公園Ｂ（人工芝）', purpose: 'テニス（人工芝）', park: '大井ふ頭海浜公園Ｂ' },
+  { id: 'ariake_c_turf', name: '有明テニスＣ人工芝コート', purpose: 'テニス（人工芝）', park: '有明テニスＣ人工芝コート' }
 ];
 
 // 週表示テーブルの td id は "YYYYMMDD_XX" 形式。XXは30分刻みではなく2時間帯コード。
