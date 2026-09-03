@@ -228,7 +228,7 @@ function detectNewlyAvailable(previousDays, newDays) {
         const prevSlot = prevFacility.timeSlots.find(s => s.time === slot.time);
         const wasAvailable = prevSlot ? prevSlot.available : false;
         if (!wasAvailable) {
-          found.push({ date: dateStr, facility: facility.facility, time: slot.time });
+          found.push({ date: dateStr, facilityId: facility.facilityId, facility: facility.facility, time: slot.time });
         }
       }
     }
@@ -293,6 +293,20 @@ function appendActivityLog(logPath, newSlots, generatedAt) {
   return combined;
 }
 
+const FAVORITES_API_URL = 'https://tennis-auto-monitor.vercel.app/api/favorites';
+
+async function getFavoritesConfig() {
+  try {
+    const res = await fetch(FAVORITES_API_URL, { signal: AbortSignal.timeout(10000) });
+    const data = await res.json();
+    if (!data.success) throw new Error(data.error || 'unknown error');
+    return { facilityIds: data.facilityIds || [], notifyFavoritesOnly: Boolean(data.notifyFavoritesOnly) };
+  } catch (e) {
+    console.error('お気に入り設定の取得に失敗（全施設を通知対象として続行）:', e.message);
+    return { facilityIds: [], notifyFavoritesOnly: false };
+  }
+}
+
 (async () => {
   const outDir = path.join(__dirname, '..', 'data');
   const outPath = path.join(outDir, 'availability.json');
@@ -312,7 +326,13 @@ function appendActivityLog(logPath, newSlots, generatedAt) {
   const generatedAt = new Date().toISOString();
   const newlyAvailable = detectNewlyAvailable(previousData.days || {}, days);
   console.log('NEWLY_AVAILABLE', newlyAvailable.length);
-  await sendPushNotification(newlyAvailable);
+
+  const favoritesConfig = await getFavoritesConfig();
+  const toNotify = favoritesConfig.notifyFavoritesOnly
+    ? newlyAvailable.filter(item => favoritesConfig.facilityIds.includes(item.facilityId))
+    : newlyAvailable;
+  console.log('TO_NOTIFY', toNotify.length, '(favoritesOnly=' + favoritesConfig.notifyFavoritesOnly + ')');
+  await sendPushNotification(toNotify);
 
   fs.mkdirSync(outDir, { recursive: true });
   if (newlyAvailable.length > 0) {

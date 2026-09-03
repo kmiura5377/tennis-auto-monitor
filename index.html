@@ -740,8 +740,13 @@
                 <h3 class="modal-title">⭐ お気に入り施設の編集</h3>
                 <button class="modal-close" id="favoritesModalClose">&times;</button>
             </div>
+            <label class="fav-row" style="border-bottom:2px solid var(--border-color); margin-bottom:6px;">
+                <input type="checkbox" id="notifyFavoritesOnlyCheckbox">
+                <span>お気に入りの新規空きだけ通知する（オフなら全施設を通知）</span>
+            </label>
             <div id="favoritesList"></div>
             <button class="notify-btn" id="saveFavoritesBtn" style="width:100%; margin-top:14px;">保存する</button>
+            <p class="no-data" id="favoritesSaveStatus" style="margin-top:8px;"></p>
         </div>
     </div>
 
@@ -762,25 +767,56 @@
         function pad(n) { return String(n).padStart(2, '0'); }
         function dateKey(y, m, d) { return `${y}-${pad(m + 1)}-${pad(d)}`; }
 
-        // --- お気に入り（ブラウザ内のみで保存） ---
-        function loadFavorites() {
+        // --- お気に入り（サーバー側KVで共有。localStorageは初回表示を速くするためのキャッシュ） ---
+        const FAVORITES_API_URL = '/api/favorites';
+        const FAVORITES_API_TOKEN = 'Gxf7uuMliEh1Nd-f7fGx8GwJKQNdiKcM';
+
+        function loadFavoritesCache() {
             try {
-                return new Set(JSON.parse(localStorage.getItem('favoriteFacilities') || '[]'));
-            } catch (e) {
-                return new Set();
-            }
+                const cached = JSON.parse(localStorage.getItem('favoritesCache') || 'null');
+                if (cached) return { facilityIds: cached.facilityIds || [], notifyFavoritesOnly: !!cached.notifyFavoritesOnly };
+            } catch (e) { /* ignore */ }
+            return { facilityIds: [], notifyFavoritesOnly: false };
         }
 
-        function saveFavorites(set) {
+        function saveFavoritesCache(data) {
             try {
-                localStorage.setItem('favoriteFacilities', JSON.stringify([...set]));
+                localStorage.setItem('favoritesCache', JSON.stringify(data));
             } catch (e) { /* ignore */ }
         }
 
-        let favorites = loadFavorites();
+        let { facilityIds: initialFavIds, notifyFavoritesOnly } = loadFavoritesCache();
+        let favorites = new Set(initialFavIds);
 
         function isFavorite(facilityId) {
             return favorites.has(facilityId);
+        }
+
+        async function syncFavoritesFromServer() {
+            try {
+                const res = await fetch(FAVORITES_API_URL);
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error || 'unknown error');
+                favorites = new Set(data.facilityIds || []);
+                notifyFavoritesOnly = Boolean(data.notifyFavoritesOnly);
+                saveFavoritesCache({ facilityIds: [...favorites], notifyFavoritesOnly });
+                renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
+            } catch (e) {
+                console.error('お気に入りの取得に失敗（ローカルのキャッシュを使用）:', e.message);
+            }
+        }
+
+        async function saveFavoritesToServer(facilityIds, notifyOnly) {
+            const res = await fetch(FAVORITES_API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'X-Favorites-Token': FAVORITES_API_TOKEN },
+                body: JSON.stringify({ facilityIds, notifyFavoritesOnly: notifyOnly })
+            });
+            const data = await res.json();
+            if (!data.success) throw new Error(data.error || 'unknown error');
+            favorites = new Set(data.facilityIds || []);
+            notifyFavoritesOnly = Boolean(data.notifyFavoritesOnly);
+            saveFavoritesCache({ facilityIds: [...favorites], notifyFavoritesOnly });
         }
 
         function dayHasFavoriteAvailability(dayFacilities) {
@@ -828,6 +864,8 @@
                     <span>${f.name}</span>
                 </label>
             `).join('');
+            document.getElementById('notifyFavoritesOnlyCheckbox').checked = notifyFavoritesOnly;
+            document.getElementById('favoritesSaveStatus').textContent = '';
         }
 
         async function loadData() {
@@ -988,12 +1026,23 @@
         document.getElementById('favoritesModal').addEventListener('click', (e) => {
             if (e.target.id === 'favoritesModal') e.target.classList.remove('active');
         });
-        document.getElementById('saveFavoritesBtn').addEventListener('click', () => {
+        document.getElementById('saveFavoritesBtn').addEventListener('click', async () => {
             const checked = [...document.querySelectorAll('#favoritesList input:checked')].map(el => el.value);
-            favorites = new Set(checked);
-            saveFavorites(favorites);
-            document.getElementById('favoritesModal').classList.remove('active');
-            renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
+            const notifyOnly = document.getElementById('notifyFavoritesOnlyCheckbox').checked;
+            const status = document.getElementById('favoritesSaveStatus');
+            const btn = document.getElementById('saveFavoritesBtn');
+
+            btn.disabled = true;
+            status.textContent = '保存中...';
+            try {
+                await saveFavoritesToServer(checked, notifyOnly);
+                document.getElementById('favoritesModal').classList.remove('active');
+                renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
+            } catch (e) {
+                status.textContent = '❌ 保存に失敗しました: ' + e.message;
+            } finally {
+                btn.disabled = false;
+            }
         });
 
         // --- アクティビティログ ---
@@ -1042,6 +1091,7 @@
 
         loadData();
         loadActivityLog();
+        syncFavoritesFromServer();
         setInterval(loadData, 60 * 60 * 1000);
         setInterval(loadActivityLog, 60 * 60 * 1000);
 
