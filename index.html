@@ -368,6 +368,7 @@
         }
 
         .day {
+            position: relative;
             min-width: 0;
             aspect-ratio: 1;
             display: flex;
@@ -383,6 +384,43 @@
             min-height: 62px;
             overflow: hidden;
             transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+        }
+
+        .day-star {
+            position: absolute;
+            top: 3px;
+            right: 5px;
+            font-size: 10px;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.25));
+        }
+
+        .fav-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 4px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 13px;
+        }
+
+        .fav-row:last-child {
+            border-bottom: none;
+        }
+
+        .fav-row input {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--accent);
+        }
+
+        .facility-section.favorite {
+            border-left: 3px solid #f5b300;
+            padding-left: 10px;
+            margin-left: -3px;
+        }
+
+        .fav-star-icon {
+            color: #f5b300;
         }
 
         .day:hover {
@@ -643,7 +681,9 @@
                     <div class="calendar-nav">
                         <select class="btn facility-select" id="facilityFilter">
                             <option value="all">全施設</option>
+                            <option value="favorites">⭐ お気に入り</option>
                         </select>
+                        <button class="btn" id="editFavoritesBtn">⭐ 編集</button>
                         <div class="segmented">
                             <button class="btn" id="prevMonth">← 前月</button>
                             <button class="btn" id="nextMonth">次月 →</button>
@@ -694,6 +734,17 @@
         </div>
     </div>
 
+    <div class="modal" id="favoritesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">⭐ お気に入り施設の編集</h3>
+                <button class="modal-close" id="favoritesModalClose">&times;</button>
+            </div>
+            <div id="favoritesList"></div>
+            <button class="notify-btn" id="saveFavoritesBtn" style="width:100%; margin-top:14px;">保存する</button>
+        </div>
+    </div>
+
     <div class="footer">
         <div class="footer-content">
             <div class="footer-text">💡 空きが見つかったら公式サイトで予約してください</div>
@@ -711,9 +762,36 @@
         function pad(n) { return String(n).padStart(2, '0'); }
         function dateKey(y, m, d) { return `${y}-${pad(m + 1)}-${pad(d)}`; }
 
+        // --- お気に入り（ブラウザ内のみで保存） ---
+        function loadFavorites() {
+            try {
+                return new Set(JSON.parse(localStorage.getItem('favoriteFacilities') || '[]'));
+            } catch (e) {
+                return new Set();
+            }
+        }
+
+        function saveFavorites(set) {
+            try {
+                localStorage.setItem('favoriteFacilities', JSON.stringify([...set]));
+            } catch (e) { /* ignore */ }
+        }
+
+        let favorites = loadFavorites();
+
+        function isFavorite(facilityId) {
+            return favorites.has(facilityId);
+        }
+
+        function dayHasFavoriteAvailability(dayFacilities) {
+            if (!dayFacilities) return false;
+            return dayFacilities.some(f => isFavorite(f.facilityId) && f.timeSlots.some(s => s.available));
+        }
+
         function filterFacilities(dayFacilities) {
             if (!dayFacilities) return [];
             if (selectedFacilityId === 'all') return dayFacilities;
+            if (selectedFacilityId === 'favorites') return dayFacilities.filter(f => isFavorite(f.facilityId));
             return dayFacilities.filter(f => f.facilityId === selectedFacilityId);
         }
 
@@ -732,7 +810,7 @@
 
         function populateFacilityFilter() {
             const select = document.getElementById('facilityFilter');
-            select.innerHTML = '<option value="all">全施設</option>';
+            select.innerHTML = '<option value="all">全施設</option><option value="favorites">⭐ お気に入り</option>';
             fullData.facilities.forEach(f => {
                 const opt = document.createElement('option');
                 opt.value = f.id;
@@ -740,6 +818,16 @@
                 select.appendChild(opt);
             });
             select.value = selectedFacilityId;
+        }
+
+        function populateFavoritesModal() {
+            const list = document.getElementById('favoritesList');
+            list.innerHTML = fullData.facilities.map(f => `
+                <label class="fav-row">
+                    <input type="checkbox" value="${f.id}" ${favorites.has(f.id) ? 'checked' : ''}>
+                    <span>${f.name}</span>
+                </label>
+            `).join('');
         }
 
         async function loadData() {
@@ -805,6 +893,13 @@
                 const tier = hasData && !isPast ? heatTier(count) : 0;
                 el.className = 'day' + (isPast ? ' past' : '') + (tier > 0 ? ` heat-${tier}` : '');
 
+                if (hasData && !isPast && favorites.size > 0 && dayHasFavoriteAvailability(days[key])) {
+                    const star = document.createElement('div');
+                    star.className = 'day-star';
+                    star.textContent = '⭐';
+                    el.appendChild(star);
+                }
+
                 const num = document.createElement('div');
                 num.className = 'day-number';
                 num.textContent = d;
@@ -845,9 +940,10 @@
                 .map(f => {
                     const openSlots = f.timeSlots.filter(s => s.available);
                     if (openSlots.length === 0) return '';
+                    const fav = isFavorite(f.facilityId);
                     return `
-                        <div class="facility-section">
-                            <div class="facility-name">${f.facility}</div>
+                        <div class="facility-section${fav ? ' favorite' : ''}">
+                            <div class="facility-name">${fav ? '<span class="fav-star-icon">⭐</span> ' : ''}${f.facility}</div>
                             ${openSlots.map(s => `
                                 <div class="time-slot"><span>${s.time}</span><span style="color:var(--accent-strong)">✓ 空き</span></div>
                             `).join('')}
@@ -878,6 +974,25 @@
         });
         document.getElementById('facilityFilter').addEventListener('change', (e) => {
             selectedFacilityId = e.target.value;
+            renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
+        });
+
+        document.getElementById('editFavoritesBtn').addEventListener('click', () => {
+            if (!fullData) return;
+            populateFavoritesModal();
+            document.getElementById('favoritesModal').classList.add('active');
+        });
+        document.getElementById('favoritesModalClose').addEventListener('click', () => {
+            document.getElementById('favoritesModal').classList.remove('active');
+        });
+        document.getElementById('favoritesModal').addEventListener('click', (e) => {
+            if (e.target.id === 'favoritesModal') e.target.classList.remove('active');
+        });
+        document.getElementById('saveFavoritesBtn').addEventListener('click', () => {
+            const checked = [...document.querySelectorAll('#favoritesList input:checked')].map(el => el.value);
+            favorites = new Set(checked);
+            saveFavorites(favorites);
+            document.getElementById('favoritesModal').classList.remove('active');
             renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
         });
 
