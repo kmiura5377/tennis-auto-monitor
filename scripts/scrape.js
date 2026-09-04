@@ -271,6 +271,36 @@ async function sendPushNotification(newSlots) {
   }
 }
 
+async function sendLineNotification(newSlots) {
+  const accessToken = process.env.LINE_CHANNEL_ACCESS_TOKEN;
+  if (!accessToken || newSlots.length === 0) return;
+
+  newSlots.sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
+
+  const lines = newSlots.slice(0, 10).map(formatSlotLine);
+  const text = `🎾 新しい空きが見つかりました！（${newSlots.length}件）\n`
+    + lines.join('\n')
+    + (newSlots.length > 10 ? `\n他 ${newSlots.length - 10}件` : '');
+
+  try {
+    const res = await fetch('https://api.line.me/v2/bot/message/broadcast', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ messages: [{ type: 'text', text }] })
+    });
+    if (!res.ok) {
+      console.error('LINE broadcast failed:', res.status, await res.text());
+    } else {
+      console.log('LINE broadcast sent');
+    }
+  } catch (e) {
+    console.error('LINE broadcast error:', e.message);
+  }
+}
+
 const ACTIVITY_LOG_MAX_ENTRIES = 200;
 
 function appendActivityLog(logPath, newSlots, generatedAt) {
@@ -333,6 +363,7 @@ async function getFavoritesConfig() {
     : newlyAvailable;
   console.log('TO_NOTIFY', toNotify.length, '(favoritesOnly=' + favoritesConfig.notifyFavoritesOnly + ')');
   await sendPushNotification(toNotify);
+  await sendLineNotification(toNotify);
 
   fs.mkdirSync(outDir, { recursive: true });
   if (newlyAvailable.length > 0) {
