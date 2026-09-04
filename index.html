@@ -224,36 +224,6 @@
             cursor: default;
         }
 
-        .subscribe-panel {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 16px;
-            margin-bottom: 16px;
-            font-size: 12.5px;
-        }
-
-        .subscribe-panel code {
-            background: var(--accent-soft);
-            color: var(--accent-strong);
-            padding: 1px 6px;
-            border-radius: 5px;
-            font-weight: 600;
-        }
-
-        .subscribe-panel textarea {
-            width: 100%;
-            height: 84px;
-            margin-top: 8px;
-            font-family: ui-monospace, monospace;
-            font-size: 10.5px;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 8px;
-        }
-
         .card {
             background-color: var(--bg-elevated);
             border: 1px solid var(--border-color);
@@ -668,13 +638,6 @@
                 <button class="notify-btn" id="notifyBtn">🔔 新規空きの通知を有効にする</button>
             </div>
 
-            <div class="subscribe-panel" id="subscribePanel" style="display:none;">
-                通知の設定が完了しました。以下の内容をコピーして、GitHubリポジトリの Secret
-                <code>PUSH_SUBSCRIPTION</code> に貼り付けてください（初回のみ・1人分のみ対応）。
-                <textarea id="subscribeText" readonly></textarea>
-                <button class="btn" id="copySubscribeBtn">コピーする</button>
-            </div>
-
             <div class="calendar-container card">
                 <div class="calendar-header">
                     <h2 class="calendar-title" id="calendarTitle">-</h2>
@@ -767,13 +730,21 @@
         function pad(n) { return String(n).padStart(2, '0'); }
         function dateKey(y, m, d) { return `${y}-${pad(m + 1)}-${pad(d)}`; }
 
+        // --- 利用者識別（URLの ?u=<id> で個人ごとに分離。省略時は所有者="me"） ---
+        const myUserId = new URLSearchParams(location.search).get('u') || 'me';
+        function withUser(url) {
+            return url + (url.includes('?') ? '&' : '?') + 'u=' + encodeURIComponent(myUserId);
+        }
+
         // --- お気に入り（サーバー側KVで共有。localStorageは初回表示を速くするためのキャッシュ） ---
-        const FAVORITES_API_URL = '/api/favorites';
+        const FAVORITES_API_URL = withUser('/api/favorites');
+        const SUBSCRIBE_API_URL = withUser('/api/subscribe');
         const FAVORITES_API_TOKEN = 'Gxf7uuMliEh1Nd-f7fGx8GwJKQNdiKcM';
+        const FAVORITES_CACHE_KEY = 'favoritesCache:' + myUserId;
 
         function loadFavoritesCache() {
             try {
-                const cached = JSON.parse(localStorage.getItem('favoritesCache') || 'null');
+                const cached = JSON.parse(localStorage.getItem(FAVORITES_CACHE_KEY) || 'null');
                 if (cached) return { facilityIds: cached.facilityIds || [], notifyFavoritesOnly: !!cached.notifyFavoritesOnly };
             } catch (e) { /* ignore */ }
             return { facilityIds: [], notifyFavoritesOnly: false };
@@ -781,7 +752,7 @@
 
         function saveFavoritesCache(data) {
             try {
-                localStorage.setItem('favoritesCache', JSON.stringify(data));
+                localStorage.setItem(FAVORITES_CACHE_KEY, JSON.stringify(data));
             } catch (e) { /* ignore */ }
         }
 
@@ -1152,26 +1123,28 @@
                         applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
                     });
 
-                    btn.textContent = '🔔 通知は有効です';
+                    btn.textContent = '登録中...';
                     btn.disabled = true;
 
-                    const panel = document.getElementById('subscribePanel');
-                    const textarea = document.getElementById('subscribeText');
-                    textarea.value = JSON.stringify(subscription);
-                    panel.style.display = 'block';
+                    try {
+                        const res = await fetch(SUBSCRIBE_API_URL, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', 'X-Favorites-Token': FAVORITES_API_TOKEN },
+                            body: JSON.stringify({ subscription })
+                        });
+                        const data = await res.json();
+                        if (!data.success) throw new Error(data.error || 'unknown error');
+                        btn.textContent = '🔔 通知は有効です';
+                    } catch (e) {
+                        btn.textContent = '❌ 登録に失敗しました';
+                        btn.disabled = false;
+                        console.error('subscribe save failed', e);
+                    }
                 });
             } catch (e) {
                 console.error('push setup failed', e);
             }
         }
-
-        document.getElementById('copySubscribeBtn').addEventListener('click', () => {
-            const textarea = document.getElementById('subscribeText');
-            textarea.select();
-            navigator.clipboard.writeText(textarea.value).catch(() => {
-                document.execCommand('copy');
-            });
-        });
 
         setupPush();
     </script>

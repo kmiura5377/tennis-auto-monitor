@@ -27,9 +27,9 @@ jobs:
 
       - name: Run scraper
         env:
-          PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
           PUSH_VAPID_PRIVATE_KEY: ${{ secrets.PUSH_VAPID_PRIVATE_KEY }}
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          FAVORITES_API_TOKEN: ${{ secrets.FAVORITES_API_TOKEN }}
         run: npm run scrape
 
       - name: Commit updated data if changed

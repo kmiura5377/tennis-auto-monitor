@@ -242,18 +242,9 @@ function formatSlotLine(slot) {
   return `${d.getMonth() + 1}/${d.getDate()}(${weekday}) ${slot.time} ${slot.facility}`;
 }
 
-async function sendPushNotification(newSlots) {
-  const subscriptionJson = process.env.PUSH_SUBSCRIPTION;
+async function sendPushNotification(subscription, newSlots, label) {
   const privateKey = process.env.PUSH_VAPID_PRIVATE_KEY;
-  if (!subscriptionJson || !privateKey || newSlots.length === 0) return;
-
-  let subscription;
-  try {
-    subscription = JSON.parse(subscriptionJson);
-  } catch (e) {
-    console.error('PUSH_SUBSCRIPTION is not valid JSON:', e.message);
-    return;
-  }
+  if (!subscription || !privateKey || newSlots.length === 0) return;
 
   webpush.setVapidDetails('mailto:example@example.com', VAPID_PUBLIC_KEY, privateKey);
 
@@ -265,9 +256,9 @@ async function sendPushNotification(newSlots) {
 
   try {
     await webpush.sendNotification(subscription, JSON.stringify({ title, body, url: '/' }));
-    console.log('Push notification sent');
+    console.log(`Push notification sent (${label})`);
   } catch (e) {
-    console.error('Push notification failed:', e.statusCode, e.message);
+    console.error(`Push notification failed (${label}):`, e.statusCode, e.message);
   }
 }
 
@@ -323,18 +314,29 @@ function appendActivityLog(logPath, newSlots, generatedAt) {
   return combined;
 }
 
-const FAVORITES_API_URL = 'https://tennis-auto-monitor.vercel.app/api/favorites';
+const NOTIFY_TARGETS_URL = 'https://tennis-auto-monitor.vercel.app/api/notify-targets';
 
-async function getFavoritesConfig() {
+// 登録済み全ユーザーの「お気に入り設定」＋「Web Push購読情報」を取得する。
+// scrape.js専用の保護されたエンドポイントを叩く（トークン必須）。
+async function getNotifyTargets() {
+  const token = process.env.FAVORITES_API_TOKEN;
   try {
-    const res = await fetch(FAVORITES_API_URL, { signal: AbortSignal.timeout(10000) });
+    const res = await fetch(NOTIFY_TARGETS_URL, {
+      headers: token ? { 'X-Favorites-Token': token } : {},
+      signal: AbortSignal.timeout(10000)
+    });
     const data = await res.json();
     if (!data.success) throw new Error(data.error || 'unknown error');
-    return { facilityIds: data.facilityIds || [], notifyFavoritesOnly: Boolean(data.notifyFavoritesOnly) };
+    return data.users || [];
   } catch (e) {
-    console.error('お気に入り設定の取得に失敗（全施設を通知対象として続行）:', e.message);
-    return { facilityIds: [], notifyFavoritesOnly: false };
+    console.error('利用者一覧の取得に失敗（通知はスキップ）:', e.message);
+    return [];
   }
+}
+
+function filterForUser(newlyAvailable, user) {
+  if (!user.notifyFavoritesOnly) return newlyAvailable;
+  return newlyAvailable.filter(item => (user.facilityIds || []).includes(item.facilityId));
 }
 
 (async () => {
@@ -357,13 +359,20 @@ async function getFavoritesConfig() {
   const newlyAvailable = detectNewlyAvailable(previousData.days || {}, days);
   console.log('NEWLY_AVAILABLE', newlyAvailable.length);
 
-  const favoritesConfig = await getFavoritesConfig();
-  const toNotify = favoritesConfig.notifyFavoritesOnly
-    ? newlyAvailable.filter(item => favoritesConfig.facilityIds.includes(item.facilityId))
-    : newlyAvailable;
-  console.log('TO_NOTIFY', toNotify.length, '(favoritesOnly=' + favoritesConfig.notifyFavoritesOnly + ')');
-  await sendPushNotification(toNotify);
-  await sendLineNotification(toNotify);
+  const users = await getNotifyTargets();
+  console.log('REGISTERED_USERS', users.length);
+
+  for (const user of users) {
+    const toNotify = filterForUser(newlyAvailable, user);
+    console.log(`TO_NOTIFY[${user.id}]`, toNotify.length, '(favoritesOnly=' + user.notifyFavoritesOnly + ')');
+    if (user.subscription) {
+      await sendPushNotification(user.subscription, toNotify, user.id);
+    }
+  }
+
+  // LINEはアカウント所有者（"me"）の設定を基準にブロードキャスト配信する
+  const owner = users.find(u => u.id === 'me') || { facilityIds: [], notifyFavoritesOnly: false };
+  await sendLineNotification(filterForUser(newlyAvailable, owner));
 
   fs.mkdirSync(outDir, { recursive: true });
   if (newlyAvailable.length > 0) {
