@@ -853,7 +853,7 @@
                 if (dates.length > 0) {
                     const rangeStart = new Date(dates[0]).toLocaleDateString('ja-JP', { month: 'long', day: 'numeric' });
                     const rangeEnd = new Date(dates[dates.length - 1]).toLocaleDateString('ja-JP', { month: 'long', day: 'numeric' });
-                    banner.textContent = `実際の空き状況データです（${rangeStart}〜${rangeEnd}分を1時間ごとに取得。それ以外の日付は未取得です）`;
+                    banner.textContent = `実際の空き状況データです（${rangeStart}〜${rangeEnd}分を30分ごとに取得。それ以外の日付は未取得です）`;
                 } else {
                     banner.textContent = '⚠️ データがまだ取得できていません';
                 }
@@ -1063,8 +1063,8 @@
         loadData();
         loadActivityLog();
         syncFavoritesFromServer();
-        setInterval(loadData, 60 * 60 * 1000);
-        setInterval(loadActivityLog, 60 * 60 * 1000);
+        setInterval(loadData, 30 * 60 * 1000);
+        setInterval(loadActivityLog, 30 * 60 * 1000);
 
         // --- PWA installability + Web Push ---
         const VAPID_PUBLIC_KEY = 'BNpuNfvpkX-8XMwnvBU4K7cykGDCEh6uSR7IwtKEfQJh4E-qus2N1PigdmjcnPIs-G7bvgO_2dNjKSQS9FRgVI8';

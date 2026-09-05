@@ -2,12 +2,16 @@ name: Tennis Court Availability Scraper
 
 on:
   schedule:
-    # UTC time, once per hour. JST 6:00-23:59 = UTC 21:00-23:59 (prev day) + UTC 00:00-14:59
-    - cron: '0 21-23,0-14 * * *'
+    # UTC time, every 30 minutes. JST 6:00-23:59 = UTC 21:00-23:59 (prev day) + UTC 00:00-14:59
+    - cron: '0,30 21-23,0-14 * * *'
   workflow_dispatch: {}
 
 permissions:
   contents: write
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
 
 jobs:
   scrape:
