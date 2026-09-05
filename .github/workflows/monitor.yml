@@ -38,25 +38,38 @@ jobs:
 
       - name: Commit updated data if changed
         run: |
+          set -x
           git config user.name "tennis-monitor-bot"
           git config user.email "actions@users.noreply.github.com"
-          if [ -z "$(git status --porcelain -- data/availability.json data/activity-log.json)" ]; then
-            echo "No changes to data files"
-            exit 0
-          fi
 
-          git add data/availability.json data/activity-log.json
-          git commit -m "Update availability data ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+          cp data/availability.json /tmp/availability.json
+          cp data/activity-log.json /tmp/activity-log.json
 
-          # スクレイピングに時間がかかる間に他の変更がpushされていることがあるため、
-          # 先に進んでいたら一度だけrebaseして再試行する
-          for attempt in 1 2 3; do
-            if git push; then
+          # スクレイピングに15〜30分かかる間に他の実行がpushしていることがあるため、
+          # 毎回リモートの最新状態から作り直してからコミット・pushする（stale baseを避ける）
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout main
+            git reset --hard origin/main
+
+            cp /tmp/availability.json data/availability.json
+            cp /tmp/activity-log.json data/activity-log.json
+
+            if [ -z "$(git status --porcelain -- data/availability.json data/activity-log.json)" ]; then
+              echo "No changes to data files"
               exit 0
             fi
-            echo "push rejected, rebasing onto latest main (attempt $attempt)"
-            git fetch origin main
-            git rebase origin/main
+
+            git add data/availability.json data/activity-log.json
+            git commit -m "Update availability data ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+
+            if git push origin main; then
+              echo "push succeeded on attempt $attempt"
+              exit 0
+            fi
+
+            echo "push failed on attempt $attempt, retrying after backoff"
+            sleep $((attempt * 5))
           done
 
           echo "push failed after retries"
