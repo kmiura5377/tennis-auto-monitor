@@ -1,24 +1,23 @@
 {
-  "generatedAt": "2026-09-11T10:46:31.812Z",
-  "newlyAvailableCount": 0,
+  "generatedAt": "2026-09-11T11:15:17.254Z",
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 3,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
