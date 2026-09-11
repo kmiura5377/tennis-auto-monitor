@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-09-11T09:46:06.500Z",
+  "newlyAvailableCount": 1,
+  "registeredUsers": 2,
+  "perUser": [
+    {
+      "userId": "me",
+      "hasSubscription": true,
+      "notifyFavoritesOnly": false,
+      "toNotifyCount": 1,
+      "pushResult": {
+        "attempted": true,
+        "ok": true
+      }
+    },
+    {
+      "userId": "f8732b4a88cb",
+      "hasSubscription": false,
+      "notifyFavoritesOnly": false,
+      "toNotifyCount": 1,
+      "pushResult": {
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_subscription"
+      }
+    }
+  ]
+}
