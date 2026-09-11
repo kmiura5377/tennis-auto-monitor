@@ -32,14 +32,15 @@ module.exports = async (req, res) => {
   const userId = sanitizeUserId(req.query?.u);
   const body = req.body || {};
 
-  if (!body.subscription || !body.subscription.endpoint) {
+  // body.subscription === null は「無効になった購読情報をクリアする」ためのリクエスト
+  if (body.subscription !== null && (!body.subscription || !body.subscription.endpoint)) {
     res.status(400).json({ success: false, error: 'subscriptionが不正です' });
     return;
   }
 
   try {
     await kvSet(`tennis-monitor:push:${userId}`, body.subscription);
-    await registerUser(userId);
+    if (body.subscription !== null) await registerUser(userId);
     res.status(200).json({ success: true });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });

@@ -255,6 +255,21 @@ function formatSlotLine(slot) {
   return `${m}/${d}(${weekday}) ${slot.time} ${slot.facility}`;
 }
 
+async function clearStaleSubscription(userId) {
+  const token = process.env.FAVORITES_API_TOKEN;
+  if (!token) return;
+  try {
+    await fetch(`https://tennis-auto-monitor.vercel.app/api/subscribe?u=${encodeURIComponent(userId)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Favorites-Token': token },
+      body: JSON.stringify({ subscription: null })
+    });
+    console.log(`Cleared stale push subscription for ${userId}`);
+  } catch (e) {
+    console.error(`Failed to clear stale subscription for ${userId}:`, e.message);
+  }
+}
+
 async function sendRawPush(subscription, title, body, label) {
   const privateKey = process.env.PUSH_VAPID_PRIVATE_KEY;
   if (!subscription || !privateKey) return;
@@ -266,6 +281,12 @@ async function sendRawPush(subscription, title, body, label) {
     console.log(`Push notification sent (${label})`);
   } catch (e) {
     console.error(`Push notification failed (${label}):`, e.statusCode, e.message);
+    // 410 Gone / 404 Not Found は「その端末でこの購読はもう存在しない」ことを意味する。
+    // ブラウザ側で通知が解除された等の理由でよく起こるので、次回以降サイレントに
+    // 送信し続けないよう、こちらの記録も削除しておく（ボタンは自動的に再表示される）。
+    if (e.statusCode === 404 || e.statusCode === 410) {
+      await clearStaleSubscription(label);
+    }
   }
 }
 
