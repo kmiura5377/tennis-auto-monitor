@@ -270,15 +270,19 @@ async function clearStaleSubscription(userId) {
   }
 }
 
+// 戻り値は診断用に呼び出し元へ結果を伝えるための構造体。
+// { attempted, ok, statusCode, error, skippedReason }
 async function sendRawPush(subscription, title, body, label) {
   const privateKey = process.env.PUSH_VAPID_PRIVATE_KEY;
-  if (!subscription || !privateKey) return;
+  if (!subscription) return { attempted: false, ok: false, skippedReason: 'no_subscription' };
+  if (!privateKey) return { attempted: false, ok: false, skippedReason: 'no_private_key_env' };
 
   webpush.setVapidDetails('mailto:example@example.com', VAPID_PUBLIC_KEY, privateKey);
 
   try {
     await webpush.sendNotification(subscription, JSON.stringify({ title, body, url: '/' }));
     console.log(`Push notification sent (${label})`);
+    return { attempted: true, ok: true };
   } catch (e) {
     console.error(`Push notification failed (${label}):`, e.statusCode, e.message);
     // 410 Gone / 404 Not Found は「その端末でこの購読はもう存在しない」ことを意味する。
@@ -287,6 +291,7 @@ async function sendRawPush(subscription, title, body, label) {
     if (e.statusCode === 404 || e.statusCode === 410) {
       await clearStaleSubscription(label);
     }
+    return { attempted: true, ok: false, statusCode: e.statusCode, error: e.body || e.message };
   }
 }
 
@@ -314,12 +319,13 @@ async function sendRawLine(text) {
 }
 
 async function sendPushNotification(subscription, newSlots, label) {
-  if (!subscription || newSlots.length === 0) return;
+  if (!subscription) return { attempted: false, ok: false, skippedReason: 'no_subscription' };
+  if (newSlots.length === 0) return { attempted: false, ok: false, skippedReason: 'no_new_slots' };
   newSlots.sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
   const title = `🎾 新しい空きが見つかりました！（${newSlots.length}件）`;
   const body = newSlots.slice(0, 3).map(formatSlotLine).join('\n')
     + (newSlots.length > 3 ? `\n他 ${newSlots.length - 3}件` : '');
-  await sendRawPush(subscription, title, body, label);
+  return await sendRawPush(subscription, title, body, label);
 }
 
 async function sendLineNotification(newSlots) {
@@ -471,12 +477,26 @@ function filterForUser(newlyAvailable, user) {
   const users = await getNotifyTargets();
   console.log('REGISTERED_USERS', users.length);
 
+  // 認証なしで閲覧できる data/notify-debug.json に送信試行の結果を記録し、
+  // GitHub Actions の詳細ログにアクセスできなくても状況を確認できるようにする。
+  const notifyDebug = {
+    generatedAt,
+    newlyAvailableCount: newlyAvailable.length,
+    registeredUsers: users.length,
+    perUser: []
+  };
+
   for (const user of users) {
     const toNotify = filterForUser(newlyAvailable, user);
     console.log(`TO_NOTIFY[${user.id}]`, toNotify.length, '(favoritesOnly=' + user.notifyFavoritesOnly + ')');
-    if (user.subscription) {
-      await sendPushNotification(user.subscription, toNotify, user.id);
-    }
+    const entry = {
+      userId: user.id,
+      hasSubscription: !!user.subscription,
+      notifyFavoritesOnly: !!user.notifyFavoritesOnly,
+      toNotifyCount: toNotify.length
+    };
+    entry.pushResult = await sendPushNotification(user.subscription, toNotify, user.id);
+    notifyDebug.perUser.push(entry);
   }
 
   // LINEはアカウント所有者（"me"）の設定を基準にブロードキャスト配信する
@@ -487,6 +507,8 @@ function filterForUser(newlyAvailable, user) {
   if (newlyAvailable.length > 0) {
     appendActivityLog(logPath, newlyAvailable, generatedAt);
   }
+
+  fs.writeFileSync(path.join(outDir, 'notify-debug.json'), JSON.stringify(notifyDebug, null, 2));
 
   const output = {
     generatedAt,
