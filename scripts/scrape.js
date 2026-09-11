@@ -1,7 +1,8 @@
 // 東京都立公園テニスコート 空き状況スクレイパー
 // GitHub Actions から実行される想定。実ブラウザ(Playwright)で予約サイトを操作し、
-// 週表示カレンダーを直近5週間分ページ送りしてデータを取得する。
+// 週表示カレンダーを直近4週間分ページ送りしてデータを取得する。
 // 月表示APIはヘッドレスブラウザからの応答が得られなかったため使用しない。
+// 施設は SCRAPE_CONCURRENCY 件ずつ並行処理する（実行時間短縮のため）。
 
 const { chromium } = require('playwright');
 const webpush = require('web-push');
@@ -12,7 +13,12 @@ const path = require('path');
 const VAPID_PUBLIC_KEY = 'BNpuNfvpkX-8XMwnvBU4K7cykGDCEh6uSR7IwtKEfQJh4E-qus2N1PigdmjcnPIs-G7bvgO_2dNjKSQS9FRgVI8';
 
 const BASE_URL = 'https://kouen.sports.metro.tokyo.lg.jp/web/index.jsp';
-const WEEKS_TO_FETCH = 5;
+const WEEKS_TO_FETCH = 4;
+const SCRAPE_CONCURRENCY = 5;
+
+// この割合以上の施設で取得に失敗したら「予約サイト側からアクセス制限を受けた可能性」と
+// みなし、緊急通知を送った上でこの自動実行(GitHub Actionsのスケジュール)自体を無効化する。
+const BLOCK_SUSPECTED_THRESHOLD = 0.5;
 
 // テニス（ハード）4施設 + テニス（人工芝）27施設 = 全31施設
 // （大井ふ頭海浜公園Ｂは両方の区分に存在するため、別施設として扱う）
@@ -195,8 +201,10 @@ async function scrapeFacility(browser, facility, days) {
     }
 
     console.log(`[${facility.id}] done`);
+    return true;
   } catch (error) {
     console.error(`[${facility.id}] ERROR: ${error.message}`);
+    return false;
   } finally {
     await page.close();
   }
@@ -247,17 +255,11 @@ function formatSlotLine(slot) {
   return `${m}/${d}(${weekday}) ${slot.time} ${slot.facility}`;
 }
 
-async function sendPushNotification(subscription, newSlots, label) {
+async function sendRawPush(subscription, title, body, label) {
   const privateKey = process.env.PUSH_VAPID_PRIVATE_KEY;
-  if (!subscription || !privateKey || newSlots.length === 0) return;
+  if (!subscription || !privateKey) return;
 
   webpush.setVapidDetails('mailto:example@example.com', VAPID_PUBLIC_KEY, privateKey);
-
-  newSlots.sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
-
-  const title = `🎾 新しい空きが見つかりました！（${newSlots.length}件）`;
-  const body = newSlots.slice(0, 3).map(formatSlotLine).join('\n')
-    + (newSlots.length > 3 ? `\n他 ${newSlots.length - 3}件` : '');
 
   try {
     await webpush.sendNotification(subscription, JSON.stringify({ title, body, url: '/' }));
@@ -267,16 +269,9 @@ async function sendPushNotification(subscription, newSlots, label) {
   }
 }
 
-async function sendLineNotification(newSlots) {
+async function sendRawLine(text) {
   const accessToken = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-  if (!accessToken || newSlots.length === 0) return;
-
-  newSlots.sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
-
-  const lines = newSlots.slice(0, 10).map(formatSlotLine);
-  const text = `🎾 新しい空きが見つかりました！（${newSlots.length}件）\n`
-    + lines.join('\n')
-    + (newSlots.length > 10 ? `\n他 ${newSlots.length - 10}件` : '');
+  if (!accessToken) return;
 
   try {
     const res = await fetch('https://api.line.me/v2/bot/message/broadcast', {
@@ -294,6 +289,80 @@ async function sendLineNotification(newSlots) {
     }
   } catch (e) {
     console.error('LINE broadcast error:', e.message);
+  }
+}
+
+async function sendPushNotification(subscription, newSlots, label) {
+  if (!subscription || newSlots.length === 0) return;
+  newSlots.sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
+  const title = `🎾 新しい空きが見つかりました！（${newSlots.length}件）`;
+  const body = newSlots.slice(0, 3).map(formatSlotLine).join('\n')
+    + (newSlots.length > 3 ? `\n他 ${newSlots.length - 3}件` : '');
+  await sendRawPush(subscription, title, body, label);
+}
+
+async function sendLineNotification(newSlots) {
+  if (newSlots.length === 0) return;
+  newSlots.sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
+  const lines = newSlots.slice(0, 10).map(formatSlotLine);
+  const text = `🎾 新しい空きが見つかりました！（${newSlots.length}件）\n`
+    + lines.join('\n')
+    + (newSlots.length > 10 ? `\n他 ${newSlots.length - 10}件` : '');
+  await sendRawLine(text);
+}
+
+// 大部分の施設で取得失敗＝ボット判定/アクセス制限を受けた可能性がある場合の緊急対応。
+// 全利用者に警告を送り、GitHub Actions の定期実行自体を無効化して自動停止する。
+async function handleSuspectedBlock(failureCount, totalCount) {
+  const message = `⚠️ テニスコート監視システムで異常を検知しました\n\n`
+    + `${totalCount}施設中${failureCount}施設で取得に失敗しました。予約サイト側からアクセス制限を受けた可能性があるため、自動実行を停止しました。\n\n`
+    + `再開するにはGitHubリポジトリの Actions タブから手動で有効化してください。`;
+
+  console.error('SUSPECTED_BLOCK', message);
+
+  try {
+    const users = await getNotifyTargets();
+    for (const user of users) {
+      if (user.subscription) {
+        await sendRawPush(user.subscription, '⚠️ テニスコート監視: 自動停止しました', message, user.id);
+      }
+    }
+    await sendRawLine(message);
+  } catch (e) {
+    console.error('緊急通知の送信に失敗:', e.message);
+  }
+
+  await disableWorkflow();
+}
+
+async function disableWorkflow() {
+  const token = process.env.GITHUB_TOKEN;
+  const repo = process.env.GITHUB_REPOSITORY; // "owner/repo" 形式
+  const workflowFile = 'monitor.yml';
+  if (!token || !repo) {
+    console.error('GITHUB_TOKEN/GITHUB_REPOSITORYが無いため、ワークフローを自動無効化できませんでした');
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${repo}/actions/workflows/${workflowFile}/disable`,
+      {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/vnd.github+json',
+          'X-GitHub-Api-Version': '2022-11-28'
+        }
+      }
+    );
+    if (res.status === 204) {
+      console.log('ワークフローを無効化しました（自動停止）');
+    } else {
+      console.error('ワークフロー無効化に失敗:', res.status, await res.text());
+    }
+  } catch (e) {
+    console.error('ワークフロー無効化エラー:', e.message);
   }
 }
 
@@ -352,13 +421,27 @@ function filterForUser(newlyAvailable, user) {
 
   const browser = await chromium.launch({ headless: true });
   const days = {};
+  let failureCount = 0;
 
-  for (const facility of FACILITIES) {
-    await scrapeFacility(browser, facility, days);
-    await sleep(2000); // 施設間で間隔を空ける
+  // 施設を SCRAPE_CONCURRENCY 件ずつ同時処理する簡易ワーカープール
+  let nextIndex = 0;
+  async function worker() {
+    while (nextIndex < FACILITIES.length) {
+      const facility = FACILITIES[nextIndex++];
+      const ok = await scrapeFacility(browser, facility, days);
+      if (!ok) failureCount++;
+    }
   }
+  const workerCount = Math.min(SCRAPE_CONCURRENCY, FACILITIES.length);
+  await Promise.all(Array.from({ length: workerCount }, () => worker()));
 
   await browser.close();
+
+  const failureRate = failureCount / FACILITIES.length;
+  console.log(`FAILURE_RATE ${failureCount}/${FACILITIES.length} (${(failureRate * 100).toFixed(0)}%)`);
+  if (failureRate >= BLOCK_SUSPECTED_THRESHOLD) {
+    await handleSuspectedBlock(failureCount, FACILITIES.length);
+  }
 
   const generatedAt = new Date().toISOString();
   const newlyAvailable = detectNewlyAvailable(previousData.days || {}, days);
