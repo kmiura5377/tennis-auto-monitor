@@ -236,10 +236,15 @@ function detectNewlyAvailable(previousDays, newDays) {
   return found;
 }
 
+// slot.date（"YYYY-MM-DD"、日本時間の暦日）から表示用文字列を作る。
+// GitHub Actionsの実行環境はUTCのため、new Date(...).getDate()等の
+// ローカルタイムゾーン依存のgetterを使うと日付が1日ずれる。
+// Date.UTC()で組み立てて getUTCDay() で読み戻すことで、実行環境の
+// タイムゾーンに関係なく常に正しい日付・曜日になる。
 function formatSlotLine(slot) {
-  const d = new Date(slot.date + 'T00:00:00+09:00');
-  const weekday = ['日', '月', '火', '水', '木', '金', '土'][d.getDay()];
-  return `${d.getMonth() + 1}/${d.getDate()}(${weekday}) ${slot.time} ${slot.facility}`;
+  const [y, m, d] = slot.date.split('-').map(Number);
+  const weekday = ['日', '月', '火', '水', '木', '金', '土'][new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+  return `${m}/${d}(${weekday}) ${slot.time} ${slot.facility}`;
 }
 
 async function sendPushNotification(subscription, newSlots, label) {

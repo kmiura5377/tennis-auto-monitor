@@ -1028,10 +1028,13 @@
             return `${days}日前`;
         }
 
+        // dateStr（"YYYY-MM-DD"、日本時間の暦日）を表示用に変換する。
+        // 閲覧者のブラウザのタイムゾーンに関係なく常に正しい日付・曜日になるよう、
+        // Date.UTC()で組み立てて getUTCDay() で読み戻す。
         function formatActivityDate(dateStr) {
-            const d = new Date(dateStr + 'T00:00:00+09:00');
-            const weekday = ['日', '月', '火', '水', '木', '金', '土'][d.getDay()];
-            return `${d.getMonth() + 1}/${d.getDate()}(${weekday})`;
+            const [y, m, d] = dateStr.split('-').map(Number);
+            const weekday = ['日', '月', '火', '水', '木', '金', '土'][new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+            return `${m}/${d}(${weekday})`;
         }
 
         async function loadActivityLog() {
