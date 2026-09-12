@@ -1,8 +1,29 @@
 {
-  "mode": "test_push_only",
-  "generatedAt": "2026-09-12T04:07:46.991Z",
-  "result": {
-    "attempted": true,
-    "ok": true
-  }
+  "generatedAt": "2026-09-12T04:14:48.961Z",
+  "newlyAvailableCount": 0,
+  "registeredUsers": 2,
+  "perUser": [
+    {
+      "userId": "me",
+      "hasSubscription": true,
+      "notifyFavoritesOnly": false,
+      "toNotifyCount": 0,
+      "pushResult": {
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
+      }
+    },
+    {
+      "userId": "f8732b4a88cb",
+      "hasSubscription": false,
+      "notifyFavoritesOnly": false,
+      "toNotifyCount": 0,
+      "pushResult": {
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_subscription"
+      }
+    }
+  ]
 }
