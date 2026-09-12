@@ -1,28 +1,8 @@
 {
-  "generatedAt": "2026-09-12T03:45:51.289Z",
-  "newlyAvailableCount": 1,
-  "registeredUsers": 2,
-  "perUser": [
-    {
-      "userId": "me",
-      "hasSubscription": true,
-      "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
-      "pushResult": {
-        "attempted": true,
-        "ok": true
-      }
-    },
-    {
-      "userId": "f8732b4a88cb",
-      "hasSubscription": false,
-      "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
-      "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_subscription"
-      }
-    }
-  ]
+  "mode": "test_push_only",
+  "generatedAt": "2026-09-12T04:07:46.991Z",
+  "result": {
+    "attempted": true,
+    "ok": true
+  }
 }
