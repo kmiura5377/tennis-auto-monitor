@@ -4,7 +4,12 @@ on:
   schedule:
     # UTC time, every 30 minutes. JST 6:00-23:59 = UTC 21:00-23:59 (prev day) + UTC 00:00-14:59
     - cron: '0,30 21-23,0-14 * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      test_push_only:
+        description: '自分(me)宛にテスト通知だけ送る（実際のスクレイピングは行わない）'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -37,6 +42,7 @@ jobs:
           FAVORITES_API_TOKEN: ${{ secrets.FAVORITES_API_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          TEST_PUSH_ONLY: ${{ github.event.inputs.test_push_only }}
         run: npm run scrape
 
       - name: Commit updated data if changed

@@ -440,7 +440,36 @@ function filterForUser(newlyAvailable, user) {
   return newlyAvailable.filter(item => (user.facilityIds || []).includes(item.facilityId));
 }
 
+// workflow_dispatch から test_push_only=true で実行された場合、スクレイピングは一切行わず
+// 自分（"me"）宛にテスト通知だけを即時送信する。実機にプッシュが届くかどうかを、
+// 実際に新しい空きが出るのを待たずに確認するための手動テスト用モード。
+const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
+
 (async () => {
+  if (TEST_PUSH_ONLY) {
+    const outDir = path.join(__dirname, '..', 'data');
+    const users = await getNotifyTargets();
+    const me = users.find(u => u.id === 'me');
+    let result;
+    if (!me) {
+      result = { attempted: false, ok: false, skippedReason: 'user_not_found' };
+    } else {
+      result = await sendRawPush(
+        me.subscription,
+        '🔔 テスト通知',
+        'これはテスト通知です。これが届いていればプッシュ通知は正常に機能しています。',
+        'me'
+      );
+    }
+    console.log('TEST_PUSH_RESULT', JSON.stringify(result));
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(outDir, 'notify-debug.json'),
+      JSON.stringify({ mode: 'test_push_only', generatedAt: new Date().toISOString(), result }, null, 2)
+    );
+    return;
+  }
+
   const outDir = path.join(__dirname, '..', 'data');
   const outPath = path.join(outDir, 'availability.json');
   const logPath = path.join(outDir, 'activity-log.json');
