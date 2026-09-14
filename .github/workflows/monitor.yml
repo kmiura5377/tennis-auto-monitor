@@ -22,6 +22,10 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    # 通常は数分〜10分程度で終わる想定。GitHub Actions側の一時的な不具合等で
+    # 実行が開始されないまま長時間キューに残り続けると、後続の30分おきの実行が
+    # ずっと詰まってしまうため、上限を設けて早めに打ち切れるようにする。
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
