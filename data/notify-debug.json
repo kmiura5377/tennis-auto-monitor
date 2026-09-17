@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-09-17T13:23:50.215Z",
+  "generatedAt": "2026-09-17T13:50:41.270Z",
   "scrapeFailureCount": 3,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.0967741935483871,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "shiba",
+    "kameido",
     "sarue",
-    "soshigaya"
+    "higashiyamato_minami"
   ],
-  "newlyAvailableCount": 8,
+  "newlyAvailableCount": 7,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 8,
+      "toNotifyCount": 7,
       "pushResult": {
         "attempted": true,
         "ok": true
@@ -26,7 +26,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 8,
+      "toNotifyCount": 7,
       "pushResult": {
         "attempted": false,
         "ok": false,
