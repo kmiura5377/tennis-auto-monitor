@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-17T08:24:00.613Z",
+  "generatedAt": "2026-09-17T08:49:13.675Z",
   "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kiba",
     "soshigaya",
-    "higashishirahige",
-    "ukima"
+    "sarue",
+    "kiba",
+    "nogawa"
   ],
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 7,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 7,
       "pushResult": {
         "attempted": true,
         "ok": true
@@ -27,7 +27,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 7,
       "pushResult": {
         "attempted": false,
         "ok": false,
