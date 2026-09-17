@@ -1,20 +1,18 @@
 {
-  "generatedAt": "2026-09-17T21:21:01.594Z",
-  "scrapeFailureCount": 1,
+  "generatedAt": "2026-09-17T21:44:59.465Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.03225806451612903,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
-  "failedFacilityIds": [
-    "ariake_c_turf"
-  ],
-  "newlyAvailableCount": 6,
+  "failedFacilityIds": [],
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 6,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": true,
         "ok": true
@@ -24,7 +22,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 6,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
