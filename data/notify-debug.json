@@ -1,22 +1,26 @@
 {
-  "generatedAt": "2026-09-17T11:21:49.461Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-09-17T11:49:09.055Z",
+  "scrapeFailureCount": 7,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0.22580645161290322,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kiba",
+    "shiba",
     "sarue",
-    "ukima"
+    "kameido",
+    "kiba",
+    "zenpukuji",
+    "nogawa",
+    "higashiyamato_minami"
   ],
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 4,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 4,
       "pushResult": {
         "attempted": true,
         "ok": true
@@ -26,7 +30,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 4,
       "pushResult": {
         "attempted": false,
         "ok": false,
