@@ -481,6 +481,7 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
   const browser = await chromium.launch({ headless: true });
   const days = {};
   let failureCount = 0;
+  const failedFacilityIds = [];
 
   // 施設を SCRAPE_CONCURRENCY 件ずつ同時処理する簡易ワーカープール
   let nextIndex = 0;
@@ -488,7 +489,10 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
     while (nextIndex < FACILITIES.length) {
       const facility = FACILITIES[nextIndex++];
       const ok = await scrapeFacility(browser, facility, days);
-      if (!ok) failureCount++;
+      if (!ok) {
+        failureCount++;
+        failedFacilityIds.push(facility.id);
+      }
     }
   }
   const workerCount = Math.min(SCRAPE_CONCURRENCY, FACILITIES.length);
@@ -498,7 +502,8 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
 
   const failureRate = failureCount / FACILITIES.length;
   console.log(`FAILURE_RATE ${failureCount}/${FACILITIES.length} (${(failureRate * 100).toFixed(0)}%)`);
-  if (failureRate >= BLOCK_SUSPECTED_THRESHOLD) {
+  const blockSuspected = failureRate >= BLOCK_SUSPECTED_THRESHOLD;
+  if (blockSuspected) {
     await handleSuspectedBlock(failureCount, FACILITIES.length);
   }
 
@@ -513,6 +518,11 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
   // GitHub Actions の詳細ログにアクセスできなくても状況を確認できるようにする。
   const notifyDebug = {
     generatedAt,
+    scrapeFailureCount: failureCount,
+    scrapeTotalFacilities: FACILITIES.length,
+    scrapeFailureRate: failureRate,
+    blockSuspected,
+    failedFacilityIds,
     newlyAvailableCount: newlyAvailable.length,
     registeredUsers: users.length,
     perUser: []
