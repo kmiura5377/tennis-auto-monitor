@@ -1,13 +1,21 @@
 {
-  "generatedAt": "2026-09-14T07:14:11.335Z",
-  "newlyAvailableCount": 1,
+  "generatedAt": "2026-09-17T07:24:20.109Z",
+  "scrapeFailureCount": 2,
+  "scrapeTotalFacilities": 31,
+  "scrapeFailureRate": 0.06451612903225806,
+  "blockSuspected": false,
+  "failedFacilityIds": [
+    "kiba",
+    "johoku"
+  ],
+  "newlyAvailableCount": 28,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
-      "notifyFavoritesOnly": true,
-      "toNotifyCount": 1,
+      "notifyFavoritesOnly": false,
+      "toNotifyCount": 28,
       "pushResult": {
         "attempted": true,
         "ok": true
@@ -17,7 +25,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
+      "toNotifyCount": 28,
       "pushResult": {
         "attempted": false,
         "ok": false,
