@@ -1,21 +1,29 @@
 {
-  "generatedAt": "2026-09-17T07:24:20.109Z",
-  "scrapeFailureCount": 2,
+  "generatedAt": "2026-09-17T07:50:01.971Z",
+  "scrapeFailureCount": 10,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.06451612903225806,
+  "scrapeFailureRate": 0.3225806451612903,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kiba",
-    "johoku"
+    "shiba",
+    "soshigaya",
+    "kameido",
+    "akatsuka",
+    "higashishirahige",
+    "oojima_komatsugawa",
+    "takaido",
+    "hikarigaoka",
+    "fuchu_no_mori",
+    "nogawa"
   ],
-  "newlyAvailableCount": 28,
+  "newlyAvailableCount": 4,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 28,
+      "toNotifyCount": 4,
       "pushResult": {
         "attempted": true,
         "ok": true
@@ -25,7 +33,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 28,
+      "toNotifyCount": 4,
       "pushResult": {
         "attempted": false,
         "ok": false,
