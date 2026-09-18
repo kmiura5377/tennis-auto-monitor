@@ -1,33 +1,30 @@
 {
-  "generatedAt": "2026-09-18T06:53:12.721Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-09-18T07:22:54.701Z",
+  "scrapeFailureCount": 1,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0.03225806451612903,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "soshigaya",
-    "hikarigaoka",
-    "higashiyamato_minami"
+    "koganei"
   ],
-  "newlyAvailableCount": 0,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
