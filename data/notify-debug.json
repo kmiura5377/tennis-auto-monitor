@@ -1,22 +1,24 @@
 {
-  "generatedAt": "2026-09-18T07:49:05.655Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-09-18T08:23:04.297Z",
+  "scrapeFailureCount": 5,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0.16129032258064516,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "ariake_b_hard",
+    "shiba",
     "sarue",
-    "inokashira"
+    "kiba",
+    "shakujii_b",
+    "fuchu_no_mori"
   ],
-  "newlyAvailableCount": 1,
+  "newlyAvailableCount": 5,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": true,
         "ok": true
@@ -26,7 +28,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": false,
         "ok": false,
