@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-09-18T08:23:04.297Z",
+  "generatedAt": "2026-09-18T08:49:49.070Z",
   "scrapeFailureCount": 5,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.16129032258064516,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "shiba",
     "sarue",
-    "kiba",
-    "shakujii_b",
-    "fuchu_no_mori"
+    "higashiayase",
+    "higashishirahige",
+    "zenpukuji",
+    "hikarigaoka"
   ],
-  "newlyAvailableCount": 5,
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 5,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": true,
         "ok": true
@@ -28,7 +28,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 5,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
