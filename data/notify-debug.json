@@ -1,18 +1,14 @@
 {
-  "generatedAt": "2026-09-18T14:22:17.477Z",
-  "scrapeFailureCount": 6,
+  "generatedAt": "2026-09-18T14:49:11.851Z",
+  "scrapeFailureCount": 2,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.1935483870967742,
+  "scrapeFailureRate": 0.06451612903225806,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "sarue",
-    "shinozaki_a",
-    "higashiayase",
-    "shakujii_b",
-    "musashino_chuo",
-    "oi_b_turf"
+    "kameido",
+    "shioiri"
   ],
-  "newlyAvailableCount": 7,
+  "newlyAvailableCount": 10,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -30,7 +26,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 7,
+      "toNotifyCount": 10,
       "pushResult": {
         "attempted": false,
         "ok": false,
