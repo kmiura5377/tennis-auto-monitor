@@ -1,32 +1,31 @@
 {
-  "generatedAt": "2026-09-19T06:25:28.292Z",
+  "generatedAt": "2026-09-19T06:51:17.450Z",
   "scrapeFailureCount": 2,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.06451612903225806,
   "blockSuspected": false,
   "failedFacilityIds": [
     "sarue",
-    "kameido"
+    "kiba"
   ],
-  "newlyAvailableCount": 5,
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 5,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
