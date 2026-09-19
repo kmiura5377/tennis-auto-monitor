@@ -1,15 +1,21 @@
 {
-  "generatedAt": "2026-09-19T03:21:22.323Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-09-19T03:47:10.444Z",
+  "scrapeFailureCount": 9,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0.2903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "akatsuka",
+    "oi_b_hard",
+    "ariake_b_hard",
+    "sarue",
+    "shiba",
+    "kameido",
+    "kiba",
+    "oojima_komatsugawa",
     "shioiri",
-    "musashino_chuo"
+    "koganei"
   ],
-  "newlyAvailableCount": 6,
+  "newlyAvailableCount": 5,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -27,7 +33,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 6,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": false,
         "ok": false,
