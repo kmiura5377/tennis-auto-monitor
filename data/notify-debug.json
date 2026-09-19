@@ -1,12 +1,14 @@
 {
-  "generatedAt": "2026-09-19T06:51:17.450Z",
-  "scrapeFailureCount": 2,
+  "generatedAt": "2026-09-19T07:20:25.161Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.06451612903225806,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
     "sarue",
-    "kiba"
+    "kameido",
+    "oojima_komatsugawa",
+    "inokashira"
   ],
   "newlyAvailableCount": 3,
   "registeredUsers": 2,
@@ -15,10 +17,11 @@
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 1,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
