@@ -1,18 +1,16 @@
 {
-  "generatedAt": "2026-09-19T10:46:59.034Z",
-  "scrapeFailureCount": 6,
+  "generatedAt": "2026-09-19T11:20:19.184Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.1935483870967742,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "shiba",
-    "akatsuka",
-    "oojima_komatsugawa",
-    "koganei",
-    "shakujii_b",
-    "fuchu_no_mori"
+    "soshigaya",
+    "sarue",
+    "kiba",
+    "inokashira"
   ],
-  "newlyAvailableCount": 0,
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -30,7 +28,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
