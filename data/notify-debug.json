@@ -1,17 +1,14 @@
 {
-  "generatedAt": "2026-09-19T12:50:52.450Z",
-  "scrapeFailureCount": 5,
+  "generatedAt": "2026-09-19T13:21:27.974Z",
+  "scrapeFailureCount": 2,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.16129032258064516,
+  "scrapeFailureRate": 0.06451612903225806,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kameido",
     "kiba",
-    "soshigaya",
-    "shinozaki_a",
-    "oojima_komatsugawa"
+    "takaido"
   ],
-  "newlyAvailableCount": 4,
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -29,7 +26,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
