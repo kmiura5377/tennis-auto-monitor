@@ -1,11 +1,14 @@
 {
-  "generatedAt": "2026-09-19T21:44:21.622Z",
-  "scrapeFailureCount": 0,
+  "generatedAt": "2026-09-19T22:19:46.495Z",
+  "scrapeFailureCount": 2,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0,
+  "scrapeFailureRate": 0.06451612903225806,
   "blockSuspected": false,
-  "failedFacilityIds": [],
-  "newlyAvailableCount": 0,
+  "failedFacilityIds": [
+    "kiba",
+    "ariake_c_turf"
+  ],
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -23,7 +26,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
