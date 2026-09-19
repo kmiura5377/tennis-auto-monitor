@@ -1,32 +1,36 @@
 {
-  "generatedAt": "2026-09-19T10:21:27.399Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-09-19T10:46:59.034Z",
+  "scrapeFailureCount": 6,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0.1935483870967742,
   "blockSuspected": false,
   "failedFacilityIds": [
+    "shiba",
+    "akatsuka",
+    "oojima_komatsugawa",
     "koganei",
-    "higashiyamato_minami",
-    "oi_b_turf"
+    "shakujii_b",
+    "fuchu_no_mori"
   ],
-  "newlyAvailableCount": 4,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 1,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
