@@ -1,18 +1,14 @@
 {
-  "generatedAt": "2026-09-20T07:20:03.641Z",
-  "scrapeFailureCount": 6,
+  "generatedAt": "2026-09-20T07:47:28.723Z",
+  "scrapeFailureCount": 2,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.1935483870967742,
+  "scrapeFailureRate": 0.06451612903225806,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "shiba",
-    "sarue",
-    "kiba",
-    "shinozaki_a",
-    "zenpukuji",
-    "hikarigaoka"
+    "johoku",
+    "musashino_chuo"
   ],
-  "newlyAvailableCount": 4,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -30,7 +26,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
