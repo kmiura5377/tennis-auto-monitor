@@ -1,16 +1,15 @@
 {
-  "generatedAt": "2026-09-20T22:20:02.763Z",
-  "scrapeFailureCount": 4,
+  "generatedAt": "2026-09-20T22:47:11.327Z",
+  "scrapeFailureCount": 3,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.12903225806451613,
+  "scrapeFailureRate": 0.0967741935483871,
   "blockSuspected": false,
   "failedFacilityIds": [
     "shiba",
-    "ukima",
-    "higashishirahige",
-    "hikarigaoka"
+    "kameido",
+    "kiba"
   ],
-  "newlyAvailableCount": 1,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -28,7 +27,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
