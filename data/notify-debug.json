@@ -1,16 +1,14 @@
 {
-  "generatedAt": "2026-09-20T12:50:45.528Z",
-  "scrapeFailureCount": 4,
+  "generatedAt": "2026-09-20T13:21:10.382Z",
+  "scrapeFailureCount": 2,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.12903225806451613,
+  "scrapeFailureRate": 0.06451612903225806,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "ariake_b_hard",
-    "higashiayase",
-    "ariake_c_turf",
-    "oi_b_turf"
+    "kameido",
+    "johoku"
   ],
-  "newlyAvailableCount": 1,
+  "newlyAvailableCount": 5,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -28,7 +26,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": false,
         "ok": false,
