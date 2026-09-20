@@ -1,15 +1,17 @@
 {
-  "generatedAt": "2026-09-20T01:19:59.774Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-09-20T01:46:35.452Z",
+  "scrapeFailureCount": 5,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0.16129032258064516,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kiba",
+    "shiba",
+    "soshigaya",
     "akatsuka",
-    "higashiyamato_minami"
+    "inokashira",
+    "shakujii_b"
   ],
-  "newlyAvailableCount": 1,
+  "newlyAvailableCount": 6,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -27,7 +29,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
+      "toNotifyCount": 6,
       "pushResult": {
         "attempted": false,
         "ok": false,
