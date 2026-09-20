@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-09-20T13:21:10.382Z",
-  "scrapeFailureCount": 2,
+  "generatedAt": "2026-09-20T13:46:42.470Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.06451612903225806,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kameido",
-    "johoku"
+    "hibiya",
+    "soshigaya",
+    "musashino_chuo",
+    "oi_b_turf"
   ],
-  "newlyAvailableCount": 5,
+  "newlyAvailableCount": 4,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -26,7 +28,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 5,
+      "toNotifyCount": 4,
       "pushResult": {
         "attempted": false,
         "ok": false,
