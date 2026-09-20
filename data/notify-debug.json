@@ -1,16 +1,17 @@
 {
-  "generatedAt": "2026-09-20T13:46:42.470Z",
-  "scrapeFailureCount": 4,
+  "generatedAt": "2026-09-20T14:21:21.085Z",
+  "scrapeFailureCount": 5,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.12903225806451613,
+  "scrapeFailureRate": 0.16129032258064516,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "hibiya",
-    "soshigaya",
-    "musashino_chuo",
-    "oi_b_turf"
+    "higashishirahige",
+    "sarue",
+    "higashiayase",
+    "shakujii_b",
+    "fuchu_no_mori"
   ],
-  "newlyAvailableCount": 4,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -28,7 +29,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
