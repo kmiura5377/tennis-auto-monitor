@@ -1,16 +1,11 @@
 {
-  "generatedAt": "2026-09-20T14:46:47.739Z",
-  "scrapeFailureCount": 4,
+  "generatedAt": "2026-09-20T21:18:40.508Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.12903225806451613,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
-  "failedFacilityIds": [
-    "johoku",
-    "kiba",
-    "inokashira",
-    "oi_b_turf"
-  ],
-  "newlyAvailableCount": 4,
+  "failedFacilityIds": [],
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -28,7 +23,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
