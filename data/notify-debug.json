@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-21T06:55:17.843Z",
+  "generatedAt": "2026-09-21T07:24:09.425Z",
   "scrapeFailureCount": 6,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.1935483870967742,
   "blockSuspected": false,
   "failedFacilityIds": [
+    "soshigaya",
     "shiba",
-    "sarue",
-    "shakujii_b",
-    "hikarigaoka",
-    "fuchu_no_mori",
-    "oi_b_turf"
+    "akatsuka",
+    "shinozaki_a",
+    "shioiri",
+    "zenpukuji"
   ],
   "newlyAvailableCount": 5,
   "registeredUsers": 2,
@@ -19,10 +19,11 @@
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 2,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
