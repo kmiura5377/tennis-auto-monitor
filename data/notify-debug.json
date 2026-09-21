@@ -1,19 +1,18 @@
 {
-  "generatedAt": "2026-09-21T11:49:13.891Z",
-  "scrapeFailureCount": 7,
+  "generatedAt": "2026-09-21T12:26:21.652Z",
+  "scrapeFailureCount": 6,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.22580645161290322,
+  "scrapeFailureRate": 0.1935483870967742,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "sarue",
-    "shiba",
     "soshigaya",
-    "higashiayase",
-    "akatsuka",
-    "shakujii_b",
-    "fuchu_no_mori"
+    "shiba",
+    "sarue",
+    "kameido",
+    "kiba",
+    "ariake_c_turf"
   ],
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -31,7 +30,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
