@@ -1,15 +1,16 @@
 {
-  "generatedAt": "2026-09-21T07:50:36.610Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-09-21T08:23:59.864Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "higashiayase",
-    "akatsuka",
-    "higashiyamato_minami"
+    "shinozaki_a",
+    "oojima_komatsugawa",
+    "musashino_chuo",
+    "zenpukuji"
   ],
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -27,7 +28,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
