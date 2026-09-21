@@ -1,17 +1,19 @@
 {
-  "generatedAt": "2026-09-21T11:22:01.131Z",
-  "scrapeFailureCount": 5,
+  "generatedAt": "2026-09-21T11:49:13.891Z",
+  "scrapeFailureCount": 7,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.16129032258064516,
+  "scrapeFailureRate": 0.22580645161290322,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kiba",
-    "kameido",
-    "akatsuka",
+    "sarue",
+    "shiba",
+    "soshigaya",
     "higashiayase",
-    "higashiyamato_minami"
+    "akatsuka",
+    "shakujii_b",
+    "fuchu_no_mori"
   ],
-  "newlyAvailableCount": 0,
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -29,7 +31,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
