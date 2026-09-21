@@ -1,17 +1,18 @@
 {
-  "generatedAt": "2026-09-21T00:29:35.312Z",
-  "scrapeFailureCount": 5,
+  "generatedAt": "2026-09-21T00:53:37.964Z",
+  "scrapeFailureCount": 6,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.16129032258064516,
+  "scrapeFailureRate": 0.1935483870967742,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "sarue",
-    "kameido",
+    "ukima",
+    "johoku",
     "shinozaki_a",
-    "inokashira",
-    "higashiyamato_minami"
+    "higashiayase",
+    "higashiyamato_minami",
+    "ariake_c_turf"
   ],
-  "newlyAvailableCount": 11,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -29,7 +30,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 11,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
