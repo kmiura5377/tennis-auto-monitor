@@ -1,13 +1,17 @@
 {
-  "generatedAt": "2026-09-21T10:48:26.357Z",
-  "scrapeFailureCount": 1,
+  "generatedAt": "2026-09-21T11:22:01.131Z",
+  "scrapeFailureCount": 5,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.03225806451612903,
+  "scrapeFailureRate": 0.16129032258064516,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "inokashira"
+    "kiba",
+    "kameido",
+    "akatsuka",
+    "higashiayase",
+    "higashiyamato_minami"
   ],
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -25,7 +29,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
