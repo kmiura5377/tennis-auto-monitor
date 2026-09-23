@@ -1,18 +1,16 @@
 {
-  "generatedAt": "2026-09-23T11:44:11.682Z",
-  "scrapeFailureCount": 6,
+  "generatedAt": "2026-09-23T12:11:20.884Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.1935483870967742,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "oi_a_hard",
-    "soshigaya",
     "sarue",
-    "toneri",
-    "oojima_komatsugawa",
-    "shakujii_b"
+    "kiba",
+    "kameido",
+    "toneri"
   ],
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -30,7 +28,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
