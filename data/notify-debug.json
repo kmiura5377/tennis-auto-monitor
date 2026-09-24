@@ -1,16 +1,13 @@
 {
-  "generatedAt": "2026-09-24T00:48:23.082Z",
-  "scrapeFailureCount": 7,
+  "generatedAt": "2026-09-24T01:11:58.514Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.22580645161290322,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "oi_b_hard",
-    "kiba",
-    "johoku",
-    "hikarigaoka",
-    "shakujii_b",
-    "fuchu_no_mori",
+    "higashishirahige",
+    "akatsuka",
+    "shinozaki_a",
     "koganei"
   ],
   "newlyAvailableCount": 2,
@@ -20,10 +17,11 @@
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 1,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
