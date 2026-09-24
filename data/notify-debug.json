@@ -1,38 +1,39 @@
 {
-  "generatedAt": "2026-09-24T12:49:59.542Z",
+  "generatedAt": "2026-09-24T13:11:42.793Z",
   "scrapeFailureCount": 9,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.2903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "shiba",
     "sarue",
     "kiba",
     "kameido",
-    "shioiri",
+    "higashishirahige",
+    "johoku",
     "takaido",
-    "nogawa",
-    "higashiyamato_minami",
+    "oojima_komatsugawa",
+    "koganei",
     "ariake_c_turf"
   ],
-  "newlyAvailableCount": 13,
+  "newlyAvailableCount": 4,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 2,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 13,
+      "toNotifyCount": 4,
       "pushResult": {
         "attempted": false,
         "ok": false,
