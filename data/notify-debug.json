@@ -1,15 +1,20 @@
 {
-  "generatedAt": "2026-09-24T10:09:22.480Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-09-24T10:44:38.581Z",
+  "scrapeFailureCount": 8,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0.25806451612903225,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "ukima",
-    "soshigaya",
+    "kameido",
+    "sarue",
+    "toneri",
+    "oojima_komatsugawa",
+    "shinozaki_a",
+    "takaido",
+    "nogawa",
     "ariake_c_turf"
   ],
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 4,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -27,7 +32,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 4,
       "pushResult": {
         "attempted": false,
         "ok": false,
