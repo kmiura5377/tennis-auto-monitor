@@ -1,18 +1,23 @@
 {
-  "generatedAt": "2026-09-23T23:39:19.473Z",
-  "scrapeFailureCount": 6,
+  "generatedAt": "2026-09-24T00:11:14.771Z",
+  "scrapeFailureCount": 11,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.1935483870967742,
+  "scrapeFailureRate": 0.3548387096774194,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "ariake_b_hard",
-    "sarue",
-    "shinozaki_a",
-    "musashino_chuo",
-    "higashiyamato_minami",
-    "fuchu_no_mori"
+    "ariake_a_hard",
+    "kiba",
+    "kameido",
+    "higashishirahige",
+    "ukima",
+    "toneri",
+    "oojima_komatsugawa",
+    "shioiri",
+    "zenpukuji",
+    "koganei",
+    "oi_b_turf"
   ],
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -30,7 +35,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
