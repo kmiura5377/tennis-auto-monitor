@@ -1,21 +1,19 @@
 {
-  "generatedAt": "2026-09-25T12:49:14.091Z",
-  "scrapeFailureCount": 9,
+  "generatedAt": "2026-09-25T13:12:38.674Z",
+  "scrapeFailureCount": 7,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.2903225806451613,
+  "scrapeFailureRate": 0.22580645161290322,
   "blockSuspected": false,
   "failedFacilityIds": [
     "sarue",
-    "kiba",
-    "ukima",
-    "toneri",
-    "shioiri",
     "higashiayase",
+    "oojima_komatsugawa",
     "shinozaki_a",
-    "takaido",
-    "nogawa"
+    "toneri",
+    "fuchu_no_mori",
+    "koganei"
   ],
-  "newlyAvailableCount": 5,
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -33,7 +31,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 5,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
