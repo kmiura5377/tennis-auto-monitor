@@ -1,23 +1,16 @@
 {
-  "generatedAt": "2026-09-25T11:44:29.839Z",
-  "scrapeFailureCount": 11,
+  "generatedAt": "2026-09-25T12:12:16.834Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.3548387096774194,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kameido",
-    "shiba",
-    "johoku",
     "ukima",
-    "akatsuka",
-    "takaido",
-    "zenpukuji",
-    "shakujii_b",
-    "koganei",
-    "hikarigaoka",
-    "oi_b_turf"
+    "kameido",
+    "soshigaya",
+    "musashino_chuo"
   ],
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -35,7 +28,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
