@@ -1,38 +1,38 @@
 {
-  "generatedAt": "2026-09-25T05:10:50.485Z",
-  "scrapeFailureCount": 8,
+  "generatedAt": "2026-09-25T05:43:55.512Z",
+  "scrapeFailureCount": 9,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.25806451612903225,
+  "scrapeFailureRate": 0.2903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
     "shiba",
-    "soshigaya",
     "sarue",
     "kameido",
     "kiba",
-    "akatsuka",
-    "zenpukuji",
-    "nogawa"
+    "soshigaya",
+    "oojima_komatsugawa",
+    "takaido",
+    "musashino_chuo",
+    "inokashira"
   ],
-  "newlyAvailableCount": 1,
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
