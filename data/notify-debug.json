@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-09-25T01:39:40.219Z",
-  "scrapeFailureCount": 7,
+  "generatedAt": "2026-09-25T02:11:06.559Z",
+  "scrapeFailureCount": 8,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.22580645161290322,
+  "scrapeFailureRate": 0.25806451612903225,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kiba",
-    "kameido",
     "sarue",
-    "soshigaya",
+    "kameido",
     "shiba",
-    "shakujii_b",
+    "higashishirahige",
+    "higashiayase",
+    "takaido",
+    "hikarigaoka",
     "musashino_chuo"
   ],
-  "newlyAvailableCount": 4,
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -31,7 +32,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
