@@ -1,14 +1,17 @@
 {
-  "generatedAt": "2026-09-26T23:08:43.475Z",
-  "scrapeFailureCount": 2,
+  "generatedAt": "2026-09-26T23:39:37.177Z",
+  "scrapeFailureCount": 5,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.06451612903225806,
+  "scrapeFailureRate": 0.16129032258064516,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "johoku",
-    "zenpukuji"
+    "sarue",
+    "kameido",
+    "oojima_komatsugawa",
+    "zenpukuji",
+    "koganei"
   ],
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -26,7 +29,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
