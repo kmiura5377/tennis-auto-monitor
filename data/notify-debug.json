@@ -1,19 +1,16 @@
 {
-  "generatedAt": "2026-09-27T03:11:03.465Z",
-  "scrapeFailureCount": 7,
+  "generatedAt": "2026-09-27T03:44:37.571Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.22580645161290322,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kameido",
-    "sarue",
-    "akatsuka",
+    "ariake_b_hard",
+    "johoku",
     "oojima_komatsugawa",
-    "inokashira",
-    "fuchu_no_mori",
-    "oi_b_turf"
+    "koganei"
   ],
-  "newlyAvailableCount": 0,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -31,7 +28,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
