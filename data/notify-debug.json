@@ -1,31 +1,33 @@
 {
-  "generatedAt": "2026-09-27T21:08:15.699Z",
-  "scrapeFailureCount": 2,
+  "generatedAt": "2026-09-27T21:40:22.004Z",
+  "scrapeFailureCount": 3,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.06451612903225806,
+  "scrapeFailureRate": 0.0967741935483871,
   "blockSuspected": false,
   "failedFacilityIds": [
     "shiba",
-    "inokashira"
+    "soshigaya",
+    "ariake_c_turf"
   ],
-  "newlyAvailableCount": 10,
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 3,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 10,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
