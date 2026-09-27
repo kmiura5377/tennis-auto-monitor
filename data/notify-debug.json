@@ -1,15 +1,11 @@
 {
-  "generatedAt": "2026-09-27T21:40:22.004Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-09-27T22:08:46.098Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
-  "failedFacilityIds": [
-    "shiba",
-    "soshigaya",
-    "ariake_c_turf"
-  ],
-  "newlyAvailableCount": 2,
+  "failedFacilityIds": [],
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -27,7 +23,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
