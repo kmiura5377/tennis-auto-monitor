@@ -1,39 +1,31 @@
 {
-  "generatedAt": "2026-09-28T12:11:26.694Z",
-  "scrapeFailureCount": 9,
+  "generatedAt": "2026-09-28T12:50:34.252Z",
+  "scrapeFailureCount": 2,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.2903225806451613,
+  "scrapeFailureRate": 0.06451612903225806,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "sarue",
-    "akatsuka",
-    "higashiayase",
-    "ukima",
-    "shioiri",
-    "takaido",
-    "inokashira",
-    "koganei",
-    "nogawa"
+    "shiba",
+    "shinozaki_a"
   ],
-  "newlyAvailableCount": 4,
+  "newlyAvailableCount": 5,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": false,
         "ok": false,
