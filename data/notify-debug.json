@@ -1,13 +1,16 @@
 {
-  "generatedAt": "2026-09-28T21:41:43.339Z",
-  "scrapeFailureCount": 1,
+  "generatedAt": "2026-09-28T22:08:08.313Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.03225806451612903,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "musashino_chuo"
+    "soshigaya",
+    "akatsuka",
+    "oi_b_turf",
+    "higashiyamato_minami"
   ],
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -25,7 +28,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
