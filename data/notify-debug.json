@@ -1,35 +1,37 @@
 {
-  "generatedAt": "2026-09-28T03:09:34.048Z",
-  "scrapeFailureCount": 5,
+  "generatedAt": "2026-09-28T03:46:23.472Z",
+  "scrapeFailureCount": 8,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.16129032258064516,
+  "scrapeFailureRate": 0.25806451612903225,
   "blockSuspected": false,
   "failedFacilityIds": [
     "kameido",
-    "soshigaya",
-    "takaido",
-    "higashiyamato_minami",
-    "oi_b_turf"
+    "shiba",
+    "kiba",
+    "akatsuka",
+    "hikarigaoka",
+    "shioiri",
+    "fuchu_no_mori",
+    "higashiyamato_minami"
   ],
-  "newlyAvailableCount": 5,
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 5,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
