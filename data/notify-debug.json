@@ -1,18 +1,20 @@
 {
-  "generatedAt": "2026-09-28T09:12:19.292Z",
-  "scrapeFailureCount": 6,
+  "generatedAt": "2026-09-28T09:46:33.265Z",
+  "scrapeFailureCount": 8,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.1935483870967742,
+  "scrapeFailureRate": 0.25806451612903225,
   "blockSuspected": false,
   "failedFacilityIds": [
+    "ariake_b_hard",
+    "soshigaya",
     "kameido",
     "kiba",
-    "ukima",
+    "oojima_komatsugawa",
+    "zenpukuji",
     "takaido",
-    "koganei",
     "fuchu_no_mori"
   ],
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 6,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -30,7 +32,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 6,
       "pushResult": {
         "attempted": false,
         "ok": false,
