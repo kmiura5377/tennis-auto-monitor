@@ -1,21 +1,17 @@
 {
-  "generatedAt": "2026-09-29T09:46:55.976Z",
-  "scrapeFailureCount": 9,
+  "generatedAt": "2026-09-29T10:12:01.747Z",
+  "scrapeFailureCount": 5,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.2903225806451613,
+  "scrapeFailureRate": 0.16129032258064516,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "shiba",
-    "sarue",
     "kameido",
-    "soshigaya",
-    "kiba",
-    "shinozaki_a",
-    "musashino_chuo",
-    "inokashira",
-    "higashiyamato_minami"
+    "higashishirahige",
+    "johoku",
+    "nogawa",
+    "fuchu_no_mori"
   ],
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -33,7 +29,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
