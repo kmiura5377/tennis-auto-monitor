@@ -1,20 +1,21 @@
 {
-  "generatedAt": "2026-09-30T06:51:40.928Z",
-  "scrapeFailureCount": 8,
+  "generatedAt": "2026-09-30T07:13:51.683Z",
+  "scrapeFailureCount": 9,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.25806451612903225,
+  "scrapeFailureRate": 0.2903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
+    "kameido",
     "shiba",
     "kiba",
     "soshigaya",
-    "johoku",
     "shinozaki_a",
-    "shakujii_b",
-    "musashino_chuo",
-    "oi_b_turf"
+    "shioiri",
+    "ariake_c_turf",
+    "fuchu_no_mori",
+    "higashiyamato_minami"
   ],
-  "newlyAvailableCount": 1,
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -32,7 +33,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
