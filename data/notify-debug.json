@@ -1,24 +1,28 @@
 {
-  "generatedAt": "2026-10-01T00:21:24.585Z",
-  "scrapeFailureCount": 5,
+  "generatedAt": "2026-10-01T06:20:36.522Z",
+  "scrapeFailureCount": 9,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.16129032258064516,
+  "scrapeFailureRate": 0.2903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "kiba",
     "soshigaya",
-    "higashishirahige",
+    "kiba",
+    "johoku",
+    "toneri",
+    "takaido",
     "hikarigaoka",
-    "oi_b_turf"
+    "oi_b_turf",
+    "fuchu_no_mori",
+    "ariake_c_turf"
   ],
-  "newlyAvailableCount": 10,
+  "newlyAvailableCount": 6,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
-      "notifyFavoritesOnly": true,
-      "toNotifyCount": 1,
+      "notifyFavoritesOnly": false,
+      "toNotifyCount": 6,
       "pushResult": {
         "attempted": true,
         "ok": true
@@ -28,7 +32,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 10,
+      "toNotifyCount": 6,
       "pushResult": {
         "attempted": false,
         "ok": false,
