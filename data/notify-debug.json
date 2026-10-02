@@ -1,22 +1,18 @@
 {
-  "generatedAt": "2026-10-02T13:54:09.079Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-10-02T19:15:11.732Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
-  "failedFacilityIds": [
-    "sarue",
-    "shinozaki_a",
-    "fuchu_no_mori"
-  ],
-  "newlyAvailableCount": 13,
+  "failedFacilityIds": [],
+  "newlyAvailableCount": 14,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 13,
+      "toNotifyCount": 14,
       "pushResult": {
         "attempted": true,
         "ok": true
@@ -26,7 +22,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 13,
+      "toNotifyCount": 14,
       "pushResult": {
         "attempted": false,
         "ok": false,
