@@ -15,6 +15,8 @@ const VAPID_PUBLIC_KEY = 'BNpuNfvpkX-8XMwnvBU4K7cykGDCEh6uSR7IwtKEfQJh4E-qus2N1P
 const BASE_URL = 'https://kouen.sports.metro.tokyo.lg.jp/web/index.jsp';
 const WEEKS_TO_FETCH = 4;
 const SCRAPE_CONCURRENCY = 5;
+const RETRY_ROUNDS = 2;
+const RETRY_CONCURRENCY = 2;
 
 // この割合以上の施設で取得に失敗したら「予約サイト側からアクセス制限を受けた可能性」と
 // みなし、緊急通知を送った上でこの自動実行(GitHub Actionsのスケジュール)自体を無効化する。
@@ -133,7 +135,8 @@ function mergeParsedWeek(days, facility, parsed) {
   }
 }
 
-async function scrapeFacility(browser, facility, days) {
+// diag には失敗理由・コート数・取得できた週数を書き込む（data/notify-debug.json に残して原因調査に使う）
+async function scrapeFacility(browser, facility, days, diag) {
   const page = await browser.newPage();
   page.setDefaultTimeout(30000);
 
@@ -162,6 +165,7 @@ async function scrapeFacility(browser, facility, days) {
     const facilityOptions = await page.locator('#facility-select option').evaluateAll(els =>
       els.map(e => ({ text: e.textContent, value: e.value })).filter(o => o.value !== '0')
     );
+    diag.courtOptions = facilityOptions.map(o => o.text.trim());
     if (facilityOptions.length === 0) {
       throw new Error('施設の選択肢が見つかりませんでした');
     }
@@ -173,6 +177,7 @@ async function scrapeFacility(browser, facility, days) {
     await waitWeekPopulated(page);
     let parsed = await parseWeekTable(page);
     mergeParsedWeek(days, facility, parsed);
+    diag.weeksFetched = 1;
     let weekHead = await page.locator('#week-head').innerText().catch(() => '');
     console.log(`[${facility.id}] week 1 parsed (${Object.keys(parsed).length} dates, head=${weekHead})`);
 
@@ -199,6 +204,7 @@ async function scrapeFacility(browser, facility, days) {
       }
 
       mergeParsedWeek(days, facility, parsed);
+      diag.weeksFetched = w + 1;
       console.log(`[${facility.id}] week ${w + 1} parsed (${Object.keys(parsed).length} dates, attempts=${attempt}, head=${weekHead})`);
       await sleep(800);
     }
@@ -207,10 +213,29 @@ async function scrapeFacility(browser, facility, days) {
     return true;
   } catch (error) {
     console.error(`[${facility.id}] ERROR: ${error.message}`);
+    diag.error = String(error.message).split('\n')[0].slice(0, 200);
     return false;
   } finally {
     await page.close();
   }
+}
+
+// 今回取得できなかった「施設×日付」を前回データから補う。補った施設のIDを返す。
+// 今日（日本時間）より前の日付は不要なので引き継がない。
+function carryOverMissing(previousDays, days) {
+  const todayJst = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+  const stale = new Set();
+  for (const [dateStr, prevFacilities] of Object.entries(previousDays)) {
+    if (dateStr < todayJst) continue;
+    for (const prevFacility of prevFacilities) {
+      const hasNew = (days[dateStr] || []).some(f => f.facilityId === prevFacility.facilityId);
+      if (hasNew) continue;
+      if (!days[dateStr]) days[dateStr] = [];
+      days[dateStr].push(prevFacility);
+      stale.add(prevFacility.facilityId);
+    }
+  }
+  return [...stale];
 }
 
 function loadPreviousData(filePath) {
@@ -480,25 +505,44 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
 
   const browser = await chromium.launch({ headless: true });
   const days = {};
-  let failureCount = 0;
-  const failedFacilityIds = [];
+  const facilityDiag = {}; // 施設ごとの診断情報（失敗理由・コート数・取得週数）
 
-  // 施設を SCRAPE_CONCURRENCY 件ずつ同時処理する簡易ワーカープール
-  let nextIndex = 0;
-  async function worker() {
-    while (nextIndex < FACILITIES.length) {
-      const facility = FACILITIES[nextIndex++];
-      const ok = await scrapeFacility(browser, facility, days);
-      if (!ok) {
-        failureCount++;
-        failedFacilityIds.push(facility.id);
+  // 施設を concurrency 件ずつ同時処理する簡易ワーカープール。失敗した施設のIDを返す
+  async function runPool(targets, concurrency) {
+    const failed = [];
+    let nextIndex = 0;
+    async function worker() {
+      while (nextIndex < targets.length) {
+        const facility = targets[nextIndex++];
+        const diag = { attempts: ((facilityDiag[facility.id] || {}).attempts || 0) + 1 };
+        facilityDiag[facility.id] = diag;
+        const ok = await scrapeFacility(browser, facility, days, diag);
+        // 週送りが途中で止まった（WEEKS_TO_FETCH 週ぶん取れなかった）場合も取得失敗として扱う
+        if (ok && diag.weeksFetched < WEEKS_TO_FETCH) {
+          diag.error = `取得できたのは${diag.weeksFetched}/${WEEKS_TO_FETCH}週のみ`;
+          failed.push(facility);
+        } else if (!ok) {
+          failed.push(facility);
+        }
       }
     }
+    await Promise.all(Array.from({ length: Math.min(concurrency, targets.length) }, () => worker()));
+    return failed;
   }
-  const workerCount = Math.min(SCRAPE_CONCURRENCY, FACILITIES.length);
-  await Promise.all(Array.from({ length: workerCount }, () => worker()));
+
+  let failedFacilities = await runPool(FACILITIES, SCRAPE_CONCURRENCY);
+  // 失敗した施設は、サイトへの負荷を抑えるため同時数を減らして最大 RETRY_ROUNDS 回やり直す
+  for (let round = 1; round <= RETRY_ROUNDS && failedFacilities.length > 0; round++) {
+    console.log(`RETRY round ${round}: ${failedFacilities.map(f => f.id).join(',')}`);
+    failedFacilities = await runPool(failedFacilities, RETRY_CONCURRENCY);
+  }
+  const failureCount = failedFacilities.length;
+  const failedFacilityIds = failedFacilities.map(f => f.id);
 
   await browser.close();
+
+  // 取得に失敗した施設・日付は前回のデータを引き継ぐ（表示から消えてしまうのを防ぐ）
+  const staleFacilityIds = carryOverMissing(previousData.days || {}, days);
 
   const failureRate = failureCount / FACILITIES.length;
   console.log(`FAILURE_RATE ${failureCount}/${FACILITIES.length} (${(failureRate * 100).toFixed(0)}%)`);
@@ -523,6 +567,8 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
     scrapeFailureRate: failureRate,
     blockSuspected,
     failedFacilityIds,
+    staleFacilityIds,
+    facilityDiag,
     newlyAvailableCount: newlyAvailable.length,
     registeredUsers: users.length,
     perUser: []

@@ -23,24 +23,46 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    # 通常は数分〜10分程度で終わる想定。GitHub Actions側の一時的な不具合等で
-    # 実行が開始されないまま長時間キューに残り続けると、後続の30分おきの実行が
-    # ずっと詰まってしまうため、上限を設けて早めに打ち切れるようにする。
-    timeout-minutes: 20
+    # スクレイピング(約10分)＋次の実行までの待ち時間(30分間隔になるまで)を含めて、
+    # 余裕を持たせた上限。GitHub Actions側の不具合等で詰まったままにならないようにする。
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
 
+      # GitHubの定期実行(schedule)は間引かれて数時間空くことがあるため、
+      # 「各実行の最後に次の実行を自分で起動する」連鎖を主にし、scheduleは連鎖が
+      # 途切れた時の再始動用に残している。連鎖が生きているのにscheduleも動いて
+      # 二重に実行しないよう、直近20分以内にデータが更新されていればscheduleの実行は何もしない。
+      - name: Guard against duplicate runs
+        id: guard
+        run: |
+          echo "START_EPOCH=$(date +%s)" >> "$GITHUB_ENV"
+          skip=false
+          if [ "${{ github.event_name }}" = "schedule" ] && [ -f data/availability.json ]; then
+            gen=$(jq -r '.generatedAt' data/availability.json)
+            age=$(( $(date +%s) - $(date -d "$gen" +%s) ))
+            if [ "$age" -lt 1200 ]; then
+              skip=true
+              echo "データは${age}秒前に更新済みのため、この実行は何もしない"
+            fi
+          fi
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"
+
       - uses: actions/setup-node@v4
+        if: steps.guard.outputs.skip != 'true'
         with:
           node-version: '20'
 
       - name: Install dependencies
+        if: steps.guard.outputs.skip != 'true'
         run: npm install --no-audit --no-fund
 
       - name: Install Playwright browser
+        if: steps.guard.outputs.skip != 'true'
         run: npx playwright install --with-deps chromium
 
       - name: Run scraper
+        if: steps.guard.outputs.skip != 'true'
         env:
           PUSH_VAPID_PRIVATE_KEY: ${{ secrets.PUSH_VAPID_PRIVATE_KEY }}
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
@@ -51,6 +73,7 @@ jobs:
         run: npm run scrape
 
       - name: Commit updated data if changed
+        if: steps.guard.outputs.skip != 'true'
         run: |
           set -x
           git config user.name "tennis-monitor-bot"
@@ -90,3 +113,25 @@ jobs:
 
           echo "push failed after retries"
           exit 1
+
+      # 次の実行を自分で起動する（30分間隔になるまで待ってから）。
+      # workflow_dispatch はGITHUB_TOKENからでも起動できる。日本時間の深夜(0〜5時)は
+      # 起動せず連鎖を止め、朝6時台のscheduleで再開させる。
+      - name: Wait and trigger next run
+        if: always() && steps.guard.outputs.skip != 'true' && github.event.inputs.test_push_only != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          elapsed=$(( $(date +%s) - START_EPOCH ))
+          wait=$(( 1800 - elapsed ))
+          if [ "$wait" -gt 0 ]; then
+            echo "次の実行まで${wait}秒待つ"
+            sleep "$wait"
+          fi
+          hour=$(TZ=Asia/Tokyo date +%H)
+          if [ "$((10#$hour))" -lt 6 ]; then
+            echo "深夜(日本時間${hour}時)のため次の実行は起動しない"
+            exit 0
+          fi
+          gh workflow run monitor.yml --ref main
