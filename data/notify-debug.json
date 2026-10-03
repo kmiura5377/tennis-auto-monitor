@@ -1,27 +1,23 @@
 {
-  "generatedAt": "2026-10-03T13:10:01.888Z",
-  "scrapeFailureCount": 6,
+  "generatedAt": "2026-10-03T13:34:33.150Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.1935483870967742,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "ariake_a_hard",
     "toneri",
-    "oojima_komatsugawa",
-    "higashiyamato_minami",
+    "ariake_a_hard",
     "koganei",
     "ariake_c_turf"
   ],
   "staleFacilityIds": [
-    "oojima_komatsugawa",
-    "higashiyamato_minami",
     "toneri",
     "koganei",
     "ariake_c_turf",
+    "oi_b_turf",
     "shinozaki_a",
     "shakujii_b",
     "zenpukuji",
-    "oi_b_turf",
     "kameido",
     "shioiri"
   ],
@@ -42,7 +38,11 @@
     },
     "ariake_a_hard": {
       "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "courtOptions": [
+        "ハード"
+      ],
+      "weeksFetched": 1,
+      "error": "取得できたのは1/4週のみ"
     },
     "ariake_b_hard": {
       "attempts": 1,
@@ -73,14 +73,14 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 3,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -101,14 +101,14 @@
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 3,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝・照明有）",
         "テニス（人工芝・照明無）"
@@ -116,7 +116,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -131,18 +131,25 @@
     },
     "toneri": {
       "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 1,
+      "error": "取得できたのは1/4週のみ"
     },
     "shinozaki_a": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "oojima_komatsugawa": {
-      "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "attempts": 2,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "shioiri": {
       "attempts": 2,
@@ -159,21 +166,21 @@
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 2,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "hikarigaoka": {
       "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
+    "hikarigaoka": {
+      "attempts": 1,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
     "shakujii_b": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -187,7 +194,7 @@
       "weeksFetched": 4
     },
     "musashino_chuo": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -216,9 +223,11 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 3,
-      "courtOptions": [],
-      "error": "施設の選択肢が見つかりませんでした"
+      "attempts": 1,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "oi_b_turf": {
       "attempts": 1,
@@ -229,31 +238,28 @@
     },
     "ariake_c_turf": {
       "attempts": 3,
-      "courtOptions": [
-        "人工芝"
-      ],
-      "weeksFetched": 1,
-      "error": "取得できたのは1/4週のみ"
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     }
   },
-  "newlyAvailableCount": 4,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
-      "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "notifyFavoritesOnly": true,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
