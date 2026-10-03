@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T08:28:40.589Z",
+  "generatedAt": "2026-10-03T09:01:21.429Z",
   "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.12903225806451613,
@@ -7,13 +7,12 @@
   "failedFacilityIds": [
     "toneri",
     "ariake_a_hard",
-    "ariake_c_turf",
-    "koganei"
+    "koganei",
+    "ariake_c_turf"
   ],
   "staleFacilityIds": [
+    "toneri",
     "ariake_c_turf",
-    "inokashira",
-    "oojima_komatsugawa",
     "shioiri",
     "shinozaki_a"
   ],
@@ -41,7 +40,7 @@
       "error": "取得できたのは1/4週のみ"
     },
     "ariake_b_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "ハード"
       ],
@@ -62,7 +61,7 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -76,7 +75,7 @@
       "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -130,8 +129,8 @@
       "courtOptions": [
         "テニス（人工芝）"
       ],
-      "weeksFetched": 2,
-      "error": "取得できたのは2/4週のみ"
+      "weeksFetched": 1,
+      "error": "取得できたのは1/4週のみ"
     },
     "shinozaki_a": {
       "attempts": 1,
@@ -141,14 +140,14 @@
       "weeksFetched": 4
     },
     "oojima_komatsugawa": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -205,7 +204,7 @@
       "error": "取得できたのは1/4週のみ"
     },
     "nogawa": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -219,14 +218,14 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "人工芝"
       ],
@@ -238,24 +237,25 @@
       "error": "施設の選択肢が見つかりませんでした"
     }
   },
-  "newlyAvailableCount": 6,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 6,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 6,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
