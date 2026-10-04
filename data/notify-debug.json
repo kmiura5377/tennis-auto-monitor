@@ -1,21 +1,24 @@
 {
-  "generatedAt": "2026-10-04T03:32:38.372Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-10-04T04:04:23.630Z",
+  "scrapeFailureCount": 5,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0.16129032258064516,
   "blockSuspected": false,
   "failedFacilityIds": [
     "ariake_a_hard",
+    "toneri",
     "koganei",
+    "shakujii_b",
     "ariake_c_turf"
   ],
   "staleFacilityIds": [
-    "hibiya",
-    "shinozaki_a",
-    "shioiri",
+    "shakujii_b",
+    "toneri",
     "koganei",
     "ariake_c_turf",
-    "shakujii_b",
+    "hibiya",
+    "shioiri",
+    "shinozaki_a",
     "shiba",
     "ukima",
     "higashiayase",
@@ -61,7 +64,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 1,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -75,21 +78,21 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 2,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "kiba": {
       "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
-    "soshigaya": {
+    "kiba": {
       "attempts": 2,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "soshigaya": {
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -103,7 +106,7 @@
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -136,7 +139,8 @@
       "courtOptions": [
         "テニス（人工芝）"
       ],
-      "weeksFetched": 4
+      "weeksFetched": 1,
+      "error": "取得できたのは1/4週のみ"
     },
     "shinozaki_a": {
       "attempts": 1,
@@ -153,7 +157,7 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 3,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -181,11 +185,8 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "inokashira": {
       "attempts": 1,
@@ -195,7 +196,7 @@
       "weeksFetched": 4
     },
     "musashino_chuo": {
-      "attempts": 3,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -203,21 +204,17 @@
     },
     "koganei": {
       "attempts": 3,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 1,
-      "error": "取得できたのは1/4週のみ"
+      "error": "page.goto: Timeout 30000ms exceeded."
     },
     "nogawa": {
-      "attempts": 1,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -231,7 +228,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "人工芝"
       ],
@@ -246,24 +243,25 @@
       "error": "取得できたのは1/4週のみ"
     }
   },
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 1,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
