@@ -137,7 +137,11 @@ function mergeParsedWeek(days, facility, parsed) {
 
 // diag には失敗理由・コート数・取得できた週数を書き込む（data/notify-debug.json に残して原因調査に使う）
 async function scrapeFacility(browser, facility, days, diag) {
-  const page = await browser.newPage();
+  // 施設ごとに独立したブラウザ環境(cookie等を共有しない)を使う。browser.newPage() だと全施設が
+  // 同じcookieを共有し、予約サイト側が持つ「表示中の週」などの状態が並行処理の施設同士で混ざり、
+  // 取得失敗や別施設の週のデータが混入する原因になりうるため。
+  const context = await browser.newContext();
+  const page = await context.newPage();
   page.setDefaultTimeout(30000);
 
   try {
@@ -216,18 +220,22 @@ async function scrapeFacility(browser, facility, days, diag) {
     diag.error = String(error.message).split('\n')[0].slice(0, 200);
     return false;
   } finally {
-    await page.close();
+    await context.close();
   }
 }
 
 // 今回取得できなかった「施設×日付」を前回データから補う。補った施設のIDを返す。
 // 今日（日本時間）より前の日付は不要なので引き継がない。
-function carryOverMissing(previousDays, days) {
+// 取得に失敗した施設(failedIds)だけが対象。成功した施設で日付が無いのは「サイトが表示しなくなった」
+// ということなので引き継がない。今回取れた日付の範囲を超える先の日付も引き継がない。
+function carryOverMissing(previousDays, days, failedIds) {
   const todayJst = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+  const lastFreshDate = Object.keys(days).sort().pop() || todayJst;
   const stale = new Set();
   for (const [dateStr, prevFacilities] of Object.entries(previousDays)) {
-    if (dateStr < todayJst) continue;
+    if (dateStr < todayJst || dateStr > lastFreshDate) continue;
     for (const prevFacility of prevFacilities) {
+      if (!failedIds.includes(prevFacility.facilityId)) continue;
       const hasNew = (days[dateStr] || []).some(f => f.facilityId === prevFacility.facilityId);
       if (hasNew) continue;
       if (!days[dateStr]) days[dateStr] = [];
@@ -542,7 +550,7 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
   await browser.close();
 
   // 取得に失敗した施設・日付は前回のデータを引き継ぐ（表示から消えてしまうのを防ぐ）
-  const staleFacilityIds = carryOverMissing(previousData.days || {}, days);
+  const staleFacilityIds = carryOverMissing(previousData.days || {}, days, failedFacilityIds);
 
   const failureRate = failureCount / FACILITIES.length;
   console.log(`FAILURE_RATE ${failureCount}/${FACILITIES.length} (${(failureRate * 100).toFixed(0)}%)`);
