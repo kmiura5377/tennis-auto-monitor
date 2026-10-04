@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T06:32:50.379Z",
+  "generatedAt": "2026-10-04T07:02:52.026Z",
   "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.12903225806451613,
@@ -7,14 +7,14 @@
   "failedFacilityIds": [
     "toneri",
     "ariake_a_hard",
-    "koganei",
-    "ariake_c_turf"
+    "ariake_c_turf",
+    "koganei"
   ],
   "staleFacilityIds": [
+    "ukima",
     "toneri",
     "koganei",
     "ariake_c_turf",
-    "ukima",
     "oi_b_turf",
     "hibiya",
     "shioiri",
@@ -49,7 +49,7 @@
       "error": "取得できたのは1/4週のみ"
     },
     "ariake_b_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "ハード"
       ],
@@ -120,7 +120,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -142,7 +142,7 @@
       "error": "取得できたのは1/4週のみ"
     },
     "shinozaki_a": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -156,14 +156,14 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "takaido": {
-      "attempts": 3,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -234,7 +234,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "人工芝"
       ],
@@ -242,28 +242,28 @@
     },
     "ariake_c_turf": {
       "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "courtOptions": [],
+      "error": "施設の選択肢が見つかりませんでした"
     }
   },
-  "newlyAvailableCount": 0,
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
