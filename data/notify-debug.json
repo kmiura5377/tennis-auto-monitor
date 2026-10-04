@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T00:28:11.609Z",
+  "generatedAt": "2026-10-04T00:58:58.279Z",
   "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.12903225806451613,
@@ -12,15 +12,15 @@
   ],
   "staleFacilityIds": [
     "koganei",
-    "shakujii_b",
-    "toneri",
     "ariake_c_turf",
+    "toneri",
+    "shakujii_b",
+    "zenpukuji",
     "shiba",
     "ukima",
     "shinozaki_a",
     "higashiayase",
     "oi_b_turf",
-    "zenpukuji",
     "kameido",
     "shioiri"
   ],
@@ -33,7 +33,7 @@
       "weeksFetched": 4
     },
     "oi_b_hard": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "ハード"
       ],
@@ -41,10 +41,14 @@
     },
     "ariake_a_hard": {
       "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "courtOptions": [
+        "ハード"
+      ],
+      "weeksFetched": 1,
+      "error": "取得できたのは1/4週のみ"
     },
     "ariake_b_hard": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "ハード"
       ],
@@ -79,14 +83,14 @@
       "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -115,7 +119,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -130,7 +134,11 @@
     },
     "toneri": {
       "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 2,
+      "error": "取得できたのは2/4週のみ"
     },
     "shinozaki_a": {
       "attempts": 1,
@@ -211,14 +219,14 @@
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 3,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
