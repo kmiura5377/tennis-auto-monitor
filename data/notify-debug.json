@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T10:18:26.114Z",
+  "generatedAt": "2026-10-05T10:42:31.507Z",
   "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0,
@@ -71,28 +71,28 @@
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝・照明有）",
         "テニス（人工芝・照明無）"
@@ -100,7 +100,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -114,7 +114,7 @@
       "weeksFetched": 4
     },
     "toneri": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -135,7 +135,7 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -184,14 +184,14 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -212,7 +212,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "人工芝"
       ],
@@ -233,11 +233,10 @@
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
