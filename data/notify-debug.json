@@ -1,15 +1,19 @@
 {
-  "generatedAt": "2026-10-05T03:46:58.244Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-10-05T04:21:13.603Z",
+  "scrapeFailureCount": 5,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0.16129032258064516,
   "blockSuspected": false,
   "failedFacilityIds": [
     "ariake_a_hard",
+    "toneri",
+    "shioiri",
     "koganei",
     "ariake_c_turf"
   ],
   "staleFacilityIds": [
+    "shioiri",
+    "toneri",
     "koganei",
     "ariake_a_hard",
     "ariake_c_turf"
@@ -59,21 +63,21 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "kameido": {
       "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
-    "kiba": {
+    "kameido": {
       "attempts": 1,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "kiba": {
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -87,21 +91,21 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 3,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 1,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝・照明有）",
         "テニス（人工芝・照明無）"
@@ -124,13 +128,10 @@
     },
     "toneri": {
       "attempts": 3,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "shinozaki_a": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -144,14 +145,11 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "page.goto: Timeout 30000ms exceeded."
     },
     "takaido": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -165,14 +163,14 @@
       "weeksFetched": 4
     },
     "hikarigaoka": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 3,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -201,7 +199,7 @@
       "error": "取得できたのは1/4週のみ"
     },
     "nogawa": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -215,7 +213,7 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -230,10 +228,14 @@
     },
     "ariake_c_turf": {
       "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "courtOptions": [
+        "人工芝"
+      ],
+      "weeksFetched": 1,
+      "error": "取得できたのは1/4週のみ"
     }
   },
-  "newlyAvailableCount": 1,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -251,7 +253,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
