@@ -97,6 +97,12 @@ async function waitWeekPopulated(page) {
   }, { timeout: 25000 });
 }
 
+// 表示中の週のセルid一覧（日付を含む）。週が切り替わったかの判定に使う
+async function weekCellIds(page) {
+  return page.evaluate(() =>
+    [...document.querySelectorAll('#week-info td[id]')].map(t => t.id).join(','));
+}
+
 // #week-info の innerHTML から { 'YYYY-MM-DD': [{time, available}] } を抽出
 async function parseWeekTable(page) {
   return page.evaluate(() => {
@@ -165,6 +171,8 @@ async function scrapeFacility(browser, facility, days, diag) {
     await sleep(2000);
     await waitLoadingHidden(page);
 
+    // 施設(コート)の選択肢が読み込まれるまで最大15秒待つ（遅い時に「選択肢なし」と誤判定しないため）
+    await page.waitForFunction(() => document.querySelectorAll('#facility-select option').length > 1, null, { timeout: 15000 }).catch(() => {});
     // 施設(コート)選択: プレースホルダー以外の最初の選択肢を使う
     const facilityOptions = await page.locator('#facility-select option').evaluateAll(els =>
       els.map(e => ({ text: e.textContent, value: e.value })).filter(o => o.value !== '0')
@@ -194,8 +202,14 @@ async function scrapeFacility(browser, facility, days, diag) {
         attempt++;
         // getWeekInfoAjax(4, 0, 0) is the exact handler bound to the "次週>>" link;
         // calling it directly is far more reliable than clicking the element.
+        const idsBefore = await weekCellIds(page);
         await page.evaluate(() => { if (typeof getWeekInfoAjax === 'function') getWeekInfoAjax(4, 0, 0); });
-        await sleep(1500 + attempt * 500);
+        // サイトの反応が遅いと固定の待ち時間では前の週のままを読んでしまうため、
+        // 表の日付(セルid)が実際に切り替わるまで最大15秒待つ
+        await page.waitForFunction(before =>
+          [...document.querySelectorAll('#week-info td[id]')].map(t => t.id).join(',') !== before,
+        idsBefore, { timeout: 15000 }).catch(() => {});
+        await sleep(500);
         await waitWeekPopulated(page).catch(() => {});
         parsed = await parseWeekTable(page);
         newDates = Object.keys(parsed).sort().join(',');
