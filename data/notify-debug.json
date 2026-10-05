@@ -1,20 +1,22 @@
 {
-  "generatedAt": "2026-10-05T07:47:19.635Z",
-  "scrapeFailureCount": 4,
+  "generatedAt": "2026-10-05T08:16:35.600Z",
+  "scrapeFailureCount": 5,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.12903225806451613,
+  "scrapeFailureRate": 0.16129032258064516,
   "blockSuspected": false,
   "failedFacilityIds": [
-    "toneri",
     "ariake_a_hard",
+    "toneri",
+    "oojima_komatsugawa",
     "koganei",
     "ariake_c_turf"
   ],
   "staleFacilityIds": [
+    "oojima_komatsugawa",
+    "toneri",
     "koganei",
     "ariake_a_hard",
-    "ariake_c_turf",
-    "toneri"
+    "ariake_c_turf"
   ],
   "facilityDiag": {
     "oi_a_hard": {
@@ -54,14 +56,14 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 1,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -82,28 +84,28 @@
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "higashishirahige": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "ukima": {
       "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
-    "johoku": {
+    "higashishirahige": {
+      "attempts": 2,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "ukima": {
       "attempts": 3,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "johoku": {
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝・照明有）",
         "テニス（人工芝・照明無）"
@@ -126,11 +128,14 @@
     },
     "toneri": {
       "attempts": 3,
-      "courtOptions": [],
-      "error": "施設の選択肢が見つかりませんでした"
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 1,
+      "error": "取得できたのは1/4週のみ"
     },
     "shinozaki_a": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -138,10 +143,8 @@
     },
     "oojima_komatsugawa": {
       "attempts": 3,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "courtOptions": [],
+      "error": "施設の選択肢が見つかりませんでした"
     },
     "shioiri": {
       "attempts": 1,
@@ -151,14 +154,14 @@
       "weeksFetched": 4
     },
     "takaido": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -194,7 +197,11 @@
     },
     "koganei": {
       "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 1,
+      "error": "取得できたのは1/4週のみ"
     },
     "nogawa": {
       "attempts": 1,
@@ -204,14 +211,14 @@
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -226,7 +233,11 @@
     },
     "ariake_c_turf": {
       "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "courtOptions": [
+        "人工芝"
+      ],
+      "weeksFetched": 1,
+      "error": "取得できたのは1/4週のみ"
     }
   },
   "newlyAvailableCount": 2,
