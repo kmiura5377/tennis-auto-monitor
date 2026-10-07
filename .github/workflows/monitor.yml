@@ -134,4 +134,14 @@ jobs:
             echo "深夜(日本時間${hour}時)のため次の実行は起動しない"
             exit 0
           fi
-          gh workflow run monitor.yml --ref main
+          # 一時的なGitHub APIの不調で連鎖が途切れないよう、数回やり直す
+          for attempt in 1 2 3 4 5; do
+            if gh workflow run monitor.yml --ref main; then
+              echo "次の実行を起動した(試行${attempt}回目)"
+              exit 0
+            fi
+            echo "起動に失敗(試行${attempt}回目)。待ってやり直す"
+            sleep $((attempt * 10))
+          done
+          echo "次の実行を起動できなかった"
+          exit 1

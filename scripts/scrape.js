@@ -21,6 +21,8 @@ const RETRY_CONCURRENCY = 2;
 // この割合以上の施設で取得に失敗したら「予約サイト側からアクセス制限を受けた可能性」と
 // みなし、緊急通知を送った上でこの自動実行(GitHub Actionsのスケジュール)自体を無効化する。
 const BLOCK_SUSPECTED_THRESHOLD = 0.5;
+// 上の失敗率を何回連続で超えたら自動停止するか（1回だけの一時的な接続障害では止めない）
+const BLOCK_STREAK_TO_DISABLE = 3;
 
 // テニス（ハード）4施設 + テニス（人工芝）27施設 = 全31施設
 // （大井ふ頭海浜公園Ｂは両方の区分に存在するため、別施設として扱う）
@@ -241,13 +243,14 @@ async function scrapeFacility(browser, facility, days, diag) {
 // 今回取得できなかった「施設×日付」を前回データから補う。補った施設のIDを返す。
 // 今日（日本時間）より前の日付は不要なので引き継がない。
 // 取得に失敗した施設(failedIds)だけが対象。成功した施設で日付が無いのは「サイトが表示しなくなった」
-// ということなので引き継がない。今回取れた日付の範囲を超える先の日付も引き継がない。
+// ということなので引き継がない。
+// （以前は「今回取れた最後の日付」より先を切り捨てていたが、全施設が失敗した時に
+//   今日以外の日付が全部消えてしまう不具合になったため、この上限は設けない）
 function carryOverMissing(previousDays, days, failedIds) {
   const todayJst = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
-  const lastFreshDate = Object.keys(days).sort().pop() || todayJst;
   const stale = new Set();
   for (const [dateStr, prevFacilities] of Object.entries(previousDays)) {
-    if (dateStr < todayJst || dateStr > lastFreshDate) continue;
+    if (dateStr < todayJst) continue;
     for (const prevFacility of prevFacilities) {
       if (!failedIds.includes(prevFacility.facilityId)) continue;
       const hasNew = (days[dateStr] || []).some(f => f.facilityId === prevFacility.facilityId);
@@ -258,6 +261,16 @@ function carryOverMissing(previousDays, days, failedIds) {
     }
   }
   return [...stale];
+}
+
+// 前回までに「半数以上の施設が失敗」が何回連続していたか（data/notify-debug.json の blockStreak）
+function loadPreviousBlockStreak() {
+  try {
+    const prev = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'notify-debug.json'), 'utf8'));
+    return Number(prev.blockStreak) || 0;
+  } catch (e) {
+    return 0;
+  }
 }
 
 function loadPreviousData(filePath) {
@@ -569,8 +582,33 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
   const failureRate = failureCount / FACILITIES.length;
   console.log(`FAILURE_RATE ${failureCount}/${FACILITIES.length} (${(failureRate * 100).toFixed(0)}%)`);
   const blockSuspected = failureRate >= BLOCK_SUSPECTED_THRESHOLD;
-  if (blockSuspected) {
+
+  // 一時的な接続障害でも全施設が失敗しうるため、1回の失敗だけでは自動停止しない。
+  // 「半数以上の失敗」が BLOCK_STREAK_TO_DISABLE 回連続した時だけ、緊急通知＋自動停止する。
+  const blockStreak = blockSuspected ? loadPreviousBlockStreak() + 1 : 0;
+  if (blockSuspected && blockStreak >= BLOCK_STREAK_TO_DISABLE) {
     await handleSuspectedBlock(failureCount, FACILITIES.length);
+  } else if (blockSuspected) {
+    console.warn(`BLOCK_SUSPECTED ${blockStreak}/${BLOCK_STREAK_TO_DISABLE}回連続。まだ自動停止はしない`);
+  }
+
+  // 全施設が失敗＝今回は新しい情報が1件も取れていない。前回の表示データはそのまま残し、
+  // 「最終更新」の時刻も進めない（古いデータを新しく見せない）。通知も行わない。
+  if (failureCount === FACILITIES.length) {
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(path.join(outDir, 'notify-debug.json'), JSON.stringify({
+      generatedAt: new Date().toISOString(),
+      outage: true,
+      scrapeFailureCount: failureCount,
+      scrapeTotalFacilities: FACILITIES.length,
+      scrapeFailureRate: failureRate,
+      blockSuspected,
+      blockStreak,
+      failedFacilityIds,
+      facilityDiag
+    }, null, 2));
+    console.error('ALL_FACILITIES_FAILED: データは更新せず前回のまま残す');
+    return;
   }
 
   const generatedAt = new Date().toISOString();
@@ -588,6 +626,7 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
     scrapeTotalFacilities: FACILITIES.length,
     scrapeFailureRate: failureRate,
     blockSuspected,
+    blockStreak,
     failedFacilityIds,
     staleFacilityIds,
     facilityDiag,
