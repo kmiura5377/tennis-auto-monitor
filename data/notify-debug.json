@@ -1,16 +1,12 @@
 {
-  "generatedAt": "2026-10-07T13:51:02.357Z",
-  "scrapeFailureCount": 1,
+  "generatedAt": "2026-10-07T14:24:08.836Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.03225806451612903,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [
-    "koganei"
-  ],
-  "staleFacilityIds": [
-    "koganei"
-  ],
+  "failedFacilityIds": [],
+  "staleFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
       "attempts": 1,
@@ -55,21 +51,21 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -154,14 +150,14 @@
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "hikarigaoka": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -189,18 +185,21 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "attempts": 2,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 1,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -214,7 +213,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "人工芝"
       ],
@@ -228,7 +227,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 6,
+  "newlyAvailableCount": 8,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -246,7 +245,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 6,
+      "toNotifyCount": 8,
       "pushResult": {
         "attempted": false,
         "ok": false,
