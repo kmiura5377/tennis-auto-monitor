@@ -1,18 +1,12 @@
 {
-  "generatedAt": "2026-10-09T04:04:04.924Z",
-  "scrapeFailureCount": 2,
+  "generatedAt": "2026-10-09T04:30:52.303Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.06451612903225806,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [
-    "higashiayase",
-    "koganei"
-  ],
-  "staleFacilityIds": [
-    "higashiayase",
-    "koganei"
-  ],
+  "failedFacilityIds": [],
+  "staleFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
       "attempts": 2,
@@ -43,7 +37,7 @@
       "weeksFetched": 4
     },
     "hibiya": {
-      "attempts": 2,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -107,32 +101,35 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 2,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "higashiayase": {
-      "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "attempts": 2,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "toneri": {
-      "attempts": 2,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 2,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "oojima_komatsugawa": {
-      "attempts": 3,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -188,11 +185,14 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "attempts": 1,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 2,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -227,7 +227,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 0,
+  "newlyAvailableCount": 5,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -245,7 +245,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": false,
         "ok": false,
