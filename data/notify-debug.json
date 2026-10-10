@@ -1,27 +1,43 @@
 {
-  "generatedAt": "2026-10-10T11:34:09.143Z",
-  "scrapeFailureCount": 7,
+  "generatedAt": "2026-10-10T12:05:15.869Z",
+  "scrapeFailureCount": 15,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.22580645161290322,
+  "scrapeFailureRate": 0.4838709677419355,
   "blockSuspected": false,
   "blockStreak": 0,
   "failedFacilityIds": [
-    "ariake_a_hard",
-    "soshigaya",
-    "sarue",
-    "shiba",
+    "oi_b_hard",
+    "ariake_b_hard",
+    "hibiya",
+    "ukima",
     "johoku",
     "akatsuka",
-    "oi_b_turf"
+    "shioiri",
+    "oojima_komatsugawa",
+    "takaido",
+    "shakujii_b",
+    "musashino_chuo",
+    "inokashira",
+    "koganei",
+    "nogawa",
+    "ariake_c_turf"
   ],
   "staleFacilityIds": [
-    "ariake_a_hard",
-    "shiba",
-    "sarue",
-    "soshigaya",
+    "shioiri",
+    "oojima_komatsugawa",
+    "takaido",
+    "inokashira",
+    "shakujii_b",
+    "koganei",
+    "oi_b_hard",
+    "hibiya",
+    "musashino_chuo",
+    "nogawa",
+    "ariake_c_turf",
+    "ariake_b_hard",
+    "ukima",
     "johoku",
-    "akatsuka",
-    "oi_b_turf"
+    "akatsuka"
   ],
   "facilityDiag": {
     "oi_a_hard": {
@@ -32,58 +48,61 @@
       "weeksFetched": 4
     },
     "oi_b_hard": {
-      "attempts": 2,
-      "courtOptions": [
-        "ハード"
-      ],
-      "weeksFetched": 4
-    },
-    "ariake_a_hard": {
       "attempts": 3,
       "error": "page.selectOption: Timeout 30000ms exceeded."
     },
-    "ariake_b_hard": {
+    "ariake_a_hard": {
       "attempts": 3,
       "courtOptions": [
         "ハード"
       ],
       "weeksFetched": 4
     },
+    "ariake_b_hard": {
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
+    },
     "hibiya": {
-      "attempts": 2,
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
+    },
+    "shiba": {
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
-    "shiba": {
-      "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
-    },
     "sarue": {
-      "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "attempts": 1,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 3,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 3,
+      "attempts": 1,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
+      "attempts": 1,
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 2,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -91,10 +110,8 @@
     },
     "ukima": {
       "attempts": 3,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "courtOptions": [],
+      "error": "施設の選択肢が見つかりませんでした"
     },
     "johoku": {
       "attempts": 3,
@@ -105,7 +122,7 @@
       "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "higashiayase": {
-      "attempts": 2,
+      "attempts": 3,
       "courtOptions": [
         "テニス（人工芝）"
       ],
@@ -126,25 +143,16 @@
       "weeksFetched": 4
     },
     "oojima_komatsugawa": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "shioiri": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "takaido": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "zenpukuji": {
       "attempts": 1,
@@ -161,67 +169,52 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "inokashira": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "musashino_chuo": {
-      "attempts": 2,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "koganei": {
-      "attempts": 1,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "nogawa": {
-      "attempts": 2,
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     },
     "fuchu_no_mori": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 2,
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 3,
-      "error": "page.selectOption: Timeout 30000ms exceeded."
-    },
-    "ariake_c_turf": {
       "attempts": 2,
       "courtOptions": [
         "人工芝"
       ],
       "weeksFetched": 4
+    },
+    "ariake_c_turf": {
+      "attempts": 3,
+      "error": "page.selectOption: Timeout 30000ms exceeded."
     }
   },
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -239,7 +232,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
