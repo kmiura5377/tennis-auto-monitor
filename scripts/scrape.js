@@ -14,7 +14,10 @@ const VAPID_PUBLIC_KEY = 'BNpuNfvpkX-8XMwnvBU4K7cykGDCEh6uSR7IwtKEfQJh4E-qus2N1P
 
 const BASE_URL = 'https://kouen.sports.metro.tokyo.lg.jp/web/index.jsp';
 const WEEKS_TO_FETCH = 4;
-const SCRAPE_CONCURRENCY = 5;
+// 予約サイトへの負荷を抑えるため同時に開く施設数は控えめにする（以前は5。取得失敗が増えたため3に下げた）
+const SCRAPE_CONCURRENCY = 3;
+// 取得に失敗した施設の前回データを引き継ぐ期間。これより古い場合は表示から外す
+const CARRY_OVER_MAX_AGE_MS = 3 * 3600 * 1000;
 const RETRY_ROUNDS = 2;
 const RETRY_CONCURRENCY = 2;
 
@@ -162,21 +165,31 @@ async function scrapeFacility(browser, facility, days, diag) {
     console.log(`[${facility.id}] selecting purpose: ${facility.purpose}`);
     // 公園の選択肢はサイトが非同期(Ajax)で読み込む。サイトが重い時は読み込まれないことがあり、
     // 以前は黙って先へ進んで selectOption が30秒待って時間切れになっていた。
-    // 読み込まれるまで待ち、だめなら利用目的を選び直して最大3回試す。
-    for (let t = 1; t <= 3; t++) {
-      const parkPopulated = page.waitForResponse(r => r.url().includes('Favorite2InfoBuildAjax'), { timeout: 20000 }).catch(() => {});
-      if (t > 1) {
-        await page.selectOption('#purpose-home', { index: 0 }).catch(() => {});
-        await sleep(1000);
+    // 読み込まれるまで待ち、だめなら最大3回試す（2回目以降はページを読み込み直す）。
+    // 利用目的の選択そのものが時間切れになることもある(2026-10-21の実行で12施設)ため、
+    // その場合も30秒待ち続けず10秒で見切って読み込み直す。
+    let lastError = null;
+    let parkReady = false;
+    for (let t = 1; t <= 3 && !parkReady; t++) {
+      try {
+        if (t > 1) {
+          await page.goto(BASE_URL, { waitUntil: 'load' });
+          await closeNoticeDialogs(page);
+        }
+        const parkPopulated = page.waitForResponse(r => r.url().includes('Favorite2InfoBuildAjax'), { timeout: 20000 }).catch(() => {});
+        await page.selectOption('#purpose-home', { label: facility.purpose }, { timeout: 10000 });
+        await parkPopulated;
+        parkReady = await page.waitForFunction(label =>
+          [...document.querySelectorAll('#bname-home option')].some(o => o.textContent.trim() === label),
+        facility.park, { timeout: 15000 }).then(() => true).catch(() => false);
+        if (!parkReady) console.log(`[${facility.id}] park list not loaded (try ${t}/3)`);
+      } catch (e) {
+        lastError = e;
+        console.log(`[${facility.id}] purpose select failed (try ${t}/3): ${e.message.split('\n')[0]}`);
       }
-      await page.selectOption('#purpose-home', { label: facility.purpose });
-      await parkPopulated;
-      const ready = await page.waitForFunction(label =>
-        [...document.querySelectorAll('#bname-home option')].some(o => o.textContent.trim() === label),
-      facility.park, { timeout: 15000 }).then(() => true).catch(() => false);
-      if (ready) break;
-      console.log(`[${facility.id}] park list not loaded (try ${t}/3)`);
     }
+    // 3回とも利用目的を選べなかった場合は、その理由で失敗とする
+    if (!parkReady && lastError) throw lastError;
     await sleep(1000);
 
     diag.step = '公園の選択';
@@ -252,6 +265,12 @@ async function scrapeFacility(browser, facility, days, diag) {
   } catch (error) {
     console.error(`[${facility.id}] ERROR: ${error.message}`);
     diag.error = `[${diag.step || '接続'}] ` + String(error.message).split('\n')[0].slice(0, 200);
+    // 失敗した時に画面が何を表示していたか(混雑・メンテナンス・アクセス制限の案内など)を記録する
+    try {
+      const title = await page.title();
+      const text = (await page.locator('body').innerText({ timeout: 3000 })).replace(/\s+/g, ' ').trim();
+      diag.pageHint = `${title} | ${text.slice(0, 160)}`;
+    } catch (e) { /* ページが取れなければ記録しない */ }
     return false;
   } finally {
     await context.close();
@@ -264,13 +283,21 @@ async function scrapeFacility(browser, facility, days, diag) {
 // ということなので引き継がない。
 // （以前は「今回取れた最後の日付」より先を切り捨てていたが、全施設が失敗した時に
 //   今日以外の日付が全部消えてしまう不具合になったため、この上限は設けない）
-function carryOverMissing(previousDays, days, failedIds) {
+// ただし、その施設の最後の取得成功から CARRY_OVER_MAX_AGE_MS を過ぎた古いデータは引き継がない
+// （古い空き状況を新しい情報のように表示し続けないため）。引き継ぎをやめた施設は
+// droppedIds に入れる。fetchedAt は施設ごとの最終取得成功時刻 { facilityId: ISO文字列 }。
+function carryOverMissing(previousDays, days, failedIds, fetchedAt, droppedIds) {
   const todayJst = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
   const stale = new Set();
   for (const [dateStr, prevFacilities] of Object.entries(previousDays)) {
     if (dateStr < todayJst) continue;
     for (const prevFacility of prevFacilities) {
       if (!failedIds.includes(prevFacility.facilityId)) continue;
+      const age = Date.now() - Date.parse(fetchedAt[prevFacility.facilityId] || 0);
+      if (!(age <= CARRY_OVER_MAX_AGE_MS)) {
+        if (!droppedIds.includes(prevFacility.facilityId)) droppedIds.push(prevFacility.facilityId);
+        continue;
+      }
       const hasNew = (days[dateStr] || []).some(f => f.facilityId === prevFacility.facilityId);
       if (hasNew) continue;
       if (!days[dateStr]) days[dateStr] = [];
@@ -564,7 +591,17 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
   await browser.close();
 
   // 取得に失敗した施設・日付は前回のデータを引き継ぐ（表示から消えてしまうのを防ぐ）
-  const staleFacilityIds = carryOverMissing(previousData.days || {}, days, failedFacilityIds);
+  // 施設ごとの最終取得成功時刻。成功した施設は今、失敗した施設は前回の値を持ち越す
+  // （無い場合は前回データ全体の生成時刻で代用）
+  const now = new Date().toISOString();
+  const facilityFetchedAt = {};
+  for (const f of FACILITIES) {
+    facilityFetchedAt[f.id] = failedFacilityIds.includes(f.id)
+      ? ((previousData.facilityFetchedAt || {})[f.id] || previousData.generatedAt || null)
+      : now;
+  }
+  const droppedFacilityIds = [];
+  const staleFacilityIds = carryOverMissing(previousData.days || {}, days, failedFacilityIds, facilityFetchedAt, droppedFacilityIds);
 
   const failureRate = failureCount / FACILITIES.length;
   console.log(`FAILURE_RATE ${failureCount}/${FACILITIES.length} (${(failureRate * 100).toFixed(0)}%)`);
@@ -617,6 +654,7 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
     blockStreak,
     failedFacilityIds,
     staleFacilityIds,
+    droppedFacilityIds,
     facilityDiag,
     newlyAvailableCount: newlyAvailable.length,
     registeredUsers: users.length,
@@ -650,6 +688,7 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
   const output = {
     generatedAt,
     facilities: FACILITIES.map(f => ({ id: f.id, name: f.name })),
+    facilityFetchedAt,
     days
   };
 
