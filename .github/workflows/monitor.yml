@@ -23,9 +23,9 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    # スクレイピング(約10分)＋次の実行までの待ち時間(30分間隔になるまで)を含めて、
-    # 余裕を持たせた上限。GitHub Actions側の不具合等で詰まったままにならないようにする。
-    timeout-minutes: 40
+    # スクレイピング(約10分)＋次の実行までの待ち時間(通常30分、取得失敗が続く間は最大120分)を
+    # 含めて、余裕を持たせた上限。GitHub Actions側の不具合等で詰まったままにならないようにする。
+    timeout-minutes: 140
     steps:
       - uses: actions/checkout@v4
 
@@ -38,10 +38,15 @@ jobs:
         run: |
           echo "START_EPOCH=$(date +%s)" >> "$GITHUB_ENV"
           skip=false
-          if [ "${{ github.event_name }}" = "schedule" ] && [ -f data/availability.json ]; then
-            gen=$(jq -r '.generatedAt' data/availability.json)
+          # 最後に実行された時刻は notify-debug.json を使う（全施設が失敗した回は
+          # availability.json を更新しないため、そちらでは実行の有無が分からない）
+          if [ "${{ github.event_name }}" = "schedule" ] && [ -f data/notify-debug.json ]; then
+            gen=$(jq -r '.generatedAt' data/notify-debug.json)
+            streak=$(jq -r '.blockStreak // 0' data/notify-debug.json)
+            threshold=1200   # 通常(30分間隔)は20分以内なら何もしない。間隔を広げている間はその分長くする
+            if [ "$streak" -ge 6 ]; then threshold=6600; elif [ "$streak" -ge 3 ]; then threshold=3000; fi
             age=$(( $(date +%s) - $(date -d "$gen" +%s) ))
-            if [ "$age" -lt 1200 ]; then
+            if [ "$age" -lt "$threshold" ]; then
               skip=true
               echo "データは${age}秒前に更新済みのため、この実行は何もしない"
             fi
@@ -123,8 +128,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
+          # 取得失敗が続いている時(blockStreak=半数以上の失敗が連続した回数)は、予約サイトへの負荷を
+          # 抑えるため間隔を広げる: 0〜2回=30分、3〜5回=60分、6回以上=120分。回復すれば30分に戻る
+          streak=$(jq -r '.blockStreak // 0' data/notify-debug.json 2>/dev/null || echo 0)
+          interval=1800
+          if [ "$streak" -ge 6 ]; then interval=7200; elif [ "$streak" -ge 3 ]; then interval=3600; fi
           elapsed=$(( $(date +%s) - START_EPOCH ))
-          wait=$(( 1800 - elapsed ))
+          wait=$(( interval - elapsed ))
           if [ "$wait" -gt 0 ]; then
             echo "次の実行まで${wait}秒待つ"
             sleep "$wait"

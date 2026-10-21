@@ -21,8 +21,9 @@ const RETRY_CONCURRENCY = 2;
 // この割合以上の施設で取得に失敗したら「予約サイト側からアクセス制限を受けた可能性」と
 // みなし、緊急通知を送った上でこの自動実行(GitHub Actionsのスケジュール)自体を無効化する。
 const BLOCK_SUSPECTED_THRESHOLD = 0.5;
-// 上の失敗率を何回連続で超えたら自動停止するか（1回だけの一時的な接続障害では止めない）
-const BLOCK_STREAK_TO_DISABLE = 3;
+// 上の失敗率を何回連続で超えたら通知するか（1回だけの一時的な接続障害では通知しない）。
+// 連続回数(blockStreak)は monitor.yml が実行間隔を広げる判断にも使う
+const BLOCK_STREAK_TO_NOTIFY = 3;
 
 // テニス（ハード）4施設 + テニス（人工芝）27施設 = 全31施設
 // （大井ふ頭海浜公園Ｂは両方の区分に存在するため、別施設として扱う）
@@ -157,16 +158,33 @@ async function scrapeFacility(browser, facility, days, diag) {
     await page.goto(BASE_URL, { waitUntil: 'load' });
     await closeNoticeDialogs(page);
 
+    diag.step = '利用目的の選択';
     console.log(`[${facility.id}] selecting purpose: ${facility.purpose}`);
-    const parkPopulated = page.waitForResponse(r => r.url().includes('Favorite2InfoBuildAjax'), { timeout: 20000 }).catch(() => {});
-    await page.selectOption('#purpose-home', { label: facility.purpose });
-    await parkPopulated;
+    // 公園の選択肢はサイトが非同期(Ajax)で読み込む。サイトが重い時は読み込まれないことがあり、
+    // 以前は黙って先へ進んで selectOption が30秒待って時間切れになっていた。
+    // 読み込まれるまで待ち、だめなら利用目的を選び直して最大3回試す。
+    for (let t = 1; t <= 3; t++) {
+      const parkPopulated = page.waitForResponse(r => r.url().includes('Favorite2InfoBuildAjax'), { timeout: 20000 }).catch(() => {});
+      if (t > 1) {
+        await page.selectOption('#purpose-home', { index: 0 }).catch(() => {});
+        await sleep(1000);
+      }
+      await page.selectOption('#purpose-home', { label: facility.purpose });
+      await parkPopulated;
+      const ready = await page.waitForFunction(label =>
+        [...document.querySelectorAll('#bname-home option')].some(o => o.textContent.trim() === label),
+      facility.park, { timeout: 15000 }).then(() => true).catch(() => false);
+      if (ready) break;
+      console.log(`[${facility.id}] park list not loaded (try ${t}/3)`);
+    }
     await sleep(1000);
 
+    diag.step = '公園の選択';
     console.log(`[${facility.id}] selecting park: ${facility.park}`);
     await page.selectOption('#bname-home', { label: facility.park });
     await sleep(1500);
 
+    diag.step = '検索';
     console.log(`[${facility.id}] searching`);
     await page.click('#btn-go');
     await page.waitForLoadState('load');
@@ -233,7 +251,7 @@ async function scrapeFacility(browser, facility, days, diag) {
     return true;
   } catch (error) {
     console.error(`[${facility.id}] ERROR: ${error.message}`);
-    diag.error = String(error.message).split('\n')[0].slice(0, 200);
+    diag.error = `[${diag.step || '接続'}] ` + String(error.message).split('\n')[0].slice(0, 200);
     return false;
   } finally {
     await context.close();
@@ -401,12 +419,14 @@ async function sendLineNotification(newSlots) {
   await sendRawLine(text);
 }
 
-// 大部分の施設で取得失敗＝ボット判定/アクセス制限を受けた可能性がある場合の緊急対応。
-// 全利用者に警告を送り、GitHub Actions の定期実行自体を無効化して自動停止する。
+// 大部分の施設で取得失敗が続いた（予約サイトが重い／アクセス制限を受けた可能性）場合の通知。
+// 以前はここで GitHub Actions の定期実行自体を無効化して自動停止していたが、サイトが一時的に
+// 重いだけでも止まってしまい、気づかないまま11日間止まった(2026-10-10〜)ため、止めずに
+// 通知だけ送る。負荷は monitor.yml 側で実行間隔を広げて(30分→60分→120分)抑える。
 async function handleSuspectedBlock(failureCount, totalCount) {
   const message = `⚠️ テニスコート監視システムで異常を検知しました\n\n`
-    + `${totalCount}施設中${failureCount}施設で取得に失敗しました。予約サイト側からアクセス制限を受けた可能性があるため、自動実行を停止しました。\n\n`
-    + `再開するにはGitHubリポジトリの Actions タブから手動で有効化してください。`;
+    + `${totalCount}施設中${failureCount}施設で取得に失敗する状態が続いています。予約サイトが混み合っているか、アクセス制限を受けた可能性があります。\n\n`
+    + `自動停止はせず、実行の間隔をあけて再試行を続けます。`;
 
   console.error('SUSPECTED_BLOCK', message);
 
@@ -414,45 +434,12 @@ async function handleSuspectedBlock(failureCount, totalCount) {
     const users = await getNotifyTargets();
     for (const user of users) {
       if (user.subscription) {
-        await sendRawPush(user.subscription, '⚠️ テニスコート監視: 自動停止しました', message, user.id);
+        await sendRawPush(user.subscription, '⚠️ テニスコート監視: 取得失敗が続いています', message, user.id);
       }
     }
     await sendRawLine(message);
   } catch (e) {
     console.error('緊急通知の送信に失敗:', e.message);
-  }
-
-  await disableWorkflow();
-}
-
-async function disableWorkflow() {
-  const token = process.env.GITHUB_TOKEN;
-  const repo = process.env.GITHUB_REPOSITORY; // "owner/repo" 形式
-  const workflowFile = 'monitor.yml';
-  if (!token || !repo) {
-    console.error('GITHUB_TOKEN/GITHUB_REPOSITORYが無いため、ワークフローを自動無効化できませんでした');
-    return;
-  }
-
-  try {
-    const res = await fetch(
-      `https://api.github.com/repos/${repo}/actions/workflows/${workflowFile}/disable`,
-      {
-        method: 'PUT',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/vnd.github+json',
-          'X-GitHub-Api-Version': '2022-11-28'
-        }
-      }
-    );
-    if (res.status === 204) {
-      console.log('ワークフローを無効化しました（自動停止）');
-    } else {
-      console.error('ワークフロー無効化に失敗:', res.status, await res.text());
-    }
-  } catch (e) {
-    console.error('ワークフロー無効化エラー:', e.message);
   }
 }
 
@@ -583,13 +570,14 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
   console.log(`FAILURE_RATE ${failureCount}/${FACILITIES.length} (${(failureRate * 100).toFixed(0)}%)`);
   const blockSuspected = failureRate >= BLOCK_SUSPECTED_THRESHOLD;
 
-  // 一時的な接続障害でも全施設が失敗しうるため、1回の失敗だけでは自動停止しない。
-  // 「半数以上の失敗」が BLOCK_STREAK_TO_DISABLE 回連続した時だけ、緊急通知＋自動停止する。
+  // 一時的な接続障害でも全施設が失敗しうるため、1回の失敗では何もしない。
+  // 「半数以上の失敗」が BLOCK_STREAK_TO_NOTIFY 回連続した時に、緊急通知を1回だけ送る。
   const blockStreak = blockSuspected ? loadPreviousBlockStreak() + 1 : 0;
-  if (blockSuspected && blockStreak >= BLOCK_STREAK_TO_DISABLE) {
+  if (blockSuspected && blockStreak === BLOCK_STREAK_TO_NOTIFY) {
+    // 通知は連続失敗がちょうどN回目の1回だけ（以降は同じ通知を繰り返さない）
     await handleSuspectedBlock(failureCount, FACILITIES.length);
   } else if (blockSuspected) {
-    console.warn(`BLOCK_SUSPECTED ${blockStreak}/${BLOCK_STREAK_TO_DISABLE}回連続。まだ自動停止はしない`);
+    console.warn(`BLOCK_SUSPECTED ${blockStreak}回連続`);
   }
 
   // 全施設が失敗＝今回は新しい情報が1件も取れていない。前回の表示データはそのまま残し、
