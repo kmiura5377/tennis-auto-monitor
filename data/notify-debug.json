@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T02:57:19.889Z",
+  "generatedAt": "2026-10-23T03:28:00.864Z",
   "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0,
@@ -10,7 +10,7 @@
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -26,7 +26,7 @@
       "weeksFetched": 4
     },
     "ariake_a_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -123,7 +123,7 @@
       "weeksFetched": 4
     },
     "higashiayase": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -139,7 +139,7 @@
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -187,7 +187,7 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -259,7 +259,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -277,7 +277,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
