@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-24T02:18:01.354Z",
+  "generatedAt": "2026-10-24T02:45:51.162Z",
   "scrapeFailureCount": 1,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.03225806451612903,
   "blockSuspected": false,
   "blockStreak": 0,
   "failedFacilityIds": [
-    "fuchu_no_mori"
+    "higashiyamato_minami"
   ],
   "staleFacilityIds": [
-    "fuchu_no_mori"
+    "higashiyamato_minami"
   ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -30,14 +30,6 @@
       "weeksFetched": 4
     },
     "ariake_a_hard": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "ハード"
-      ],
-      "weeksFetched": 4
-    },
-    "ariake_b_hard": {
       "attempts": 3,
       "step": "検索",
       "courtOptions": [
@@ -45,8 +37,16 @@
       ],
       "weeksFetched": 4
     },
+    "ariake_b_hard": {
+      "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "ハード"
+      ],
+      "weeksFetched": 4
+    },
     "hibiya": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -54,7 +54,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -62,7 +62,7 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -86,7 +86,7 @@
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -94,7 +94,7 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -119,7 +119,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -175,7 +175,7 @@
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -231,17 +231,21 @@
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知らせ 2026/10/20 武蔵野公園野球場の霜の影響による利用休止時間について "
-    },
-    "higashiyamato_minami": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
       ],
       "weeksFetched": 4
+    },
+    "higashiyamato_minami": {
+      "attempts": 3,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "error": "[検索] page.waitForFunction: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 条件変更 施設ごと 日付順 公園 東大和南公園 施設 選択してください。 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリックして予約枠を確保します。 <<前週<前"
     },
     "oi_b_turf": {
       "attempts": 1,
@@ -260,25 +264,24 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 5,
+  "newlyAvailableCount": 7,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 5,
+      "toNotifyCount": 7,
       "pushResult": {
         "attempted": false,
         "ok": false,
