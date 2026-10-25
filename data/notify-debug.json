@@ -1,25 +1,32 @@
 {
-  "generatedAt": "2026-10-25T01:33:43.481Z",
-  "scrapeFailureCount": 1,
+  "generatedAt": "2026-10-25T02:09:41.465Z",
+  "scrapeFailureCount": 6,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.03225806451612903,
+  "scrapeFailureRate": 0.1935483870967742,
   "blockSuspected": false,
   "blockStreak": 0,
   "failedFacilityIds": [
-    "hikarigaoka"
+    "oi_a_hard",
+    "hibiya",
+    "kiba",
+    "kameido",
+    "higashishirahige",
+    "inokashira"
   ],
   "staleFacilityIds": [
-    "hikarigaoka"
+    "oi_a_hard",
+    "kameido",
+    "kiba",
+    "higashishirahige",
+    "hibiya",
+    "inokashira"
   ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "ハード"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知らせ 2026/10/20 武蔵野公園野球場の霜の影響による利用休止時間について "
     },
     "oi_b_hard": {
       "attempts": 1,
@@ -30,7 +37,7 @@
       "weeksFetched": 4
     },
     "ariake_a_hard": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -46,15 +53,14 @@
       "weeksFetched": 4
     },
     "hibiya": {
-      "attempts": 2,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "courtOptions": [],
+      "error": "[検索] 施設の選択肢が見つかりませんでした",
+      "pageHint": " | "
     },
     "shiba": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -70,20 +76,15 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年10月25日～、亀戸中央公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 亀戸中央公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●を"
     },
     "kiba": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知らせ 2026/10/20 武蔵野公園野球場の霜の影響による利用休止時間について "
     },
     "soshigaya": {
       "attempts": 1,
@@ -94,12 +95,9 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知らせ 2026/10/20 武蔵野公園野球場の霜の影響による利用休止時間について "
     },
     "ukima": {
       "attempts": 1,
@@ -110,7 +108,7 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝・照明有）",
@@ -119,7 +117,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -167,7 +165,7 @@
       "weeksFetched": 4
     },
     "takaido": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -175,7 +173,7 @@
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -183,9 +181,12 @@
       "weeksFetched": 4
     },
     "hikarigaoka": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知らせ 2026/10/20 武蔵野公園野球場の霜の影響による利用休止時間について "
+      "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "shakujii_b": {
       "attempts": 1,
@@ -197,11 +198,8 @@
     },
     "inokashira": {
       "attempts": 3,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知らせ 2026/10/20 武蔵野公園野球場の霜の影響による利用休止時間について "
     },
     "musashino_chuo": {
       "attempts": 1,
@@ -220,7 +218,7 @@
       "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -228,7 +226,7 @@
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -236,7 +234,7 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -244,7 +242,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -260,7 +258,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 0,
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -278,7 +276,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
