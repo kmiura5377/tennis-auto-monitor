@@ -1,12 +1,22 @@
 {
-  "generatedAt": "2026-10-25T09:29:00.459Z",
-  "scrapeFailureCount": 0,
+  "generatedAt": "2026-10-25T10:10:04.818Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [],
-  "staleFacilityIds": [],
+  "failedFacilityIds": [
+    "oi_b_hard",
+    "shinozaki_a",
+    "zenpukuji",
+    "toneri"
+  ],
+  "staleFacilityIds": [
+    "oi_b_hard",
+    "toneri",
+    "shinozaki_a",
+    "zenpukuji"
+  ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
@@ -18,12 +28,9 @@
       "weeksFetched": 4
     },
     "oi_b_hard": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "ハード"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知らせ 2026/10/20 武蔵野公園野球場の霜の影響による利用休止時間について "
     },
     "ariake_a_hard": {
       "attempts": 1,
@@ -50,7 +57,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -58,7 +65,7 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -66,7 +73,7 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -82,7 +89,7 @@
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -106,7 +113,7 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝・照明有）",
@@ -115,7 +122,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -123,7 +130,7 @@
       "weeksFetched": 4
     },
     "higashiayase": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -131,23 +138,22 @@
       "weeksFetched": 4
     },
     "toneri": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
       ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForFunction: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 「公園：」を選択して下さい。 条件変更 施設ごと 日付順 公園 舎人公園 施設 選択してください。 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリックして予約枠を"
     },
     "shinozaki_a": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年10月25日～、篠崎公園Ａでテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 篠崎公園Ａ 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリ"
     },
     "oojima_komatsugawa": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -155,7 +161,7 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -163,7 +169,7 @@
       "weeksFetched": 4
     },
     "takaido": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -171,12 +177,11 @@
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "courtOptions": [],
+      "error": "[検索] 施設の選択肢が見つかりませんでした",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知らせ 2026/10/20 武蔵野公園野球場の霜の影響による利用休止時間について "
     },
     "hikarigaoka": {
       "attempts": 1,
@@ -211,7 +216,7 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -227,7 +232,7 @@
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -235,7 +240,7 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -259,25 +264,24 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 6,
+  "newlyAvailableCount": 4,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 6,
+      "toNotifyCount": 4,
       "pushResult": {
         "attempted": false,
         "ok": false,
