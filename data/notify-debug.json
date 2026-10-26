@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T07:14:31.629Z",
+  "generatedAt": "2026-10-26T07:41:03.082Z",
   "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0,
@@ -10,7 +10,7 @@
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -123,7 +123,7 @@
       "weeksFetched": 4
     },
     "higashiayase": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -139,7 +139,7 @@
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -171,7 +171,7 @@
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -179,7 +179,7 @@
       "weeksFetched": 4
     },
     "hikarigaoka": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -195,7 +195,7 @@
       "weeksFetched": 4
     },
     "inokashira": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -203,7 +203,7 @@
       "weeksFetched": 4
     },
     "musashino_chuo": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -219,14 +219,6 @@
       "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "fuchu_no_mori": {
       "attempts": 2,
       "step": "検索",
       "courtOptions": [
@@ -234,8 +226,16 @@
       ],
       "weeksFetched": 4
     },
-    "higashiyamato_minami": {
+    "fuchu_no_mori": {
       "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "higashiyamato_minami": {
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -251,7 +251,7 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -259,7 +259,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -277,7 +277,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
