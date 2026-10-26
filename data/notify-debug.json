@@ -1,18 +1,12 @@
 {
-  "generatedAt": "2026-10-26T12:14:10.535Z",
-  "scrapeFailureCount": 2,
+  "generatedAt": "2026-10-26T12:41:30.714Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.06451612903225806,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [
-    "shakujii_b",
-    "higashiayase"
-  ],
-  "staleFacilityIds": [
-    "higashiayase",
-    "shakujii_b"
-  ],
+  "failedFacilityIds": [],
+  "staleFacilityIds": [],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
@@ -56,7 +50,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -88,7 +82,7 @@
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -112,7 +106,7 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝・照明有）",
@@ -121,23 +115,6 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "higashiayase": {
-      "attempts": 3,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "error": "[検索] page.waitForFunction: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 条件変更 施設ごと 日付順 公園 東綾瀬公園 施設 選択してください。 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリックして予約枠を確保します。 <<前週<前日"
-    },
-    "toneri": {
       "attempts": 1,
       "step": "検索",
       "courtOptions": [
@@ -145,8 +122,24 @@
       ],
       "weeksFetched": 4
     },
-    "shinozaki_a": {
+    "higashiayase": {
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "toneri": {
       "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "shinozaki_a": {
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -186,7 +179,7 @@
       "weeksFetched": 4
     },
     "hikarigaoka": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -194,11 +187,6 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知ら"
-    },
-    "inokashira": {
       "attempts": 1,
       "step": "検索",
       "courtOptions": [
@@ -206,8 +194,16 @@
       ],
       "weeksFetched": 4
     },
+    "inokashira": {
+      "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
     "musashino_chuo": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -239,7 +235,7 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -255,7 +251,7 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -263,7 +259,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 5,
+  "newlyAvailableCount": 4,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -281,7 +277,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 5,
+      "toNotifyCount": 4,
       "pushResult": {
         "attempted": false,
         "ok": false,
