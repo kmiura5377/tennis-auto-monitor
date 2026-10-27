@@ -1,16 +1,24 @@
 {
-  "generatedAt": "2026-10-27T03:56:14.823Z",
-  "scrapeFailureCount": 0,
+  "generatedAt": "2026-10-27T04:32:19.917Z",
+  "scrapeFailureCount": 3,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0,
+  "scrapeFailureRate": 0.0967741935483871,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [],
-  "staleFacilityIds": [],
+  "failedFacilityIds": [
+    "kameido",
+    "shinozaki_a",
+    "hikarigaoka"
+  ],
+  "staleFacilityIds": [
+    "hikarigaoka",
+    "kameido",
+    "shinozaki_a"
+  ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -50,7 +58,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -66,12 +74,9 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選"
     },
     "kiba": {
       "attempts": 1,
@@ -82,7 +87,7 @@
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -90,7 +95,7 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -106,7 +111,7 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝・照明有）",
@@ -115,7 +120,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 3,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -123,7 +128,7 @@
       "weeksFetched": 4
     },
     "higashiayase": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -139,12 +144,9 @@
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知ら"
     },
     "oojima_komatsugawa": {
       "attempts": 3,
@@ -171,7 +173,7 @@
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -179,15 +181,12 @@
       "weeksFetched": 4
     },
     "hikarigaoka": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知ら"
     },
     "shakujii_b": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -195,7 +194,7 @@
       "weeksFetched": 4
     },
     "inokashira": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -203,7 +202,7 @@
       "weeksFetched": 4
     },
     "musashino_chuo": {
-      "attempts": 3,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -211,7 +210,7 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -235,7 +234,7 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -243,7 +242,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -251,7 +250,7 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -259,24 +258,25 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 4,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 1,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 4,
       "pushResult": {
         "attempted": false,
         "ok": false,
