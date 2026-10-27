@@ -1,20 +1,12 @@
 {
-  "generatedAt": "2026-10-27T04:59:33.692Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-10-27T05:27:44.931Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [
-    "shiba",
-    "shakujii_b",
-    "kameido"
-  ],
-  "staleFacilityIds": [
-    "shiba",
-    "shakujii_b",
-    "kameido"
-  ],
+  "failedFacilityIds": [],
+  "staleFacilityIds": [],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
@@ -26,7 +18,7 @@
       "weeksFetched": 4
     },
     "oi_b_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -34,7 +26,7 @@
       "weeksFetched": 4
     },
     "ariake_a_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -42,7 +34,7 @@
       "weeksFetched": 4
     },
     "ariake_b_hard": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -58,12 +50,15 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知ら"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -71,16 +66,15 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
       ],
-      "error": "[検索] page.waitForFunction: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 「公園：」を選択して下さい。 条件変更 施設ごと 日付順 公園 亀戸中央公園 施設 選択してください。 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリックして予約"
+      "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -112,7 +106,7 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝・照明有）",
@@ -121,7 +115,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -161,7 +155,7 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -185,7 +179,7 @@
       "weeksFetched": 4
     },
     "hikarigaoka": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -193,11 +187,12 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
-      "courtOptions": [],
-      "error": "[検索] 施設の選択肢が見つかりませんでした",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 2026/10/20 【猿江恩賜公園】男女更衣室の利用停止のお知ら"
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "inokashira": {
       "attempts": 1,
@@ -216,7 +211,7 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -248,7 +243,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -256,7 +251,7 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -264,7 +259,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 1,
+  "newlyAvailableCount": 6,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -282,7 +277,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 1,
+      "toNotifyCount": 6,
       "pushResult": {
         "attempted": false,
         "ok": false,
