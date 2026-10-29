@@ -1,17 +1,15 @@
 {
-  "generatedAt": "2026-10-29T13:01:08.427Z",
-  "scrapeFailureCount": 2,
+  "generatedAt": "2026-10-29T13:32:34.943Z",
+  "scrapeFailureCount": 1,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.06451612903225806,
+  "scrapeFailureRate": 0.03225806451612903,
   "blockSuspected": false,
   "blockStreak": 0,
   "failedFacilityIds": [
-    "higashishirahige",
-    "takaido"
+    "ariake_b_hard"
   ],
   "staleFacilityIds": [
-    "higashishirahige",
-    "takaido"
+    "ariake_b_hard"
   ],
   "droppedFacilityIds": [],
   "facilityDiag": {
@@ -32,7 +30,7 @@
       "weeksFetched": 4
     },
     "ariake_a_hard": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -40,12 +38,11 @@
       "weeksFetched": 4
     },
     "ariake_b_hard": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "ハード"
-      ],
-      "weeksFetched": 4
+      "courtOptions": [],
+      "error": "[検索] 施設の選択肢が見つかりませんでした",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 「公園：」を選択して下さい。 条件変更 施設ごと 日付順 指定条件に該当する空き施設が見つかりませんでした。 条件を変更し、再度、検索してください。 ご利用ガイド 公園・施設一覧 サイトマップ利用環境 C"
     },
     "hibiya": {
       "attempts": 1,
@@ -56,7 +53,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -64,7 +61,7 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -80,7 +77,7 @@
       "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -96,13 +93,15 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
-      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年10月29日～、東白鬚公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 東白鬚公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリ"
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 3,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -110,7 +109,7 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝・照明有）",
@@ -143,7 +142,7 @@
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -167,10 +166,12 @@
       "weeksFetched": 4
     },
     "takaido": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
-      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年10月29日～、高井戸公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 高井戸公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリ"
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "zenpukuji": {
       "attempts": 1,
@@ -181,7 +182,7 @@
       "weeksFetched": 4
     },
     "hikarigaoka": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -213,7 +214,7 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -245,7 +246,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -253,7 +254,7 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -261,7 +262,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -279,7 +280,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
