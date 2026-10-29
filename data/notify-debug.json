@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-10-29T01:16:03.189Z",
-  "scrapeFailureCount": 0,
+  "generatedAt": "2026-10-29T01:46:19.529Z",
+  "scrapeFailureCount": 2,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0,
+  "scrapeFailureRate": 0.06451612903225806,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [],
-  "staleFacilityIds": [],
+  "failedFacilityIds": [
+    "ariake_a_hard",
+    "kiba"
+  ],
+  "staleFacilityIds": [
+    "ariake_a_hard",
+    "kiba"
+  ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
@@ -26,15 +32,13 @@
       "weeksFetched": 4
     },
     "ariake_a_hard": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "ハード"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年10月29日～、有明テニスＡ屋外ハードコートでテニス（ハード）をする。 条件変更 施設ごと 日付順 公園 有明テニスＡ屋外ハードコート 施設 ハード １ヶ月空き表示 月表示 １週間空き表示 週表"
     },
     "ariake_b_hard": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -50,7 +54,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -74,12 +78,10 @@
       "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年10月29日～、木場公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 木場公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリック"
     },
     "soshigaya": {
       "attempts": 1,
@@ -106,7 +108,7 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝・照明有）",
@@ -123,7 +125,7 @@
       "weeksFetched": 4
     },
     "higashiayase": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -147,7 +149,7 @@
       "weeksFetched": 4
     },
     "oojima_komatsugawa": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -163,7 +165,7 @@
       "weeksFetched": 4
     },
     "takaido": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -187,7 +189,7 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -195,7 +197,7 @@
       "weeksFetched": 4
     },
     "inokashira": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -211,7 +213,7 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -219,22 +221,6 @@
       "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "fuchu_no_mori": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "higashiyamato_minami": {
       "attempts": 2,
       "step": "検索",
       "courtOptions": [
@@ -242,8 +228,24 @@
       ],
       "weeksFetched": 4
     },
+    "fuchu_no_mori": {
+      "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "higashiyamato_minami": {
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
     "oi_b_turf": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -251,7 +253,7 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -259,7 +261,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 23,
+  "newlyAvailableCount": 5,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -277,7 +279,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 23,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": false,
         "ok": false,
