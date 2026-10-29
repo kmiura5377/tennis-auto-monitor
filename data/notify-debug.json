@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-10-29T10:31:32.355Z",
+  "generatedAt": "2026-10-29T10:55:55.679Z",
   "scrapeFailureCount": 3,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0.0967741935483871,
   "blockSuspected": false,
   "blockStreak": 0,
   "failedFacilityIds": [
-    "hibiya",
     "ariake_b_hard",
-    "shinozaki_a"
+    "johoku",
+    "takaido"
   ],
   "staleFacilityIds": [
-    "hibiya",
-    "ariake_b_hard",
-    "shinozaki_a"
+    "takaido",
+    "johoku",
+    "ariake_b_hard"
   ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -26,7 +26,7 @@
       "weeksFetched": 4
     },
     "oi_b_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -43,16 +43,16 @@
     },
     "ariake_b_hard": {
       "attempts": 3,
-      "step": "検索",
-      "courtOptions": [],
-      "error": "[検索] 施設の選択肢が見つかりませんでした",
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
       "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/29 スポレクお客様窓口一時休止のお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 202"
     },
     "hibiya": {
-      "attempts": 3,
+      "attempts": 2,
       "step": "検索",
-      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年10月29日～、日比谷公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 日比谷公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリ"
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "shiba": {
       "attempts": 1,
@@ -71,7 +71,7 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -87,7 +87,7 @@
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -95,7 +95,7 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -111,31 +111,12 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 2,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝・照明有）",
-        "テニス（人工芝・照明無）"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年10月29日～、城北中央公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 城北中央公園 施設 テニス（人工芝・照明有） テニス（人工芝・照明無） １ヶ月空き表示 月表示 １週間空"
     },
     "akatsuka": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "higashiayase": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "toneri": {
       "attempts": 1,
       "step": "検索",
       "courtOptions": [
@@ -143,10 +124,29 @@
       ],
       "weeksFetched": 4
     },
+    "higashiayase": {
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "toneri": {
+      "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
     "shinozaki_a": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/29 スポレクお客様窓口一時休止のお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 202"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "oojima_komatsugawa": {
       "attempts": 1,
@@ -157,7 +157,7 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -165,12 +165,9 @@
       "weeksFetched": 4
     },
     "takaido": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/29 スポレクお客様窓口一時休止のお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 202"
     },
     "zenpukuji": {
       "attempts": 1,
@@ -197,7 +194,7 @@
       "weeksFetched": 4
     },
     "inokashira": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -229,7 +226,7 @@
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -245,7 +242,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -261,25 +258,24 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 5,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": false,
         "ok": false,
