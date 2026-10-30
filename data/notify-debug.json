@@ -1,36 +1,21 @@
 {
-  "generatedAt": "2026-10-30T03:25:23.280Z",
-  "scrapeFailureCount": 6,
+  "generatedAt": "2026-10-30T03:56:39.298Z",
+  "scrapeFailureCount": 2,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.1935483870967742,
+  "scrapeFailureRate": 0.06451612903225806,
   "blockSuspected": false,
   "blockStreak": 0,
   "failedFacilityIds": [
-    "oi_a_hard",
-    "kiba",
-    "akatsuka",
-    "shinozaki_a",
-    "johoku",
-    "oojima_komatsugawa"
+    "oi_b_hard",
+    "ariake_c_turf"
   ],
   "staleFacilityIds": [
-    "oi_a_hard",
-    "akatsuka",
-    "shinozaki_a",
-    "oojima_komatsugawa",
-    "johoku",
-    "kiba"
+    "oi_b_hard",
+    "ariake_c_turf"
   ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 3,
-      "step": "検索",
-      "courtOptions": [],
-      "error": "[検索] 施設の選択肢が見つかりませんでした",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/29 スポレクお客様窓口一時休止のお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 202"
-    },
-    "oi_b_hard": {
       "attempts": 1,
       "step": "検索",
       "courtOptions": [
@@ -38,8 +23,13 @@
       ],
       "weeksFetched": 4
     },
+    "oi_b_hard": {
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選"
+    },
     "ariake_a_hard": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -55,7 +45,7 @@
       "weeksFetched": 4
     },
     "hibiya": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -63,7 +53,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -87,12 +77,15 @@
       "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/29 スポレクお客様窓口一時休止のお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 202"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 2,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -100,7 +93,7 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 3,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -108,7 +101,7 @@
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -116,19 +109,21 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 3,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝・照明有）",
         "テニス（人工芝・照明無）"
       ],
-      "error": "[検索] page.waitForFunction: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 条件変更 施設ごと 日付順 公園 城北中央公園 施設 選択してください。 テニス（人工芝・照明有） テニス（人工芝・照明無） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリックして"
+      "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/29 スポレクお客様窓口一時休止のお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 202"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "higashiayase": {
       "attempts": 1,
@@ -139,7 +134,7 @@
       "weeksFetched": 4
     },
     "toneri": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -147,14 +142,20 @@
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/29 スポレクお客様窓口一時休止のお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 202"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "oojima_komatsugawa": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/10/29 スポレクお客様窓口一時休止のお知らせ 2026/10/26 【大井ふ頭海浜公園Ａ】テニスコート一部利用停止のお知らせ 202"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "shioiri": {
       "attempts": 1,
@@ -173,7 +174,7 @@
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -197,7 +198,7 @@
       "weeksFetched": 4
     },
     "inokashira": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -213,7 +214,7 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -229,7 +230,7 @@
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -253,12 +254,10 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "人工芝"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年10月30日～、有明テニスＣ人工芝コートでテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 有明テニスＣ人工芝コート 施設 人工芝 １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希"
     }
   },
   "newlyAvailableCount": 2,
