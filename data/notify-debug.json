@@ -1,12 +1,20 @@
 {
-  "generatedAt": "2026-11-03T13:51:46.058Z",
-  "scrapeFailureCount": 0,
+  "generatedAt": "2026-11-03T14:23:17.018Z",
+  "scrapeFailureCount": 3,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0,
+  "scrapeFailureRate": 0.0967741935483871,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [],
-  "staleFacilityIds": [],
+  "failedFacilityIds": [
+    "musashino_chuo",
+    "higashiayase",
+    "ariake_c_turf"
+  ],
+  "staleFacilityIds": [
+    "higashiayase",
+    "ariake_c_turf",
+    "musashino_chuo"
+  ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
@@ -66,7 +74,7 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -82,14 +90,6 @@
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 3,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "higashishirahige": {
       "attempts": 1,
       "step": "検索",
       "courtOptions": [
@@ -97,8 +97,16 @@
       ],
       "weeksFetched": 4
     },
-    "ukima": {
+    "higashishirahige": {
       "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "ukima": {
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -123,12 +131,9 @@
       "weeksFetched": 4
     },
     "higashiayase": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
     },
     "toneri": {
       "attempts": 1,
@@ -155,7 +160,7 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -187,7 +192,7 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -195,7 +200,7 @@
       "weeksFetched": 4
     },
     "inokashira": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -203,12 +208,9 @@
       "weeksFetched": 4
     },
     "musashino_chuo": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選"
     },
     "koganei": {
       "attempts": 1,
@@ -251,15 +253,14 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "人工芝"
-      ],
-      "weeksFetched": 4
+      "courtOptions": [],
+      "error": "[検索] 施設の選択肢が見つかりませんでした",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
     }
   },
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 6,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -277,7 +278,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 6,
       "pushResult": {
         "attempted": false,
         "ok": false,
