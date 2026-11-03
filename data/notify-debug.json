@@ -1,32 +1,16 @@
 {
-  "generatedAt": "2026-11-03T14:55:55.101Z",
-  "scrapeFailureCount": 7,
+  "generatedAt": "2026-11-03T15:21:04.156Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.22580645161290322,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [
-    "johoku",
-    "shinozaki_a",
-    "shioiri",
-    "oojima_komatsugawa",
-    "zenpukuji",
-    "higashiyamato_minami",
-    "oi_b_turf"
-  ],
-  "staleFacilityIds": [
-    "johoku",
-    "shinozaki_a",
-    "oojima_komatsugawa",
-    "zenpukuji",
-    "oi_b_turf",
-    "higashiyamato_minami",
-    "shioiri"
-  ],
+  "failedFacilityIds": [],
+  "staleFacilityIds": [],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -50,7 +34,7 @@
       "weeksFetched": 4
     },
     "ariake_b_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -66,7 +50,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -74,7 +58,7 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -98,7 +82,7 @@
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -114,7 +98,7 @@
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -122,9 +106,13 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝・照明有）",
+        "テニス（人工芝・照明無）"
+      ],
+      "weeksFetched": 4
     },
     "akatsuka": {
       "attempts": 1,
@@ -135,7 +123,7 @@
       "weeksFetched": 4
     },
     "higashiayase": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -151,22 +139,31 @@
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "oojima_komatsugawa": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
+      "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "takaido": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -175,8 +172,11 @@
     },
     "zenpukuji": {
       "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "hikarigaoka": {
       "attempts": 1,
@@ -187,7 +187,7 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -219,7 +219,7 @@
       "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -235,19 +235,23 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 3,
+      "attempts": 2,
       "step": "検索",
-      "courtOptions": [],
-      "error": "[検索] 施設の選択肢が見つかりませんでした",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "人工芝"
+      ],
+      "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -255,7 +259,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 6,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -273,7 +277,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 6,
       "pushResult": {
         "attempted": false,
         "ok": false,
