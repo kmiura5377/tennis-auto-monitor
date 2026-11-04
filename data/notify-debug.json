@@ -1,12 +1,36 @@
 {
-  "generatedAt": "2026-11-04T06:23:39.961Z",
-  "scrapeFailureCount": 0,
+  "generatedAt": "2026-11-04T07:05:53.543Z",
+  "scrapeFailureCount": 11,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0,
+  "scrapeFailureRate": 0.3548387096774194,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [],
-  "staleFacilityIds": [],
+  "failedFacilityIds": [
+    "ariake_a_hard",
+    "shiba",
+    "ukima",
+    "kiba",
+    "shinozaki_a",
+    "oojima_komatsugawa",
+    "takaido",
+    "zenpukuji",
+    "inokashira",
+    "higashiyamato_minami",
+    "oi_b_turf"
+  ],
+  "staleFacilityIds": [
+    "ariake_a_hard",
+    "shiba",
+    "kiba",
+    "ukima",
+    "oojima_komatsugawa",
+    "shinozaki_a",
+    "takaido",
+    "zenpukuji",
+    "inokashira",
+    "higashiyamato_minami",
+    "oi_b_turf"
+  ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
@@ -26,15 +50,12 @@
       "weeksFetched": 4
     },
     "ariake_a_hard": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "ハード"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
     },
     "ariake_b_hard": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -42,7 +63,7 @@
       "weeksFetched": 4
     },
     "hibiya": {
-      "attempts": 2,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -50,12 +71,10 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年11月4日～、芝公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 芝公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリックして予"
     },
     "sarue": {
       "attempts": 2,
@@ -66,7 +85,7 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -74,15 +93,12 @@
       "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
     },
     "soshigaya": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -90,7 +106,7 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -98,12 +114,10 @@
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年11月4日～、浮間公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 浮間公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリックし"
     },
     "johoku": {
       "attempts": 1,
@@ -123,7 +137,7 @@
       "weeksFetched": 4
     },
     "higashiayase": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -131,7 +145,7 @@
       "weeksFetched": 4
     },
     "toneri": {
-      "attempts": 2,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -139,23 +153,18 @@
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選"
     },
     "oojima_komatsugawa": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年11月4日～、大島小松川公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 大島小松川公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●"
     },
     "shioiri": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -163,23 +172,18 @@
       "weeksFetched": 4
     },
     "takaido": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
     },
     "zenpukuji": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年11月4日～、善福寺川緑地でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 善福寺川緑地 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をク"
     },
     "hikarigaoka": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -187,7 +191,7 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -195,15 +199,13 @@
       "weeksFetched": 4
     },
     "inokashira": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年11月4日～、井の頭恩賜公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 井の頭恩賜公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●"
     },
     "musashino_chuo": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -211,7 +213,7 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -235,20 +237,14 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31 東綾瀬公園野球場整地工事について 2026/10/29 スポレク"
     },
     "oi_b_turf": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "人工芝"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 現在お知らせはありません。 空き状況検索 ヘルプ 利用日 種目 選択してください。 野球 野球（小） テニス（ハード） テニス（人工芝） サッカー サッカー（小） ラグビー ホッケー 和弓 和弓（初心者） 洋弓 洋"
     },
     "ariake_c_turf": {
       "attempts": 1,
@@ -259,7 +255,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 4,
+  "newlyAvailableCount": 5,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -277,7 +273,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": false,
         "ok": false,
