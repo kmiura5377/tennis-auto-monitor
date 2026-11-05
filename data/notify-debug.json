@@ -1,20 +1,16 @@
 {
-  "generatedAt": "2026-11-05T14:30:20.703Z",
-  "scrapeFailureCount": 1,
+  "generatedAt": "2026-11-05T14:57:36.901Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.03225806451612903,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [
-    "ariake_b_hard"
-  ],
-  "staleFacilityIds": [
-    "ariake_b_hard"
-  ],
+  "failedFacilityIds": [],
+  "staleFacilityIds": [],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -22,7 +18,7 @@
       "weeksFetched": 4
     },
     "oi_b_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -38,14 +34,15 @@
       "weeksFetched": 4
     },
     "ariake_b_hard": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
-      "courtOptions": [],
-      "error": "[検索] 施設の選択肢が見つかりませんでした",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/05 【東綾瀬公園】高反発バット使用禁止について 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31"
+      "courtOptions": [
+        "ハード"
+      ],
+      "weeksFetched": 4
     },
     "hibiya": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -61,7 +58,7 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -93,7 +90,7 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -174,7 +171,7 @@
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -214,7 +211,7 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -238,7 +235,7 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -262,7 +259,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 4,
+  "newlyAvailableCount": 5,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -280,7 +277,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 4,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": false,
         "ok": false,
