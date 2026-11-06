@@ -1,16 +1,12 @@
 {
-  "generatedAt": "2026-11-06T15:16:40.548Z",
-  "scrapeFailureCount": 1,
+  "generatedAt": "2026-11-06T16:24:04.304Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.03225806451612903,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [
-    "ariake_c_turf"
-  ],
-  "staleFacilityIds": [
-    "ariake_c_turf"
-  ],
+  "failedFacilityIds": [],
+  "staleFacilityIds": [],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
@@ -54,7 +50,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -119,7 +115,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -199,7 +195,7 @@
       "weeksFetched": 4
     },
     "inokashira": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -247,7 +243,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -255,12 +251,15 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 3,
-      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/05 【東綾瀬公園】高反発バット使用禁止について 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "人工芝"
+      ],
+      "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 5,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -278,7 +277,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 5,
       "pushResult": {
         "attempted": false,
         "ok": false,
