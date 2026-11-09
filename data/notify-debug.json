@@ -1,26 +1,30 @@
 {
-  "generatedAt": "2026-11-09T12:50:33.795Z",
-  "scrapeFailureCount": 4,
+  "generatedAt": "2026-11-09T13:24:27.414Z",
+  "scrapeFailureCount": 6,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.12903225806451613,
+  "scrapeFailureRate": 0.1935483870967742,
   "blockSuspected": false,
   "blockStreak": 0,
   "failedFacilityIds": [
-    "kameido",
+    "higashiayase",
     "takaido",
-    "shioiri",
-    "ariake_c_turf"
+    "akatsuka",
+    "hikarigaoka",
+    "zenpukuji",
+    "shakujii_b"
   ],
   "staleFacilityIds": [
-    "ariake_c_turf",
-    "shioiri",
-    "takaido",
-    "kameido"
+    "higashiayase",
+    "hikarigaoka",
+    "shakujii_b",
+    "akatsuka",
+    "zenpukuji",
+    "takaido"
   ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -28,7 +32,7 @@
       "weeksFetched": 4
     },
     "oi_b_hard": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -36,7 +40,7 @@
       "weeksFetched": 4
     },
     "ariake_a_hard": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -44,7 +48,7 @@
       "weeksFetched": 4
     },
     "ariake_b_hard": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -68,7 +72,7 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -76,9 +80,12 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.goto: Navigation to \"https://kouen.sports.metro.tokyo.lg.jp/web/index.jsp\" is interrupted by another navigation to \"chrome-error://chromewebdata/\""
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "kiba": {
       "attempts": 1,
@@ -97,7 +104,7 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -122,20 +129,16 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "step": "利用目的の選択",
+      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
+      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
     },
     "higashiayase": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "step": "利用目的の選択",
+      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | ご利用環境 × 対応ブラウザ 対応ブラウザは以下のとおりです。いずれも最新版のみ対応しています。 デスクトップブラウザ Chrome Firefox Microsoft Edge Safari （macOS のみ） モバイルデバイス Chrome for Android iOS Safari 閉じる 利用者カード× 利"
     },
     "toneri": {
       "attempts": 1,
@@ -154,7 +157,7 @@
       "weeksFetched": 4
     },
     "oojima_komatsugawa": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -162,13 +165,12 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
       ],
-      "error": "[検索] page.waitForFunction: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 「公園：」を選択して下さい。 条件変更 施設ごと 日付順 公園 汐入公園 施設 選択してください。 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●をクリックして予約枠を"
+      "weeksFetched": 4
     },
     "takaido": {
       "attempts": 3,
@@ -178,30 +180,24 @@
     },
     "zenpukuji": {
       "attempts": 3,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "step": "利用目的の選択",
+      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
+      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
     },
     "hikarigaoka": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "step": "利用目的の選択",
+      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
+      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
     },
     "shakujii_b": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "step": "利用目的の選択",
+      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
+      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
     },
     "inokashira": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -217,7 +213,7 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -225,7 +221,7 @@
       "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -233,7 +229,7 @@
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -241,7 +237,7 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -249,7 +245,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -258,30 +254,31 @@
     },
     "ariake_c_turf": {
       "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "step": "検索",
+      "courtOptions": [
+        "人工芝"
+      ],
+      "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 3,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 0,
+      "toNotifyCount": 1,
       "pushResult": {
-        "attempted": false,
-        "ok": false,
-        "skippedReason": "no_new_slots"
+        "attempted": true,
+        "ok": true
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 3,
       "pushResult": {
         "attempted": false,
         "ok": false,
