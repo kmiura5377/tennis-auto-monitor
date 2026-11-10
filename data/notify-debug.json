@@ -1,48 +1,13 @@
 {
-  "generatedAt": "2026-11-10T14:46:16.179Z",
-  "scrapeFailureCount": 16,
+  "generatedAt": "2026-11-10T19:48:31.860Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.5161290322580645,
-  "blockSuspected": true,
-  "blockStreak": 4,
-  "failedFacilityIds": [
-    "sarue",
-    "hibiya",
-    "kiba",
-    "kameido",
-    "takaido",
-    "zenpukuji",
-    "hikarigaoka",
-    "shakujii_b",
-    "inokashira",
-    "musashino_chuo",
-    "koganei",
-    "nogawa",
-    "fuchu_no_mori",
-    "higashiyamato_minami",
-    "oi_b_turf",
-    "ariake_c_turf"
-  ],
-  "staleFacilityIds": [
-    "sarue",
-    "kameido",
-    "kiba",
-    "takaido",
-    "zenpukuji",
-    "hikarigaoka",
-    "higashiyamato_minami",
-    "oi_b_turf",
-    "nogawa",
-    "koganei",
-    "fuchu_no_mori",
-    "hibiya",
-    "inokashira",
-    "musashino_chuo",
-    "ariake_c_turf"
-  ],
-  "droppedFacilityIds": [
-    "shakujii_b"
-  ],
+  "scrapeFailureRate": 0,
+  "blockSuspected": false,
+  "blockStreak": 0,
+  "failedFacilityIds": [],
+  "staleFacilityIds": [],
+  "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
       "attempts": 1,
@@ -77,10 +42,12 @@
       "weeksFetched": 4
     },
     "hibiya": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "shiba": {
       "attempts": 1,
@@ -91,25 +58,31 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -125,7 +98,7 @@
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -133,7 +106,7 @@
       "weeksFetched": 4
     },
     "johoku": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝・照明有）",
@@ -182,7 +155,7 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -190,79 +163,103 @@
       "weeksFetched": 4
     },
     "takaido": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "hikarigaoka": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "inokashira": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "musashino_chuo": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "人工芝"
+      ],
+      "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "人工芝"
+      ],
+      "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 8,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -280,7 +277,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 8,
       "pushResult": {
         "attempted": false,
         "ok": false,
