@@ -1,42 +1,38 @@
 {
-  "generatedAt": "2026-11-10T12:51:46.242Z",
-  "scrapeFailureCount": 23,
+  "generatedAt": "2026-11-10T13:18:09.024Z",
+  "scrapeFailureCount": 19,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.7419354838709677,
+  "scrapeFailureRate": 0.6129032258064516,
   "blockSuspected": true,
-  "blockStreak": 1,
+  "blockStreak": 2,
   "failedFacilityIds": [
-    "oi_b_hard",
-    "ariake_a_hard",
-    "oi_a_hard",
-    "hibiya",
     "kiba",
     "kameido",
     "soshigaya",
+    "sarue",
     "higashishirahige",
     "ukima",
     "johoku",
-    "higashiayase",
     "akatsuka",
     "toneri",
+    "higashiayase",
     "shinozaki_a",
-    "takaido",
+    "oojima_komatsugawa",
     "shioiri",
-    "hikarigaoka",
+    "takaido",
     "zenpukuji",
-    "nogawa",
+    "hikarigaoka",
     "shakujii_b",
-    "fuchu_no_mori",
-    "oi_b_turf",
+    "musashino_chuo",
     "ariake_c_turf"
   ],
   "staleFacilityIds": [
+    "sarue",
+    "oojima_komatsugawa",
+    "musashino_chuo",
     "takaido",
     "shioiri",
-    "oi_b_turf",
     "ariake_c_turf",
-    "oi_b_hard",
-    "oi_a_hard",
     "kiba",
     "kameido",
     "soshigaya",
@@ -48,32 +44,34 @@
     "shinozaki_a",
     "zenpukuji",
     "hikarigaoka",
-    "ariake_a_hard",
     "higashiayase",
-    "shakujii_b",
-    "fuchu_no_mori",
-    "nogawa",
-    "hibiya"
+    "shakujii_b"
   ],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "ハード"
+      ],
+      "weeksFetched": 4
     },
     "oi_b_hard": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "ハード"
+      ],
+      "weeksFetched": 4
     },
     "ariake_a_hard": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "ハード"
+      ],
+      "weeksFetched": 4
     },
     "ariake_b_hard": {
       "attempts": 2,
@@ -84,10 +82,12 @@
       "weeksFetched": 4
     },
     "hibiya": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 2,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "shiba": {
       "attempts": 2,
@@ -98,12 +98,10 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "step": "利用目的の選択",
+      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
+      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
     },
     "kameido": {
       "attempts": 3,
@@ -166,12 +164,10 @@
       "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
     },
     "oojima_komatsugawa": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "step": "利用目的の選択",
+      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
+      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
     },
     "shioiri": {
       "attempts": 3,
@@ -212,12 +208,10 @@
       "weeksFetched": 4
     },
     "musashino_chuo": {
-      "attempts": 2,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "step": "利用目的の選択",
+      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
+      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
     },
     "koganei": {
       "attempts": 2,
@@ -228,18 +222,6 @@
       "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
-    },
-    "fuchu_no_mori": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
-    },
-    "higashiyamato_minami": {
       "attempts": 2,
       "step": "検索",
       "courtOptions": [
@@ -247,11 +229,29 @@
       ],
       "weeksFetched": 4
     },
+    "fuchu_no_mori": {
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
+    "higashiyamato_minami": {
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
     "oi_b_turf": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "人工芝"
+      ],
+      "weeksFetched": 4
     },
     "ariake_c_turf": {
       "attempts": 3,
@@ -260,7 +260,7 @@
       "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
     }
   },
-  "newlyAvailableCount": 0,
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -278,7 +278,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 0,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
