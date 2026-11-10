@@ -1,31 +1,24 @@
 {
-  "generatedAt": "2026-11-10T10:42:51.624Z",
-  "scrapeFailureCount": 3,
+  "generatedAt": "2026-11-10T11:17:48.869Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.0967741935483871,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [
-    "ariake_b_hard",
-    "oi_a_hard",
-    "kameido"
-  ],
-  "staleFacilityIds": [
-    "ariake_b_hard",
-    "oi_a_hard",
-    "kameido"
-  ],
+  "failedFacilityIds": [],
+  "staleFacilityIds": [],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
       "attempts": 3,
       "step": "検索",
-      "courtOptions": [],
-      "error": "[検索] 施設の選択肢が見つかりませんでした",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/05 【東綾瀬公園】高反発バット使用禁止について 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31"
+      "courtOptions": [
+        "ハード"
+      ],
+      "weeksFetched": 4
     },
     "oi_b_hard": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -43,9 +36,10 @@
     "ariake_b_hard": {
       "attempts": 3,
       "step": "検索",
-      "courtOptions": [],
-      "error": "[検索] 施設の選択肢が見つかりませんでした",
-      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/05 【東綾瀬公園】高反発バット使用禁止について 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31"
+      "courtOptions": [
+        "ハード"
+      ],
+      "weeksFetched": 4
     },
     "hibiya": {
       "attempts": 1,
@@ -56,7 +50,7 @@
       "weeksFetched": 4
     },
     "shiba": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -64,7 +58,7 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -72,10 +66,12 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 3,
-      "step": "利用目的の選択",
-      "error": "[利用目的の選択] page.selectOption: Timeout 10000ms exceeded.",
-      "pageHint": "施設予約システムからのお知らせ | 施設予約システムからのお知らせ ご迷惑をおかけしております。 現在、ご指定のページはアクセスできません。 しばらく経ってから、アクセスしてください。"
+      "attempts": 1,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "kiba": {
       "attempts": 1,
@@ -102,7 +98,7 @@
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -119,7 +115,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -127,7 +123,7 @@
       "weeksFetched": 4
     },
     "higashiayase": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -159,7 +155,7 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -175,7 +171,7 @@
       "weeksFetched": 4
     },
     "zenpukuji": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -207,7 +203,7 @@
       "weeksFetched": 4
     },
     "musashino_chuo": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -215,7 +211,7 @@
       "weeksFetched": 4
     },
     "koganei": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -223,7 +219,7 @@
       "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -231,7 +227,7 @@
       "weeksFetched": 4
     },
     "fuchu_no_mori": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -255,7 +251,7 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -263,7 +259,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 0,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -281,7 +277,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 0,
       "pushResult": {
         "attempted": false,
         "ok": false,
