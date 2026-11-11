@@ -148,7 +148,20 @@ function mergeParsedWeek(days, facility, parsed) {
 }
 
 // diag には失敗理由・コート数・取得できた週数を書き込む（data/notify-debug.json に残して原因調査に使う）
+// 予約サイトが「アクセスできません」のお知らせ画面や 502 Proxy Error を返す障害を検知したら、
+// この実行ではそれ以上アクセスしない（不調なサーバーに追い打ちをかけないため）。
+// 2026-11-10 夜に予約サイト側の障害で最大23施設が失敗した際、各施設を3回×2周やり直していた。
+const SITE_ERROR_PATTERN = /アクセスできません|Proxy Error|(?:^|\D)50[23](?:\D|$)|Service Unavailable|メンテナンス/;
+const SITE_DOWN_STREAK = 4; // 障害画面が連続でこの回数見えたら、サイト障害とみなして中断する
+let siteErrorStreak = 0;
+let siteDownDetected = false;
+
 async function scrapeFacility(browser, facility, days, diag) {
+  if (siteDownDetected) {
+    diag.error = '[中断] 予約サイトの障害が続いているため、この実行では試さなかった';
+    diag.skipped = true;
+    return false;
+  }
   // 施設ごとに独立したブラウザ環境(cookie等を共有しない)を使う。browser.newPage() だと全施設が
   // 同じcookieを共有し、予約サイト側が持つ「表示中の週」などの状態が並行処理の施設同士で混ざり、
   // 取得失敗や別施設の週のデータが混入する原因になりうるため。
@@ -261,6 +274,7 @@ async function scrapeFacility(browser, facility, days, diag) {
     }
 
     console.log(`[${facility.id}] done`);
+    siteErrorStreak = 0;
     return true;
   } catch (error) {
     console.error(`[${facility.id}] ERROR: ${error.message}`);
@@ -271,6 +285,14 @@ async function scrapeFacility(browser, facility, days, diag) {
       const text = (await page.locator('body').innerText({ timeout: 3000 })).replace(/\s+/g, ' ').trim();
       diag.pageHint = `${title} | ${text.slice(0, 160)}`;
     } catch (e) { /* ページが取れなければ記録しない */ }
+    if (SITE_ERROR_PATTERN.test(diag.pageHint || '')) {
+      diag.siteError = true;
+      siteErrorStreak++;
+      if (siteErrorStreak >= SITE_DOWN_STREAK && !siteDownDetected) {
+        siteDownDetected = true;
+        console.error(`SITE_DOWN: 予約サイトの障害画面が${siteErrorStreak}回連続。この実行では以降アクセスしない`);
+      }
+    }
     return false;
   } finally {
     await context.close();
@@ -581,7 +603,7 @@ const TEST_PUSH_ONLY = process.env.TEST_PUSH_ONLY === 'true';
 
   let failedFacilities = await runPool(FACILITIES, SCRAPE_CONCURRENCY);
   // 失敗した施設は、サイトへの負荷を抑えるため同時数を減らして最大 RETRY_ROUNDS 回やり直す
-  for (let round = 1; round <= RETRY_ROUNDS && failedFacilities.length > 0; round++) {
+  for (let round = 1; round <= RETRY_ROUNDS && failedFacilities.length > 0 && !siteDownDetected; round++) {
     console.log(`RETRY round ${round}: ${failedFacilities.map(f => f.id).join(',')}`);
     failedFacilities = await runPool(failedFacilities, RETRY_CONCURRENCY);
   }
