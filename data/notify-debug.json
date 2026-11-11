@@ -1,20 +1,16 @@
 {
-  "generatedAt": "2026-11-11T02:07:50.016Z",
-  "scrapeFailureCount": 1,
+  "generatedAt": "2026-11-11T02:38:38.089Z",
+  "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0.03225806451612903,
+  "scrapeFailureRate": 0,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [
-    "kameido"
-  ],
-  "staleFacilityIds": [
-    "kameido"
-  ],
+  "failedFacilityIds": [],
+  "staleFacilityIds": [],
   "droppedFacilityIds": [],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -46,14 +42,6 @@
       "weeksFetched": 4
     },
     "hibiya": {
-      "attempts": 3,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
-    },
-    "shiba": {
       "attempts": 1,
       "step": "検索",
       "courtOptions": [
@@ -61,8 +49,16 @@
       ],
       "weeksFetched": 4
     },
+    "shiba": {
+      "attempts": 3,
+      "step": "検索",
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
+    },
     "sarue": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -70,10 +66,12 @@
       "weeksFetched": 4
     },
     "kameido": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
-      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
-      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年11月11日～、亀戸中央公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 亀戸中央公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●を"
+      "courtOptions": [
+        "テニス（人工芝）"
+      ],
+      "weeksFetched": 4
     },
     "kiba": {
       "attempts": 3,
@@ -84,7 +82,7 @@
       "weeksFetched": 4
     },
     "soshigaya": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -100,7 +98,7 @@
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -141,7 +139,7 @@
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -189,7 +187,7 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -197,7 +195,7 @@
       "weeksFetched": 4
     },
     "inokashira": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
