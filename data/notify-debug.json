@@ -1,16 +1,26 @@
 {
-  "generatedAt": "2026-11-11T13:40:02.522Z",
-  "scrapeFailureCount": 0,
+  "generatedAt": "2026-11-12T02:44:54.204Z",
+  "scrapeFailureCount": 4,
   "scrapeTotalFacilities": 31,
-  "scrapeFailureRate": 0,
+  "scrapeFailureRate": 0.12903225806451613,
   "blockSuspected": false,
   "blockStreak": 0,
-  "failedFacilityIds": [],
+  "failedFacilityIds": [
+    "ariake_b_hard",
+    "hibiya",
+    "sarue",
+    "ukima"
+  ],
   "staleFacilityIds": [],
-  "droppedFacilityIds": [],
+  "droppedFacilityIds": [
+    "ariake_b_hard",
+    "hibiya",
+    "sarue",
+    "ukima"
+  ],
   "facilityDiag": {
     "oi_a_hard": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -34,23 +44,19 @@
       "weeksFetched": 4
     },
     "ariake_b_hard": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "ハード"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/05 【東綾瀬公園】高反発バット使用禁止について 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31"
     },
     "hibiya": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "courtOptions": [],
+      "error": "[検索] 施設の選択肢が見つかりませんでした",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 「公園：」を選択して下さい。 条件変更 施設ごと 日付順 指定条件に該当する空き施設が見つかりませんでした。 条件を変更し、再度、検索してください。 ご利用ガイド 公園・施設一覧 サイトマップ利用環境 C"
     },
     "shiba": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -58,15 +64,13 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "error": "[検索] page.waitForLoadState: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム 空き状況画面（施設ごと） | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 空き状況 ヘルプ 指定条件 2026年11月12日～、猿江恩賜公園でテニス（人工芝）をする。 条件変更 施設ごと 日付順 公園 猿江恩賜公園 施設 テニス（人工芝） １ヶ月空き表示 月表示 １週間空き表示 週表示 ご希望の日時の●を"
     },
     "kameido": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -74,7 +78,7 @@
       "weeksFetched": 4
     },
     "kiba": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -90,7 +94,7 @@
       "weeksFetched": 4
     },
     "higashishirahige": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -98,12 +102,9 @@
       "weeksFetched": 4
     },
     "ukima": {
-      "attempts": 1,
-      "step": "検索",
-      "courtOptions": [
-        "テニス（人工芝）"
-      ],
-      "weeksFetched": 4
+      "attempts": 3,
+      "error": "[接続] page.goto: Timeout 30000ms exceeded.",
+      "pageHint": "都立公園スポーツレクリエーション予約システム ホーム画面 | 都立公園スポーツレクリエーション予約システム ログイン 初めての方 ホーム 予約 抽選 お知らせ ヘルプ 全て表示 2026/03/25 【重要】本人確認についてのお知らせ 2026/11/05 【東綾瀬公園】高反発バット使用禁止について 2026/11/01 【光が丘公園】一部利用休止のお知らせ 2026/10/31"
     },
     "johoku": {
       "attempts": 2,
@@ -115,7 +116,7 @@
       "weeksFetched": 4
     },
     "akatsuka": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -139,7 +140,7 @@
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -155,7 +156,7 @@
       "weeksFetched": 4
     },
     "shioiri": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -187,7 +188,7 @@
       "weeksFetched": 4
     },
     "shakujii_b": {
-      "attempts": 1,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -203,7 +204,7 @@
       "weeksFetched": 4
     },
     "musashino_chuo": {
-      "attempts": 3,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -219,7 +220,7 @@
       "weeksFetched": 4
     },
     "nogawa": {
-      "attempts": 2,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -235,7 +236,7 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -243,7 +244,7 @@
       "weeksFetched": 4
     },
     "oi_b_turf": {
-      "attempts": 2,
+      "attempts": 3,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -251,7 +252,7 @@
       "weeksFetched": 4
     },
     "ariake_c_turf": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "人工芝"
@@ -259,7 +260,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 9,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -277,7 +278,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 2,
+      "toNotifyCount": 9,
       "pushResult": {
         "attempted": false,
         "ok": false,
