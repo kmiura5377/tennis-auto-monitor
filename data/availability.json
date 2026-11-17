@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T07:04:23.180Z",
+  "generatedAt": "2026-11-17T07:34:02.754Z",
   "facilities": [
     {
       "id": "oi_a_hard",
@@ -127,37 +127,37 @@
     }
   ],
   "facilityFetchedAt": {
-    "oi_a_hard": "2026-11-17T07:04:23.180Z",
-    "oi_b_hard": "2026-11-17T07:04:23.180Z",
-    "ariake_a_hard": "2026-11-17T07:04:23.180Z",
-    "ariake_b_hard": "2026-11-17T07:04:23.180Z",
-    "hibiya": "2026-11-17T07:04:23.180Z",
-    "shiba": "2026-11-17T07:04:23.180Z",
-    "sarue": "2026-11-17T07:04:23.180Z",
-    "kameido": "2026-11-17T07:04:23.180Z",
-    "kiba": "2026-11-17T07:04:23.180Z",
-    "soshigaya": "2026-11-17T07:04:23.180Z",
-    "higashishirahige": "2026-11-17T07:04:23.180Z",
-    "ukima": "2026-11-17T07:04:23.180Z",
-    "johoku": "2026-11-17T07:04:23.180Z",
-    "akatsuka": "2026-11-17T07:04:23.180Z",
-    "higashiayase": "2026-11-17T07:04:23.180Z",
-    "toneri": "2026-11-17T07:04:23.180Z",
-    "shinozaki_a": "2026-11-17T07:04:23.180Z",
-    "oojima_komatsugawa": "2026-11-17T07:04:23.180Z",
-    "shioiri": "2026-11-17T07:04:23.180Z",
-    "takaido": "2026-11-17T07:04:23.180Z",
-    "zenpukuji": "2026-11-17T07:04:23.180Z",
-    "hikarigaoka": "2026-11-17T07:04:23.180Z",
-    "shakujii_b": "2026-11-17T07:04:23.180Z",
-    "inokashira": "2026-11-17T07:04:23.180Z",
-    "musashino_chuo": "2026-11-17T07:04:23.180Z",
-    "koganei": "2026-11-17T07:04:23.180Z",
-    "nogawa": "2026-11-17T07:04:23.180Z",
-    "fuchu_no_mori": "2026-11-17T07:04:23.180Z",
-    "higashiyamato_minami": "2026-11-17T07:04:23.180Z",
-    "oi_b_turf": "2026-11-17T07:04:23.180Z",
-    "ariake_c_turf": "2026-11-17T07:04:23.180Z"
+    "oi_a_hard": "2026-11-17T07:34:02.754Z",
+    "oi_b_hard": "2026-11-17T07:34:02.754Z",
+    "ariake_a_hard": "2026-11-17T07:34:02.754Z",
+    "ariake_b_hard": "2026-11-17T07:34:02.754Z",
+    "hibiya": "2026-11-17T07:34:02.754Z",
+    "shiba": "2026-11-17T07:34:02.754Z",
+    "sarue": "2026-11-17T07:34:02.754Z",
+    "kameido": "2026-11-17T07:34:02.754Z",
+    "kiba": "2026-11-17T07:34:02.754Z",
+    "soshigaya": "2026-11-17T07:34:02.754Z",
+    "higashishirahige": "2026-11-17T07:34:02.754Z",
+    "ukima": "2026-11-17T07:34:02.754Z",
+    "johoku": "2026-11-17T07:34:02.754Z",
+    "akatsuka": "2026-11-17T07:34:02.754Z",
+    "higashiayase": "2026-11-17T07:34:02.754Z",
+    "toneri": "2026-11-17T07:34:02.754Z",
+    "shinozaki_a": "2026-11-17T07:34:02.754Z",
+    "oojima_komatsugawa": "2026-11-17T07:34:02.754Z",
+    "shioiri": "2026-11-17T07:34:02.754Z",
+    "takaido": "2026-11-17T07:34:02.754Z",
+    "zenpukuji": "2026-11-17T07:34:02.754Z",
+    "hikarigaoka": "2026-11-17T07:34:02.754Z",
+    "shakujii_b": "2026-11-17T07:34:02.754Z",
+    "inokashira": "2026-11-17T07:34:02.754Z",
+    "musashino_chuo": "2026-11-17T07:34:02.754Z",
+    "koganei": "2026-11-17T07:34:02.754Z",
+    "nogawa": "2026-11-17T07:34:02.754Z",
+    "fuchu_no_mori": "2026-11-17T07:34:02.754Z",
+    "higashiyamato_minami": "2026-11-17T07:34:02.754Z",
+    "oi_b_turf": "2026-11-17T07:34:02.754Z",
+    "ariake_c_turf": "2026-11-17T07:34:02.754Z"
   },
   "days": {
     "2026-11-17": [
@@ -187,6 +187,28 @@
           },
           {
             "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "oi_b_hard",
+        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -226,28 +248,6 @@
         ]
       },
       {
-        "facilityId": "oi_b_hard",
-        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -278,6 +278,36 @@
           {
             "time": "21:00-23:00",
             "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": true
+          },
+          {
+            "time": "19:00-21:00",
+            "available": true
           }
         ]
       },
@@ -438,6 +468,36 @@
         ]
       },
       {
+        "facilityId": "ukima",
+        "facility": "浮間公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
         "timeSlots": [
@@ -468,8 +528,8 @@
         ]
       },
       {
-        "facilityId": "ukima",
-        "facility": "浮間公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -489,7 +549,7 @@
           },
           {
             "time": "17:00-19:00",
-            "available": false
+            "available": true
           },
           {
             "time": "19:00-21:00",
@@ -660,6 +720,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -685,42 +763,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -810,24 +852,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -845,6 +869,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -872,8 +914,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -886,48 +928,6 @@
           {
             "time": "13:00-15:00",
             "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": true
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": true
-          },
-          {
-            "time": "19:00-21:00",
-            "available": true
           }
         ]
       }
@@ -964,6 +964,28 @@
         ]
       },
       {
+        "facilityId": "oi_b_hard",
+        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_a_hard",
         "facility": "有明テニスＡ屋外ハードコート",
         "timeSlots": [
@@ -998,28 +1020,6 @@
         ]
       },
       {
-        "facilityId": "oi_b_hard",
-        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -1049,6 +1049,36 @@
           },
           {
             "time": "21:00-23:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -1210,6 +1240,36 @@
         ]
       },
       {
+        "facilityId": "ukima",
+        "facility": "浮間公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
         "timeSlots": [
@@ -1240,8 +1300,8 @@
         ]
       },
       {
-        "facilityId": "ukima",
-        "facility": "浮間公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -1432,6 +1492,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -1457,42 +1535,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -1582,24 +1624,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -1618,6 +1642,24 @@
           {
             "time": "15:00-17:00",
             "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": true
+          },
+          {
+            "time": "11:00-13:00",
+            "available": true
+          },
+          {
+            "time": "13:00-15:00",
+            "available": true
           }
         ]
       },
@@ -1644,8 +1686,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -1657,48 +1699,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -1736,6 +1736,28 @@
         ]
       },
       {
+        "facilityId": "oi_b_hard",
+        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_a_hard",
         "facility": "有明テニスＡ屋外ハードコート",
         "timeSlots": [
@@ -1770,28 +1792,6 @@
         ]
       },
       {
-        "facilityId": "oi_b_hard",
-        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -1821,6 +1821,36 @@
           },
           {
             "time": "21:00-23:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -1982,6 +2012,36 @@
         ]
       },
       {
+        "facilityId": "ukima",
+        "facility": "浮間公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
         "timeSlots": [
@@ -2012,16 +2072,16 @@
         ]
       },
       {
-        "facilityId": "ukima",
-        "facility": "浮間公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
-            "available": false
+            "available": true
           },
           {
             "time": "11:00-13:00",
-            "available": false
+            "available": true
           },
           {
             "time": "13:00-15:00",
@@ -2029,7 +2089,7 @@
           },
           {
             "time": "15:00-17:00",
-            "available": false
+            "available": true
           },
           {
             "time": "17:00-19:00",
@@ -2204,6 +2264,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -2229,42 +2307,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -2354,24 +2396,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -2390,6 +2414,24 @@
           {
             "time": "15:00-17:00",
             "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": true
           }
         ]
       },
@@ -2416,38 +2458,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": true
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -2459,18 +2471,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -2508,6 +2508,28 @@
         ]
       },
       {
+        "facilityId": "oi_b_hard",
+        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_a_hard",
         "facility": "有明テニスＡ屋外ハードコート",
         "timeSlots": [
@@ -2542,28 +2564,6 @@
         ]
       },
       {
-        "facilityId": "oi_b_hard",
-        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -2593,6 +2593,36 @@
           },
           {
             "time": "21:00-23:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -2754,6 +2784,36 @@
         ]
       },
       {
+        "facilityId": "ukima",
+        "facility": "浮間公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
         "timeSlots": [
@@ -2784,24 +2844,24 @@
         ]
       },
       {
-        "facilityId": "ukima",
-        "facility": "浮間公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
-            "available": false
+            "available": true
           },
           {
             "time": "11:00-13:00",
-            "available": false
+            "available": true
           },
           {
             "time": "13:00-15:00",
-            "available": false
+            "available": true
           },
           {
             "time": "15:00-17:00",
-            "available": false
+            "available": true
           },
           {
             "time": "17:00-19:00",
@@ -2976,6 +3036,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": true
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -3001,42 +3079,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -3126,24 +3168,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -3162,6 +3186,24 @@
           {
             "time": "15:00-17:00",
             "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": true
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": true
           }
         ]
       },
@@ -3188,38 +3230,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          },
-          {
-            "time": "15:00-17:00",
-            "available": true
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -3231,18 +3243,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -3280,6 +3280,28 @@
         ]
       },
       {
+        "facilityId": "oi_b_hard",
+        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_a_hard",
         "facility": "有明テニスＡ屋外ハードコート",
         "timeSlots": [
@@ -3314,28 +3336,6 @@
         ]
       },
       {
-        "facilityId": "oi_b_hard",
-        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -3365,6 +3365,36 @@
           },
           {
             "time": "21:00-23:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -3526,6 +3556,36 @@
         ]
       },
       {
+        "facilityId": "ukima",
+        "facility": "浮間公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
         "timeSlots": [
@@ -3556,8 +3616,8 @@
         ]
       },
       {
-        "facilityId": "ukima",
-        "facility": "浮間公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -3621,7 +3681,7 @@
           },
           {
             "time": "15:00-17:00",
-            "available": false
+            "available": true
           },
           {
             "time": "17:00-19:00",
@@ -3748,6 +3808,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -3773,42 +3851,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -3898,24 +3940,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -3933,6 +3957,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -3960,8 +4002,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -3973,48 +4015,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -4052,6 +4052,28 @@
         ]
       },
       {
+        "facilityId": "oi_b_hard",
+        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_a_hard",
         "facility": "有明テニスＡ屋外ハードコート",
         "timeSlots": [
@@ -4086,28 +4108,6 @@
         ]
       },
       {
-        "facilityId": "oi_b_hard",
-        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -4137,6 +4137,36 @@
           },
           {
             "time": "21:00-23:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -4298,6 +4328,36 @@
         ]
       },
       {
+        "facilityId": "ukima",
+        "facility": "浮間公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
         "timeSlots": [
@@ -4328,8 +4388,8 @@
         ]
       },
       {
-        "facilityId": "ukima",
-        "facility": "浮間公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -4520,6 +4580,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -4545,42 +4623,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -4670,24 +4712,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -4705,6 +4729,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -4732,8 +4774,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -4745,48 +4787,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -4824,6 +4824,28 @@
         ]
       },
       {
+        "facilityId": "oi_b_hard",
+        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_a_hard",
         "facility": "有明テニスＡ屋外ハードコート",
         "timeSlots": [
@@ -4858,28 +4880,6 @@
         ]
       },
       {
-        "facilityId": "oi_b_hard",
-        "facility": "大井ふ頭海浜公園Ｂ（ハード）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -4909,6 +4909,36 @@
           },
           {
             "time": "21:00-23:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -5070,6 +5100,36 @@
         ]
       },
       {
+        "facilityId": "ukima",
+        "facility": "浮間公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
         "timeSlots": [
@@ -5100,8 +5160,8 @@
         ]
       },
       {
-        "facilityId": "ukima",
-        "facility": "浮間公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -5292,6 +5352,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -5317,42 +5395,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -5442,24 +5484,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -5477,6 +5501,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -5504,8 +5546,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -5517,48 +5559,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -5686,8 +5686,8 @@
         ]
       },
       {
-        "facilityId": "shiba",
-        "facility": "芝公園（人工芝）",
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -5716,8 +5716,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "shiba",
+        "facility": "芝公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -5760,6 +5760,36 @@
           {
             "time": "13:00-15:00",
             "available": true
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
           },
           {
             "time": "15:00-17:00",
@@ -5824,32 +5854,20 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
-            "available": false
+            "available": true
           },
           {
             "time": "11:00-13:00",
-            "available": false
+            "available": true
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
+            "available": true
           }
         ]
       },
@@ -5884,8 +5902,38 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -5898,6 +5946,18 @@
           {
             "time": "13:00-15:00",
             "available": true
+          },
+          {
+            "time": "15:00-17:00",
+            "available": true
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
           }
         ]
       },
@@ -6064,6 +6124,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": true
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -6089,42 +6167,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -6214,24 +6256,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -6250,6 +6274,24 @@
           {
             "time": "15:00-17:00",
             "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": true
+          },
+          {
+            "time": "13:00-15:00",
+            "available": true
           }
         ]
       },
@@ -6276,38 +6318,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          },
-          {
-            "time": "15:00-17:00",
-            "available": true
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -6319,18 +6331,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -6458,8 +6458,8 @@
         ]
       },
       {
-        "facilityId": "shiba",
-        "facility": "芝公園（人工芝）",
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -6488,12 +6488,12 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "shiba",
+        "facility": "芝公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
-            "available": true
+            "available": false
           },
           {
             "time": "11:00-13:00",
@@ -6532,6 +6532,36 @@
           {
             "time": "13:00-15:00",
             "available": true
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": true
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
           },
           {
             "time": "15:00-17:00",
@@ -6596,32 +6626,20 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
-            "available": false
+            "available": true
           },
           {
             "time": "11:00-13:00",
-            "available": false
+            "available": true
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
+            "available": true
           }
         ]
       },
@@ -6656,8 +6674,38 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -6670,6 +6718,18 @@
           {
             "time": "13:00-15:00",
             "available": true
+          },
+          {
+            "time": "15:00-17:00",
+            "available": true
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
           }
         ]
       },
@@ -6836,6 +6896,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -6861,42 +6939,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -6986,24 +7028,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -7022,6 +7046,24 @@
           {
             "time": "15:00-17:00",
             "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": true
+          },
+          {
+            "time": "11:00-13:00",
+            "available": true
+          },
+          {
+            "time": "13:00-15:00",
+            "available": true
           }
         ]
       },
@@ -7048,38 +7090,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          },
-          {
-            "time": "15:00-17:00",
-            "available": true
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -7091,18 +7103,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -7230,6 +7230,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "shiba",
         "facility": "芝公園（人工芝）",
         "timeSlots": [
@@ -7260,20 +7290,20 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
-            "available": false
+            "available": true
           },
           {
             "time": "11:00-13:00",
-            "available": false
+            "available": true
           },
           {
             "time": "13:00-15:00",
-            "available": false
+            "available": true
           },
           {
             "time": "15:00-17:00",
@@ -7290,20 +7320,20 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
-            "available": true
+            "available": false
           },
           {
             "time": "11:00-13:00",
-            "available": true
+            "available": false
           },
           {
             "time": "13:00-15:00",
-            "available": true
+            "available": false
           },
           {
             "time": "15:00-17:00",
@@ -7368,32 +7398,20 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
-            "available": false
+            "available": true
           },
           {
             "time": "11:00-13:00",
-            "available": false
+            "available": true
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
+            "available": true
           }
         ]
       },
@@ -7428,8 +7446,38 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -7442,6 +7490,18 @@
           {
             "time": "13:00-15:00",
             "available": true
+          },
+          {
+            "time": "15:00-17:00",
+            "available": true
+          },
+          {
+            "time": "17:00-19:00",
+            "available": true
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
           }
         ]
       },
@@ -7608,6 +7668,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -7633,42 +7711,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -7758,24 +7800,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -7794,6 +7818,24 @@
           {
             "time": "15:00-17:00",
             "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": true
           }
         ]
       },
@@ -7820,38 +7862,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          },
-          {
-            "time": "15:00-17:00",
-            "available": true
-          },
-          {
-            "time": "17:00-19:00",
-            "available": true
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -7863,18 +7875,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -8002,8 +8002,8 @@
         ]
       },
       {
-        "facilityId": "shiba",
-        "facility": "芝公園（人工芝）",
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -8032,8 +8032,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "shiba",
+        "facility": "芝公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -8041,7 +8041,7 @@
           },
           {
             "time": "11:00-13:00",
-            "available": true
+            "available": false
           },
           {
             "time": "13:00-15:00",
@@ -8080,6 +8080,36 @@
           {
             "time": "15:00-17:00",
             "available": true
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": true
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
           },
           {
             "time": "17:00-19:00",
@@ -8140,32 +8170,20 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
-            "available": false
+            "available": true
           },
           {
             "time": "11:00-13:00",
-            "available": false
+            "available": true
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
+            "available": true
           }
         ]
       },
@@ -8200,8 +8218,38 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -8214,6 +8262,18 @@
           {
             "time": "13:00-15:00",
             "available": true
+          },
+          {
+            "time": "15:00-17:00",
+            "available": true
+          },
+          {
+            "time": "17:00-19:00",
+            "available": true
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
           }
         ]
       },
@@ -8380,6 +8440,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -8405,42 +8483,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -8530,24 +8572,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -8566,6 +8590,24 @@
           {
             "time": "15:00-17:00",
             "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": true
+          },
+          {
+            "time": "11:00-13:00",
+            "available": true
+          },
+          {
+            "time": "13:00-15:00",
+            "available": true
           }
         ]
       },
@@ -8592,38 +8634,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          },
-          {
-            "time": "15:00-17:00",
-            "available": true
-          },
-          {
-            "time": "17:00-19:00",
-            "available": true
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -8635,18 +8647,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -8774,6 +8774,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "shiba",
         "facility": "芝公園（人工芝）",
         "timeSlots": [
@@ -8804,8 +8834,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -8834,8 +8864,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -8912,8 +8942,8 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -8925,18 +8955,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -8972,8 +8990,8 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -8985,6 +9003,48 @@
           },
           {
             "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -9152,6 +9212,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -9177,42 +9255,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -9302,24 +9344,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -9337,6 +9361,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -9364,8 +9406,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -9377,48 +9419,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -9546,6 +9546,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "shiba",
         "facility": "芝公園（人工芝）",
         "timeSlots": [
@@ -9576,8 +9606,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -9606,8 +9636,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -9684,8 +9714,8 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -9697,18 +9727,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -9744,8 +9762,8 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -9757,6 +9775,48 @@
           },
           {
             "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -9924,6 +9984,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -9949,42 +10027,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -10074,24 +10116,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -10109,6 +10133,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -10136,8 +10178,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -10149,48 +10191,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -10318,8 +10318,8 @@
         ]
       },
       {
-        "facilityId": "shiba",
-        "facility": "芝公園（人工芝）",
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -10348,8 +10348,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "shiba",
+        "facility": "芝公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -10396,6 +10396,36 @@
           {
             "time": "15:00-17:00",
             "available": true
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
           },
           {
             "time": "17:00-19:00",
@@ -10456,32 +10486,20 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
-            "available": false
+            "available": true
           },
           {
             "time": "11:00-13:00",
-            "available": false
+            "available": true
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
+            "available": true
           }
         ]
       },
@@ -10516,8 +10534,38 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -10530,6 +10578,18 @@
           {
             "time": "13:00-15:00",
             "available": true
+          },
+          {
+            "time": "15:00-17:00",
+            "available": true
+          },
+          {
+            "time": "17:00-19:00",
+            "available": true
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
           }
         ]
       },
@@ -10696,6 +10756,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -10721,42 +10799,6 @@
           },
           {
             "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -10846,24 +10888,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -10882,6 +10906,24 @@
           {
             "time": "15:00-17:00",
             "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": true
+          },
+          {
+            "time": "11:00-13:00",
+            "available": true
+          },
+          {
+            "time": "13:00-15:00",
+            "available": true
           }
         ]
       },
@@ -10908,38 +10950,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": true
-          },
-          {
-            "time": "11:00-13:00",
-            "available": true
-          },
-          {
-            "time": "13:00-15:00",
-            "available": true
-          },
-          {
-            "time": "15:00-17:00",
-            "available": true
-          },
-          {
-            "time": "17:00-19:00",
-            "available": true
-          },
-          {
-            "time": "19:00-21:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -10951,18 +10963,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -11056,6 +11056,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -11120,8 +11150,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -11150,8 +11180,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -11228,6 +11258,24 @@
         ]
       },
       {
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ukima",
         "facility": "浮間公園（人工芝）",
         "timeSlots": [
@@ -11258,8 +11306,8 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -11276,8 +11324,8 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -11456,6 +11504,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -11486,44 +11552,44 @@
         ]
       },
       {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "musashino_chuo",
         "facility": "武蔵野中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -11570,8 +11636,8 @@
         ]
       },
       {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
+        "facilityId": "ariake_c_turf",
+        "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -11583,6 +11649,10 @@
           },
           {
             "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -11601,28 +11671,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "ariake_c_turf",
-        "facility": "有明テニスＣ人工芝コート",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -11650,8 +11698,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -11663,36 +11711,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -11786,6 +11804,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -11850,8 +11898,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -11880,8 +11928,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -11958,6 +12006,24 @@
         ]
       },
       {
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ukima",
         "facility": "浮間公園（人工芝）",
         "timeSlots": [
@@ -11988,8 +12054,8 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -12006,8 +12072,8 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -12186,6 +12252,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -12216,44 +12300,44 @@
         ]
       },
       {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "musashino_chuo",
         "facility": "武蔵野中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -12300,8 +12384,8 @@
         ]
       },
       {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
+        "facilityId": "ariake_c_turf",
+        "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -12313,6 +12397,10 @@
           },
           {
             "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -12331,28 +12419,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "ariake_c_turf",
-        "facility": "有明テニスＣ人工芝コート",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -12380,8 +12446,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -12393,36 +12459,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -12516,6 +12552,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -12580,8 +12646,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -12610,8 +12676,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -12688,6 +12754,24 @@
         ]
       },
       {
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ukima",
         "facility": "浮間公園（人工芝）",
         "timeSlots": [
@@ -12718,8 +12802,8 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -12736,8 +12820,8 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -12916,6 +13000,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -12946,44 +13048,44 @@
         ]
       },
       {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "musashino_chuo",
         "facility": "武蔵野中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -13030,8 +13132,8 @@
         ]
       },
       {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
+        "facilityId": "ariake_c_turf",
+        "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -13043,6 +13145,10 @@
           },
           {
             "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -13061,28 +13167,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "ariake_c_turf",
-        "facility": "有明テニスＣ人工芝コート",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -13110,8 +13194,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -13123,36 +13207,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -13246,6 +13300,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -13310,8 +13394,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -13340,8 +13424,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -13418,6 +13502,24 @@
         ]
       },
       {
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ukima",
         "facility": "浮間公園（人工芝）",
         "timeSlots": [
@@ -13448,8 +13550,8 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -13466,8 +13568,8 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -13646,6 +13748,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -13676,44 +13796,44 @@
         ]
       },
       {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "musashino_chuo",
         "facility": "武蔵野中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -13760,8 +13880,8 @@
         ]
       },
       {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
+        "facilityId": "ariake_c_turf",
+        "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -13773,6 +13893,10 @@
           },
           {
             "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -13791,28 +13915,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "ariake_c_turf",
-        "facility": "有明テニスＣ人工芝コート",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -13840,8 +13942,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -13853,36 +13955,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -13976,6 +14048,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -14040,8 +14142,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -14070,8 +14172,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -14148,6 +14250,24 @@
         ]
       },
       {
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ukima",
         "facility": "浮間公園（人工芝）",
         "timeSlots": [
@@ -14178,8 +14298,8 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -14196,8 +14316,8 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -14376,6 +14496,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -14406,44 +14544,44 @@
         ]
       },
       {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "musashino_chuo",
         "facility": "武蔵野中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -14490,8 +14628,8 @@
         ]
       },
       {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
+        "facilityId": "ariake_c_turf",
+        "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -14503,6 +14641,10 @@
           },
           {
             "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -14521,28 +14663,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "ariake_c_turf",
-        "facility": "有明テニスＣ人工芝コート",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -14570,8 +14690,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -14583,36 +14703,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -14706,6 +14796,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -14770,8 +14890,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -14800,8 +14920,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -14878,6 +14998,24 @@
         ]
       },
       {
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ukima",
         "facility": "浮間公園（人工芝）",
         "timeSlots": [
@@ -14908,8 +15046,8 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -14926,8 +15064,8 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -15106,6 +15244,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -15136,44 +15292,44 @@
         ]
       },
       {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "musashino_chuo",
         "facility": "武蔵野中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -15220,8 +15376,8 @@
         ]
       },
       {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
+        "facilityId": "ariake_c_turf",
+        "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -15233,6 +15389,10 @@
           },
           {
             "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -15251,28 +15411,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "ariake_c_turf",
-        "facility": "有明テニスＣ人工芝コート",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -15300,8 +15438,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -15313,36 +15451,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -15436,6 +15544,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -15500,8 +15638,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -15530,8 +15668,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -15608,6 +15746,24 @@
         ]
       },
       {
+        "facilityId": "higashishirahige",
+        "facility": "東白鬚公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ukima",
         "facility": "浮間公園（人工芝）",
         "timeSlots": [
@@ -15638,8 +15794,8 @@
         ]
       },
       {
-        "facilityId": "higashishirahige",
-        "facility": "東白鬚公園（人工芝）",
+        "facilityId": "johoku",
+        "facility": "城北中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -15656,8 +15812,8 @@
         ]
       },
       {
-        "facilityId": "johoku",
-        "facility": "城北中央公園（人工芝）",
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -15836,6 +15992,24 @@
         ]
       },
       {
+        "facilityId": "shakujii_b",
+        "facility": "石神井公園Ｂ（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "hikarigaoka",
         "facility": "光が丘公園（人工芝）",
         "timeSlots": [
@@ -15866,44 +16040,44 @@
         ]
       },
       {
-        "facilityId": "shakujii_b",
-        "facility": "石神井公園Ｂ（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "musashino_chuo",
         "facility": "武蔵野中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -15950,8 +16124,8 @@
         ]
       },
       {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
+        "facilityId": "ariake_c_turf",
+        "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -15963,6 +16137,10 @@
           },
           {
             "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -15981,28 +16159,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "ariake_c_turf",
-        "facility": "有明テニスＣ人工芝コート",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
             "available": false
           }
         ]
@@ -16030,8 +16186,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -16043,36 +16199,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -16166,6 +16292,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -16230,8 +16386,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -16260,8 +16416,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -16388,6 +16544,24 @@
       {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -16614,8 +16788,8 @@
         ]
       },
       {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
+        "facilityId": "musashino_chuo",
+        "facility": "武蔵野中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -16632,8 +16806,26 @@
         ]
       },
       {
-        "facilityId": "musashino_chuo",
-        "facility": "武蔵野中央公園（人工芝）",
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -16680,42 +16872,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -16733,6 +16889,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -16760,8 +16934,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -16773,36 +16947,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -16896,6 +17040,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -16960,8 +17134,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -16990,8 +17164,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -17118,6 +17292,24 @@
       {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -17344,8 +17536,8 @@
         ]
       },
       {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
+        "facilityId": "musashino_chuo",
+        "facility": "武蔵野中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -17362,8 +17554,26 @@
         ]
       },
       {
-        "facilityId": "musashino_chuo",
-        "facility": "武蔵野中央公園（人工芝）",
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -17410,42 +17620,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -17463,6 +17637,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -17490,8 +17682,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -17503,36 +17695,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -17626,6 +17788,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -17690,8 +17882,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -17720,8 +17912,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -17848,6 +18040,24 @@
       {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -18074,8 +18284,8 @@
         ]
       },
       {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
+        "facilityId": "musashino_chuo",
+        "facility": "武蔵野中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -18092,8 +18302,26 @@
         ]
       },
       {
-        "facilityId": "musashino_chuo",
-        "facility": "武蔵野中央公園（人工芝）",
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -18140,42 +18368,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -18193,6 +18385,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -18220,8 +18430,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -18233,36 +18443,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -18356,6 +18536,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -18420,8 +18630,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -18450,8 +18660,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -18578,6 +18788,24 @@
       {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -18804,8 +19032,8 @@
         ]
       },
       {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
+        "facilityId": "musashino_chuo",
+        "facility": "武蔵野中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -18822,8 +19050,26 @@
         ]
       },
       {
-        "facilityId": "musashino_chuo",
-        "facility": "武蔵野中央公園（人工芝）",
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -18870,42 +19116,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -18923,6 +19133,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -18950,8 +19178,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -18963,36 +19191,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -19086,6 +19284,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -19150,8 +19378,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -19180,8 +19408,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -19308,6 +19536,24 @@
       {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -19534,8 +19780,8 @@
         ]
       },
       {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
+        "facilityId": "musashino_chuo",
+        "facility": "武蔵野中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -19552,8 +19798,26 @@
         ]
       },
       {
-        "facilityId": "musashino_chuo",
-        "facility": "武蔵野中央公園（人工芝）",
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -19600,42 +19864,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -19653,6 +19881,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -19680,8 +19926,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -19693,36 +19939,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -19816,6 +20032,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -19880,8 +20126,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -19910,8 +20156,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -20038,6 +20284,24 @@
       {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -20264,8 +20528,8 @@
         ]
       },
       {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
+        "facilityId": "musashino_chuo",
+        "facility": "武蔵野中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -20282,8 +20546,26 @@
         ]
       },
       {
-        "facilityId": "musashino_chuo",
-        "facility": "武蔵野中央公園（人工芝）",
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -20330,42 +20612,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -20383,6 +20629,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -20410,8 +20674,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -20423,36 +20687,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
@@ -20546,6 +20780,36 @@
         ]
       },
       {
+        "facilityId": "hibiya",
+        "facility": "日比谷公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          },
+          {
+            "time": "15:00-17:00",
+            "available": false
+          },
+          {
+            "time": "17:00-19:00",
+            "available": false
+          },
+          {
+            "time": "19:00-21:00",
+            "available": false
+          }
+        ]
+      },
+      {
         "facilityId": "ariake_b_hard",
         "facility": "有明テニスＢインドアコート",
         "timeSlots": [
@@ -20610,8 +20874,8 @@
         ]
       },
       {
-        "facilityId": "sarue",
-        "facility": "猿江恩賜公園（人工芝）",
+        "facilityId": "kameido",
+        "facility": "亀戸中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -20640,8 +20904,8 @@
         ]
       },
       {
-        "facilityId": "kameido",
-        "facility": "亀戸中央公園（人工芝）",
+        "facilityId": "sarue",
+        "facility": "猿江恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -20768,6 +21032,24 @@
       {
         "facilityId": "johoku",
         "facility": "城北中央公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiayase",
+        "facility": "東綾瀬公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -20994,8 +21276,8 @@
         ]
       },
       {
-        "facilityId": "inokashira",
-        "facility": "井の頭恩賜公園（人工芝）",
+        "facilityId": "musashino_chuo",
+        "facility": "武蔵野中央公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -21012,8 +21294,26 @@
         ]
       },
       {
-        "facilityId": "musashino_chuo",
-        "facility": "武蔵野中央公園（人工芝）",
+        "facilityId": "nogawa",
+        "facility": "野川公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "koganei",
+        "facility": "小金井公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -21060,42 +21360,6 @@
         ]
       },
       {
-        "facilityId": "higashiyamato_minami",
-        "facility": "東大和南公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "nogawa",
-        "facility": "野川公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
         "facilityId": "ariake_c_turf",
         "facility": "有明テニスＣ人工芝コート",
         "timeSlots": [
@@ -21113,6 +21377,24 @@
           },
           {
             "time": "15:00-17:00",
+            "available": false
+          }
+        ]
+      },
+      {
+        "facilityId": "higashiyamato_minami",
+        "facility": "東大和南公園（人工芝）",
+        "timeSlots": [
+          {
+            "time": "09:00-11:00",
+            "available": false
+          },
+          {
+            "time": "11:00-13:00",
+            "available": false
+          },
+          {
+            "time": "13:00-15:00",
             "available": false
           }
         ]
@@ -21140,8 +21422,8 @@
         ]
       },
       {
-        "facilityId": "higashiayase",
-        "facility": "東綾瀬公園（人工芝）",
+        "facilityId": "inokashira",
+        "facility": "井の頭恩賜公園（人工芝）",
         "timeSlots": [
           {
             "time": "09:00-11:00",
@@ -21153,36 +21435,6 @@
           },
           {
             "time": "13:00-15:00",
-            "available": false
-          }
-        ]
-      },
-      {
-        "facilityId": "hibiya",
-        "facility": "日比谷公園（人工芝）",
-        "timeSlots": [
-          {
-            "time": "09:00-11:00",
-            "available": false
-          },
-          {
-            "time": "11:00-13:00",
-            "available": false
-          },
-          {
-            "time": "13:00-15:00",
-            "available": false
-          },
-          {
-            "time": "15:00-17:00",
-            "available": false
-          },
-          {
-            "time": "17:00-19:00",
-            "available": false
-          },
-          {
-            "time": "19:00-21:00",
             "available": false
           }
         ]
