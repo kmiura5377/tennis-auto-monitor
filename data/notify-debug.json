@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T15:04:18.087Z",
+  "generatedAt": "2026-11-20T18:54:47.539Z",
   "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0,
@@ -131,7 +131,7 @@
       "weeksFetched": 4
     },
     "toneri": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -139,7 +139,7 @@
       "weeksFetched": 4
     },
     "shinozaki_a": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -259,24 +259,25 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 16,
+  "newlyAvailableCount": 2,
   "registeredUsers": 2,
   "perUser": [
     {
       "userId": "me",
       "hasSubscription": true,
       "notifyFavoritesOnly": true,
-      "toNotifyCount": 1,
+      "toNotifyCount": 0,
       "pushResult": {
-        "attempted": true,
-        "ok": true
+        "attempted": false,
+        "ok": false,
+        "skippedReason": "no_new_slots"
       }
     },
     {
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 16,
+      "toNotifyCount": 2,
       "pushResult": {
         "attempted": false,
         "ok": false,
