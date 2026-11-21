@@ -5,5 +5,12 @@
     "selector": "a[onclick*=\"Akisyoukai\"]",
     "landed": "https://reserve.opas.jp/toyonaka/menu/Login.cgi",
     "title": "公共施設予約システム（照会方法選択）"
+  },
+  {
+    "step": 2,
+    "action": "click",
+    "selector": "tr[onclick*=\"'Enter','1'\"]",
+    "landed": "https://reserve.opas.jp/toyonaka/yoyaku/QueryMethodSelect.cgi",
+    "title": "公共施設予約システム（施設絞り込み（場所選択））"
   }
 ]

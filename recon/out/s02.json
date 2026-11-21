@@ -1,0 +1,374 @@
+{
+  "url": "https://reserve.opas.jp/toyonaka/yoyaku/QueryMethodSelect.cgi",
+  "title": "公共施設予約システム（施設絞り込み（場所選択））",
+  "clickables": [
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "href": null,
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "空き照会・予約",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Yoyaku')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "本日のお知らせ",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Oshirase')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻る",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('BackToMenu')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインに戻る",
+      "href": "/toyonaka/menu/Logout.cgi",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "空き照会・予約",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Yoyaku')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "本日のお知らせ",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Oshirase')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻る",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('BackToMenu')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインに戻る",
+      "href": "/toyonaka/menu/Logout.cgi",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前に戻るボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Back');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "豊島体育館",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_01');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "柴原体育館",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_02');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "庄内体育館",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_03');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "千里体育館",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_04');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "高川スポーツルーム",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_05');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "テニスコート",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_06');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "野球場",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_08');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "少年野球場",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_09');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "武道館ひびき",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_10');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "学校夜間運動場",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_11');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "会議室",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_12');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "グラウンド",
+      "href": null,
+      "onclick": "oneClickSubmit('txtLocationCode','Enter','272035_001_13');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの先頭へボタン",
+      "href": "#wrapper",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前に戻るボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Back');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    }
+  ],
+  "forms": [
+    {
+      "action": "/toyonaka/menu/Menu.cgi",
+      "name": "menu.Menu.Form",
+      "hidden": [
+        "txtProcId=/menu/Menu",
+        "txtFunctionCode=",
+        "action=Enter"
+      ]
+    },
+    {
+      "action": "/toyonaka/yoyaku/LocationSelect.cgi",
+      "name": "yoyaku.LocationSelect.Form",
+      "hidden": [
+        "action=",
+        "txtProcId=/yoyaku/LocationSelect",
+        "txtLocationCode="
+      ]
+    }
+  ]
+}
