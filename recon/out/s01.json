@@ -1,0 +1,184 @@
+{
+  "url": "https://reserve.opas.jp/toyonaka/menu/Login.cgi",
+  "title": "公共施設予約システム（照会方法選択）",
+  "clickables": [
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "href": null,
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "空き照会・予約",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Yoyaku')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "本日のお知らせ",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Oshirase')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻る",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('BackToMenu')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインに戻る",
+      "href": "/toyonaka/menu/Logout.cgi",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "空き照会・予約",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Yoyaku')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "本日のお知らせ",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Oshirase')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻る",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('BackToMenu')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインに戻る",
+      "href": "/toyonaka/menu/Logout.cgi",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻るボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('BackToMenu');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "利用目的から絞り込む",
+      "href": null,
+      "onclick": "oneClickSubmit('txtSelectKey','Enter','0');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "施設を指定する",
+      "href": null,
+      "onclick": "oneClickSubmit('txtSelectKey','Enter','1');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの先頭へボタン",
+      "href": "#wrapper",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻るボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('BackToMenu');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    }
+  ],
+  "forms": [
+    {
+      "action": "/toyonaka/menu/Menu.cgi",
+      "name": "menu.Menu.Form",
+      "hidden": [
+        "txtProcId=/menu/Menu",
+        "txtFunctionCode=",
+        "action=Enter"
+      ]
+    },
+    {
+      "action": "/toyonaka/yoyaku/QueryMethodSelect.cgi",
+      "name": "yoyaku.QueryMethodSelect.Form",
+      "hidden": [
+        "action=",
+        "txtProcId=/yoyaku/QueryMethodSelect",
+        "txtSelectKey="
+      ]
+    }
+  ]
+}

@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
+
+
+
+
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<meta http-equiv="Expire" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+
+<meta name="description" content="公共施設予約システム">
+<meta name="keywords" content="公共,施設予約">
+
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+
+<title>公共施設予約システム（ログイン）</title>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/toyonaka/css/toyonaka/import.css?var=20240517">
+<link rel="SHORTCUT ICON" href="/toyonaka/img/toyonaka/icon/favicon.ico">
+
+<!-- Google Tag Manager -->
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-FEPQZ6T1B6&amp;cx=c&amp;_slc=1"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXVLNEHMJ6&amp;cx=c&amp;gtm=4e6bh1"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-M4MCVLW"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M4MCVLW');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript" src="/toyonaka/js/CommonFunctions.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/jquery.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/jquery-ui.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/meca.js?var=20240319"></script>
+
+
+<script>
+$(function() {
+$.noConflict();
+// roll over
+$('.btn').meca('hover');
+// pngfix
+$('.pngfix').meca('pngfix');
+});
+</script>
+
+<!--[if IE 6]>
+	<script type="text/javascript" src="/toyonaka/js/DD_belatedPNG-min.js?var=<%=JS_VER%>"></script>
+	<script type="text/javascript">
+		DD_belatedPNG.fix('.pngbg');
+	</script>
+<![endif]-->
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/toyonaka/css/toyonaka/softwarekeyboardstyle.css?var=20240517">
+</head>
+<body id="login" onunload="ignoreTrue();">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4MCVLW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<noscript><p class="jserr">JavaScriptが無効になっているため使用できません。<br />ブラウザ設定でJavaScriptを有効にしてください。</p></noscript>
+
+
+<div id="containerUPain">
+	<div class="loginlogo">
+		<h1 class="logo">
+			<img src="/toyonaka/img/toyonaka/side/logo_login.png" alt="公共施設予約システム" title="公共施設予約システム" class="pngfix pc">
+			<img src="/toyonaka/img/toyonaka/side/logo.png" alt="公共施設予約システム" title="公共施設予約システム" class="sp">
+		</h1>
+	</div>
+	
+	
+		<div id="securedseal" style="float:right;">
+			<table width="135" border="0" cellpadding="2" cellspacing="0" title="このマークは、ウェブサイトを安心してご利用いただける安全の証です。"><tbody><tr><td width="135" align="center" valign="top"><!-- DigiCert Seal HTML --><!-- Place HTML on your site where the seal should appear --><div id="DigiCertClickID_2VCIk5PO"><div id="DigiCertClickID_2VCIk5POSeal" style="text-decoration: none; text-align: center; display: block; vertical-align: baseline; font-size: 100%; font-style: normal; text-indent: 0px; line-height: 1; width: auto; margin: 0px auto; padding: 0px; border: 0px; background: transparent; position: relative; inset: 0px; clear: both; float: none; cursor: default;"><img src="//seal.digicert.com/seals/cascade/?tag=2VCIk5PO&amp;referer=reserve.opas.jp&amp;format=png&amp;lang=ja&amp;an=min" alt="DigiCert Secured — click to verify" tabindex="0" role="button" aria-label="Verify DigiCert TLS certificate for this site" aria-haspopup="true" style="text-decoration: none; text-align: center; display: block; vertical-align: baseline; font-size: 100%; font-style: normal; text-indent: 0px; line-height: 1; width: auto; margin: 0px auto; padding: 0px; border: 0px; background: transparent; position: relative; inset: 0px; clear: both; float: none; cursor: pointer;"></div></div><!-- DigiCert Seal Code --><!-- Place with DigiCert Seal HTML or with other scripts --><script type="text/javascript">        var __dcid = __dcid || [];        __dcid.push({"cid":"DigiCertClickID_2VCIk5PO","tag":"2VCIk5PO"});        (function(){var cid=document.createElement("script");cid.async=true;cid.src="//seal.digicert.com/seals/cascade/seal.min.js";var s = document.getElementsByTagName("script");var ls = s[(s.length - 1)];ls.parentNode.insertBefore(cid, ls.nextSibling);}());</script><script async="" src="//seal.digicert.com/seals/cascade/seal.min.js"></script></td></tr></tbody></table><br>
+		</div>
+	
+</div>
+
+<div id="container" style="margin-top: 0px;"><div class="overlay"></div>
+	<form name="menu.Login.Form" method="post" action="/toyonaka/menu/Login.cgi" onsubmit="return false;" id="formMain">
+	<input type="hidden" name="action" value="" id="action">
+	<input type="hidden" name="txtProcId" value="/menu/Login" id="txtProcId">
+	
+	
+	
+	<div class="newslistheader clearfix">
+		<div class="title maxwidth"><span style="text-align:center;">お　知　ら　せ</span></div>
+		<div class="top_pagerbox">
+			<a href="#footer"><img src="/toyonaka/img/toyonaka/common/btn_pageunder.png" width="132" height="32" alt="ページの最終へボタン" title="ページの最終へボタン" class="pngfix btn"></a>
+		</div>
+	</div>	
+
+	<div id="newslist">
+		<ul>
+			
+			
+				<li class="clfix">
+					<div class="news_title">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_tr.gif" class="corner_tr">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_tl.gif" class="corner_tl">
+
+						<div style="padding-left:10px;">
+							
+								<img src="/toyonaka/img/toyonaka/common/new.gif" alt="新着情報" style="vertical-align:middle;">
+													
+							
+								<span style="vertical-align:middle;">１１月度定期メンテナンスにおけるシステム停止のおしらせ</span>
+							
+							
+						</div>
+					</div>
+					<div class="news_detail">
+						<pre style="text-align:left; padding-left:10px; font-size: 16px; word-wrap: break-word;" wrap="">１１月度定期メンテナンスを実施するため、下記の日時はオーパスシステムをご利用いただけません。ご注意ください。
+
+《システム停止期間》
+令和８年（２０２６年）１１月２４日（火）２４：００～翌１１月２５日（水）５：００</pre>
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_br.gif" class="corner_br">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_bl.gif" class="corner_bl">
+					</div>
+				</li>
+			
+			
+			
+				<li class="clfix">
+					<div class="news_title">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_tr.gif" class="corner_tr">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_tl.gif" class="corner_tl">
+
+						<div style="padding-left:10px;">
+							
+								<img src="/toyonaka/img/toyonaka/common/new.gif" alt="新着情報" style="vertical-align:middle;">
+													
+							
+								<span style="vertical-align:middle;">オーパス・スポーツ施設情報システム街頭端末の廃止について</span>
+							
+							
+						</div>
+					</div>
+					<div class="news_detail">
+						<pre style="text-align:left; padding-left:10px; font-size: 16px; word-wrap: break-word;" wrap="">街頭端末につきまして、昨今の利用環境の変化を踏まえ、令和９年（２０２７年）１月３１日をもって廃止といたします。
+令和９年（２０２７年）２月１日以降は、ご自身のパソコン・スマートフォン等で予約に関する手続きを行っていただきますようお願いいたします。お持ちでない方は、施設窓口にお問い合わせください。
+ご不便をおかけしますが、ご理解とご協力をお願いいたします。</pre>
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_br.gif" class="corner_br">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_bl.gif" class="corner_bl">
+					</div>
+				</li>
+			
+			
+			
+				<li class="clfix">
+					<div class="news_title">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_tr.gif" class="corner_tr">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_tl.gif" class="corner_tl">
+
+						<div style="padding-left:10px;">
+							
+								<img src="/toyonaka/img/toyonaka/common/new.gif" alt="新着情報" style="vertical-align:middle;">
+													
+							
+								<span style="vertical-align:middle;">豊島公園野球場の停電について</span>
+							
+							
+						</div>
+					</div>
+					<div class="news_detail">
+						<pre style="text-align:left; padding-left:10px; font-size: 16px; word-wrap: break-word;" wrap="">豊島公園野球場は全館停電のため、１１月２４日（火）９時～１３時の間は予約等の窓口対応ができません。皆様にはご迷惑をおかけしますが、ご理解いただきますようよろしくお願いいたします。</pre>
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_br.gif" class="corner_br">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_bl.gif" class="corner_bl">
+					</div>
+				</li>
+			
+			
+			
+				<li class="clfix">
+					<div class="news_title">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_tr.gif" class="corner_tr">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_tl.gif" class="corner_tl">
+
+						<div style="padding-left:10px;">
+							
+								<img src="/toyonaka/img/toyonaka/common/new.gif" alt="新着情報" style="vertical-align:middle;">
+													
+							
+								<span style="vertical-align:middle;">携帯Ｗｅｂサービス（ガラケー用サービス）終了のお知らせ</span>
+							
+							
+						</div>
+					</div>
+					<div class="news_detail">
+						<pre style="text-align:left; padding-left:10px; font-size: 16px; word-wrap: break-word;" wrap="">携帯Ｗｅｂサービス（ガラケー用サービス）は、１２月２９日をもって終了いたします。
+ご迷惑をおかけいたしますが、１月４日からはインターネットでのご予約をお願いします。
+</pre>
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_br.gif" class="corner_br">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_bl.gif" class="corner_bl">
+					</div>
+				</li>
+			
+			
+			
+				<li class="clfix">
+					<div class="news_title">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_tr.gif" class="corner_tr">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_tl.gif" class="corner_tl">
+
+						<div style="padding-left:10px;">
+													
+							
+								<span style="vertical-align:middle;">雨天による体育施設の利用中止について</span>
+							
+							
+						</div>
+					</div>
+					<div class="news_detail">
+						<pre style="text-align:left; padding-left:10px; font-size: 16px; word-wrap: break-word;" wrap="">屋外体育施設を予約された方は、雨天による施設の利用中止については、下記の施設いずれかに問い合せてご確認いただくようお願いいたします。（独自に判断されないようお願いいたします。）
+
+マリンフード豊中テニスコート（ふれあい緑地庭球場）０６－４８６６－１７１７
+グリーンスポーツセンター　０６－６３９８－７３９１
+豊島公園野球場　０６－６８６２－００１８
+野畑庭球場　０６－６８４４－１３１３</pre>
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_br.gif" class="corner_br">
+						<img src="/toyonaka/img/toyonaka/under/newslist_kado_bl.gif" class="corner_bl">
+					</div>
+				</li>
+			
+			
+		</ul>
+	</div>
+	
+	
+	<div id="footer" style="display: inline;"></div>
+	
+	<div class="loginboxl">
+		<div class="inbox">
+			<div class="formcontent">
+				<p><label for="txtRiyoshaCode">利用者番号</label><br>
+					<input type="text" name="txtRiyoshaCode" maxlength="8" value="" style="ime-mode:disabled;" class="default_box riyoshacd" id="txtRiyoshaCode" title="利用者番号">
+					<img id="showkeyboard_number" src="/toyonaka/img/toyonaka/softwarekeyboad/keyboad_123.png" alt="利用者番号入力用のソフトウェアキーボードを表示します" title="利用者番号入力用のソフトウェアキーボードを表示します" class="img_button pc">
+				</p>
+				<p><label for="txtPassWord">パスワード</label><br>
+					<input type="password" name="txtPassWord" maxlength="16" value="" style="ime-mode:disabled;" class="default_box password" id="txtPassWord" title="パスワード">
+					<img id="showkeyboard_alphabet" src="/toyonaka/img/toyonaka/softwarekeyboad/keyboad_abc.png" alt="パスワード入力用のソフトウェアキーボードを表示します" title="パスワード入力用のソフトウェアキーボードを表示します" class="img_button pc">
+				</p>
+			</div>
+			<p class="loginbtn">
+				<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('Enter');return false;"><img src="/toyonaka/img/toyonaka/login/loginbtn.png" alt="ログインボタン" title="ログインボタン" class="pngfix btn"></a>
+			</p>
+			<p>利用者番号（半角数字）とパスワード（半角英数字）を<br>入力後、［ログインボタン］を押してください。</p>
+			
+			
+				
+					<p>
+						<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('PasswordToiawase');return false;">パスワードを忘れたとき</a>
+					</p>
+				
+			
+			
+			<p class="pswanws">安全なパスワードの設定と定期的なパスワードの<br>変更、適切な管理をお願いします。<br>※安全なパスワード…なるべく多くの文字数で、<br>英数字・大文字・小文字を混在させたパスワード</p>
+		</div>
+	</div>
+	
+	
+	<div class="loginboxr">
+		<img src="/toyonaka/img/toyonaka/login/loginboxh.gif" class="corner_tl">
+		<div class="inbox">
+			<div class="message_div">
+				<span class="messagetitle">照会のみの方はこちら</span><br>
+				利用者登録の有無に関わらず、どなたでも<br>
+				ご利用いただけます。
+			</div>
+			<div class="btnbox">
+				<img src="/toyonaka/img/toyonaka/login/loginmenu_tr.png" class="corner_tr">
+				<img src="/toyonaka/img/toyonaka/login/loginmenu_tl.png" class="corner_tl">
+				
+					
+						<p class="menu_button">
+							<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('Akisyoukai');return false;"><img src="/toyonaka/img/toyonaka/login/aki_jyoukyou_syoukai_btn.png" alt="空き状況照会ボタン" title="空き状況照会ボタン" class="pngfix btn"></a>
+						</p>
+					
+				
+				
+					
+						<p class="menu_button">
+							<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('ChusenKikan');return false;"><img src="/toyonaka/img/toyonaka/login/chusen_taisyoubi_btn.png" alt="抽選対象日のご案内ボタン" title="抽選対象日のご案内ボタン" class="pngfix btn"></a>
+						</p>
+					
+				
+				
+					
+				
+				
+					
+						<p class="menu_button">
+							<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('UnRegisterLogin');return false;"><img src="/toyonaka/img/toyonaka/login/chusen_kekka_btn.png" alt="抽選結果の確認(未登録者)ボタン" title="抽選結果の確認(未登録者)ボタン" class="pngfix btn"></a>
+						</p>
+					
+				
+				
+					
+						<p class="menu_button">
+							<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('Oshirase');return false;"><img src="/toyonaka/img/toyonaka/login/osirase_btn.png" alt="本日のお知らせボタン" title="本日のお知らせボタン" class="pngfix btn"></a>
+						</p>
+					
+				
+				
+					
+						<p class="menu_button">
+							<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('INetPassword');return false;"><img src="/toyonaka/img/toyonaka/login/internet_password_btn.png" alt="パスワードの登録ボタン" title="パスワードの登録ボタン" class="pngfix btn"></a>
+						</p>
+					
+				
+				<img src="/toyonaka/img/toyonaka/login/loginmenu_br.png" class="corner_br">
+				<img src="/toyonaka/img/toyonaka/login/loginmenu_bl.png" class="corner_bl">
+			</div>
+		</div>
+	</div>
+	
+	
+	<!--
+	<div class="loginboxr clearfix" style="height:123px;">
+		<img src='/toyonaka/img/toyonaka/login/loginboxh.gif' class="corner_tl" />
+		<div class="inbox">
+			<div class="btnbox">
+				<img src="/toyonaka/img/toyonaka/login/loginmenu_tr.png" class="corner_tr">
+				<img src="/toyonaka/img/toyonaka/login/loginmenu_tl.png" class="corner_tl">
+				<p class="menu_button">
+					<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('INetPassword');return false;"><img src='/toyonaka/img/toyonaka/login/internet_password_btn.png' 
+							alt="パスワードの登録ボタン" 
+							title="パスワードの登録ボタン" 
+							class="pngfix btn" /></a>
+				</p>
+				<img src="/toyonaka/img/toyonaka/login/loginmenu_br.png" class="corner_br">
+				<img src="/toyonaka/img/toyonaka/login/loginmenu_bl.png" class="corner_bl">
+			</div>
+		</div>
+	</div>
+	-->
+	</form>
+</div>
+
+<div id="containerLPain">
+	<a href="/toyonaka/Accessibility.cgi" style="text-align: center; clear: both;"><strong>当ウェブサイトにおけるアクセシビリティ対応について</strong></a>
+</div>
+
+
+	
+
+
+
+<div id="login_footer" style="margin-top:8px; display:block;">
+	
+		
+			<p style="text-align: center; clear: both;">
+				<a href="https://reserve.opas.jp/portal/menu/DantaiSelect.cgi?action=ReNew">
+					<img src="/toyonaka/img/toyonaka/login/back_to_dantai_btn.png" alt="団体選択画面へボタン" title="団体選択画面へボタン" style="display: inline-block;" class="pngfix btn">
+				</a>
+			</p>
+		
+	
+</div>
+
+
+
+
+<div id="keyboard_number" class="keyboard_number ui-draggable">
+	<span class="skb_title">[利用者番号]<br>を入力してください。</span><br>
+	<center><input type="text" id="txtUseNumeric" size="8" maxlength="8" class="number_box" style="ime-mode:disabled;"><br><br></center>
+	
+
+
+
+<div id="rowN0" class="rowN0">
+	<input type="image" name="1" src="/toyonaka/img/toyonaka/softwarekeyboad/number_1.png" value="1" alt="" title="">
+	<input type="image" name="2" src="/toyonaka/img/toyonaka/softwarekeyboad/number_2.png" value="2" alt="" title="">
+	<input type="image" name="3" src="/toyonaka/img/toyonaka/softwarekeyboad/number_3.png" value="3" alt="" title=""><br>
+	<input type="image" name="4" src="/toyonaka/img/toyonaka/softwarekeyboad/number_4.png" value="4" alt="" title="">
+	<input type="image" name="5" src="/toyonaka/img/toyonaka/softwarekeyboad/number_5.png" value="5" alt="" title="">
+	<input type="image" name="6" src="/toyonaka/img/toyonaka/softwarekeyboad/number_6.png" value="6" alt="" title=""><br>
+	<input type="image" name="7" src="/toyonaka/img/toyonaka/softwarekeyboad/number_7.png" value="7" alt="" title="">
+	<input type="image" name="8" src="/toyonaka/img/toyonaka/softwarekeyboad/number_8.png" value="8" alt="" title="">
+	<input type="image" name="9" src="/toyonaka/img/toyonaka/softwarekeyboad/number_9.png" value="9" alt="" title=""><br>
+	<img src="/toyonaka/img/toyonaka/softwarekeyboad/number_touka.png" alt="" title="" class="pngfix">
+	<input type="image" name="0" src="/toyonaka/img/toyonaka/softwarekeyboad/number_0.png" value="0" alt="" title="">
+	<img src="/toyonaka/img/toyonaka/softwarekeyboad/number_touka.png" alt="" title="" class="pngfix"><br>
+	<input type="image" name="Backspace" src="/toyonaka/img/toyonaka/softwarekeyboad/backspace.png" value="Backspace" alt="" title=""><br>
+	<input type="image" name="Close" src="/toyonaka/img/toyonaka/softwarekeyboad/close.png" value="Close" alt="" title="" style="margin-top:30px;">
+	<input type="image" name="Enter" src="/toyonaka/img/toyonaka/softwarekeyboad/enter.png" value="Enter" alt="" title="" style="margin-top:30px;">
+</div>
+</div>
+
+<div id="keyboard_alphabet" class="keyboard_alphabet ui-draggable">
+	<span class="skb_title">[パスワード]<br>を入力してください。</span>
+	<center><input type="password" id="txtUseAlphaNumeric" size="16" maxlength="16" class="password_box" style="ime-mode:disabled;"><br><br></center>
+	
+
+
+<div id="rowA0" class="rowA0">
+	<input type="image" name="1" src="/toyonaka/img/toyonaka/softwarekeyboad/number_1.png" value="1" alt="" title="">
+	<input type="image" name="2" src="/toyonaka/img/toyonaka/softwarekeyboad/number_2.png" value="2" alt="" title="">
+	<input type="image" name="3" src="/toyonaka/img/toyonaka/softwarekeyboad/number_3.png" value="3" alt="" title="">
+	<input type="image" name="4" src="/toyonaka/img/toyonaka/softwarekeyboad/number_4.png" value="4" alt="" title="">
+	<input type="image" name="5" src="/toyonaka/img/toyonaka/softwarekeyboad/number_5.png" value="5" alt="" title="">
+	<input type="image" name="6" src="/toyonaka/img/toyonaka/softwarekeyboad/number_6.png" value="6" alt="" title="">
+	<input type="image" name="7" src="/toyonaka/img/toyonaka/softwarekeyboad/number_7.png" value="7" alt="" title="">
+	<input type="image" name="8" src="/toyonaka/img/toyonaka/softwarekeyboad/number_8.png" value="8" alt="" title="">
+	<input type="image" name="9" src="/toyonaka/img/toyonaka/softwarekeyboad/number_9.png" value="9" alt="" title="">
+	<input type="image" name="0" src="/toyonaka/img/toyonaka/softwarekeyboad/number_0.png" value="0" alt="" title="">
+</div>
+
+<div id="rowA0_shift" class="rowA0_shift">
+	<input type="image" name="1" src="/toyonaka/img/toyonaka/softwarekeyboad/number_1.png" value="1" alt="" title="">
+	<input type="image" name="2" src="/toyonaka/img/toyonaka/softwarekeyboad/number_2.png" value="2" alt="" title="">
+	<input type="image" name="3" src="/toyonaka/img/toyonaka/softwarekeyboad/number_3.png" value="3" alt="" title="">
+	<input type="image" name="4" src="/toyonaka/img/toyonaka/softwarekeyboad/number_4.png" value="4" alt="" title="">
+	<input type="image" name="5" src="/toyonaka/img/toyonaka/softwarekeyboad/number_5.png" value="5" alt="" title="">
+	<input type="image" name="6" src="/toyonaka/img/toyonaka/softwarekeyboad/number_6.png" value="6" alt="" title="">
+	<input type="image" name="7" src="/toyonaka/img/toyonaka/softwarekeyboad/number_7.png" value="7" alt="" title="">
+	<input type="image" name="8" src="/toyonaka/img/toyonaka/softwarekeyboad/number_8.png" value="8" alt="" title="">
+	<input type="image" name="9" src="/toyonaka/img/toyonaka/softwarekeyboad/number_9.png" value="9" alt="" title="">
+	<input type="image" name="0" src="/toyonaka/img/toyonaka/softwarekeyboad/number_0.png" value="0" alt="" title="">
+</div>
+
+<div id="rowA1" class="rowA1">
+	<input type="image" name="q" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_q.png" value="q" alt="" title="">
+	<input type="image" name="w" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_w.png" value="w" alt="" title="">
+	<input type="image" name="e" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_e.png" value="e" alt="" title="">
+	<input type="image" name="r" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_r.png" value="r" alt="" title="">
+	<input type="image" name="t" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_t.png" value="t" alt="" title="">
+	<input type="image" name="y" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_y.png" value="y" alt="" title="">
+	<input type="image" name="u" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_u.png" value="u" alt="" title="">
+	<input type="image" name="i" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_i.png" value="i" alt="" title="">
+	<input type="image" name="o" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_o.png" value="o" alt="" title="">
+	<input type="image" name="p" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_p.png" value="p" alt="" title="">
+</div>
+
+<div id="rowA1_shift" class="rowA1_shift">
+	<input type="image" name="Q" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_q.png" value="Q" alt="" title="">
+	<input type="image" name="W" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_w.png" value="W" alt="" title="">
+	<input type="image" name="E" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_e.png" value="E" alt="" title="">
+	<input type="image" name="R" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_r.png" value="R" alt="" title="">
+	<input type="image" name="T" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_t.png" value="T" alt="" title="">
+	<input type="image" name="Y" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_y.png" value="Y" alt="" title="">
+	<input type="image" name="U" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_u.png" value="U" alt="" title="">
+	<input type="image" name="I" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_i.png" value="I" alt="" title="">
+	<input type="image" name="O" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_o.png" value="O" alt="" title="">
+	<input type="image" name="P" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_p.png" value="P" alt="" title="">
+</div>
+
+<div id="rowA2" class="rowA2">
+	<input type="image" name="a" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_a.png" value="a" alt="" title="">
+	<input type="image" name="s" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_s.png" value="s" alt="" title="">
+	<input type="image" name="d" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_d.png" value="d" alt="" title="">
+	<input type="image" name="f" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_f.png" value="f" alt="" title="">
+	<input type="image" name="g" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_g.png" value="g" alt="" title="">
+	<input type="image" name="h" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_h.png" value="h" alt="" title="">
+	<input type="image" name="j" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_j.png" value="j" alt="" title="">
+	<input type="image" name="k" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_k.png" value="k" alt="" title="">
+	<input type="image" name="l" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_l.png" value="l" alt="" title="">
+</div>
+
+<div id="rowA2_shift" class="rowA2_shift">
+	<input type="image" name="A" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_a.png" value="A" alt="" title="">
+	<input type="image" name="S" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_s.png" value="S" alt="" title="">
+	<input type="image" name="D" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_d.png" value="D" alt="" title="">
+	<input type="image" name="F" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_f.png" value="F" alt="" title="">
+	<input type="image" name="G" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_g.png" value="G" alt="" title="">
+	<input type="image" name="H" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_h.png" value="H" alt="" title="">
+	<input type="image" name="J" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_j.png" value="J" alt="" title="">
+	<input type="image" name="K" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_k.png" value="K" alt="" title="">
+	<input type="image" name="L" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_l.png" value="L" alt="" title="">
+</div>
+
+<div id="rowA3" class="rowA3">
+	<input type="image" name="z" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_z.png" value="z" alt="" title="">
+	<input type="image" name="x" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_x.png" value="x" alt="" title="">
+	<input type="image" name="c" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_c.png" value="c" alt="" title="">
+	<input type="image" name="v" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_v.png" value="v" alt="" title="">
+	<input type="image" name="b" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_b.png" value="b" alt="" title="">
+	<input type="image" name="n" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_n.png" value="n" alt="" title="">
+	<input type="image" name="m" src="/toyonaka/img/toyonaka/softwarekeyboad/small/alphabet_m.png" value="m" alt="" title=""><br>
+	<input type="image" name="Shift" src="/toyonaka/img/toyonaka/softwarekeyboad/shift.png" value="Shift_Large" alt="" title="">
+	<input type="image" name="Backspace" src="/toyonaka/img/toyonaka/softwarekeyboad/backspace.png" value="Backspace" alt="" title=""><br>
+	<input type="image" name="Close" src="/toyonaka/img/toyonaka/softwarekeyboad/close.png" value="Close" alt="" title="" style="margin-top:30px;">
+	<input type="image" name="Enter" src="/toyonaka/img/toyonaka/softwarekeyboad/enter.png" value="Enter" alt="" title="" style="margin-top:30px;">
+</div>
+
+<div id="rowA3_shift" class="rowA3_shift">
+	<input type="image" name="Z" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_z.png" value="Z" alt="" title="">
+	<input type="image" name="X" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_x.png" value="X" alt="" title="">
+	<input type="image" name="C" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_c.png" value="C" alt="" title="">
+	<input type="image" name="V" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_v.png" value="V" alt="" title="">
+	<input type="image" name="B" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_b.png" value="B" alt="" title="">
+	<input type="image" name="N" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_n.png" value="N" alt="" title="">
+	<input type="image" name="M" src="/toyonaka/img/toyonaka/softwarekeyboad/capital/alphabet_m.png" value="M" alt="" title=""><br>
+	<input type="image" name="Shift" src="/toyonaka/img/toyonaka/softwarekeyboad/shift.png" value="Shift_Small" alt="" title="">
+	<input type="image" name="Backspace" src="/toyonaka/img/toyonaka/softwarekeyboad/backspace.png" value="Backspace" alt="" title=""><br>
+	<input type="image" name="Close" src="/toyonaka/img/toyonaka/softwarekeyboad/close.png" value="Close" alt="" title="" style="margin-top:30px;">
+	<input type="image" name="Enter" src="/toyonaka/img/toyonaka/softwarekeyboad/enter.png" value="Enter" alt="" title="" style="margin-top:30px;">
+</div>
+</div>
+
+<script type="text/javascript" src="/toyonaka/js/softwarekeyboad/jquery-fieldselection.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/softwarekeyboad/vkeyboard-common.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/softwarekeyboad/vkeyboard-login.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/menu.js?var=20240319"></script> <!-- ◆追加スクリプト◆ -->
+<script type="text/javascript" src="/toyonaka/js/jquery-1_11.js?var=20240319"></script><!-- ◆追加スクリプト◆ -->
+
+</body></html>

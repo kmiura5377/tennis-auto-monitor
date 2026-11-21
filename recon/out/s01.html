@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
+
+
+
+
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<meta http-equiv="Expire" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+
+<meta name="description" content="公共施設予約システム">
+<meta name="keywords" content="公共,施設予約">
+
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+
+<title>公共施設予約システム（照会方法選択）</title>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/toyonaka/css/toyonaka/import.css?var=20240517">
+<link rel="SHORTCUT ICON" href="/toyonaka/img/toyonaka/icon/favicon.ico">
+
+<!-- Google Tag Manager -->
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-FEPQZ6T1B6&amp;cx=c&amp;_slc=1"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXVLNEHMJ6&amp;cx=c&amp;gtm=4e6bh1"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-M4MCVLW"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M4MCVLW');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript" src="/toyonaka/js/CommonFunctions.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/jquery.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/jquery-ui.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/meca.js?var=20240319"></script>
+
+
+<script>
+$(function() {
+$.noConflict();
+// roll over
+$('.btn').meca('hover');
+// pngfix
+$('.pngfix').meca('pngfix');
+});
+</script>
+
+<!--[if IE 6]>
+	<script type="text/javascript" src="/toyonaka/js/DD_belatedPNG-min.js?var=<%=JS_VER%>"></script>
+	<script type="text/javascript">
+		DD_belatedPNG.fix('.pngbg');
+	</script>
+<![endif]-->
+
+
+
+
+</head>
+<body onunload="ignoreTrue();" id="facilities">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4MCVLW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div id="wrapper"><!--★ID追加★-->
+	
+	
+
+
+
+
+
+
+
+
+
+<!-- header SP★タグとクラス追加★/ -->
+<header class="sp" style="">
+	<p class="logo"><img src="/toyonaka/img/toyonaka/side/logo.png" alt="公共施設予約システム" title="公共施設予約システム" class="pngfix"></p>
+	<div class="navBtn">
+		<button class="navIcon"><span class="iconLayer"></span></button>
+	</div>
+	<nav class="gnavi gnaviOff" style="height: 900px; top: 0px;">
+		<ul>
+			
+			
+				<li class="vis">
+					<a href="#" onclick="isNextFuncCodeSet('Yoyaku')" class="bgpng">
+						空き照会・予約
+					</a>
+				</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+				<li>
+					<a href="#" onclick="isNextFuncCodeSet('Oshirase')">
+						本日のお知らせ
+					</a>
+				</li>			
+			
+			
+			
+			
+			
+													
+			
+			
+			<li class="return">
+				<a href="#" onclick="isNextFuncCodeSet('BackToMenu')">処理選択に戻る</a>
+			</li>
+			<li>
+			
+				<a href="/toyonaka/menu/Logout.cgi">ログインに戻る</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+<!-- /header SP-->
+<div id="header" class="pc"><!--★クラス追加★-->
+<form name="menu.Menu.Form" method="post" action="/toyonaka/menu/Menu.cgi" onsubmit="return false;" id="formMenuMain">
+	<input type="hidden" name="txtProcId" value="/menu/Menu">
+	<input type="hidden" name="txtFunctionCode" value="" id="txtFunctionCode">
+	<input type="hidden" name="action" value="Enter">
+<div id="sidecolumn">
+	<h1 class="logo"><img src="/toyonaka/img/toyonaka/side/logo.png" alt="公共施設予約システム" title="公共施設予約システム" class="pngfix"></h1>
+	<div class="loginMessage">ゲストログイン中です。</div>
+	<div id="gnavi">
+		<ul>
+			
+			
+				<li class="vis">
+					<a href="#" onclick="isNextFuncCodeSet('Yoyaku')" class="bgpng">
+						空き照会・予約
+					</a>
+				</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+				<li>
+					<a href="#" onclick="isNextFuncCodeSet('Oshirase')">
+						本日のお知らせ
+					</a>
+				</li>			
+			
+			
+			
+			
+			
+													
+			
+			
+			<li class="return">
+				<a href="#" onclick="isNextFuncCodeSet('BackToMenu')">処理選択に戻る</a>
+			</li>
+			<li>
+			
+				<a href="/toyonaka/menu/Logout.cgi">ログインに戻る</a>
+			</li>
+		</ul>
+	</div>
+	
+</div>
+</form>
+</div><!--■PC版 id="header"の閉じタグを移動■-->
+
+	<section id="container" style="margin-top: 0px;"><div class="overlay"></div><!--■タグ追加■-->
+		<form name="yoyaku.QueryMethodSelect.Form" method="post" action="/toyonaka/yoyaku/QueryMethodSelect.cgi" onsubmit="return false;" id="formMain">
+		
+		<input type="hidden" name="action" value="" id="action">
+		<input type="hidden" name="txtProcId" value="/yoyaku/QueryMethodSelect" id="txtProcId">
+		<input type="hidden" name="txtSelectKey" value="" id="txtSelectKey">
+		
+		
+		<div id="errcolumn">
+			<noscript><p class="jserr">JavaScriptが無効になっているため使用できません。<br />ブラウザ設定でJavaScriptを有効にしてください。</p></noscript>
+			
+		</div>
+	
+		<div id="hmaincolumn">
+			<div id="reservation_flow" class="pngbg">
+				<ul>
+					<li class="flowon"><p><strong><span>照会方法選択</span></strong></p></li>
+					<li>施設選択</li>
+					<li>空き照会</li>
+					
+				</ul>
+			</div>
+				<h2>
+					照会方法選択
+					<span class="pager">
+						<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('BackToMenu');return false;"><img src="/toyonaka/img/toyonaka/common/btn_back_to_menu.png" width="163" height="37" alt="処理選択に戻るボタン" title="処理選択に戻るボタン" class="pngfix btn"></a>
+					</span>
+				</h2>
+			</div>
+		</form></section></div>
+	
+		<div id="mmaincolumn">	
+			<div class="tablebox">
+				<p>空き状況照会方法を一つ選択してください。</p>
+				<table border="0" cellspacing="1" cellpadding="0" summary="空き状況照会方法を選択するための表" class="table_list">
+					<tbody><tr>
+						<th>空き状況照会方法</th>
+					</tr>
+					 <tr class="" onmouseover="reportOver(this);" onmouseout="reportOut(this,'');" onclick="oneClickSubmit('txtSelectKey','Enter','0');">
+						<td>
+							<a href="#" onclick="return false;">
+								<img src="/toyonaka/img/toyonaka/common/btn_arrow.png" width="42" height="42" alt="" title="">
+							</a>
+							利用目的から絞り込む
+						</td>
+					</tr>
+					 <tr class="" onmouseover="reportOver(this);" onmouseout="reportOut(this,'');" onclick="oneClickSubmit('txtSelectKey','Enter','1');">
+						<td>
+							<a href="#" onclick="return false;">
+							<img src="/toyonaka/img/toyonaka/common/btn_arrow.png" width="42" height="42" alt="" title="">
+							</a>
+							施設を指定する
+						</td>
+					</tr>
+					
+					
+					<tr class="tr2">
+						<td style="text-align:right;">
+							<p class="btnright">
+								<a href="#wrapper">
+									<img src="/toyonaka/img/toyonaka/common/btn_pagetop.png" alt="ページの先頭へボタン" title="ページの先頭へボタン" class="pngfix btn">
+								</a>
+							</p>
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+		
+	
+		<div id="fmaincolumn">	
+			<div id="pagerbox">
+				<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('BackToMenu');return false;"><img src="/toyonaka/img/toyonaka/common/btn_back_to_menu.png" width="163" height="37" alt="処理選択に戻るボタン" title="処理選択に戻るボタン" class="pngfix btn"></a>
+			</div>
+			<div id="footer" class="pngbg"><address class="pngbg">&nbsp;</address></div>
+		</div>
+	<!--■section id="container"の閉じタグを追加■-->
+
+<script type="text/javascript" src="/toyonaka/js/menu.js?var=20240319"></script> <!-- ◆追加スクリプト◆ --> 
+<script type="text/javascript" src="/toyonaka/js/jquery-1_11.js?var=20240319"></script><!-- ◆追加スクリプト◆ --> 
+
+</body></html>
