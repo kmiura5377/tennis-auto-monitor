@@ -1,3 +1,4 @@
 [
-  { "action": "click", "selector": "a[onclick*=\"Akisyoukai\"]" }
+  { "action": "click", "selector": "a[onclick*=\"Akisyoukai\"]" },
+  { "action": "click", "selector": "tr[onclick*=\"'Enter','1'\"]" }
 ]
