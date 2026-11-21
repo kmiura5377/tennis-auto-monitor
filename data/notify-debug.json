@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T09:28:25.360Z",
+  "generatedAt": "2026-11-21T09:57:51.623Z",
   "scrapeFailureCount": 0,
   "scrapeTotalFacilities": 31,
   "scrapeFailureRate": 0,
@@ -18,7 +18,7 @@
       "weeksFetched": 4
     },
     "oi_b_hard": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -34,7 +34,7 @@
       "weeksFetched": 4
     },
     "ariake_b_hard": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "ハード"
@@ -58,7 +58,7 @@
       "weeksFetched": 4
     },
     "sarue": {
-      "attempts": 2,
+      "attempts": 1,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -235,7 +235,7 @@
       "weeksFetched": 4
     },
     "higashiyamato_minami": {
-      "attempts": 1,
+      "attempts": 2,
       "step": "検索",
       "courtOptions": [
         "テニス（人工芝）"
@@ -259,7 +259,7 @@
       "weeksFetched": 4
     }
   },
-  "newlyAvailableCount": 3,
+  "newlyAvailableCount": 1,
   "registeredUsers": 2,
   "perUser": [
     {
@@ -277,7 +277,7 @@
       "userId": "f8732b4a88cb",
       "hasSubscription": false,
       "notifyFavoritesOnly": false,
-      "toNotifyCount": 3,
+      "toNotifyCount": 1,
       "pushResult": {
         "attempted": false,
         "ok": false,
