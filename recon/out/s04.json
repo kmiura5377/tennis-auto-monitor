@@ -1,0 +1,311 @@
+{
+  "url": "https://reserve.opas.jp/toyonaka/yoyaku/ShisetsuMultiSelect.cgi",
+  "title": "公共施設予約システム（施設絞り込み（場所選択））",
+  "clickables": [
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "href": null,
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "空き照会・予約",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Yoyaku')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "本日のお知らせ",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Oshirase')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻る",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('BackToMenu')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインに戻る",
+      "href": "/toyonaka/menu/Logout.cgi",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "空き照会・予約",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Yoyaku')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "本日のお知らせ",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Oshirase')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻る",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('BackToMenu')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインに戻る",
+      "href": "/toyonaka/menu/Logout.cgi",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前に戻るボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Back');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "次に進むボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Enter');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "テニスコート\t豊島公園庭球場",
+      "href": null,
+      "onclick": "chng_chkboxImage('r_record0','272035_001_06_01_01_001_001','','i_record0','/toyonaka/img/toyonaka/');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "テニスコート\t千里東町公園庭球場",
+      "href": null,
+      "onclick": "chng_chkboxImage('r_record1','272035_001_06_02_01_002_001','','i_record1','/toyonaka/img/toyonaka/');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "テニスコート\t野畑庭球場",
+      "href": null,
+      "onclick": "chng_chkboxImage('r_record2','272035_001_06_03_01_003_001','','i_record2','/toyonaka/img/toyonaka/');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "テニスコート\tふれあい緑地庭球場",
+      "href": null,
+      "onclick": "chng_chkboxImage('r_record3','272035_001_06_04_01_004_001','','i_record3','/toyonaka/img/toyonaka/');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "テニスコート\tグリーンスポーツセンター庭球場",
+      "href": null,
+      "onclick": "chng_chkboxImage('r_record4','272035_001_06_05_01_005_001','','i_record4','/toyonaka/img/toyonaka/');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "テニスコート\tグリーンスポーツセンター屋根付庭球場",
+      "href": null,
+      "onclick": "chng_chkboxImage('r_record5','272035_001_06_06_01_006_001','','i_record5','/toyonaka/img/toyonaka/');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの先頭へボタン",
+      "href": "#wrapper",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "全て選択するボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('AllSelect');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "選択を全てやめるボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('AllClear');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前に戻るボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Back');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "次に進むボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Enter');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    }
+  ],
+  "forms": [
+    {
+      "action": "/toyonaka/menu/Menu.cgi",
+      "name": "menu.Menu.Form",
+      "hidden": [
+        "txtProcId=/menu/Menu",
+        "txtFunctionCode=",
+        "action=Enter"
+      ]
+    },
+    {
+      "action": "/toyonaka/yoyaku/ShisetsuMultiSelect.cgi",
+      "name": "yoyaku.ShisetsuMultiSelect.Form",
+      "hidden": [
+        "action=",
+        "txtProcId=/yoyaku/ShisetsuMultiSelect",
+        "checkMeisaiUniqKey2[0]=",
+        "checkMeisaiUniqKey2[1]=",
+        "checkMeisaiUniqKey2[2]=",
+        "checkMeisaiUniqKey2[3]=",
+        "checkMeisaiUniqKey2[4]=",
+        "checkMeisaiUniqKey2[5]=",
+        "checkMeisaiUniqKey=272035_001_06_01_01_001_001",
+        "checkMeisaiUniqKey=272035_001_06_02_01_002_001",
+        "checkMeisaiUniqKey=272035_001_06_03_01_003_001",
+        "checkMeisaiUniqKey=272035_001_06_04_01_004_001",
+        "checkMeisaiUniqKey=272035_001_06_05_01_005_001",
+        "checkMeisaiUniqKey=272035_001_06_06_01_006_001"
+      ]
+    }
+  ]
+}

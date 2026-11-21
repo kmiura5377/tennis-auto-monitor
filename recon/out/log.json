@@ -19,5 +19,19 @@
     "selector": "tr[onclick*=\"272035_001_06\"]",
     "landed": "https://reserve.opas.jp/toyonaka/yoyaku/LocationSelect.cgi",
     "title": "公共施設予約システム（施設絞り込み（場所選択））"
+  },
+  {
+    "step": 4,
+    "action": "click",
+    "selector": "a[onclick*=\"AllSelect\"]",
+    "landed": "https://reserve.opas.jp/toyonaka/yoyaku/ShisetsuMultiSelect.cgi",
+    "title": "公共施設予約システム（施設絞り込み（場所選択））"
+  },
+  {
+    "step": 5,
+    "action": "click",
+    "selector": "a[onclick*=\"isSubmitDataSet('Enter')\"]",
+    "landed": "https://reserve.opas.jp/toyonaka/yoyaku/ShisetsuMultiSelect.cgi",
+    "title": "公共施設予約システム（利用目的選択）"
   }
 ]

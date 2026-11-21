@@ -1,0 +1,166 @@
+{
+  "url": "https://reserve.opas.jp/toyonaka/yoyaku/ShisetsuMultiSelect.cgi",
+  "title": "公共施設予約システム（利用目的選択）",
+  "clickables": [
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "href": null,
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "空き照会・予約",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Yoyaku')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "本日のお知らせ",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Oshirase')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻る",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('BackToMenu')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインに戻る",
+      "href": "/toyonaka/menu/Logout.cgi",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "空き照会・予約",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Yoyaku')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "本日のお知らせ",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Oshirase')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻る",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('BackToMenu')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインに戻る",
+      "href": "/toyonaka/menu/Logout.cgi",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前に戻るボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Back');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "TR",
+      "text": "テニス",
+      "href": null,
+      "onclick": "oneClickSubmit('metaShubetsuCd','Enter','E00');",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの先頭へボタン",
+      "href": "#wrapper",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前に戻るボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Back');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    }
+  ],
+  "forms": [
+    {
+      "action": "/toyonaka/menu/Menu.cgi",
+      "name": "menu.Menu.Form",
+      "hidden": [
+        "txtProcId=/menu/Menu",
+        "txtFunctionCode=",
+        "action=Enter"
+      ]
+    },
+    {
+      "action": "/toyonaka/yoyaku/GenreSelect.cgi",
+      "name": "yoyaku.GenreSelect.Form",
+      "hidden": [
+        "action=",
+        "txtProcId=/yoyaku/GenreSelect",
+        "gamenNo=0",
+        "metaShubetsuCd="
+      ]
+    }
+  ]
+}
