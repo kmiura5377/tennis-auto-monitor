@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
+	
+	
+
+
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<meta http-equiv="Expire" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+
+<meta name="description" content="公共施設予約システム">
+<meta name="keywords" content="公共,施設予約">
+
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+
+<title>公共施設予約システム（施設絞り込み（場所選択））</title>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/toyonaka/css/toyonaka/import.css?var=20240517">
+<link rel="SHORTCUT ICON" href="/toyonaka/img/toyonaka/icon/favicon.ico">
+
+<!-- Google Tag Manager -->
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-FEPQZ6T1B6&amp;cx=c&amp;_slc=1"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXVLNEHMJ6&amp;cx=c&amp;gtm=4e6bh1h1"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-M4MCVLW"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M4MCVLW');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript" src="/toyonaka/js/CommonFunctions.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/jquery.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/jquery-ui.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/meca.js?var=20240319"></script>
+
+
+<script>
+$(function() {
+$.noConflict();
+// roll over
+$('.btn').meca('hover');
+// pngfix
+$('.pngfix').meca('pngfix');
+});
+</script>
+
+<!--[if IE 6]>
+	<script type="text/javascript" src="/toyonaka/js/DD_belatedPNG-min.js?var=<%=JS_VER%>"></script>
+	<script type="text/javascript">
+		DD_belatedPNG.fix('.pngbg');
+	</script>
+<![endif]-->
+
+
+
+
+	
+	<script type="text/javascript">
+		function setInitImages() {
+		
+			var obj_K;
+			var obj_R;
+			
+			/* チェックボックス画像セット */
+			
+				
+				obj_K = document.getElementById('k_record0');
+				obj_R = document.getElementById('r_record0');
+				
+				/* 選択済のリストに含まれる施設は、チェックボックスをＯＮに変更 */
+				if (obj_K.value != "" && obj_R.value == "") {
+					obj_R.value = obj_K.value;
+					obj_K.value = "";
+				}
+				
+				if (obj_R.value != ""){
+					chng_chkboxImage('r_record0',obj_R.value,'','i_record0','/toyonaka/img/toyonaka/');
+				}
+				
+			
+				
+				obj_K = document.getElementById('k_record1');
+				obj_R = document.getElementById('r_record1');
+				
+				/* 選択済のリストに含まれる施設は、チェックボックスをＯＮに変更 */
+				if (obj_K.value != "" && obj_R.value == "") {
+					obj_R.value = obj_K.value;
+					obj_K.value = "";
+				}
+				
+				if (obj_R.value != ""){
+					chng_chkboxImage('r_record1',obj_R.value,'','i_record1','/toyonaka/img/toyonaka/');
+				}
+				
+			
+				
+				obj_K = document.getElementById('k_record2');
+				obj_R = document.getElementById('r_record2');
+				
+				/* 選択済のリストに含まれる施設は、チェックボックスをＯＮに変更 */
+				if (obj_K.value != "" && obj_R.value == "") {
+					obj_R.value = obj_K.value;
+					obj_K.value = "";
+				}
+				
+				if (obj_R.value != ""){
+					chng_chkboxImage('r_record2',obj_R.value,'','i_record2','/toyonaka/img/toyonaka/');
+				}
+				
+			
+				
+				obj_K = document.getElementById('k_record3');
+				obj_R = document.getElementById('r_record3');
+				
+				/* 選択済のリストに含まれる施設は、チェックボックスをＯＮに変更 */
+				if (obj_K.value != "" && obj_R.value == "") {
+					obj_R.value = obj_K.value;
+					obj_K.value = "";
+				}
+				
+				if (obj_R.value != ""){
+					chng_chkboxImage('r_record3',obj_R.value,'','i_record3','/toyonaka/img/toyonaka/');
+				}
+				
+			
+				
+				obj_K = document.getElementById('k_record4');
+				obj_R = document.getElementById('r_record4');
+				
+				/* 選択済のリストに含まれる施設は、チェックボックスをＯＮに変更 */
+				if (obj_K.value != "" && obj_R.value == "") {
+					obj_R.value = obj_K.value;
+					obj_K.value = "";
+				}
+				
+				if (obj_R.value != ""){
+					chng_chkboxImage('r_record4',obj_R.value,'','i_record4','/toyonaka/img/toyonaka/');
+				}
+				
+			
+				
+				obj_K = document.getElementById('k_record5');
+				obj_R = document.getElementById('r_record5');
+				
+				/* 選択済のリストに含まれる施設は、チェックボックスをＯＮに変更 */
+				if (obj_K.value != "" && obj_R.value == "") {
+					obj_R.value = obj_K.value;
+					obj_K.value = "";
+				}
+				
+				if (obj_R.value != ""){
+					chng_chkboxImage('r_record5',obj_R.value,'','i_record5','/toyonaka/img/toyonaka/');
+				}
+				
+			
+			
+		}
+	</script>
+</head>
+<body onload="setInitImages();" onunload="ignoreTrue();" id="facilities">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4MCVLW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="wrapper"><!--★ID追加★-->
+	
+	
+
+
+
+
+
+
+
+
+
+<!-- header SP★タグとクラス追加★/ -->
+<header class="sp" style="">
+	<p class="logo"><img src="/toyonaka/img/toyonaka/side/logo.png" alt="公共施設予約システム" title="公共施設予約システム" class="pngfix"></p>
+	<div class="navBtn">
+		<button class="navIcon"><span class="iconLayer"></span></button>
+	</div>
+	<nav class="gnavi gnaviOff" style="height: 900px; top: 0px;">
+		<ul>
+			
+			
+				<li class="vis">
+					<a href="#" onclick="isNextFuncCodeSet('Yoyaku')" class="bgpng">
+						空き照会・予約
+					</a>
+				</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+				<li>
+					<a href="#" onclick="isNextFuncCodeSet('Oshirase')">
+						本日のお知らせ
+					</a>
+				</li>			
+			
+			
+			
+			
+			
+													
+			
+			
+			<li class="return">
+				<a href="#" onclick="isNextFuncCodeSet('BackToMenu')">処理選択に戻る</a>
+			</li>
+			<li>
+			
+				<a href="/toyonaka/menu/Logout.cgi">ログインに戻る</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+<!-- /header SP-->
+<div id="header" class="pc"><!--★クラス追加★-->
+<form name="menu.Menu.Form" method="post" action="/toyonaka/menu/Menu.cgi" onsubmit="return false;" id="formMenuMain">
+	<input type="hidden" name="txtProcId" value="/menu/Menu">
+	<input type="hidden" name="txtFunctionCode" value="" id="txtFunctionCode">
+	<input type="hidden" name="action" value="Enter">
+<div id="sidecolumn">
+	<h1 class="logo"><img src="/toyonaka/img/toyonaka/side/logo.png" alt="公共施設予約システム" title="公共施設予約システム" class="pngfix"></h1>
+	<div class="loginMessage">ゲストログイン中です。</div>
+	<div id="gnavi">
+		<ul>
+			
+			
+				<li class="vis">
+					<a href="#" onclick="isNextFuncCodeSet('Yoyaku')" class="bgpng">
+						空き照会・予約
+					</a>
+				</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+				<li>
+					<a href="#" onclick="isNextFuncCodeSet('Oshirase')">
+						本日のお知らせ
+					</a>
+				</li>			
+			
+			
+			
+			
+			
+													
+			
+			
+			<li class="return">
+				<a href="#" onclick="isNextFuncCodeSet('BackToMenu')">処理選択に戻る</a>
+			</li>
+			<li>
+			
+				<a href="/toyonaka/menu/Logout.cgi">ログインに戻る</a>
+			</li>
+		</ul>
+	</div>
+	
+</div>
+</form>
+</div><!--■PC版 id="header"の閉じタグを移動■-->
+
+	<section id="container" style="margin-top: 0px;"><div class="overlay"></div><!--■タグ追加■-->
+	
+	<form name="yoyaku.ShisetsuMultiSelect.Form" method="post" action="/toyonaka/yoyaku/ShisetsuMultiSelect.cgi" onsubmit="return false;" id="formMain">
+	
+	<input type="hidden" name="action" value="" id="action">
+	<input type="hidden" name="txtProcId" value="/yoyaku/ShisetsuMultiSelect" id="txtProcId">
+	
+
+	
+	
+		<input type="hidden" name="checkMeisaiUniqKey2[0]" value="" id="k_record0">
+	
+		<input type="hidden" name="checkMeisaiUniqKey2[1]" value="" id="k_record1">
+	
+		<input type="hidden" name="checkMeisaiUniqKey2[2]" value="" id="k_record2">
+	
+		<input type="hidden" name="checkMeisaiUniqKey2[3]" value="" id="k_record3">
+	
+		<input type="hidden" name="checkMeisaiUniqKey2[4]" value="" id="k_record4">
+	
+		<input type="hidden" name="checkMeisaiUniqKey2[5]" value="" id="k_record5">
+	
+	
+	<div id="errcolumn">
+		<noscript><p class="jserr">JavaScriptが無効になっているため使用できません。<br />ブラウザ設定でJavaScriptを有効にしてください。</p></noscript>
+		
+	</div>
+	
+	<div id="hmaincolumn">
+		<div id="reservation_flow" class="pngbg">
+			<ul>
+				<li>照会方法選択</li>
+				<li class="flowon"><p><strong><span>施設選択</span></strong></p></li>
+				<li>空き照会</li>
+				
+			</ul>
+		</div>
+		<h2>
+			施設絞り込み（場所選択）
+			<span class="pager">
+				<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('Back');return false;"><img src="/toyonaka/img/toyonaka/common/btn_return.png" width="122" height="37" alt="前に戻るボタン" title="前に戻るボタン" class="pngfix btn"></a>
+				<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('Enter');return false;"><img src="/toyonaka/img/toyonaka/common/btn_next.png" width="122" height="37" alt="次に進むボタン" title="次に進むボタン" class="pngfix btn"></a>
+			</span>
+		</h2>
+	</div>
+
+	<div id="mmaincolumn">
+		<div class="tablebox">
+			
+			
+			
+			<p>空き状況を照会する施設を一つ以上選択し、［次に進むボタン］を押してください。</p>
+			<table border="0" cellspacing="1" cellpadding="0" summary="照会する施設を選択するための表" class="table_basic">
+				<tbody><tr>
+					<th scope="col" colspan="2">施設名</th>
+				</tr>
+				
+				
+				
+					<tr class="" onmouseover="reportOver(this);" onmouseout="reportOut(this,'');" onclick="chng_chkboxImage('r_record0','272035_001_06_01_01_001_001','','i_record0','/toyonaka/img/toyonaka/');">
+						<td>
+							<a href="#" onclick="return false;">
+							<img id="i_record0" src="/toyonaka/img/toyonaka/common/btn_check.png" width="42" height="42" alt="未選択" title="未選択" class="img_checkbox">
+							</a>
+							<input type="hidden" name="checkMeisaiUniqKey" value="" id="r_record0">
+							テニスコート
+						</td>
+						<td>
+							豊島公園庭球場
+						</td>
+					</tr>
+				
+				
+				
+				
+					<tr class="" onmouseover="reportOver(this);" onmouseout="reportOut(this,'');" onclick="chng_chkboxImage('r_record1','272035_001_06_02_01_002_001','','i_record1','/toyonaka/img/toyonaka/');">
+						<td>
+							<a href="#" onclick="return false;">
+							<img id="i_record1" src="/toyonaka/img/toyonaka/common/btn_check.png" width="42" height="42" alt="未選択" title="未選択" class="img_checkbox">
+							</a>
+							<input type="hidden" name="checkMeisaiUniqKey" value="" id="r_record1">
+							テニスコート
+						</td>
+						<td>
+							千里東町公園庭球場
+						</td>
+					</tr>
+				
+				
+				
+				
+					<tr class="" onmouseover="reportOver(this);" onmouseout="reportOut(this,'');" onclick="chng_chkboxImage('r_record2','272035_001_06_03_01_003_001','','i_record2','/toyonaka/img/toyonaka/');">
+						<td>
+							<a href="#" onclick="return false;">
+							<img id="i_record2" src="/toyonaka/img/toyonaka/common/btn_check.png" width="42" height="42" alt="未選択" title="未選択" class="img_checkbox">
+							</a>
+							<input type="hidden" name="checkMeisaiUniqKey" value="" id="r_record2">
+							テニスコート
+						</td>
+						<td>
+							野畑庭球場
+						</td>
+					</tr>
+				
+				
+				
+				
+					<tr class="" onmouseover="reportOver(this);" onmouseout="reportOut(this,'');" onclick="chng_chkboxImage('r_record3','272035_001_06_04_01_004_001','','i_record3','/toyonaka/img/toyonaka/');">
+						<td>
+							<a href="#" onclick="return false;">
+							<img id="i_record3" src="/toyonaka/img/toyonaka/common/btn_check.png" width="42" height="42" alt="未選択" title="未選択" class="img_checkbox">
+							</a>
+							<input type="hidden" name="checkMeisaiUniqKey" value="" id="r_record3">
+							テニスコート
+						</td>
+						<td>
+							ふれあい緑地庭球場
+						</td>
+					</tr>
+				
+				
+				
+				
+					<tr class="" onmouseover="reportOver(this);" onmouseout="reportOut(this,'');" onclick="chng_chkboxImage('r_record4','272035_001_06_05_01_005_001','','i_record4','/toyonaka/img/toyonaka/');">
+						<td>
+							<a href="#" onclick="return false;">
+							<img id="i_record4" src="/toyonaka/img/toyonaka/common/btn_check.png" width="42" height="42" alt="未選択" title="未選択" class="img_checkbox">
+							</a>
+							<input type="hidden" name="checkMeisaiUniqKey" value="" id="r_record4">
+							テニスコート
+						</td>
+						<td>
+							グリーンスポーツセンター庭球場
+						</td>
+					</tr>
+				
+				
+				
+				
+					<tr class="" onmouseover="reportOver(this);" onmouseout="reportOut(this,'');" onclick="chng_chkboxImage('r_record5','272035_001_06_06_01_006_001','','i_record5','/toyonaka/img/toyonaka/');">
+						<td>
+							<a href="#" onclick="return false;">
+							<img id="i_record5" src="/toyonaka/img/toyonaka/common/btn_check.png" width="42" height="42" alt="未選択" title="未選択" class="img_checkbox">
+							</a>
+							<input type="hidden" name="checkMeisaiUniqKey" value="" id="r_record5">
+							テニスコート
+						</td>
+						<td>
+							グリーンスポーツセンター屋根付庭球場
+						</td>
+					</tr>
+				
+				
+				<tr class="tr2">
+					<td colspan="2" style="text-align:right;">
+						<p class="btnright">
+							<a href="#wrapper">
+								<img src="/toyonaka/img/toyonaka/common/btn_pagetop.png" alt="ページの先頭へボタン" title="ページの先頭へボタン" class="pngfix btn">
+							</a>
+						</p>
+					</td>
+				</tr>
+			</tbody></table>
+
+			
+			<div class="btncenter">
+				<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('AllSelect');return false;"><img src="/toyonaka/img/toyonaka/common/btn_allselect.png" alt="全て選択するボタン" title="全て選択するボタン" class="pngfix btn"></a>
+				<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('AllClear');return false;"><img src="/toyonaka/img/toyonaka/common/btn_reset.png" alt="選択を全てやめるボタン" title="選択を全てやめるボタン" class="pngfix btn"></a>
+			</div>
+			
+			
+		</div>
+	</div>
+	</form>
+
+	<div id="fmaincolumn">	
+		<div id="pagerbox">
+			<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('Back');return false;"><img src="/toyonaka/img/toyonaka/common/btn_return.png" width="122" height="37" alt="前に戻るボタン" title="前に戻るボタン" class="pngfix btn"></a>
+			<a href="javascript:void(0)" onclick="javascript:isSubmitDataSet('Enter');return false;"><img src="/toyonaka/img/toyonaka/common/btn_next.png" width="122" height="37" alt="次に進むボタン" title="次に進むボタン" class="pngfix btn"></a>
+		</div>
+		<div id="footer" class="pngbg"><address class="pngbg">&nbsp;</address></div>
+	</div>
+	</section><!--■section id="container"の閉じタグを追加■-->
+</div>
+<script type="text/javascript" src="/toyonaka/js/menu.js?var=20240319"></script> <!-- ◆追加スクリプト◆ --> 
+<script type="text/javascript" src="/toyonaka/js/jquery-1_11.js?var=20240319"></script><!-- ◆追加スクリプト◆ --> 
+
+
+</body></html>
