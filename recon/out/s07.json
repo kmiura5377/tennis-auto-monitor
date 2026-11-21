@@ -1,0 +1,586 @@
+{
+  "url": "https://reserve.opas.jp/toyonaka/yoyaku/GenreSelect.cgi",
+  "title": "公共施設予約システム（予約対象区分選択）",
+  "clickables": [
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "href": null,
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "空き照会・予約",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Yoyaku')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "本日のお知らせ",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Oshirase')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻る",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('BackToMenu')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインに戻る",
+      "href": "/toyonaka/menu/Logout.cgi",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "空き照会・予約",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Yoyaku')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "本日のお知らせ",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('Oshirase')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "処理選択に戻る",
+      "href": "#",
+      "onclick": "isNextFuncCodeSet('BackToMenu')",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインに戻る",
+      "href": "/toyonaka/menu/Logout.cgi",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前に戻るボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Back');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "SELECT",
+      "type": "select-one",
+      "text": "2026",
+      "href": null,
+      "onclick": "",
+      "id": "optYear",
+      "name": "optYear",
+      "value": null,
+      "options": [
+        "2026:2026"
+      ]
+    },
+    {
+      "tag": "SELECT",
+      "type": "select-one",
+      "text": "11\n12",
+      "href": null,
+      "onclick": "",
+      "id": "optMonth",
+      "name": "optMonth",
+      "value": null,
+      "options": [
+        "11:11",
+        "12:12"
+      ]
+    },
+    {
+      "tag": "SELECT",
+      "type": "select-one",
+      "text": "01\n02\n03\n04\n05\n06\n07\n08\n09\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n",
+      "href": null,
+      "onclick": "",
+      "id": "optDay",
+      "name": "optDay",
+      "value": null,
+      "options": [
+        "01:01",
+        "02:02",
+        "03:03",
+        "04:04",
+        "05:05",
+        "06:06",
+        "07:07",
+        "08:08",
+        "09:09",
+        "10:10",
+        "11:11",
+        "12:12",
+        "13:13",
+        "14:14",
+        "15:15",
+        "16:16",
+        "17:17",
+        "18:18",
+        "19:19",
+        "20:20",
+        "21:21",
+        "22:22",
+        "23:23",
+        "24:24",
+        "25:25",
+        "26:26",
+        "27:27",
+        "28:28",
+        "29:29",
+        "30:30",
+        "31:31"
+      ]
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "7日表示 選択済み",
+      "href": null,
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "表示ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSetConfirm('Setup');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "【曜日で表示を絞り込みたい場合は、こちらを押して表示条件を変更してください。】",
+      "href": "#",
+      "onclick": "calYobiShow();return false;",
+      "id": "calYobi1",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "【曜日の表示条件を閉じる場合は、こちらを押してください。】",
+      "href": "#",
+      "onclick": "calYobiShow();return false;",
+      "id": "calYobi2",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "chng_Calweekshow('MON','/toyonaka/img/toyonaka/');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "chng_Calweekshow('TUE','/toyonaka/img/toyonaka/');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "chng_Calweekshow('WED','/toyonaka/img/toyonaka/');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "chng_Calweekshow('THU','/toyonaka/img/toyonaka/');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "chng_Calweekshow('FRI','/toyonaka/img/toyonaka/');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "chng_Calweekshow('SAT','/toyonaka/img/toyonaka/');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "chng_Calweekshow('SUN','/toyonaka/img/toyonaka/');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "",
+      "href": "#",
+      "onclick": "chng_Calweekshow('HOL','/toyonaka/img/toyonaka/');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ログインボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Login');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetPrev');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "次の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetNext');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの先頭へボタン",
+      "href": "#wrapper",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの最終へボタン",
+      "href": "#footer",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetPrev');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "次の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetNext');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの先頭へボタン",
+      "href": "#wrapper",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの最終へボタン",
+      "href": "#footer",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetPrev');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "次の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetNext');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの先頭へボタン",
+      "href": "#wrapper",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの最終へボタン",
+      "href": "#footer",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetPrev');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "次の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetNext');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの先頭へボタン",
+      "href": "#wrapper",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの最終へボタン",
+      "href": "#footer",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetPrev');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "次の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetNext');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの先頭へボタン",
+      "href": "#wrapper",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの最終へボタン",
+      "href": "#footer",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetPrev');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "次の7日分ボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('OffsetNext');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの先頭へボタン",
+      "href": "#wrapper",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "ページの最終へボタン",
+      "href": "#footer",
+      "onclick": "",
+      "id": "",
+      "name": null,
+      "value": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "text": "前に戻るボタン",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:isSubmitDataSet('Back');return false;",
+      "id": "",
+      "name": null,
+      "value": null
+    }
+  ],
+  "forms": [
+    {
+      "action": "/toyonaka/menu/Menu.cgi",
+      "name": "menu.Menu.Form",
+      "hidden": [
+        "txtProcId=/menu/Menu",
+        "txtFunctionCode=",
+        "action=Enter"
+      ]
+    },
+    {
+      "action": "/toyonaka/yoyaku/CalendarStatusSelect.cgi",
+      "name": "yoyaku.CalendarStatusSelect.Form",
+      "hidden": [
+        "action=",
+        "txtProcId=/yoyaku/CalendarStatusSelect",
+        "txtCalYobiView=block",
+        "printedFlg=",
+        "radioshow=week",
+        "checkShowDay=MON",
+        "checkShowDay=TUE",
+        "checkShowDay=WED",
+        "checkShowDay=THU",
+        "checkShowDay=FRI",
+        "checkShowDay=SAT",
+        "checkShowDay=SUN",
+        "checkShowDay=HOL"
+      ]
+    }
+  ]
+}
