@@ -39,11 +39,9 @@ async function clickAndWait(page, selector) {
 }
 
 // 表示中の画面（7日分×全施設）を読み取る。
-// 戻り値: { start: 'YYYY-MM-DD', facilities: [{ site, dates: ['M/D',...], rows: [{ time, cells: [{available, remaining, total}] }] }] }
+// 戻り値: { facilities: [{ site, dates: ['M/D',...], rows: [{ time, cells: [{available, remaining, total}] }] }] }
 async function parseScreen(page) {
   return page.evaluate(() => {
-    const val = id => { const el = document.getElementById(id); return el ? el.value : null; };
-    const start = `${val('optYear')}-${String(val('optMonth')).padStart(2, '0')}-${String(val('optDay')).padStart(2, '0')}`;
     const facilities = [];
     document.querySelectorAll('td.shisetu_name').forEach(nameCell => {
       const site = nameCell.innerText.trim();
@@ -71,27 +69,30 @@ async function parseScreen(page) {
         });
       facilities.push({ site, dates, rows });
     });
-    return { start, facilities };
+    return { facilities };
   });
 }
 
-function addDays(ymd, n) {
-  const [y, m, d] = ymd.split('-').map(Number);
-  return new Date(Date.UTC(y, m - 1, d + n)).toISOString().slice(0, 10);
+// 列見出しの「M月D日」に年を補って 'YYYY-MM-DD' にする。
+// 年は日本時間の今日を基準にし、今日の月より2か月以上前の月は翌年とみなす（12月→1月の年またぎ）。
+// （画面上部の「表示開始日」の選択欄は実際の表示と食い違うことがあったため使わない）
+function labelToDate(label) {
+  const [m, d] = label.split('/').map(Number);
+  const now = new Date(Date.now() + 9 * 3600 * 1000);
+  let y = now.getUTCFullYear();
+  if (m < now.getUTCMonth() + 1 - 1) y += 1;
+  return `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
 }
 
-// 画面の内容を days（{ 'YYYY-MM-DD': [{facilityId, facility, timeSlots}] }）に書き込む。
-// 日付は「表示開始日（年月日の選択欄）から何日目か」で決める。列見出しの月日と食い違えば例外にする
+// 画面の内容を days（{ 'YYYY-MM-DD': [{facilityId, facility, timeSlots}] }）に書き込む
 function mergeScreen(days, screen) {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(screen.start)) throw new Error(`表示開始日が読めない: ${screen.start}`);
   let count = 0;
   for (const f of screen.facilities) {
     const facility = FACILITIES.find(x => x.site === f.site);
     if (!facility) { console.log(`未知の施設をスキップ: ${f.site}`); continue; }
     f.dates.forEach((label, i) => {
-      const dateStr = addDays(screen.start, i);
-      const [, mm, dd] = dateStr.split('-').map(Number);
-      if (label !== `${mm}/${dd}`) throw new Error(`日付の対応がずれている: 列見出し${label} / 計算${dateStr}`);
+      if (!label) throw new Error(`列見出しの日付が読めない（${f.site} ${i + 1}列目）`);
+      const dateStr = labelToDate(label);
       if (!days[dateStr]) days[dateStr] = [];
       let entry = days[dateStr].find(e => e.facilityId === facility.id);
       if (!entry) {
@@ -144,7 +145,7 @@ async function scrapeAll(days, diag) {
       const n = mergeScreen(days, screen);
       diag.weeksFetched = w + 1;
       diag.facilitiesSeen = screen.facilities.map(f => f.site);
-      console.log(`week ${w + 1}: start=${screen.start} facilities=${screen.facilities.length} slots=${n}`);
+      console.log(`week ${w + 1}: first=${screen.facilities[0].dates[0]} facilities=${screen.facilities.length} slots=${n}`);
       if (w < WEEKS_TO_FETCH - 1) {
         diag.step = `${w + 2}週目へ`;
         await clickAndWait(page, `a[onclick*="OffsetNext"]`);
