@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
+
+
+
+
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<meta http-equiv="Expire" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+
+<meta name="description" content="公共施設予約システム">
+<meta name="keywords" content="公共,施設予約">
+
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+
+<title>公共施設予約システム（セッションエラー）</title>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/toyonaka/css/toyonaka/import.css?var=20240517">
+<link rel="SHORTCUT ICON" href="/toyonaka/img/toyonaka/icon/favicon.ico">
+
+<!-- Google Tag Manager -->
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-FEPQZ6T1B6&amp;cx=c&amp;_slc=1"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXVLNEHMJ6&amp;cx=c&amp;gtm=4e6bh1h1"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-M4MCVLW"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M4MCVLW');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript" src="/toyonaka/js/CommonFunctions.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/jquery.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/jquery-ui.js?var=20240319"></script>
+<script type="text/javascript" src="/toyonaka/js/meca.js?var=20240319"></script>
+
+
+<script>
+$(function() {
+$.noConflict();
+// roll over
+$('.btn').meca('hover');
+// pngfix
+$('.pngfix').meca('pngfix');
+});
+</script>
+
+<!--[if IE 6]>
+	<script type="text/javascript" src="/toyonaka/js/DD_belatedPNG-min.js?var=<%=JS_VER%>"></script>
+	<script type="text/javascript">
+		DD_belatedPNG.fix('.pngbg');
+	</script>
+<![endif]-->
+
+
+
+
+<script type="text/javascript">
+<!--
+  function redirect(){
+    sObj = document.getElementById("formMain");
+    sObj.action = "/toyonaka/Welcome.cgi";
+    sObj.submit();
+  }
+//-->
+</script>
+</head>
+
+<body class="error_page" onunload="ignoreTrue();">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4MCVLW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form name="errorSession" method="post" action="" id="formMain" onsubmit="return false;">
+		<div class="error_page_div">
+			<h1 style="height:auto;">セッションタイムアウト</h1><br>
+			<p class="jserr">前回操作から長時間操作を行われていなかったか、ログインされていません。<br>ログインし直してください。</p>
+			<br>
+			<hr style="width:98%;">
+			<br>
+			<p class="btncenter">
+				<a href="javascript:void(0)" onclick="javascript:redirect();return false;"><img src="/toyonaka/img/toyonaka/login/loginbtn.png" alt="ログインボタン" title="ログインボタン" class="pngfix btn"></a>
+			</p>
+		</div>
+	</form>
+	<script type="text/javascript" src="/toyonaka/js/menu.js?var=20240319"></script> <!-- ◆追加スクリプト◆ --> 
+	<script type="text/javascript" src="/toyonaka/js/jquery-1_11.js?var=20240319"></script><!-- ◆追加スクリプト◆ --> 
+
+
+</body></html>

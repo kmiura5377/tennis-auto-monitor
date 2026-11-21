@@ -1,0 +1,23 @@
+{
+  "url": "https://reserve.opas.jp/toyonaka/yoyaku/ShisetsuMultiSelect.cgi",
+  "title": "公共施設予約システム（セッションエラー）",
+  "clickables": [
+    {
+      "i": 0,
+      "tag": "A",
+      "text": "",
+      "href": "javascript:void(0)",
+      "onclick": "javascript:redirect();return false;",
+      "id": "",
+      "name": null
+    }
+  ],
+  "forms": [
+    {
+      "action": "",
+      "method": "post",
+      "name": "errorSession",
+      "fields": []
+    }
+  ]
+}
