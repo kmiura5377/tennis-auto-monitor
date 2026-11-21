@@ -3,7 +3,7 @@ name: Recon Toyonaka (temporary)
 on:
   push:
     branches: [recon-toyonaka]
-    paths: ['recon/recon-toyonaka.js', '.github/workflows/recon-toyonaka.yml', 'recon/steps.json']
+    paths: ['recon/recon-toyonaka.js', '.github/workflows/recon-toyonaka.yml', 'recon/steps.json', 'scripts/scrape-toyonaka.js']
 
 permissions:
   contents: write
@@ -19,11 +19,13 @@ jobs:
           node-version: '20'
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - run: node recon/recon-toyonaka.js
-      - name: Commit recon output
+      # 通知用のSecretは渡さない（試験実行では通知を送らない）
+      - run: node scripts/scrape-toyonaka.js
+      - name: Commit output
+        if: always()
         run: |
           git config user.name "tennis-monitor-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -f recon/out
-          git commit -m "Recon output ($(date -u +%Y-%m-%dT%H:%M:%SZ))" || exit 0
+          git add -f data/toyonaka*.json
+          git commit -m "Test output ($(date -u +%Y-%m-%dT%H:%M:%SZ))" || exit 0
           git push origin HEAD:recon-toyonaka
