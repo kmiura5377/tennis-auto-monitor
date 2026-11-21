@@ -272,6 +272,19 @@
             padding: 6px 12px;
         }
 
+        .area-switch {
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+        .area-switch .btn {
+            white-space: nowrap;
+        }
+        .segmented .btn.active {
+            background-color: var(--bg-elevated);
+            color: var(--text-primary);
+            box-shadow: var(--shadow-sm);
+            font-weight: 700;
+        }
         .segmented .btn:hover {
             background-color: var(--bg-elevated);
             color: var(--text-primary);
@@ -626,7 +639,11 @@
                 <div class="header-icon">🎾</div>
                 <div>
                     <h1>テニスコート空き状況カレンダー</h1>
-                    <p class="header-subtitle">東京都立公園を自動監視中</p>
+                    <p class="header-subtitle" id="headerSubtitle">東京都立公園を自動監視中</p>
+                </div>
+                <div class="segmented area-switch" id="areaSwitch">
+                    <button class="btn" data-area="tokyo">東京</button>
+                    <button class="btn" data-area="toyonaka">豊中</button>
                 </div>
             </header>
 
@@ -716,13 +733,48 @@
     <div class="footer">
         <div class="footer-content">
             <div class="footer-text">💡 空きが見つかったら公式サイトで予約してください</div>
-            <a href="https://kouen.sports.metro.tokyo.lg.jp/web/" target="_blank" rel="noopener" class="footer-button">
+            <a href="https://kouen.sports.metro.tokyo.lg.jp/web/" target="_blank" rel="noopener" class="footer-button" id="reserveLink">
                 予約ページを開く ↗
             </a>
         </div>
     </div>
 
     <script>
+        // --- 地域（東京都立公園 / 豊中市）。データは地域ごとに別ファイルで、別々のGitHub Actionsが更新する ---
+        const AREAS = {
+            tokyo: {
+                subtitle: '東京都立公園を自動監視中',
+                data: '/data/availability.json',
+                log: '/data/activity-log.json',
+                site: 'https://kouen.sports.metro.tokyo.lg.jp/web/'
+            },
+            toyonaka: {
+                subtitle: '豊中市のテニスコートを自動監視中',
+                data: '/data/toyonaka.json',
+                log: '/data/toyonaka-activity-log.json',
+                site: 'https://reserve.opas.jp/toyonaka/'
+            }
+        };
+        function initialArea() {
+            const fromUrl = new URLSearchParams(location.search).get('area');
+            if (AREAS[fromUrl]) return fromUrl;
+            try {
+                const saved = localStorage.getItem('area');
+                if (AREAS[saved]) return saved;
+            } catch (e) { /* ignore */ }
+            return 'tokyo';
+        }
+        let currentArea = initialArea();
+
+        function applyAreaUi() {
+            const area = AREAS[currentArea];
+            document.getElementById('headerSubtitle').textContent = area.subtitle;
+            document.getElementById('reserveLink').href = area.site;
+            document.querySelectorAll('#areaSwitch .btn').forEach(b => {
+                b.classList.toggle('active', b.dataset.area === currentArea);
+            });
+        }
+
         let viewDate = new Date();
         let fullData = null;
         let selectedFacilityId = 'all';
@@ -841,9 +893,12 @@
 
         async function loadData() {
             try {
-                const res = await fetch(`/data/availability.json?t=${Date.now()}`);
+                const area = currentArea;
+                const res = await fetch(`${AREAS[area].data}?t=${Date.now()}`);
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                fullData = await res.json();
+                const data = await res.json();
+                if (area !== currentArea) return; // 読み込み中に地域が切り替えられた
+                fullData = data;
 
                 document.getElementById('lastCheckTime').textContent = new Date(fullData.generatedAt).toLocaleString('ja-JP');
                 document.getElementById('monitoringStatus').textContent = '🟢';
@@ -954,7 +1009,7 @@
                         <div class="facility-section${fav ? ' favorite' : ''}">
                             <div class="facility-name">${fav ? '<span class="fav-star-icon">⭐</span> ' : ''}${f.facility}</div>
                             ${openSlots.map(s => `
-                                <div class="time-slot"><span>${s.time}</span><span style="color:var(--accent-strong)">✓ 空き</span></div>
+                                <div class="time-slot"><span>${s.time}</span><span style="color:var(--accent-strong)">✓ 空き${s.remaining != null ? `（残り${s.remaining}/${s.total}面）` : ''}</span></div>
                             `).join('')}
                         </div>
                     `;
@@ -999,6 +1054,9 @@
         });
         document.getElementById('saveFavoritesBtn').addEventListener('click', async () => {
             const checked = [...document.querySelectorAll('#favoritesList input:checked')].map(el => el.value);
+            // 画面に出ているのは今の地域の施設だけなので、他の地域のお気に入りは消さずに残す
+            const shownIds = new Set(fullData.facilities.map(f => f.id));
+            const keptOtherAreas = [...favorites].filter(id => !shownIds.has(id));
             const notifyOnly = document.getElementById('notifyFavoritesOnlyCheckbox').checked;
             const status = document.getElementById('favoritesSaveStatus');
             const btn = document.getElementById('saveFavoritesBtn');
@@ -1006,7 +1064,7 @@
             btn.disabled = true;
             status.textContent = '保存中...';
             try {
-                await saveFavoritesToServer(checked, notifyOnly);
+                await saveFavoritesToServer([...keptOtherAreas, ...checked], notifyOnly);
                 document.getElementById('favoritesModal').classList.remove('active');
                 renderCalendar(viewDate.getFullYear(), viewDate.getMonth());
             } catch (e) {
@@ -1040,9 +1098,12 @@
         async function loadActivityLog() {
             const list = document.getElementById('activityList');
             try {
-                const res = await fetch(`/data/activity-log.json?t=${Date.now()}`);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const log = await res.json();
+                const area = currentArea;
+                const res = await fetch(`${AREAS[area].log}?t=${Date.now()}`);
+                // まだ一度も空きを検知していない地域はファイル自体が無い
+                if (!res.ok && res.status !== 404) throw new Error(`HTTP ${res.status}`);
+                const log = res.ok ? await res.json() : [];
+                if (area !== currentArea) return;
 
                 if (!log || log.length === 0) {
                     list.innerHTML = '<p class="no-data">まだ新しい空きは見つかっていません</p>';
@@ -1062,6 +1123,20 @@
                 list.innerHTML = `<p class="no-data">読み込みに失敗しました: ${e.message}</p>`;
             }
         }
+
+        applyAreaUi();
+        document.querySelectorAll('#areaSwitch .btn').forEach(b => {
+            b.addEventListener('click', () => {
+                if (b.dataset.area === currentArea) return;
+                currentArea = b.dataset.area;
+                try { localStorage.setItem('area', currentArea); } catch (e) { /* ignore */ }
+                selectedFacilityId = 'all';
+                applyAreaUi();
+                document.getElementById('calendarDays').innerHTML = '<p class="no-data">読み込み中...</p>';
+                loadData();
+                loadActivityLog();
+            });
+        });
 
         loadData();
         loadActivityLog();

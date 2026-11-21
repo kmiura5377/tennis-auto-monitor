@@ -5,7 +5,8 @@
   "main": "scripts/scrape.js",
   "scripts": {
     "dev": "vercel dev",
-    "scrape": "node scripts/scrape.js"
+    "scrape": "node scripts/scrape.js",
+    "scrape:toyonaka": "node scripts/scrape-toyonaka.js"
   },
   "dependencies": {
     "nodemailer": "^6.9.0",

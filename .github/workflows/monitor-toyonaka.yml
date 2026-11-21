@@ -1,0 +1,126 @@
+name: Toyonaka Tennis Court Scraper
+
+# 豊中市スポーツ施設情報システムのテニスコート空き状況を30分ごとに取得する。
+# 都立公園用の monitor.yml とは別に動かす（片方のサイトの不調がもう片方に影響しないように）。
+# 仕組みは monitor.yml と同じで、「各実行の最後に次の実行を自分で起動する」連鎖を主にし、
+# schedule は連鎖が途切れた時の再始動用。
+
+on:
+  schedule:
+    # UTC。日本時間 6:00〜23:59 の間、毎時22分・52分（都立公園側の7分・37分と重ならないようにずらす）
+    - cron: '22,52 21-23,0-14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: scrape-toyonaka
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    # 取得(約3分)＋次の実行までの待ち時間(30分)に余裕を持たせた上限
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+
+      # 連鎖が生きている時に schedule でも動いて二重実行しないよう、
+      # 直近20分以内に実行済みなら schedule の実行は何もしない
+      - name: Guard against duplicate runs
+        id: guard
+        run: |
+          echo "START_EPOCH=$(date +%s)" >> "$GITHUB_ENV"
+          skip=false
+          if [ "${{ github.event_name }}" = "schedule" ] && [ -f data/toyonaka-debug.json ]; then
+            gen=$(jq -r '.generatedAt' data/toyonaka-debug.json)
+            age=$(( $(date +%s) - $(date -d "$gen" +%s) ))
+            if [ "$age" -lt 1200 ]; then
+              skip=true
+              echo "データは${age}秒前に更新済みのため、この実行は何もしない"
+            fi
+          fi
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        if: steps.guard.outputs.skip != 'true'
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        if: steps.guard.outputs.skip != 'true'
+        run: npm install --no-audit --no-fund
+
+      - name: Install Playwright browser
+        if: steps.guard.outputs.skip != 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Run scraper
+        if: steps.guard.outputs.skip != 'true'
+        env:
+          PUSH_VAPID_PRIVATE_KEY: ${{ secrets.PUSH_VAPID_PRIVATE_KEY }}
+          FAVORITES_API_TOKEN: ${{ secrets.FAVORITES_API_TOKEN }}
+        run: npm run scrape:toyonaka
+
+      - name: Commit updated data if changed
+        if: always() && steps.guard.outputs.skip != 'true'
+        run: |
+          git config user.name "tennis-monitor-bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/toyonaka
+          cp data/toyonaka*.json /tmp/toyonaka/ 2>/dev/null || { echo "出力なし"; exit 0; }
+
+          # 都立公園側の実行も同じ main に push するので、毎回リモートの最新から作り直す
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout main
+            git reset --hard origin/main
+            cp /tmp/toyonaka/*.json data/
+
+            if [ -z "$(git status --porcelain -- 'data/toyonaka*.json')" ]; then
+              echo "No changes to data files"
+              exit 0
+            fi
+
+            git add data/toyonaka*.json
+            git commit -m "Update Toyonaka availability ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            if git push origin main; then
+              echo "push succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "push failed on attempt $attempt, retrying"
+            sleep $((attempt * 5))
+          done
+          echo "push failed after retries"
+          exit 1
+
+      # 30分間隔になるまで待ってから次の実行を起動する。日本時間の深夜(0〜5時)は起動せず、
+      # 朝6時台の schedule で再開させる
+      - name: Wait and trigger next run
+        if: always() && steps.guard.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          elapsed=$(( $(date +%s) - START_EPOCH ))
+          wait=$(( 1800 - elapsed ))
+          if [ "$wait" -gt 0 ]; then
+            echo "次の実行まで${wait}秒待つ"
+            sleep "$wait"
+          fi
+          hour=$(TZ=Asia/Tokyo date +%H)
+          if [ "$((10#$hour))" -lt 6 ]; then
+            echo "深夜(日本時間${hour}時)のため次の実行は起動しない"
+            exit 0
+          fi
+          for attempt in 1 2 3 4 5; do
+            if gh workflow run monitor-toyonaka.yml --ref main; then
+              echo "次の実行を起動した(試行${attempt}回目)"
+              exit 0
+            fi
+            sleep $((attempt * 10))
+          done
+          echo "次の実行を起動できなかった"
+          exit 1

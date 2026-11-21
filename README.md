@@ -65,6 +65,16 @@ Web Pushに加えて、LINE公式アカウントの「ブロードキャスト�
 
 ※ ブロードキャスト配信は「その公式アカウントを友達登録している全員」に届きます。友達追加のリンク/QRコードを他人と共有しない限り、実質あなただけに届きます。
 
+## 豊中市のテニスコート
+
+東京都立公園とは別に、豊中市スポーツ施設情報システム（OPAS）のテニスコート6施設も監視しています。画面右上の「東京／豊中」で切り替えます（`?area=toyonaka` で直接開くこともできます）。
+
+- 取得: `scripts/scrape-toyonaka.js`（ログイン不要の「空き状況照会」をPlaywrightで操作し、4週間分を取得）
+- 実行: `.github/workflows/monitor-toyonaka.yml`（30分に1回。都立公園の `monitor.yml` とは独立して動く）
+- データ: `data/toyonaka.json`、検知履歴は `data/toyonaka-activity-log.json`、実行結果は `data/toyonaka-debug.json`
+- 通知: 都立公園と同じWeb Push購読に届く。「お気に入りの新規空きだけ通知する」をオンにしている場合は、豊中の施設もお気に入りに入れる必要がある
+- 施設IDは `toyonaka_` で始まり、都立公園のIDとは重ならない
+
 ## 構成
 
 ```
