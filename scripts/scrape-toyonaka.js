@@ -42,33 +42,45 @@ async function clickAndWait(page, selector) {
 // 戻り値: { facilities: [{ site, dates: ['M/D',...], rows: [{ time, cells: [{available, remaining, total}] }] }] }
 async function parseScreen(page) {
   return page.evaluate(() => {
+    // 全施設が1つの表に縦に並んでいるため、行を上から順に見て「施設名の行」で区切る
     const facilities = [];
-    document.querySelectorAll('td.shisetu_name').forEach(nameCell => {
-      const site = nameCell.innerText.trim();
-      const table = nameCell.closest('table');
-      const dates = [...table.querySelectorAll('p.day')].map(p => {
-        const m = p.innerText.replace(/\s+/g, '').match(/(\d+)月(\d+)日/);
-        return m ? `${m[1]}/${m[2]}` : null;
-      });
-      const rows = [...table.querySelectorAll('tr')]
-        .filter(tr => tr.querySelector('td.facmdstime'))
-        .map(tr => {
-          const tds = [...tr.querySelectorAll('td')];
-          const time = tds[0].innerText.replace(/\s+/g, '').replace('～', '-');
-          const cells = tds.slice(1).map(td => {
-            const img = td.querySelector('img');
-            const src = img ? img.getAttribute('src') : '';
-            const m = td.innerText.match(/(\d+)\((\d+)\)/);
-            return {
-              available: /\/maru\./.test(src),
-              remaining: m ? Number(m[1]) : null,
-              total: m ? Number(m[2]) : null
-            };
-          });
-          return { time, cells };
+    let current = null;
+    const nameCells = document.querySelectorAll('td.shisetu_name');
+    const table = nameCells.length ? nameCells[0].closest('table') : null;
+    if (!table) return { facilities };
+    for (const tr of table.querySelectorAll('tr')) {
+      const nameCell = tr.querySelector('td.shisetu_name');
+      if (nameCell) {
+        current = { site: nameCell.innerText.trim(), dates: [], rows: [] };
+        facilities.push(current);
+        continue;
+      }
+      if (!current) continue;
+      const dayPs = tr.querySelectorAll('p.day');
+      if (dayPs.length) {
+        current.dates = [...dayPs].map(p => {
+          const m = p.innerText.replace(/\s+/g, '').match(/(\d+)月(\d+)日/);
+          return m ? `${m[1]}/${m[2]}` : null;
         });
-      facilities.push({ site, dates, rows });
-    });
+        continue;
+      }
+      const timeCell = tr.querySelector('td.facmdstime');
+      if (timeCell) {
+        const tds = [...tr.querySelectorAll('td')];
+        const time = timeCell.innerText.replace(/\s+/g, '').replace('～', '-');
+        const cells = tds.slice(1).map(td => {
+          const img = td.querySelector('img');
+          const src = img ? img.getAttribute('src') : '';
+          const m = td.innerText.match(/(\d+)\((\d+)\)/);
+          return {
+            available: /\/maru\./.test(src),
+            remaining: m ? Number(m[1]) : null,
+            total: m ? Number(m[2]) : null
+          };
+        });
+        current.rows.push({ time, cells });
+      }
+    }
     return { facilities };
   });
 }
