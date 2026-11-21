@@ -3,7 +3,7 @@ name: Recon Toyonaka (temporary)
 on:
   push:
     branches: [recon-toyonaka]
-    paths: ['recon/recon-toyonaka.js', '.github/workflows/recon-toyonaka.yml', 'recon/trigger.txt']
+    paths: ['recon/recon-toyonaka.js', '.github/workflows/recon-toyonaka.yml', 'recon/steps.json']
 
 permissions:
   contents: write
