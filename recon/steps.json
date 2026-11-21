@@ -1,5 +1,7 @@
 [
   { "action": "click", "selector": "a[onclick*=\"Akisyoukai\"]" },
   { "action": "click", "selector": "tr[onclick*=\"'Enter','1'\"]" },
-  { "action": "click", "selector": "tr[onclick*=\"272035_001_06\"]" }
+  { "action": "click", "selector": "tr[onclick*=\"272035_001_06\"]" },
+  { "action": "click", "selector": "a[onclick*=\"AllSelect\"]" },
+  { "action": "click", "selector": "a[onclick*=\"isSubmitDataSet('Enter')\"]" }
 ]
